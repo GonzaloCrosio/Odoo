@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Vista form-->
+    <record id="tag_expenses_type_view_form" model="ir.ui.view">
+        <field name="name">exp.expenses.type.view.form</field>
+        <field name="model">exp.expenses.type</field>
+        <field name="arch" type="xml">
+            <form string="Expenses Type">
+                <header string="Expenses Type">
+                    <!--Nombre de la etiqueta-->
+                    <h1>Expenses Type</h1>
+                </header>
+                <!--Te forma una sección dentro de la pantalla-->
+                <sheet>
+                    <group>
+                        <field string="Expenses Type" name="custom_name"
+                               readonly="False"/>
+                        <field string="Description" name="description"
+                               readonly="False"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Vista tree-->
+    <record id="expenses_type_tree" model="ir.ui.view">
+        <field name="name">exp.expenses.type.view.tree</field>
+        <field name="model">exp.expenses.type</field>
+        <field name="arch" type="xml">
+            <tree class="tag_tree">
+                <field name="custom_name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Crea las vistas-->
+    <record id="tag_expenses_type_action" model="ir.actions.act_window">
+        <field name="name">Expenses Type</field>
+        <field name="res_model">exp.expenses.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No Expenses Type created.</p>
+        </field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <record id="tag_expenses_type_menu" model="ir.ui.menu">
+        <field name="name">Expenses Type</field>
+        <field name="action" ref="tag_expenses_type_action"/>
+        <field name="parent_id" ref="custom_gonza_expenses.menu_expenses"/>
+        <field name="sequence">22</field>
+    </record>
+</odoo>

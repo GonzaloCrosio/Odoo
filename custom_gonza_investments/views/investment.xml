@@ -1,0 +1,180 @@
+<odoo>
+    <!--Define la vista Tree (donde se muestra la lista de datos)-->
+    <record id="view_investments_tree" model="ir.ui.view">
+        <field name="name">investments.tree</field>
+        <field name="model">inv.investments.transactions</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="investment_name" optional="show"/>
+                <field name="date" optional="show"/>
+                <field name="quantity_in_fiat" optional="show"/>
+                <field name="quantity_in_crypto" optional="show"/>
+                <field name="transaction_price" optional="show"/>
+                <field name="current_price" optional="show"/>
+                <field name="price_difference" optional="show"/>
+                <field name="current_investment_price" optional="show"/>
+                <field name="profit" optional="show"/>
+                <field name="profit_percentage" optional="show"/>
+                <field name="investment_purchase_mode_id" optional="show"/>
+                <field name="status" optional="show"/>
+                <field name="strategy" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="tax_quantity" optional="show"/>
+                <field name="profit_net" optional="show"/>
+                <field name="purchaseback_price" optional="show"/>
+                <field name="investment_location_id" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Define la vista Form (donde se carga el dato)-->
+    <record id="view_investments_form" model="ir.ui.view">
+        <field name="name">investments.form</field>
+        <field name="model">inv.investments.transactions</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="row">
+                        <div class="col-6">
+                            <group>
+                                <field name="investment_name"/>
+                                <field name="date"/>
+                                <field name="investment_purchase_mode_id"/>
+                                <field name="status"/>
+                                <field name="strategy"/>
+                                <field name="investment_location_id"/>
+                                <field name="investment_asset_type"/>
+                                <field name="description"/>
+                            </group>
+                        </div>
+                        <div class="col-6">
+                            <group>
+                                <field name="quantity_in_fiat"/>
+                                <field name="quantity_in_crypto"/>
+                                <field name="transaction_price"/>
+                                <field name="current_price"/>
+                                <field name="price_difference"/>
+                                <field name="current_investment_price"/>
+                                <field name="profit"/>
+                                <field name="profit_percentage"/>
+                                <field name="tax_quantity"/>
+                                <field name="profit_net"/>
+                                <field name="purchaseback_price"/>
+                            </group>
+                        </div>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--Crea los filtros disponibles - Separator IF/OR-->
+    <record id="investments_transactions_view_search" model="ir.ui.view">
+        <field name="name">inv.investments.transactions.view.search</field>
+        <field name="model">inv.investments.transactions</field>
+        <field name="arch" type="xml">
+            <search string="Search investments">
+                <field name="investment_name"/>
+                <field name="date"/>
+                <field name="investment_purchase_mode_id"/>
+                <field name="status"/>
+                <field name="strategy"/>
+                <field name="investment_location_id"/>
+                <field name="description"/>
+                <field name="quantity_in_fiat"/>
+                <field name="quantity_in_crypto"/>
+                <field name="transaction_price"/>
+                <field name="current_price"/>
+                <field name="price_difference"/>
+                <field name="current_investment_price"/>
+                <field name="profit"/>
+                <field name="profit_percentage"/>
+                <field name="tax_quantity"/>
+                <field name="profit_net"/>
+                <field name="purchaseback_price"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Vista Pivot-->
+    <record id="investments_transactions_view_pivot" model="ir.ui.view">
+        <field name="name">inv.investments.transactions.view.pivot</field>
+        <field name="model">inv.investments.transactions</field>
+        <field name="arch" type="xml">
+            <pivot string="Variable Investments" sample="1">
+                <field name="investment_name"/>
+                <field name="date"/>
+                <field name="investment_purchase_mode_id"/>
+                <field name="status"/>
+                <field name="strategy"/>
+                <field name="investment_location_id"/>
+                <field name="description"/>
+                <field name="quantity_in_fiat"/>
+                <field name="quantity_in_crypto"/>
+                <field name="transaction_price"/>
+                <field name="current_price"/>
+                <field name="price_difference"/>
+                <field name="current_investment_price"/>
+                <field name="profit"/>
+                <field name="profit_percentage"/>
+                <field name="tax_quantity"/>
+                <field name="profit_net"/>
+                <field name="purchaseback_price"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--Vista Graph-->
+    <record id="investments_transactions_view_graph" model="ir.ui.view">
+        <field name="name">inv.investments.transactions.view.graph</field>
+        <field name="model">inv.investments.transactions</field>
+        <field name="arch" type="xml">
+            <graph string="Variable Investments" sample="1">
+                <field name="investment_name"/>
+                <field name="date"/>
+                <field name="investment_purchase_mode_id"/>
+                <field name="status"/>
+                <field name="strategy"/>
+                <field name="investment_location_id"/>
+                <field name="description"/>
+                <field name="quantity_in_fiat"/>
+                <field name="quantity_in_crypto"/>
+                <field name="transaction_price"/>
+                <field name="current_price"/>
+                <field name="price_difference"/>
+                <field name="current_investment_price"/>
+                <field name="profit"/>
+                <field name="profit_percentage"/>
+                <field name="tax_quantity"/>
+                <field name="profit_net"/>
+                <field name="purchaseback_price"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--Acción que genera las vistas-->
+    <record id="action_investments" model="ir.actions.act_window">
+        <field name="name">Variable Investments</field>
+        <field name="res_model">inv.investments.transactions</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+
+    <!--Pestaña en cabecera de menú-->
+    <menuitem id="menu_investment_general"
+              name="Variable Investments"
+              parent="menu_investment_root"
+              action="action_investments"/>
+
+    <!--Dan acceso mediante el desplegable del menú inversiones-->
+    <record id="investments_general_menu" model="ir.ui.menu">
+        <field name="name">Variable Investments</field>
+        <field name="action" ref="action_investments"/>
+        <field name="parent_id" ref="custom_gonza_investments.menu_investment"/>
+        <field name="sequence">25</field>
+    </record>
+</odoo>

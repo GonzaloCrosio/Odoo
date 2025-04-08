@@ -1,0 +1,142 @@
+<odoo>
+    <!--Vista inicial de préstamos-->
+    <record id="view_loan_tree" model="ir.ui.view">
+        <field name="name">loan.loan.tree</field>
+        <field name="model">loan.loan</field>
+        <field name="arch" type="xml">
+            <tree string="Loans">
+                <field name="name" optional="show"/>
+                <field name="amount" optional="show"/>
+                <field name="interest_rate" optional="show"/>
+                <field name="term" optional="show"/>
+                <field name="number" optional="show"/>
+                <field name="current_debt" optional="show"/>
+                <field name="percentage_debt" optional="show"/>
+                <field name="number_payments" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Vista form-->
+    <record id="view_loan_form" model="ir.ui.view">
+        <field name="name">loan.loan.form</field>
+        <field name="model">loan.loan</field>
+        <field name="arch" type="xml">
+            <!--Cabecera del préstamo-->
+            <form>
+                <sheet>
+                    <div class="row">
+                        <div class="col-6">
+                            <group>
+                                <field name="name"/>
+                                <field name="amount"/>
+                                <field name="interest_rate"/>
+                                <field name="effective_interest_rate"/>
+                                <field name="term"/>
+                                <field name="date"/>
+                                <field name="description"/>
+                                <field name="other_day_payment"/>
+                            </group>
+                        </div>
+                        <div class="col-6">
+                            <h4>Example of Loan Effective Rate Calculation</h4>
+                            <img
+                                src="/custom_gonza_loans/static/img/Ejemplo_TNA-TAE.png"
+                                alt="Tasa Efectiva"
+                                style="width: 500px; height: 300px;"
+                            />
+                        </div>
+                    </div>
+
+                    <button name="compute_details" string="Generate Details"
+                            type="object" class="btn-primary"/>
+
+                    <notebook>
+                        <page string="Payments">
+                            <field name="detail_ids" class="text-center" style="text-align:center;"
+                                   context="{'default_loan_id': active_id}">
+                                <!--Líneas del préstamo-->
+                                <tree class="text-center" style="text-align:center;">
+                                    <field name="number" class="text-center" optional="show"/>
+                                    <field name="date" class="text-center" optional="show"/>
+                                    <field name="total_payment" class="text-center" optional="show"/>
+                                    <field name="interest_payment" class="text-center" optional="show"/>
+                                    <field name="capital_payment" class="text-center" optional="show"/>
+                                    <field name="capital_remaining" class="text-center" optional="show"/>
+                                    <field name="capital_amortized" class="text-center" optional="show"/>
+                                    <field name="status" optional="show" class="text-center"
+                                           editable="bottom"/>
+                                </tree>
+                                <!--Vista al clickear en líneas del préstamo-->
+                                <form>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <group>
+                                                <field name="loan_id"/>
+                                                <field name="number"/>
+                                                <field name="date"/>
+                                                <field name="status" editable="bottom"/>
+                                            </group>
+                                        </div>
+                                        <div class="col-6">
+                                            <group>
+                                                <field name="total_payment"/>
+                                                <field name="capital_payment"/>
+                                                <field name="interest_payment"/>
+                                                <field name="capital_amortized"/>
+                                                <field name="capital_remaining"/>
+                                            </group>
+                                        </div>
+                                    </div>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--Crea los filtros disponibles - Separator IF/OR-->
+    <record id="loan_view_search" model="ir.ui.view">
+        <field name="name">loan.loan.view.search</field>
+        <field name="model">loan.loan</field>
+        <field name="arch" type="xml">
+            <search string="Loan">
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="interest_rate"/>
+                <field name="term"/>
+                <field name="number"/>
+                <field name="current_debt"/>
+                <field name="percentage_debt"/>
+                <field name="number_payments"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Creación de vistas-->
+    <record id="action_loan" model="ir.actions.act_window">
+        <field name="name">Loans</field>
+        <field name="res_model">loan.loan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Loan
+            </p>
+        </field>
+    </record>
+
+    <!--Creación del menú-->
+    <record id="loan_general_menu" model="ir.ui.menu">
+        <field name="name">Loans</field>
+        <field name="action" ref="action_loan"/>
+        <field name="parent_id" ref="custom_gonza_loans.menu_loan"/>
+        <field name="sequence">25</field>
+    </record>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Vista form-->
+    <record id="location_investment_view_form" model="ir.ui.view">
+        <field name="name">inv.investment.location.view.form</field>
+        <field name="model">inv.investment.location</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <header>
+                    <!--Nombre de la etiqueta-->
+                    <h1>Location</h1>
+                </header>
+                <!--Te forma una sección dentro de la pantalla-->
+                <sheet>
+                    <group>
+                        <field name="custom_name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--Vista Tree-->
+    <record id="location_investment_view_tree" model="ir.ui.view">
+        <field name="name">inv.investment.location.view.tree</field>
+        <field name="model">inv.investment.location</field>
+        <field name="arch" type="xml">
+            <tree class="location_tree">
+                <field name="custom_name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Crea las vistas-->
+    <record id="location_investment_action" model="ir.actions.act_window">
+        <field name="name">Location</field>
+        <field name="res_model">inv.investment.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No locations created.</p>
+        </field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <record id="location_investment_menu" model="ir.ui.menu">
+        <field name="name">Location</field>
+        <field name="action" ref="location_investment_action"/>
+        <field name="parent_id" ref="custom_gonza_investments.menu_investment"/>
+        <field name="sequence">22</field>
+    </record>
+</odoo>

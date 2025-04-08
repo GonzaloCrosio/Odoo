@@ -1,0 +1,16 @@
+<odoo>
+    <!--Ícono de Pantalla de inicio-->
+    <menuitem id="menu_loan_root"
+              name="Loan"
+              action="action_loan"
+              sequence="10"
+              web_icon="custom_gonza_loans,static/img/prestamo.png"
+    />
+
+    <menuitem id="menu_loan"
+              name="Loan Menu"
+              parent="menu_loan_root"
+              action="action_loan"
+              sequence="10"
+    />
+</odoo>

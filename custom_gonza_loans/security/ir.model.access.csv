@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+custom_gonza_loans.access_loan_loan,access_loan_loan_user,custom_gonza_loans.model_loan_loan,base.group_user,1,1,1,1
+custom_gonza_loans.access_loan_details,access_loan_details,custom_gonza_loans.model_loan_details,base.group_user,1,1,1,1

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Define la vista Tree (donde se muestra la lista de datos)-->
+    <record id="view_expenses_tree" model="ir.ui.view">
+        <field name="name">expenses.tree</field>
+        <field name="model">exp.expenses.expenses</field>
+        <field name="arch" type="xml">
+            <tree string="Expenses">
+                <field name="expense_amount" optional="show"/>
+                <field name="income_amount" optional="show"/>
+                <field name="date" optional="show"/>
+                <field name="expenses_tag_id" optional="show"/>
+                <field name="expenses_secundary_tag_id" optional="show" widget="many2many_tags"/>
+                <field name="expenses_payment_mode_id" optional="show"/>
+                <field name="expenses_type_id" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Define la vista Form (donde se carga el dato)-->
+    <record id="view_expenses_form" model="ir.ui.view">
+        <field name="name">expenses.form</field>
+        <field name="model">exp.expenses.expenses</field>
+        <field name="arch" type="xml">
+            <form string="Expenses">
+                <sheet>
+                    <group>
+                        <field name="expense_amount"/>
+                        <field name="income_amount"/>
+                        <field name="date"/>
+                        <field name="description"/>
+                        <field name="expenses_tag_id"/>
+                        <field name="expenses_secundary_tag_id" widget="many2many_tags"/>
+                        <field name="expenses_payment_mode_id"/>
+                        <field name="expenses_type_id"/>
+                    </group>
+                    <field name="compatible_secundary_tags_ids" invisible="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Crea los filtros disponibles - Separator IF/OR-->
+    <record id="expenses_expenses_view_search" model="ir.ui.view">
+        <field name="name">exp.expenses.expenses.view.search</field>
+        <field name="model">exp.expenses.expenses</field>
+        <field name="arch" type="xml">
+            <search string="Search Expenses">
+                <field string="Category OR" name="expenses_tag_id"/>
+                <field name="expenses_payment_mode_id"/>
+                <separator/>
+                <field string="Category AND" name="expenses_tag_id"/>
+                <field name="expenses_payment_mode_id"/>
+                <separator/>
+            </search>
+        </field>
+    </record>
+
+    <!--Vista Pivot-->
+    <record id="expenses_expenses_view_pivot" model="ir.ui.view">
+        <field name="name">exp.expenses.expenses.view.pivot</field>
+        <field name="model">exp.expenses.expenses</field>
+        <field name="arch" type="xml">
+            <pivot string="Expenses Tags" sample="1">
+                <field name="expenses_tag_id" type="row"/>
+                <field name="expenses_payment_mode_id" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--Vista Graph-->
+    <record id="expenses_expenses_view_graph" model="ir.ui.view">
+        <field name="name">exp.expenses.expenses.view.graph</field>
+        <field name="model">exp.expenses.expenses</field>
+        <field name="arch" type="xml">
+            <graph string="Expenses Tags" sample="1">
+                <field name="date" interval="month"/>
+                <field name="expenses_tag_id"/>
+                <field name="expense_amount" type="measure"/>
+                <field name="expenses_payment_mode_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--Acción que genera las vistas-->
+    <record id="action_expenses" model="ir.actions.act_window">
+        <field name="name">Expenses</field>
+        <field name="res_model">exp.expenses.expenses</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <record id="expenses_general_menu" model="ir.ui.menu">
+        <field name="name">Expenses</field>
+        <field name="action" ref="action_expenses"/>
+        <field name="parent_id" ref="custom_gonza_expenses.menu_expenses"/>
+        <field name="sequence">25</field>
+    </record>
+
+    <!--Genera acceso directo desde el márgen superior-->
+    <menuitem id="menu_expenses_expenses"
+              name="Expenses"
+              parent="menu_expenses_root"
+              action="action_expenses"
+              sequence="10"
+    />
+</odoo>

@@ -1,0 +1,390 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* custom_gonza_loans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-10 12:04+0000\n"
+"PO-Revision-Date: 2025-01-10 13:16+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesaria"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Actividad de excepción"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Tipo de Actividad"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de adjuntos"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__capital_amortized
+msgid "Capital Amortized"
+msgstr "Capital amortizado"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__capital_payment
+msgid "Capital Payment"
+msgstr "Pago de capital"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__capital_remaining
+msgid "Capital Remaining"
+msgstr "Capital pendiente"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__current_debt
+msgid "Capital remaining from the last paid installment."
+msgstr "Deuda Actual."
+
+#. module: custom_gonza_loans
+#: model_terms:ir.actions.act_window,help:custom_gonza_loans.action_loan
+msgid "Create your first Loan"
+msgstr "Crea tu primer préstamo"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__create_uid
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__create_date
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__current_debt
+msgid "Current Debt"
+msgstr "Deuda actual"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__detail_ids
+msgid "Details"
+msgstr "Detalles"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__display_name
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__effective_interest_rate
+msgid "Effective Interest Rate Monthly"
+msgstr "Tasa efectiva mensual"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__effective_interest_rate
+msgid "Effective monthly interest rate calculated from the nominal annual rate."
+msgstr "Tasa efectiva mensual obtenida a partir de la tasa efectiva anual."
+
+#. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid "Example of Loan Effective Rate Calculation"
+msgstr "Ejemplo de cálculo de la Tasa Efectiva Mensual a partir de la Tasa Efectiva Anual"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__number
+msgid "Fees paid"
+msgstr "Cuotas pagadas"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Partners"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ìcono"
+
+#. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid "Generate Details"
+msgstr "Genera detalle de cuotas"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__has_message
+msgid "Has Message"
+msgstr "Mensaje"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__id
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__id
+msgid "ID"
+msgstr "ID"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_exception_icon
+msgid "Icon"
+msgstr "Ícono"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícono muestra una actividad de excepción."
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__interest_payment
+msgid "Interest Payment"
+msgstr "Pago de interés"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__interest_rate
+msgid "Interest Rate (%)"
+msgstr "Tasa Efectiva Anual"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__write_uid
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización hecha por"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__write_date
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__write_date
+msgid "Last Updated on"
+msgstr "Última actualización hecha en"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__loan_id
+#: model:ir.ui.menu,name:custom_gonza_loans.menu_loan_root
+msgid "Loan"
+msgstr "Préstamo"
+
+#. module: custom_gonza_loans
+#: model:ir.model,name:custom_gonza_loans.model_loan_details
+msgid "Loan Details"
+msgstr "Detalle de Préstamos"
+
+#. module: custom_gonza_loans
+#: model:ir.ui.menu,name:custom_gonza_loans.menu_loan
+msgid "Loan Menu"
+msgstr "Menú de Préstamos"
+
+#. module: custom_gonza_loans
+#: model:ir.model,name:custom_gonza_loans.model_loan_loan
+msgid "Loan Model"
+msgstr "Modelo de Préstamos"
+
+#. module: custom_gonza_loans
+#: model:ir.actions.act_window,name:custom_gonza_loans.action_loan
+#: model:ir.ui.menu,name:custom_gonza_loans.loan_general_menu
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_tree
+msgid "Loans"
+msgstr "Préstamos"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega de mensaje"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de actividad"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite siguiente actividad"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la siguiente actividad"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__interest_rate
+msgid "Nominal annual interest rate."
+msgstr "Tasa Nominal Anual."
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__number
+msgid "Number"
+msgstr "Cuota"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_has_error_counter
+msgid "Number of errors"
+msgstr "Números de errores"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields.selection,name:custom_gonza_loans.selection__loan_details__status__paid
+msgid "Paid"
+msgstr "Pagada"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__date
+msgid "Payment Date"
+msgstr "Fecha de pago"
+
+#. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields.selection,name:custom_gonza_loans.selection__loan_details__status__pending
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__number_payments
+msgid "Pending Payments"
+msgstr "Pagos pendientes"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__percentage_debt
+msgid "Percentage Debt"
+msgstr "Ratio deuda/capital"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__number
+msgid "Sequential number"
+msgstr "Cuota"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__other_day_payment
+msgid "Signing day first pay day"
+msgstr "Se paga el día de firma"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__status
+msgid "Status"
+msgstr "Status"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencido: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy.\n"
+"Planificado: Actividades futuras."
+
+#. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid "Tasa Efectiva"
+msgstr "Tasa efectiva"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__term
+msgid "Term in months"
+msgstr "Duración en meses"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__total_payment
+msgid "Total Payment"
+msgstr "Total pagos"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."

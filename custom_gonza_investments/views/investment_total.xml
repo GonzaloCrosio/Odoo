@@ -1,0 +1,132 @@
+<odoo>
+    <!-- Vista Tree -->
+    <record id="view_investment_total_tree" model="ir.ui.view">
+        <field name="name">inv.investment.total.tree</field>
+        <field name="model">inv.investment.total</field>
+        <field name="arch" type="xml">
+            <tree string="Total Investments">
+                <field name="name" optional="show"/>
+                <field name="total_quantity_in_crypto" optional="show"/>
+                <field name="total_quantity_in_fiat" optional="show"/>
+                <field name="total_current_investment_price" optional="show"/>
+                <field name="total_profit" optional="show"/>
+                <field name="total_profit_net" optional="show"/>
+                <field name="current_total_participation" optional="show"/>
+                <field name="fiat_total_participation" optional="show"/>
+                <field name="total_profit_percentage" optional="show"/>
+                <field name="total_tax_quantity" optional="show"/>
+                <field name="total_purchaseback_price" optional="show"/>
+                <field name="total_price_difference" optional="show"/>
+                <field name="average_transaction_price" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Form -->
+    <record id="view_investment_total_form" model="ir.ui.view">
+        <field name="name">inv.investment.total.form</field>
+        <field name="model">inv.investment.total</field>
+        <field name="arch" type="xml">
+            <form string="Total Investment">
+                <sheet>
+                    <div class="row">
+                        <div class="col-6">
+                            <group>
+                                <field name="name" readonly="1"/>
+                                <field name="total_quantity_in_crypto"
+                                       readonly="1"/>
+                                <field name="total_quantity_in_fiat"
+                                       readonly="1"/>
+                                <field name="total_current_investment_price"
+                                       readonly="1"/>
+                                <field name="total_profit" readonly="1"/>
+                                <field name="total_profit_net" readonly="1"/>
+                                <field name="current_price" readonly="1"/>
+                                <field name="average_transaction_price" readonly="1"/>
+                            </group>
+                        </div>
+                        <div class="col-6">
+                            <group>
+                                <field name="current_total_participation" readonly="1"/>
+                                <field name="fiat_total_participation" readonly="1"/>
+                                <field name="total_profit_percentage" readonly="1"/>
+                                <field name="total_tax_quantity" readonly="1"/>
+                                <field name="total_purchaseback_price" readonly="1"/>
+                                <field name="total_price_difference" readonly="1"/>
+                            </group>
+                        </div>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <!--Vista Pivot-->
+    <record id="view_investment_total_pivot" model="ir.ui.view">
+        <field name="name">inv.investment.total.pivot</field>
+        <field name="model">inv.investment.total</field>
+        <field name="arch" type="xml">
+            <pivot string="Total Investments" sample="1">
+                <field name="name"/>
+                <field name="total_quantity_in_crypto"/>
+                <field name="total_quantity_in_fiat"/>
+                <field name="total_current_investment_price"/>
+                <field name="total_profit"/>
+                <field name="total_profit_net"/>
+                <field name="current_total_participation"/>
+                <field name="fiat_total_participation"/>
+                <field name="total_profit_percentage"/>
+                <field name="total_tax_quantity"/>
+                <field name="total_purchaseback_price"/>
+                <field name="total_price_difference"/>
+                <field name="average_transaction_price"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--Vista Graph-->
+    <record id="view_investment_total_graph" model="ir.ui.view">
+        <field name="name">inv.investment.total.graph</field>
+        <field name="model">inv.investment.total</field>
+        <field name="arch" type="xml">
+            <graph string="Total Investments" sample="1">
+                <field name="name"/>
+                <field name="total_quantity_in_crypto"/>
+                <field name="total_quantity_in_fiat"/>
+                <field name="total_current_investment_price"/>
+                <field name="total_profit"/>
+                <field name="total_profit_net"/>
+                <field name="current_total_participation"/>
+                <field name="fiat_total_participation"/>
+                <field name="total_profit_percentage"/>
+                <field name="total_tax_quantity"/>
+                <field name="total_purchaseback_price"/>
+                <field name="total_price_difference"/>
+                <field name="average_transaction_price"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Acción del servidor -->
+    <record id="action_investment_total_server" model="ir.actions.server">
+        <field name="name">Total Investments</field>
+        <field name="model_id" ref="model_inv_investment_total"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['inv.investment.total'].open_grouped_investments()
+        </field>
+    </record>
+
+    <!-- Menú -->
+    <menuitem id="menu_investment_total"
+              name="Total Investments"
+              parent="menu_investment_root"
+              action="action_investment_total_server"/>
+</odoo>
+

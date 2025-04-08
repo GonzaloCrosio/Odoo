@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Vista form-->
+    <record id="tag_expenses_payment_mode_view_form" model="ir.ui.view">
+        <field name="name">exp.expenses.payment.mode.view.form</field>
+        <field name="model">exp.expenses.payment.mode</field>
+        <field name="arch" type="xml">
+            <form string="Payment Mode">
+                <header string="Payment Mode">
+                    <!--Nombre de la etiqueta-->
+                    <h1>Payment Mode</h1>
+                </header>
+                <!--Te forma una sección dentro de la pantalla-->
+                <sheet>
+                    <group>
+                        <field string="Payment Mode" name="custom_name"
+                               readonly="False"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Vista tree-->
+    <record id="expenses_payment_mode_tree" model="ir.ui.view">
+        <field name="name">exp.expenses.payment.mode.view.tree</field>
+        <field name="model">exp.expenses.payment.mode</field>
+        <field name="arch" type="xml">
+            <tree class="tag_tree">
+                <field name="custom_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Crea las vistas-->
+    <record id="tag_expenses_payment_mode_action" model="ir.actions.act_window">
+        <field name="name">Payment Mode</field>
+        <field name="res_model">exp.expenses.payment.mode</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No payment mode created.</p>
+        </field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <record id="tag_expenses_payment_mode_menu" model="ir.ui.menu">
+        <field name="name">Payment Mode</field>
+        <field name="action" ref="tag_expenses_payment_mode_action"/>
+        <field name="parent_id" ref="custom_gonza_expenses.menu_expenses"/>
+        <field name="sequence">22</field>
+    </record>
+</odoo>

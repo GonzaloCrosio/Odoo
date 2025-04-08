@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Defino vista form-->
+    <record id="inv_investment_property_view_form" model="ir.ui.view">
+        <field name="name">inv.investment.property.view.form</field>
+        <field name="model">inv.investment.property</field>
+        <field name="arch" type="xml">
+            <form string="Property">
+                <header string="Property">
+                    <!--Nombre de la etiqueta-->
+                    <h1>Asset or Liability</h1>
+                </header>
+                <!--Te forma una sección dentro de la pantalla-->
+                <sheet>
+                    <group>
+                        <field string="Asset or Liability" name="custom_name"/>
+                        <field name="quantity"/>
+                        <field name="unit_current_price"/>
+                        <field name="current_amount"/>
+                        <field name="description"/>
+                        <field name="investment_id"/>
+                        <field name="property_type"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--Defino vista tree-->
+    <record id="inv_investment_property_view_tree" model="ir.ui.view">
+        <field name="name">inv.investment.property.view.tree</field>
+        <field name="model">inv.investment.property</field>
+        <field name="arch" type="xml">
+            <tree string="Asset or Liability" class="inv_tree">
+                <field name="custom_name" optional="show"/>
+                <field name="quantity" optional="show"/>
+                <field name="unit_current_price" optional="show"/>
+                <field name="current_amount" optional="show"/>
+                <field name="description" optional="show"/>
+                <field name="investment_id" optional="show"/>
+                <field name="property_type" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Vista Pivot-->
+    <record id="investments_investments_view_pivot" model="ir.ui.view">
+        <field name="name">inv.investments.view.pivot</field>
+        <field name="model">inv.investment.property</field>
+        <field name="arch" type="xml">
+            <pivot string="Property" sample="1">
+                <field name="custom_name"/>
+                <field name="quantity"/>
+                <field name="unit_current_price"/>
+                <field name="current_amount"/>
+                <field name="description"/>
+                <field name="investment_id"/>
+                 <field name="property_type"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--Vista Graph-->
+    <record id="investments_investments_view_graph" model="ir.ui.view">
+        <field name="name">inv.investments.view.graph</field>
+        <field name="model">inv.investment.property</field>
+        <field name="arch" type="xml">
+            <graph string="Property" sample="1">
+                <field name="custom_name"/>
+                <field name="quantity"/>
+                <field name="unit_current_price"/>
+                <field name="current_amount"/>
+                <field name="description"/>
+                <field name="investment_id"/>
+                <field name="property_type"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--Crea las vistas del modelo-->
+    <record id="inv_investment_property_action" model="ir.actions.act_window">
+        <field name="name">Property</field>
+        <field name="res_model">inv.investment.property</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No property created.</p>
+        </field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <record id="inv_investment_property_menu" model="ir.ui.menu">
+        <field name="name">Property</field>
+        <field name="action" ref="inv_investment_property_action"/>
+        <field name="parent_id" ref="custom_gonza_investments.menu_investment"/>
+        <field name="sequence">22</field>
+    </record>
+
+    <!-- Menú -->
+    <menuitem id="menu_investment_property"
+              name="Total Investments Property"
+              parent="menu_investment_root"
+              action="inv_investment_property_action"/>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+    <!--Ícono de Pantalla de inicio-->
+
+    <menuitem id="menu_investment_root"
+              name="Investment"
+              action="action_investment_transaction"
+              sequence="10"
+              web_icon="custom_gonza_investments,static/img/bitcoin.png"
+    />
+
+    <menuitem id="menu_investment"
+              name="Investment Menu"
+              parent="menu_investment_root"
+              action="action_investment_transaction"
+              sequence="10"
+    />
+</odoo>

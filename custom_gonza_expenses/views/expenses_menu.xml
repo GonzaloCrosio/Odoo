@@ -1,0 +1,17 @@
+<odoo>
+    <!--Ícono de Pantalla de inicio-->
+    <menuitem id="menu_expenses_root"
+              name="Expenses"
+              action="action_expenses"
+              sequence="10"
+              web_icon="custom_gonza_expenses,static/gastos.png"
+    />
+
+    <!--Menú de acceso dentro de Expenses-->
+    <menuitem id="menu_expenses"
+              name="Expenses Menu"
+              parent="menu_expenses_root"
+              action="action_expenses"
+              sequence="10"
+    />
+</odoo>

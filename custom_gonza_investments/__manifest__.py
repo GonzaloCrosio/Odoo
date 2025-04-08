@@ -1,0 +1,27 @@
+{
+    "name": "Custom Gonzalo Investments",
+    "version": "17.0.1.0.0",
+    "category": "Customizations",
+    "author": "Gonzalo",
+    "summary": "Custom reports for the client",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "base",
+        "mail",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        # "views/investment.xml",
+        "views/investment_transactions.xml",
+        "views/investment_transactions_line.xml",
+        "views/investment_menu.xml",
+        "views/investment_purchase_mode.xml",
+        "views/investment_location.xml",
+        "views/investment_total.xml",
+        "views/investment_assets.xml",
+        "views/investments_api.xml",
+        "views/investment_property.xml",
+    ],
+}

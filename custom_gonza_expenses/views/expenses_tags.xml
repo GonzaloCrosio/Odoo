@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Vista form-->
+    <record id="tag_expenses_view_form" model="ir.ui.view">
+        <field name="name">exp.tag.expenses.view.form</field>
+        <field name="model">exp.tag.expenses</field>
+        <field name="arch" type="xml">
+            <form string="Principal Tag">
+                <header>
+                    <!--Nombre de la etiqueta-->
+                    <h1>
+                        <field name="custom_name" readonly="True"/>
+                    </h1>
+                </header>
+                <!--Te forma una sección dentro de la pantalla-->
+                <sheet>
+                    <group>
+                        <field name="custom_name"/>
+                        <field string="Description" name="description"
+                               readonly="False"/>
+                        <field name="compatible_secundary_tags_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Vista tree-->
+    <record id="tag_expenses_view_tree" model="ir.ui.view">
+        <field name="name">exp.tag.expenses.view.tree</field>
+        <field name="model">exp.tag.expenses</field>
+        <field name="arch" type="xml">
+            <tree string="Principal Tags" class="tag_tree">
+                <field name="custom_name"/>
+                <field name="description"/>
+                <field name="compatible_secundary_tags_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Crea las vistas-->
+    <record id="tag_expenses_action" model="ir.actions.act_window">
+        <field name="name">Principal Tag</field>
+        <field name="res_model">exp.tag.expenses</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No tags created.</p>
+        </field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <record id="tag_expenses_menu" model="ir.ui.menu">
+        <field name="name">Principal Tags</field>
+        <field name="action" ref="tag_expenses_action"/>
+        <field name="parent_id" ref="custom_gonza_expenses.menu_expenses"/>
+        <field name="sequence">22</field>
+    </record>
+</odoo>

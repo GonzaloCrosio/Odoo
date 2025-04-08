@@ -1,0 +1,76 @@
+<odoo>
+    <!--Vista Form-->
+    <record id="view_investment_crypto_price_form" model="ir.ui.view">
+        <field name="name">investment.crypto.price.form</field>
+        <field name="model">investment.crypto.price</field>
+        <field name="arch" type="xml">
+            <form string="Cryptocurrency Prices">
+                <sheet>
+                    <group>
+                        <field name="bitcoin_price"/>
+                        <field name="xrp_price"/>
+                        <field name="hbar_price"/>
+                        <field name="bitcoin_market_cap"/>
+                        <field name="xrp_market_cap"/>
+                        <field name="hbar_market_cap"/>
+                        <field name="bitcoin_ranking"/>
+                        <field name="xrp_ranking"/>
+                        <field name="hbar_ranking"/>
+                        <field name="bitcoin_dominance"/>
+                        <field name="xrp_dominance"/>
+                        <field name="hbar_dominance"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Vista Tree-->
+    <record id="view_investment_crypto_price_tree" model="ir.ui.view">
+        <field name="name">investment.crypto.price.tree</field>
+        <field name="model">investment.crypto.price</field>
+        <field name="arch" type="xml">
+            <tree string="Cryptocurrency Prices">
+                <field name="bitcoin_price" optional="show"/>
+                <field name="xrp_price" optional="show"/>
+                <field name="hbar_price" optional="show"/>
+                <field name="bitcoin_market_cap" optional="show"/>
+                <field name="xrp_market_cap" optional="show"/>
+                <field name="hbar_market_cap" optional="show"/>
+                <field name="bitcoin_ranking" optional="show"/>
+                <field name="xrp_ranking" optional="show"/>
+                <field name="hbar_ranking" optional="show"/>
+                <field name="bitcoin_dominance" optional="show"/>
+                <field name="xrp_dominance" optional="show"/>
+                <field name="hbar_dominance"  optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Crea las vistas-->
+    <record id="action_investment_crypto_price" model="ir.actions.act_window">
+        <field name="name">Cryptocurrency Prices</field>
+        <field name="res_model">investment.crypto.price</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Dan acceso mediante el menú-->
+    <menuitem
+        id="menu_investment_crypto_price"
+        name="Crypto Price"
+        parent="menu_investment_root"
+        action="action_investment_crypto_price"
+        sequence="10"/>
+
+    <!--Cron para ejecutar acciones planificadas-->
+    <record id="ir_cron_update_investment_crypto_prices" model="ir.cron">
+        <field name="name">Update Cryptocurrency Prices</field>
+        <field name="model_id" ref="model_investment_crypto_price"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_update_prices()</field>
+        <field name="interval_number">25</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">True</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_investment_transaction_line" model="ir.ui.view">
+        <field name="name">investment.transaction.line.form</field>
+        <field name="model">inv.investment.transaction.line</field>
+        <field name="arch" type="xml">
+            <form string="Transaction Line">
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="type"/>
+                        <field name="investment_name_line"/>
+                        <field name="transaction_id"/>
+                        <field name="quantity_in_fiat"/>
+                        <field name="quantity_in_crypto"/>
+                        <field name="transaction_price"/>
+                        <field name="current_price"/>
+                        <field name="price_difference"/>
+                        <field name="profit"/>
+                        <field name="profit_percentage"/>
+                        <field name="tax_quantity"/>
+                        <field name="profit_net"/>
+                        <field name="purchaseback_price"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
