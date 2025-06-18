@@ -18,23 +18,29 @@
                         <field name="custom_name"/>
                         <field string="Description" name="description"
                                readonly="False"/>
-                        <field name="compatible_secundary_tags_ids" widget="many2many_tags"/>
+                        <field name="compatible_secundary_tags_ids"
+                               widget="many2many_tags"/>
                     </group>
                 </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
             </form>
         </field>
     </record>
 
-    <!--Vista tree-->
-    <record id="tag_expenses_view_tree" model="ir.ui.view">
-        <field name="name">exp.tag.expenses.view.tree</field>
+    <!--Vista list-->
+    <record id="tag_expenses_view_list" model="ir.ui.view">
+        <field name="name">exp.tag.expenses.view.list</field>
         <field name="model">exp.tag.expenses</field>
         <field name="arch" type="xml">
-            <tree string="Principal Tags" class="tag_tree">
+            <list string="Principal Tags" class="tag_list">
                 <field name="custom_name"/>
                 <field name="description"/>
                 <field name="compatible_secundary_tags_ids"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -42,7 +48,7 @@
     <record id="tag_expenses_action" model="ir.actions.act_window">
         <field name="name">Principal Tag</field>
         <field name="res_model">exp.tag.expenses</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No tags created.</p>
         </field>

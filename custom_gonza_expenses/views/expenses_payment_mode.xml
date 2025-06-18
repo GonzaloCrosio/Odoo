@@ -17,18 +17,23 @@
                                readonly="False"/>
                     </group>
                 </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
             </form>
         </field>
     </record>
 
-    <!--Vista tree-->
-    <record id="expenses_payment_mode_tree" model="ir.ui.view">
-        <field name="name">exp.expenses.payment.mode.view.tree</field>
+    <!--Vista list-->
+    <record id="expenses_payment_mode_list" model="ir.ui.view">
+        <field name="name">exp.expenses.payment.mode.view.list</field>
         <field name="model">exp.expenses.payment.mode</field>
         <field name="arch" type="xml">
-            <tree class="tag_tree">
+            <list class="tag_list">
                 <field name="custom_name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -36,7 +41,7 @@
     <record id="tag_expenses_payment_mode_action" model="ir.actions.act_window">
         <field name="name">Payment Mode</field>
         <field name="res_model">exp.expenses.payment.mode</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No payment mode created.</p>
         </field>

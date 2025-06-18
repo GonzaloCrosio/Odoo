@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_expenses_summary_tree" model="ir.ui.view">
-        <field name="name">expenses.summary.by.tags.tree</field>
+    <record id="view_expenses_summary_list" model="ir.ui.view">
+        <field name="name">expenses.summary.by.tags.list</field>
         <field name="model">exp.expenses.summary</field>
         <field name="arch" type="xml">
-            <tree string="Expenses Summary">
+            <list string="Expenses Summary">
                 <field name="month"/>
                 <field name="year"/>
                 <field name="expenses_tag_id"/>
@@ -12,7 +12,7 @@
                 <field name="total_expenses"/>
                 <field name="total_income"/>
                 <field name="balance"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -46,6 +46,11 @@
                         <field name="balance"/>
                     </group>
                 </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
             </form>
         </field>
     </record>
@@ -89,7 +94,7 @@
     <record id="action_expenses_summary" model="ir.actions.act_window">
         <field name="name">Expenses Summary</field>
         <field name="res_model">exp.expenses.summary</field>
-        <field name="view_mode">tree,search,form,graph,pivot</field>
+        <field name="view_mode">list,search,form,graph,pivot</field>
     </record>
 
     <!--Genera acceso directo desde el márgen superior-->

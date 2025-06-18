@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--Define la vista Tree (donde se muestra la lista de datos)-->
-    <record id="view_expenses_tree" model="ir.ui.view">
-        <field name="name">expenses.tree</field>
+    <!--Define la vista list (donde se muestra la lista de datos)-->
+    <record id="view_expenses_list" model="ir.ui.view">
+        <field name="name">expenses.list</field>
         <field name="model">exp.expenses.expenses</field>
         <field name="arch" type="xml">
-            <tree string="Expenses">
+            <list string="Expenses">
                 <field name="expense_amount" optional="show"/>
                 <field name="income_amount" optional="show"/>
                 <field name="date" optional="show"/>
                 <field name="expenses_tag_id" optional="show"/>
-                <field name="expenses_secundary_tag_id" optional="show" widget="many2many_tags"/>
+                <field name="expenses_secundary_tag_id" optional="show"
+                       widget="many2many_tags"/>
                 <field name="expenses_payment_mode_id" optional="show"/>
                 <field name="expenses_type_id" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -30,12 +31,18 @@
                         <field name="date"/>
                         <field name="description"/>
                         <field name="expenses_tag_id"/>
-                        <field name="expenses_secundary_tag_id" widget="many2many_tags"/>
+                        <field name="expenses_secundary_tag_id"
+                               widget="many2many_tags"/>
                         <field name="expenses_payment_mode_id"/>
                         <field name="expenses_type_id"/>
                     </group>
                     <field name="compatible_secundary_tags_ids" invisible="1"/>
                 </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
             </form>
         </field>
     </record>
@@ -86,22 +93,7 @@
     <record id="action_expenses" model="ir.actions.act_window">
         <field name="name">Expenses</field>
         <field name="res_model">exp.expenses.expenses</field>
-        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_mode">list,form,pivot,graph</field>
     </record>
 
-    <!--Dan acceso mediante el menú-->
-    <record id="expenses_general_menu" model="ir.ui.menu">
-        <field name="name">Expenses</field>
-        <field name="action" ref="action_expenses"/>
-        <field name="parent_id" ref="custom_gonza_expenses.menu_expenses"/>
-        <field name="sequence">25</field>
-    </record>
-
-    <!--Genera acceso directo desde el márgen superior-->
-    <menuitem id="menu_expenses_expenses"
-              name="Expenses"
-              parent="menu_expenses_root"
-              action="action_expenses"
-              sequence="10"
-    />
 </odoo>

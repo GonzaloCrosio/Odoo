@@ -8,7 +8,6 @@
     "application": True,
     "installable": True,
     "depends": [
-        "base",
         "mail",
     ],
     "data": [
