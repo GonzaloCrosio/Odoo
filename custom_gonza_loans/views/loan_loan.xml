@@ -1,10 +1,10 @@
 <odoo>
     <!--Vista inicial de préstamos-->
-    <record id="view_loan_tree" model="ir.ui.view">
-        <field name="name">loan.loan.tree</field>
+    <record id="view_loan_list" model="ir.ui.view">
+        <field name="name">loan.loan.list</field>
         <field name="model">loan.loan</field>
         <field name="arch" type="xml">
-            <tree string="Loans">
+            <list string="Loans">
                 <field name="name" optional="show"/>
                 <field name="amount" optional="show"/>
                 <field name="interest_rate" optional="show"/>
@@ -13,7 +13,7 @@
                 <field name="current_debt" optional="show"/>
                 <field name="percentage_debt" optional="show"/>
                 <field name="number_payments" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -53,20 +53,29 @@
 
                     <notebook>
                         <page string="Payments">
-                            <field name="detail_ids" class="text-center" style="text-align:center;"
-                                   context="{'default_loan_id': active_id}">
+                            <field name="detail_ids" class="text-center"
+                                   style="text-align:center;"
+                                   context="{'default_loan_id': id}">
                                 <!--Líneas del préstamo-->
-                                <tree class="text-center" style="text-align:center;">
-                                    <field name="number" class="text-center" optional="show"/>
-                                    <field name="date" class="text-center" optional="show"/>
-                                    <field name="total_payment" class="text-center" optional="show"/>
-                                    <field name="interest_payment" class="text-center" optional="show"/>
-                                    <field name="capital_payment" class="text-center" optional="show"/>
-                                    <field name="capital_remaining" class="text-center" optional="show"/>
-                                    <field name="capital_amortized" class="text-center" optional="show"/>
-                                    <field name="status" optional="show" class="text-center"
+                                <list class="text-center" style="text-align:center;">
+                                    <field name="number" class="text-center"
+                                           optional="show"/>
+                                    <field name="date" class="text-center"
+                                           optional="show"/>
+                                    <field name="total_payment" class="text-center"
+                                           optional="show"/>
+                                    <field name="interest_payment" class="text-center"
+                                           optional="show"/>
+                                    <field name="capital_payment" class="text-center"
+                                           optional="show"/>
+                                    <field name="capital_remaining" class="text-center"
+                                           optional="show"/>
+                                    <field name="capital_amortized" class="text-center"
+                                           optional="show"/>
+                                    <field name="status" optional="show"
+                                           class="text-center"
                                            editable="bottom"/>
-                                </tree>
+                                </list>
                                 <!--Vista al clickear en líneas del préstamo-->
                                 <form>
                                     <div class="row">
@@ -93,11 +102,11 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
+                <chatter>
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="message_ids" widget="mail_thread"/>
                     <field name="activity_ids"/>
-                </div>
+                </chatter>
             </form>
         </field>
     </record>
@@ -124,19 +133,11 @@
     <record id="action_loan" model="ir.actions.act_window">
         <field name="name">Loans</field>
         <field name="res_model">loan.loan</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first Loan
             </p>
         </field>
-    </record>
-
-    <!--Creación del menú-->
-    <record id="loan_general_menu" model="ir.ui.menu">
-        <field name="name">Loans</field>
-        <field name="action" ref="action_loan"/>
-        <field name="parent_id" ref="custom_gonza_loans.menu_loan"/>
-        <field name="sequence">25</field>
     </record>
 </odoo>

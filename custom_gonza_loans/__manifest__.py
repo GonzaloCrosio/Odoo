@@ -1,6 +1,6 @@
 {
     "name": "Custom Gonzalo Loans",
-    "version": "17.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Customizations",
     "author": "Gonzalo",
     "summary": "Custom reports for the client",
@@ -8,7 +8,6 @@
     "application": True,
     "installable": True,
     "depends": [
-        "base",
         "mail",
     ],
     "data": [
