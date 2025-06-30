@@ -22,21 +22,21 @@
                         <field name="property_type"/>
                     </group>
                 </sheet>
-                <div class="oe_chatter">
+                <chatter>
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="message_ids" widget="mail_thread"/>
                     <field name="activity_ids"/>
-                </div>
+                </chatter>
             </form>
         </field>
     </record>
 
-    <!--Defino vista tree-->
-    <record id="inv_investment_property_view_tree" model="ir.ui.view">
-        <field name="name">inv.investment.property.view.tree</field>
+    <!--Defino vista list-->
+    <record id="inv_investment_property_view_list" model="ir.ui.view">
+        <field name="name">inv.investment.property.view.list</field>
         <field name="model">inv.investment.property</field>
         <field name="arch" type="xml">
-            <tree string="Asset or Liability" class="inv_tree">
+            <list string="Asset or Liability" class="inv_list">
                 <field name="custom_name" optional="show"/>
                 <field name="quantity" optional="show"/>
                 <field name="unit_current_price" optional="show"/>
@@ -44,7 +44,7 @@
                 <field name="description" optional="show"/>
                 <field name="investment_id" optional="show"/>
                 <field name="property_type" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -86,7 +86,7 @@
     <record id="inv_investment_property_action" model="ir.actions.act_window">
         <field name="name">Property</field>
         <field name="res_model">inv.investment.property</field>
-        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_mode">list,form,pivot,graph</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No property created.</p>
         </field>

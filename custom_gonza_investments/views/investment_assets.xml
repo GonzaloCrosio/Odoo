@@ -20,26 +20,26 @@
                         <field name="description"/>
                     </group>
                 </sheet>
-                <div class="oe_chatter">
+                <chatter>
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="message_ids" widget="mail_thread"/>
                     <field name="activity_ids"/>
-                </div>
+                </chatter>
             </form>
         </field>
     </record>
 
-    <!--Defino vista tree-->
-    <record id="inv_investment_assets_view_tree" model="ir.ui.view">
-        <field name="name">inv.investment.assets.view.tree</field>
+    <!--Defino vista list-->
+    <record id="inv_investment_assets_view_list" model="ir.ui.view">
+        <field name="name">inv.investment.assets.view.list</field>
         <field name="model">inv.investment.assets</field>
         <field name="arch" type="xml">
-            <tree class="inv_tree">
+            <list class="inv_list">
                 <field name="custom_name" optional="show"/>
                 <field name="asset_type" optional="show"/>
                 <field name="current_price" optional="show"/>
                 <field name="description" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -47,7 +47,7 @@
     <record id="inv_investment_assets_action" model="ir.actions.act_window">
         <field name="name">Assets</field>
         <field name="res_model">inv.investment.assets</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No assets created.</p>
         </field>

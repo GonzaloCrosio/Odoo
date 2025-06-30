@@ -8,15 +8,13 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base",
         "mail",
     ],
     "data": [
         "security/ir.model.access.csv",
-        # "views/investment.xml",
         "views/investment_transactions.xml",
-        "views/investment_transactions_line.xml",
         "views/investment_menu.xml",
+        "views/investment_transactions_line.xml",
         "views/investment_purchase_mode.xml",
         "views/investment_location.xml",
         "views/investment_total.xml",

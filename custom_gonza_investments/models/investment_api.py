@@ -7,6 +7,7 @@ _logger = logging.getLogger(__name__)
 class InvestmentCryptoPrice(models.Model):
     _name = 'investment.crypto.price'
     _description = 'Cryptocurrency Prices'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     # Campos para almacenar los valores
     bitcoin_price = fields.Float(

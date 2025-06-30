@@ -21,7 +21,7 @@
                     <notebook>
                         <page string="Transaction Lines">
                             <field name="line_ids" widget="one2many_list">
-                                <tree editable="bottom" create="true">
+                                <list editable="bottom" create="true">
                                     <field name="date"/>
                                     <field name="type"/>
                                     <field name="investment_name_line"/>
@@ -36,27 +36,32 @@
                                     <field name="profit_net"/>
                                     <field name="purchaseback_price"/>
                                     <field name="description"/>
-                                </tree>
+                                </list>
                             </field>
                         </page>
                     </notebook>
                 </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
             </form>
         </field>
     </record>
 
-    <record id="view_tree_investment_transaction" model="ir.ui.view">
-        <field name="name">investment.transaction.tree</field>
+    <record id="view_list_investment_transaction" model="ir.ui.view">
+        <field name="name">investment.transaction.list</field>
         <field name="model">inv.investment.transaction</field>
         <field name="arch" type="xml">
-            <tree string="Investment Transactions">
+            <list string="Investment Transactions">
                 <field name="investment_name"/>
                 <field name="date"/>
                 <field name="status"/>
                 <field name="strategy"/>
                 <field name="investment_location_id"/>
                 <field name="investment_purchase_mode_id"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -89,22 +94,12 @@
     <record id="action_investment_transaction" model="ir.actions.act_window">
         <field name="name">Investment Transactions</field>
         <field name="res_model">inv.investment.transaction</field>
-        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_mode">list,form,pivot,graph</field>
     </record>
 
-    <!--Pestaña en cabecera de menú-->
-    <menuitem id="menu_investment_transactions"
-              name="Variable Investments"
-              parent="menu_investment_root"
-              action="action_investment_transaction"/>
 
-    <!--Dan acceso mediante el desplegable del menú inversiones-->
-    <record id="investments_transactions_menu" model="ir.ui.menu">
-        <field name="name">Variable Transactions Investments</field>
-        <field name="action" ref="action_investment_transaction"/>
-        <field name="parent_id" ref="custom_gonza_investments.menu_investment"/>
-        <field name="sequence">25</field>
-    </record>
+
+
 
 
 </odoo>

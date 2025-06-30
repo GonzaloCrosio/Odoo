@@ -1,10 +1,10 @@
 <odoo>
-    <!-- Vista Tree -->
-    <record id="view_investment_total_tree" model="ir.ui.view">
-        <field name="name">inv.investment.total.tree</field>
+    <!-- Vista list -->
+    <record id="view_investment_total_list" model="ir.ui.view">
+        <field name="name">inv.investment.total.list</field>
         <field name="model">inv.investment.total</field>
         <field name="arch" type="xml">
-            <tree string="Total Investments">
+            <list string="Total Investments">
                 <field name="name" optional="show"/>
                 <field name="total_quantity_in_crypto" optional="show"/>
                 <field name="total_quantity_in_fiat" optional="show"/>
@@ -18,7 +18,7 @@
                 <field name="total_purchaseback_price" optional="show"/>
                 <field name="total_price_difference" optional="show"/>
                 <field name="average_transaction_price" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -57,11 +57,11 @@
                         </div>
                     </div>
                 </sheet>
-                <div class="oe_chatter">
+                <chatter>
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="message_ids" widget="mail_thread"/>
                     <field name="activity_ids"/>
-                </div>
+                </chatter>
             </form>
         </field>
     </record>
