@@ -5,17 +5,18 @@
         <field name="model">loan.loan</field>
         <field name="arch" type="xml">
             <list string="Loans">
-                <field name="name" optional="show"/>
-                <field name="amount" optional="show"/>
-                <field name="interest_rate" optional="show"/>
-                <field name="term" optional="show"/>
-                <field name="number" optional="show"/>
-                <field name="current_debt" optional="show"/>
-                <field name="percentage_debt" optional="show"/>
-                <field name="number_payments" optional="show"/>
+                <field name="name" optional="show" width="180"/>
+                <field name="amount" optional="show" width="100"/>
+                <field name="interest_rate" optional="show" width="100"/>
+                <field name="term" optional="show" width="100"/>
+                <field name="number" optional="show" width="100"/>
+                <field name="current_debt" optional="show" width="120"/>
+                <field name="percentage_debt" optional="show" width="120"/>
+                <field name="number_payments" optional="show" width="120"/>
             </list>
         </field>
     </record>
+
 
     <!--Vista form-->
     <record id="view_loan_form" model="ir.ui.view">
@@ -57,24 +58,20 @@
                                    style="text-align:center;"
                                    context="{'default_loan_id': id}">
                                 <!--Líneas del préstamo-->
-                                <list class="text-center" style="text-align:center;">
-                                    <field name="number" class="text-center"
-                                           optional="show"/>
-                                    <field name="date" class="text-center"
-                                           optional="show"/>
-                                    <field name="total_payment" class="text-center"
-                                           optional="show"/>
-                                    <field name="interest_payment" class="text-center"
-                                           optional="show"/>
-                                    <field name="capital_payment" class="text-center"
-                                           optional="show"/>
-                                    <field name="capital_remaining" class="text-center"
-                                           optional="show"/>
-                                    <field name="capital_amortized" class="text-center"
-                                           optional="show"/>
-                                    <field name="status" optional="show"
-                                           class="text-center"
-                                           editable="bottom"/>
+                                <list>
+                                    <!--Hago invisible la columna currency-->
+                                    <!--Pero debe estar currency para que aparezca el signo euro-->
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="number" width="120"/>
+                                    <field name="date" width="120"/>
+                                    <field name="total_payment" width="120"
+                                           widget="monetary"/>
+                                    <field name="interest_payment" width="120"
+                                           widget="monetary"/>
+                                    <field name="capital_payment" width="120" widget="monetary"/>
+                                    <field name="capital_remaining" width="120" widget="monetary"/>
+                                    <field name="capital_amortized" width="120" widget="monetary"/>
+                                    <field name="status" width="120" editable="bottom"/>
                                 </list>
                                 <!--Vista al clickear en líneas del préstamo-->
                                 <form>

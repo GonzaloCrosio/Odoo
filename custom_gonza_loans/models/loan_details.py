@@ -7,6 +7,13 @@ class LoanDetails(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "loan_id"
 
+    # Creo campo currency_id para almacenar la moneda del préstamo
+    currency_id = fields.Many2one(
+        'res.currency',
+        string='Currency',
+        required=True,
+        default=lambda self: self.env.company.currency_id
+    )
     loan_id = fields.Many2one(
         comodel_name='loan.loan',
         string="Loan",
