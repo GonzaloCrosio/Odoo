@@ -5,13 +5,14 @@
         <field name="model">exp.expenses.summary</field>
         <field name="arch" type="xml">
             <list string="Expenses Summary">
+                <field name="currency_id" column_invisible="True"/>
                 <field name="month"/>
                 <field name="year"/>
                 <field name="expenses_tag_id"/>
                 <field name="expenses_secundary_tag_id" widget="many2many_tags"/>
-                <field name="total_expenses"/>
-                <field name="total_income"/>
-                <field name="balance"/>
+                <field name="total_expenses"  widget="monetary"/>
+                <field name="total_income"  widget="monetary"/>
+                <field name="balance"  widget="monetary"/>
             </list>
         </field>
     </record>
@@ -36,14 +37,15 @@
             <form string="Expenses Summary">
                 <sheet>
                     <group>
+                        <field name="currency_id" invisible="1"/>
                         <field name="month"/>
                         <field name="year"/>
                         <field name="expenses_tag_id"/>
                         <field name="expenses_secundary_tag_id"
                                widget="many2many_tags"/>
-                        <field name="total_expenses"/>
-                        <field name="total_income"/>
-                        <field name="balance"/>
+                        <field name="total_expenses" widget="monetary"/>
+                        <field name="total_income" widget="monetary"/>
+                        <field name="balance" widget="monetary"/>
                     </group>
                 </sheet>
                 <chatter>

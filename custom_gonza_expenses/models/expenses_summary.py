@@ -7,6 +7,13 @@ class ExpensesSummary(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "expenses_tag_id"
 
+    # Creo campo currency_id para almacenar la moneda del gasto-ingreso
+    currency_id = fields.Many2one(
+        'res.currency',
+        string='Currency',
+        required=True,
+        default=lambda self: self.env.company.currency_id
+    )
     # Campos clave
     month = fields.Char(
         string="Month",

@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from babel.dates import format_date
 
 
 class Expenses(models.Model):
@@ -7,6 +8,13 @@ class Expenses(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "expenses_tag_id"
 
+    # Creo campo currency_id para almacenar la moneda del gasto-ingreso
+    currency_id = fields.Many2one(
+        'res.currency',
+        string='Currency',
+        required=True,
+        default=lambda self: self.env.company.currency_id
+    )
     expense_amount = fields.Float(
         string="Expense Amount",
         required=True,
@@ -62,8 +70,10 @@ class Expenses(models.Model):
     # Metodo para preparar los datos del resumen
     def _prepare_summary_values(self):
         summary_data = []
+        lang = self.env.lang or "en_US"
+
         for record in self:
-            month = record.date.strftime('%B')
+            month = format_date(record.date, format='MMMM', locale=lang).capitalize()
             year = record.date.year
 
             # Obtener lista de IDs de etiquetas secundarias

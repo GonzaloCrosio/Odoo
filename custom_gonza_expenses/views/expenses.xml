@@ -6,14 +6,20 @@
         <field name="model">exp.expenses.expenses</field>
         <field name="arch" type="xml">
             <list string="Expenses">
-                <field name="expense_amount" optional="show"/>
-                <field name="income_amount" optional="show"/>
-                <field name="date" optional="show"/>
-                <field name="expenses_tag_id" optional="show"/>
+                <!--Hago invisible la columna currency-->
+                <!--Pero debe estar currency para que aparezca el signo euro-->
+                <field name="currency_id" column_invisible="True"/>
+                <field name="expenses_tag_id" optional="show" width="120"/>
                 <field name="expenses_secundary_tag_id" optional="show"
-                       widget="many2many_tags"/>
-                <field name="expenses_payment_mode_id" optional="show"/>
-                <field name="expenses_type_id" optional="show"/>
+                       widget="many2many_tags" width="150"/>
+                <field name="date" widget="date"
+                       optional="show" width="110"/>
+                <field name="expense_amount" optional="show" width="100"
+                       widget="monetary"/>
+                <field name="income_amount" optional="show" width="100"
+                       widget="monetary"/>
+                <field name="expenses_payment_mode_id" optional="show" width="130"/>
+                <field name="expenses_type_id" optional="show" width="130"/>
             </list>
         </field>
     </record>
@@ -26,8 +32,9 @@
             <form string="Expenses">
                 <sheet>
                     <group>
-                        <field name="expense_amount"/>
-                        <field name="income_amount"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="expense_amount" widget="monetary"/>
+                        <field name="income_amount" widget="monetary"/>
                         <field name="date"/>
                         <field name="description"/>
                         <field name="expenses_tag_id"/>
