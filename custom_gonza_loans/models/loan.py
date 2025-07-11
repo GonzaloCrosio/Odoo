@@ -1,5 +1,5 @@
 from odoo import models, fields, api, _
-from datetime import timedelta
+from odoo.exceptions import ValidationError
 from dateutil.relativedelta import relativedelta
 
 
@@ -66,6 +66,17 @@ class Loan(models.Model):
         compute="_compute_number_payments",
         store=True,
     )
+    total_interest = fields.Float(
+        string="Total Interest",
+        readonly=True,
+        help="Total interest paid over the life of the loan."
+    )
+    total_amount_to_pay = fields.Float(
+        string="Total Amount to Pay",
+        readonly=True,
+        help="Total amount to be repaid (principal + interest)."
+    )
+
 
     # Cálculo del número de pagos pendientes
     @api.depends('number', 'term')
@@ -101,8 +112,31 @@ class Loan(models.Model):
             loan.current_debt = paid_details[0].capital_remaining if paid_details else 0
             loan.number = paid_details[0].number if paid_details else 0
 
+    def _validate_required_fields(self):
+        for loan in self:
+            missing_fields = []
+            if not loan.amount:
+                missing_fields.append("Amount")
+            if not loan.term:
+                missing_fields.append("Term")
+            if not loan.interest_rate:
+                missing_fields.append("Interest Rate")
+            if not loan.date:
+                missing_fields.append("Date")
+
+            if missing_fields:
+                raise ValidationError(
+                    _(
+                        "The payment plan cannot be calculated because the following fields are missing: %s"
+                    )
+                    % ", ".join(missing_fields)
+                )
+
     # Cálculo de los detalles del préstamo
     def compute_details(self):
+        # Validación limpia y reutilizable para campos requeridos
+        self._validate_required_fields()
+
         for loan in self:
             # Eliminar detalles existentes
             loan.detail_ids.unlink()
@@ -121,6 +155,9 @@ class Loan(models.Model):
             # Inicialización de variables
             capital_remaining = P
             capital_amortized = 0
+            total_interest = 0
+            total_amount = 0
+
             # Configurar la fecha inicial de `detail_date`
             if loan.other_day_payment:
                 # Primer pago el mismo día del siguiente mes
@@ -136,6 +173,10 @@ class Loan(models.Model):
                 capital_remaining -= capital_amount  # Capital restante
                 capital_amortized += capital_amount  # Capital amortizado acumulado
 
+                # Sumar totales de interés y de importe a devolver
+                total_interest += interest_amount
+                total_amount += emi
+
                 # Crear registro de detalle de cuota
                 self.env['loan.details'].create({
                     'loan_id': loan.id,
@@ -150,3 +191,7 @@ class Loan(models.Model):
 
                 # Incrementar la fecha para los pagos subsecuentes
                 detail_date += relativedelta(months=1)
+
+                # Asignar los valores calculados al préstamo de total intereses y total a pagar
+                loan.total_interest = total_interest
+                loan.total_amount_to_pay = total_amount

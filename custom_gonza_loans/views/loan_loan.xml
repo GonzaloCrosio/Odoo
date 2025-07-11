@@ -37,6 +37,8 @@
                                 <field name="date"/>
                                 <field name="description"/>
                                 <field name="other_day_payment"/>
+                                <field name="total_interest"/>
+                                <field name="total_amount_to_pay"/>
                             </group>
                         </div>
                         <div class="col-6">
