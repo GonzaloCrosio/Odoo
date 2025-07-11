@@ -123,10 +123,16 @@
         </field>
     </record>
 
+    <record id="action_investment_total_window" model="ir.actions.act_window">
+        <field name="name">Total Investments</field>
+        <field name="res_model">inv.investment.total</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+    </record>
+
     <!-- Menú -->
     <menuitem id="menu_investment_total"
               name="Total Investments"
               parent="menu_investment_root"
-              action="action_investment_total_server"/>
+              action="action_investment_total_window"/>
 </odoo>
 
