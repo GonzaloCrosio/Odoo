@@ -8,8 +8,8 @@
                 <field name="currency_id" column_invisible="True"/>
                 <field name="month"/>
                 <field name="year"/>
-                <field name="expenses_tag_id"/>
-                <field name="expenses_secundary_tag_id" widget="many2many_tags"/>
+<!--                <field name="expenses_tag_id"/>-->
+<!--                <field name="expenses_secundary_tag_id" widget="many2many_tags"/>-->
                 <field name="total_expenses"  widget="monetary"/>
                 <field name="total_income"  widget="monetary"/>
                 <field name="balance"  widget="monetary"/>
@@ -24,8 +24,8 @@
             <search string="Expenses Summary">
                 <field name="month"/>
                 <field name="year"/>
-                <field name="expenses_tag_id"/>
-                <field name="expenses_secundary_tag_id"/>
+<!--                <field name="expenses_tag_id"/>-->
+<!--                <field name="expenses_secundary_tag_id"/>-->
             </search>
         </field>
     </record>
@@ -40,9 +40,9 @@
                         <field name="currency_id" invisible="1"/>
                         <field name="month"/>
                         <field name="year"/>
-                        <field name="expenses_tag_id"/>
-                        <field name="expenses_secundary_tag_id"
-                               widget="many2many_tags"/>
+<!--                        <field name="expenses_tag_id"/>-->
+<!--                        <field name="expenses_secundary_tag_id"-->
+<!--                               widget="many2many_tags"/>-->
                         <field name="total_expenses" widget="monetary"/>
                         <field name="total_income" widget="monetary"/>
                         <field name="balance" widget="monetary"/>
@@ -64,9 +64,9 @@
             <pivot string="Expenses Summary" sample="1">
                 <field name="month"/>
                 <field name="year"/>
-                <field name="expenses_tag_id"/>
-                <field name="expenses_secundary_tag_id"
-                       widget="many2many_tags"/>
+<!--                <field name="expenses_tag_id"/>-->
+<!--                <field name="expenses_secundary_tag_id"-->
+<!--                       widget="many2many_tags"/>-->
                 <field name="total_expenses"/>
                 <field name="total_income"/>
                 <field name="balance"/>
@@ -81,9 +81,9 @@
             <graph string="Expenses Summary" sample="1">
                 <field name="month"/>
                 <field name="year"/>
-                <field name="expenses_tag_id"/>
-                <field name="expenses_secundary_tag_id"
-                       widget="many2many_tags"/>
+<!--                <field name="expenses_tag_id"/>-->
+<!--                <field name="expenses_secundary_tag_id"-->
+<!--                       widget="many2many_tags"/>-->
                 <field name="total_expenses"/>
                 <field name="total_income"/>
                 <field name="balance"/>

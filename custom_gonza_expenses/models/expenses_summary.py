@@ -5,7 +5,7 @@ class ExpensesSummary(models.Model):
     _name = 'exp.expenses.summary'
     _description = 'Expenses Summary by Tags and Month'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _rec_name = "expenses_tag_id"
+    _rec_name = "month"
 
     # Creo campo currency_id para almacenar la moneda del gasto-ingreso
     currency_id = fields.Many2one(
@@ -23,15 +23,15 @@ class ExpensesSummary(models.Model):
         string="Year",
         required=True,
     )
-    expenses_tag_id = fields.Many2one(
-        comodel_name="exp.tag.expenses",
-        string="Principal Tag",
-        required=True,
-    )
-    expenses_secundary_tag_id = fields.Many2many(
-        comodel_name="exp.tag.secundary.expenses",
-        string="Secundary Tags",
-    )
+    # expenses_tag_id = fields.Many2one(
+    #     comodel_name="exp.tag.expenses",
+    #     string="Principal Tag",
+    #     required=True,
+    # )
+    # expenses_secundary_tag_id = fields.Many2many(
+    #     comodel_name="exp.tag.secundary.expenses",
+    #     string="Secundary Tags",
+    # )
     total_expenses = fields.Float(
         string="Total Expenses",
         required=True,

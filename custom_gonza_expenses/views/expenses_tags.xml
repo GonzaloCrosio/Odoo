@@ -39,7 +39,7 @@
             <list string="Principal Tags" class="tag_list">
                 <field name="custom_name"/>
                 <field name="description"/>
-                <field name="compatible_secundary_tags_ids"/>
+                <field name="compatible_secundary_tags_ids" widget="many2many_tags"/>
             </list>
         </field>
     </record>

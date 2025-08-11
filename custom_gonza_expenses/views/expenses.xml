@@ -42,6 +42,8 @@
                                widget="many2many_tags"/>
                         <field name="expenses_payment_mode_id"/>
                         <field name="expenses_type_id"/>
+                        <field name="pdf_attachment" filename="pdf_filename"
+                               widget="binary" class="oe_form_field_file"/>
                     </group>
                     <field name="compatible_secundary_tags_ids" invisible="1"/>
                 </sheet>
