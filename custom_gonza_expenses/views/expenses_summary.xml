@@ -8,11 +8,9 @@
                 <field name="currency_id" column_invisible="True"/>
                 <field name="month"/>
                 <field name="year"/>
-<!--                <field name="expenses_tag_id"/>-->
-<!--                <field name="expenses_secundary_tag_id" widget="many2many_tags"/>-->
-                <field name="total_expenses"  widget="monetary"/>
-                <field name="total_income"  widget="monetary"/>
-                <field name="balance"  widget="monetary"/>
+                <field name="total_expenses" widget="monetary"/>
+                <field name="total_income" widget="monetary"/>
+                <field name="balance" widget="monetary"/>
             </list>
         </field>
     </record>
@@ -24,8 +22,6 @@
             <search string="Expenses Summary">
                 <field name="month"/>
                 <field name="year"/>
-<!--                <field name="expenses_tag_id"/>-->
-<!--                <field name="expenses_secundary_tag_id"/>-->
             </search>
         </field>
     </record>
@@ -40,13 +36,30 @@
                         <field name="currency_id" invisible="1"/>
                         <field name="month"/>
                         <field name="year"/>
-<!--                        <field name="expenses_tag_id"/>-->
-<!--                        <field name="expenses_secundary_tag_id"-->
-<!--                               widget="many2many_tags"/>-->
                         <field name="total_expenses" widget="monetary"/>
                         <field name="total_income" widget="monetary"/>
                         <field name="balance" widget="monetary"/>
                     </group>
+                    <notebook>
+                        <page string="Expenses">
+                            <!-- One2many computado: sólo ver. Se puede abrir cada gasto en su formulario. -->
+                            <field name="expense_ids" readonly="1"
+                                   options="{'no_create': True, 'no_create_edit': True}">
+                                <form>
+                                    <group>
+                                        <field name="date" readonly="1"/>
+                                        <field name="description" readonly="1"/>
+                                        <field name="expenses_tag_id" readonly="1"/>
+                                        <field name="expenses_secundary_tag_id"
+                                               readonly="1"/>
+                                        <field name="expense_amount" readonly="1"/>
+                                        <field name="income_amount" readonly="1"/>
+                                        <field name="currency_id" readonly="1"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
                 <chatter>
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -64,9 +77,6 @@
             <pivot string="Expenses Summary" sample="1">
                 <field name="month"/>
                 <field name="year"/>
-<!--                <field name="expenses_tag_id"/>-->
-<!--                <field name="expenses_secundary_tag_id"-->
-<!--                       widget="many2many_tags"/>-->
                 <field name="total_expenses"/>
                 <field name="total_income"/>
                 <field name="balance"/>
@@ -81,9 +91,6 @@
             <graph string="Expenses Summary" sample="1">
                 <field name="month"/>
                 <field name="year"/>
-<!--                <field name="expenses_tag_id"/>-->
-<!--                <field name="expenses_secundary_tag_id"-->
-<!--                       widget="many2many_tags"/>-->
                 <field name="total_expenses"/>
                 <field name="total_income"/>
                 <field name="balance"/>
