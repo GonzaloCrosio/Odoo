@@ -18,8 +18,9 @@
                        widget="monetary"/>
                 <field name="income_amount" optional="show" width="100"
                        widget="monetary"/>
-                <field name="expenses_payment_mode_id" optional="show" width="130"/>
-                <field name="expenses_type_id" optional="show" width="130"/>
+                <field name="expenses_payment_mode_id" optional="hide" width="130"/>
+                <field name="expenses_type_id" optional="hide" width="130"/>
+                <field name="description" optional="hide" width="200"/>
             </list>
         </field>
     </record>
