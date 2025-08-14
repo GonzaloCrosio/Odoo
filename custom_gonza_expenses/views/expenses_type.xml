@@ -5,15 +5,17 @@
         <field name="name">exp.expenses.type.view.form</field>
         <field name="model">exp.expenses.type</field>
         <field name="arch" type="xml">
-            <form string="Expenses Type">
-                <header string="Expenses Type">
+            <form string="Related Operation">
+                <header string="Related Operation">
                     <!--Nombre de la etiqueta-->
-                    <h1>Expenses Type</h1>
+                    <h1>
+                        Related Operation
+                    </h1>
                 </header>
                 <!--Te forma una sección dentro de la pantalla-->
                 <sheet>
                     <group>
-                        <field string="Expenses Type" name="custom_name"
+                        <field string="Related Expenses" name="custom_name"
                                readonly="False"/>
                         <field string="Description" name="description"
                                readonly="False"/>
@@ -42,17 +44,17 @@
 
     <!--Crea las vistas-->
     <record id="tag_expenses_type_action" model="ir.actions.act_window">
-        <field name="name">Expenses Type</field>
+        <field name="name">Related Operation</field>
         <field name="res_model">exp.expenses.type</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">No Expenses Type created.</p>
+            <p class="o_view_nocontent_smiling_face">No Related Operation created.</p>
         </field>
     </record>
 
     <!--Dan acceso mediante el menú-->
     <record id="tag_expenses_type_menu" model="ir.ui.menu">
-        <field name="name">Expenses Type</field>
+        <field name="name">Related Operation</field>
         <field name="action" ref="tag_expenses_type_action"/>
         <field name="parent_id" ref="custom_gonza_expenses.menu_expenses"/>
         <field name="sequence">22</field>

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-27 12:42+0000\n"
-"PO-Revision-Date: 2025-01-27 13:46+0100\n"
+"POT-Creation-Date: 2025-08-14 09:59+0000\n"
+"PO-Revision-Date: 2025-08-14 12:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__message_needaction
@@ -66,6 +66,11 @@ msgstr "Estado de la actividad"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_secundary_expenses__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Tipo de Actividad"
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields,help:custom_gonza_expenses.field_exp_expenses_expenses__pdf_attachment
+msgid "Attach a PDF file related to this expense or income."
+msgstr "Adjunta un PDF relacionado con esta operación."
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__message_attachment_count
@@ -123,6 +128,12 @@ msgid "Created on"
 msgstr "Creado el"
 
 #. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__currency_id
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__date
 msgid "Date"
 msgstr "Fecha"
@@ -155,11 +166,13 @@ msgstr "Importe gasto"
 
 #. module: custom_gonza_expenses
 #: model:ir.actions.act_window,name:custom_gonza_expenses.action_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__expense_ids
 #: model:ir.ui.menu,name:custom_gonza_expenses.expenses_general_menu
 #: model:ir.ui.menu,name:custom_gonza_expenses.menu_expenses_expenses
 #: model:ir.ui.menu,name:custom_gonza_expenses.menu_expenses_root
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_form
-#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_tree
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_list
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_form
 msgid "Expenses"
 msgstr "Gastos"
 
@@ -189,9 +202,9 @@ msgstr "Etiqueta Secundaria"
 #: model:ir.ui.menu,name:custom_gonza_expenses.menu_expenses_summary
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_form
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_graph
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_list
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_pivot
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_search
-#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_tree
 msgid "Expenses Summary"
 msgstr "Resumen de Gastos"
 
@@ -212,16 +225,6 @@ msgstr "Etiqueta de Gastos"
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_pivot
 msgid "Expenses Tags"
 msgstr "Etiquetas de Gastos"
-
-#. module: custom_gonza_expenses
-#: model:ir.actions.act_window,name:custom_gonza_expenses.tag_expenses_type_action
-#: model:ir.model,name:custom_gonza_expenses.model_exp_expenses_type
-#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expenses_type_id
-#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_type__custom_name
-#: model:ir.ui.menu,name:custom_gonza_expenses.tag_expenses_type_menu
-#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_type_view_form
-msgid "Expenses Type"
-msgstr "Tipo de Etiquetas"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__message_follower_ids
@@ -250,7 +253,6 @@ msgstr "Partners"
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_expenses_type__activity_type_icon
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_tag_expenses__activity_type_icon
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_tag_secundary_expenses__activity_type_icon
-#, fuzzy
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Ìcono"
 
@@ -272,7 +274,7 @@ msgstr "Mensaje"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_expenses__id
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_secundary_expenses__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__activity_exception_icon
@@ -291,7 +293,6 @@ msgstr "Ícono"
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_expenses_type__activity_exception_icon
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_tag_expenses__activity_exception_icon
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_tag_secundary_expenses__activity_exception_icon
-#, fuzzy
 msgid "Icon to indicate an exception activity."
 msgstr "Ícono muestra una actividad de excepción."
 
@@ -417,8 +418,8 @@ msgstr "Tipo de la siguiente actividad"
 
 #. module: custom_gonza_expenses
 #: model_terms:ir.actions.act_window,help:custom_gonza_expenses.tag_expenses_type_action
-msgid "No Expenses Type created."
-msgstr "No hay gastos creados."
+msgid "No Related Operation created."
+msgstr "No existen Operaciones Relacionadas creadas."
 
 #. module: custom_gonza_expenses
 #: model_terms:ir.actions.act_window,help:custom_gonza_expenses.tag_expenses_payment_mode_action
@@ -476,6 +477,11 @@ msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de entrega"
 
 #. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__pdf_attachment
+msgid "PDF Attachment Document"
+msgstr "PDF Adjunto"
+
+#. module: custom_gonza_expenses
 #: model:ir.actions.act_window,name:custom_gonza_expenses.tag_expenses_payment_mode_action
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expenses_payment_mode_id
 #: model:ir.ui.menu,name:custom_gonza_expenses.tag_expenses_payment_mode_menu
@@ -485,7 +491,6 @@ msgstr "Modo de Pago"
 
 #. module: custom_gonza_expenses
 #: model:ir.actions.act_window,name:custom_gonza_expenses.tag_expenses_action
-#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__expenses_tag_id
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_view_form
 msgid "Principal Tag"
 msgstr "Etiqueta Principal"
@@ -493,9 +498,24 @@ msgstr "Etiqueta Principal"
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expenses_tag_id
 #: model:ir.ui.menu,name:custom_gonza_expenses.tag_expenses_menu
-#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_view_tree
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_view_list
 msgid "Principal Tags"
 msgstr "Etiquetas Principales"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_type_view_form
+msgid "Related Expenses"
+msgstr "Operación Relacionada"
+
+#. module: custom_gonza_expenses
+#: model:ir.actions.act_window,name:custom_gonza_expenses.tag_expenses_type_action
+#: model:ir.model,name:custom_gonza_expenses.model_exp_expenses_type
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expenses_type_id
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_type__custom_name
+#: model:ir.ui.menu,name:custom_gonza_expenses.tag_expenses_type_menu
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_type_view_form
+msgid "Related Operation"
+msgstr "Operación Relacionada"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__activity_user_id
@@ -515,13 +535,12 @@ msgstr "Filtros de Gastos"
 #. module: custom_gonza_expenses
 #: model:ir.actions.act_window,name:custom_gonza_expenses.secundary_tag_expenses_action
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.secundary_tag_expenses_view_form
-#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.secundary_tag_expenses_view_tree
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.secundary_tag_expenses_view_list
 msgid "Secundary Tag"
 msgstr "Etiqueta Secundaria"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expenses_secundary_tag_id
-#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__expenses_secundary_tag_id
 #: model:ir.ui.menu,name:custom_gonza_expenses.secundary_tag_expenses_menu
 msgid "Secundary Tags"
 msgstr "Etiquetas Secundarias"

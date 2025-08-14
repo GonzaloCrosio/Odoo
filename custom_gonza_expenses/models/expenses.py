@@ -47,7 +47,7 @@ class Expenses(models.Model):
     )
     expenses_type_id = fields.Many2one(
         comodel_name="exp.expenses.type",
-        string="Expenses Type",
+        string="Related Operation",
     )
     compatible_secundary_tags_ids = fields.Many2many(
         comodel_name="exp.tag.secundary.expenses",
@@ -89,15 +89,10 @@ class Expenses(models.Model):
             month = format_date(record.date, format="MMMM", locale=lang).capitalize()
             year = record.date.year
 
-            # Obtener lista de IDs de etiquetas secundarias
-            # secondary_tag_ids = record.expenses_secundary_tag_id.ids
-
             summary_data.append(
                 {
                     "month": month,
                     "year": year,
-                    # 'expenses_tag_id': record.expenses_tag_id.id,
-                    # 'expenses_secundary_tag_id': [(6, 0, secondary_tag_ids)],
                     "total_expenses": record.expense_amount,
                     "total_income": record.income_amount,
                 }
@@ -139,10 +134,6 @@ class Expenses(models.Model):
 
             # Restar los valores originales del resumen
             for values in original_summary_values:
-                # Extraer IDs para búsqueda
-                # secondary_tag_ids = values['expenses_secundary_tag_id'][0][2] if values[
-                #     'expenses_secundary_tag_id'] else []
-
                 summary = self.env["exp.expenses.summary"].search(
                     [
                         ("month", "=", values["month"]),
@@ -160,10 +151,6 @@ class Expenses(models.Model):
             # Agregar los nuevos valores al resumen
             new_summary_values = record._prepare_summary_values()
             for values in new_summary_values:
-                # Extraer IDs para búsqueda
-                # secondary_tag_ids = values['expenses_secundary_tag_id'][0][2] if values[
-                #     'expenses_secundary_tag_id'] else []
-
                 summary = self.env["exp.expenses.summary"].search(
                     [
                         ("month", "=", values["month"]),
@@ -187,10 +174,6 @@ class Expenses(models.Model):
 
             # Ajustar los totales en el resumen
             for values in summary_values:
-                # Extraer IDs para búsqueda
-                # secondary_tag_ids = values['expenses_secundary_tag_id'][0][2] if values[
-                #     'expenses_secundary_tag_id'] else []
-
                 summary = self.env["exp.expenses.summary"].search(
                     [
                         ("month", "=", values["month"]),

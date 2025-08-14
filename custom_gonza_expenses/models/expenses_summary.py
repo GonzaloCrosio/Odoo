@@ -28,15 +28,6 @@ class ExpensesSummary(models.Model):
         string="Year",
         required=True,
     )
-    # expenses_tag_id = fields.Many2one(
-    #     comodel_name="exp.tag.expenses",
-    #     string="Principal Tag",
-    #     required=True,
-    # )
-    # expenses_secundary_tag_id = fields.Many2many(
-    #     comodel_name="exp.tag.secundary.expenses",
-    #     string="Secundary Tags",
-    # )
     total_expenses = fields.Float(
         string="Total Expenses",
         required=True,
@@ -52,7 +43,7 @@ class ExpensesSummary(models.Model):
         compute="_compute_balance",
         store=True,
     )
-    # 👉 One2many computado, sin inverse: sirve para visualizar únicamente
+    # One2many computado, sin inverse: sirve para visualizar únicamente
     expense_ids = fields.One2many(
         comodel_name="exp.expenses.expenses",
         compute="_compute_expense_ids",
@@ -87,18 +78,22 @@ class ExpensesSummary(models.Model):
     def _compute_expense_ids(self):
         Expense = self.env["exp.expenses.expenses"]
         for rec in self:
+            # Crea lista limpia vacía de gastos
             rec.expense_ids = [(6, 0, [])]
             if not rec.month or not rec.year:
                 continue
+            # Convierte el mes a número (1-12)
             m = rec._month_label_to_int(rec.month)
             if not m:
                 continue
+            # Filtro de mes y año
             start = date(rec.year, m, 1)
             end = date(rec.year, m, calendar.monthrange(rec.year, m)[1])
             domain = [
                 ("date", ">=", start),
                 ("date", "<=", end),
             ]
+            # Filtro de moneda y agrega gastos a la lista
             if rec.currency_id:
                 domain.append(("currency_id", "=", rec.currency_id.id))
             expenses = Expense.search(domain, order="date asc, id asc")
