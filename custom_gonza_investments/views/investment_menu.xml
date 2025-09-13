@@ -29,17 +29,4 @@
         <field name="sequence">25</field>
     </record>
 
-    <!--    &lt;!&ndash;Dan acceso mediante el desplegable del menú inversiones&ndash;&gt;-->
-    <!--    <record id="investments_general_menu" model="ir.ui.menu">-->
-    <!--        <field name="name">Variable Investments</field>-->
-    <!--        <field name="action" ref="action_investments"/>-->
-    <!--        <field name="parent_id" ref="custom_gonza_investments.menu_investment"/>-->
-    <!--        <field name="sequence">25</field>-->
-    <!--    </record>-->
-
-    <!--    &lt;!&ndash;Pestaña en cabecera de menú de vista investment.xml&ndash;&gt;-->
-    <!--    <menuitem id="menu_investment_general"-->
-    <!--              name="Variable Investments"-->
-    <!--              parent="menu_investment_root"-->
-    <!--              action="action_investments"/>-->
 </odoo>

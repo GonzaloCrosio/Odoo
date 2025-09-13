@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-11 11:55+0000\n"
-"PO-Revision-Date: 2025-07-11 13:59+0200\n"
+"POT-Creation-Date: 2025-09-13 16:35+0000\n"
+"PO-Revision-Date: 2025-09-13 18:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_needaction
@@ -133,16 +133,23 @@ msgstr "Tasa efectiva mensual"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__effective_interest_rate
-msgid ""
-"Effective monthly interest rate calculated from the nominal annual rate."
+msgid "Effective monthly interest rate calculated from the nominal annual rate."
 msgstr "Tasa efectiva mensual obtenida a partir de la tasa efectiva anual."
 
 #. module: custom_gonza_loans
 #: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
 msgid "Example of Loan Effective Rate Calculation"
-msgstr ""
-"Ejemplo de cálculo de la Tasa Efectiva Mensual a partir de la Tasa Efectiva "
-"Anual"
+msgstr "Ejemplo de cálculo de la Tasa Efectiva Mensual a partir de la Tasa Efectiva Anual"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__expected_return_rate
+msgid "Expected Investment Return (%)"
+msgstr "Tasa de Retorno Esperada (%)"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__expected_return_rate
+msgid "Expected annual rate of return on the investment."
+msgstr "Tasa de rendimiento anual esperada de la inversión."
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__number
@@ -171,6 +178,11 @@ msgstr "Ìcono"
 #: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
 msgid "Generate Details"
 msgstr "Genera detalle de cuotas"
+
+#. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid "Generate Net Present Value"
+msgstr "Generar Valor Actual Neto (VAN)"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__has_message
@@ -209,6 +221,11 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__is_investment
+msgid "Indicates if the loan is used for investment purposes."
+msgstr "Indica si el préstamo será utilizado para fines de inversión."
+
+#. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__interest_payment
 msgid "Interest Payment"
 msgstr "Pago de interés"
@@ -223,6 +240,11 @@ msgstr "Tasa Efectiva Anual"
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_is_follower
 msgid "Is Follower"
 msgstr "Es seguidor"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__is_investment
+msgid "Is Investment"
+msgstr "Es inversión"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__write_uid
@@ -287,6 +309,20 @@ msgstr "Fecha límite de actividad"
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__simulated_vfn
+msgid "Net future value of an investment that uses the loan, considering an expected return."
+msgstr ""
+"Valor Futuro Neto de una inversión que utiliza el préstamo, considerando una rentabilidad "
+"esperada."
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__simulated_npv
+msgid "Net present value of an investment that uses the loan, considering an expected return."
+msgstr ""
+"Valor Actual Neto de una inversión que utiliza el préstamo, considerando una rentabilidad "
+"esperada."
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_date_deadline
@@ -371,6 +407,17 @@ msgid "Percentage Debt"
 msgstr "Ratio deuda/capital"
 
 #. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid ""
+"Please, if there are changes in the capital or\n"
+"                                    interest, generate the new installment details to\n"
+"                                    update the exact calculation."
+msgstr ""
+"Por favor, si hay cambios en el capital o intereses,&#13;\n"
+"                                    generar el detalle de las nuevas cuotas&#13;\n"
+"                                    para actualizar el cálculo del VAN exacto."
+
+#. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_user_id
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_user_id
 msgid "Responsible User"
@@ -382,9 +429,28 @@ msgid "Sequential number"
 msgstr "Cuota"
 
 #. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid ""
+"Set this field to true if you want to analyze a\n"
+"                                    possible investment with this loan."
+msgstr ""
+"Establezca este campo como verdadero&#13;\n"
+"                                    si desea analizar una posible inversión con este préstamo."
+
+#. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__other_day_payment
 msgid "Signing day first pay day"
 msgstr "Se paga el día de firma"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__simulated_npv
+msgid "Simulated Investment NPV"
+msgstr "Valor Actual Neto (VAN)"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__simulated_vfn
+msgid "Simulated Investment VFN"
+msgstr "Valor Futuro Neto (VFN)"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__status
@@ -416,11 +482,33 @@ msgid "Term in months"
 msgstr "Duración en meses"
 
 #. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid ""
+"The FNV is the difference between the capital updated at\n"
+"                                the end date and the future value of all cash flows paid\n"
+"                                or obtained during the loan or investment."
+msgstr ""
+"El VFN es la resta del capital actualizado a la fecha final\r\n"
+"                                menos el valor futuro de todos los flujos pagados\r\n"
+"                                u obtenidos durante el préstamo o inversión."
+
+#. module: custom_gonza_loans
+#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+msgid ""
+"The NPV is the difference between current capital and\n"
+"                                the\n"
+"                                present value of cash flows paid or received during the\n"
+"                                loan or investment."
+msgstr ""
+"El VAN es la resta del capital actual menos el valor actual de los flujos pagados\r\n"
+"                                u obtenidos\r\n"
+"                                durante el préstamo\r\n"
+"                                o inversión."
+
+#. module: custom_gonza_loans
 #. odoo-python
 #: code:addons/custom_gonza_loans/models/loan.py:0
-msgid ""
-"The payment plan cannot be calculated because the following fields are "
-"missing: %s"
+msgid "The payment plan cannot be calculated because the following fields are missing: %s"
 msgstr "El préstamo no puede ser calculado porque hay campos vacíos: %s"
 
 #. module: custom_gonza_loans

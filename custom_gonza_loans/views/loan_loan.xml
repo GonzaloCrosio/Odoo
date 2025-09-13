@@ -39,6 +39,27 @@
                                 <field name="other_day_payment"/>
                                 <field name="total_interest"/>
                                 <field name="total_amount_to_pay"/>
+                                <p>Set this field to true if you want to analyze a
+                                    possible investment with this loan.
+                                </p>
+                                <field name="is_investment"/>
+
+                                <button name="compute_simulated_npv"
+                                        string="Generate Net Present Value"
+                                        type="object" class="btn-primary"
+                                        invisible="not is_investment"/>
+
+                                <p invisible="not is_investment">
+                                    Please, if there are changes in the capital or
+                                    interest, generate the new installment details to
+                                    update the exact calculation.
+                                </p>
+                                <field name="simulated_npv"
+                                       invisible="not is_investment"/>
+                                <field name="simulated_vfn"
+                                       invisible="not is_investment"/>
+                                <field name="expected_return_rate"
+                                       invisible="not is_investment"/>
                             </group>
                         </div>
                         <div class="col-6">
@@ -48,6 +69,17 @@
                                 alt="Tasa Efectiva"
                                 style="width: 500px; height: 300px;"
                             />
+                            <p style="margin-top: 150px;" invisible="not is_investment">
+                                The NPV is the difference between current capital and
+                                the
+                                present value of cash flows paid or received during the
+                                loan or investment.
+                            </p>
+                            <p style="margin-top: 50px;" invisible="not is_investment">
+                                The FNV is the difference between the capital updated at
+                                the end date and the future value of all cash flows paid
+                                or obtained during the loan or investment.
+                            </p>
                         </div>
                     </div>
 
@@ -70,9 +102,12 @@
                                            widget="monetary"/>
                                     <field name="interest_payment" width="120"
                                            widget="monetary"/>
-                                    <field name="capital_payment" width="120" widget="monetary"/>
-                                    <field name="capital_remaining" width="120" widget="monetary"/>
-                                    <field name="capital_amortized" width="120" widget="monetary"/>
+                                    <field name="capital_payment" width="120"
+                                           widget="monetary"/>
+                                    <field name="capital_remaining" width="120"
+                                           widget="monetary"/>
+                                    <field name="capital_amortized" width="120"
+                                           widget="monetary"/>
                                     <field name="status" width="120" editable="bottom"/>
                                 </list>
                                 <!--Vista al clickear en líneas del préstamo-->
