@@ -182,7 +182,7 @@ msgstr "Genera detalle de cuotas"
 #. module: custom_gonza_loans
 #: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
 msgid "Generate Net Present Value"
-msgstr "Generar Valor Actual Neto (VAN)"
+msgstr "Generar VAN y VFN"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__has_message

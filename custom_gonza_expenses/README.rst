@@ -15,7 +15,8 @@ None.
 Usage
 =====
 
-Standard Odoo functionality.
+Standard Odoo functionality. It is a module designed to record expenses
+and perform cash flow analysis.
 
 Known issues
 ============
@@ -28,18 +29,14 @@ Credits
 Authors
 ~~~~~~~
 
-* `Punt Sistemes <https://www.puntsistemes.es>`__
+* Gonzalo Crosio
 
 Contributors
 ~~~~~~~~~~~~
 
-* `Punt Sistemes <https://www.puntsistemes.es>`__:
+* Gonzalo Crosio
 
 Maintainers
 ~~~~~~~~~~~
 
-Maintained by `Punt Sistemes <https://www.puntsistemes.es>`__.
-
-.. image:: /report_pnt/static/img/punt-sistemes.png
-   :alt: Punt Sistemes
-   :target: https://www.puntsistemes.es
+Maintained by Gonzalo Crosio

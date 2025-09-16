@@ -15,7 +15,8 @@ None.
 Usage
 =====
 
-Standard Odoo functionality.
+Standard Odoo functionality. It is a module designed for loan calculation under
+a French interest system, and it allows financial analysis of investment profitability.
 
 Known issues
 ============
@@ -28,18 +29,14 @@ Credits
 Authors
 ~~~~~~~
 
-* `Punt Sistemes <https://www.puntsistemes.es>`__
+* Gonzalo Crosio
 
 Contributors
 ~~~~~~~~~~~~
 
-* `Punt Sistemes <https://www.puntsistemes.es>`__:
+* Gonzalo Crosio
 
 Maintainers
 ~~~~~~~~~~~
 
-Maintained by `Punt Sistemes <https://www.puntsistemes.es>`__.
-
-.. image:: /report_pnt/static/img/punt-sistemes.png
-   :alt: Punt Sistemes
-   :target: https://www.puntsistemes.es
+Maintained by Gonzalo Crosio
