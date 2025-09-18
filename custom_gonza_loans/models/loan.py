@@ -79,7 +79,7 @@ class Loan(models.Model):
     )
     simulated_npv = fields.Float(
         string="Simulated Investment NPV",
-        compute="_compute_simulated_npv",
+        compute="compute_simulated_npv",
         store=True,
         help="Net present value of an investment that uses the loan, considering an expected return.",
     )
