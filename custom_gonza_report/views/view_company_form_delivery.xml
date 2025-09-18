@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_picking" model="ir.ui.view">
+        <field name="name">gonza.res.company.form.picking</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='branches']" position="after">
+                <page name="Picking Reports" string="Picking Order">
+                    <group name="picking" string="Picking Reports">
+                        <group name="header_address_picking" string="Picking Address">
+                            <field name="check_picking_outgoing_address_block"/>
+                            <field name="check_picking_outgoing_warehouse_address"/>
+                            <field
+                                name="check_incoming_picking_vendor_address_shipping"/>
+                            <field name="check_outgoing_picking_customer_address"/>
+                            <field name="check_picking_custom_address"/>
+                        </group>
+                        <group name="header_picking" string="Picking Header">
+                            <field name="check_picking_partner_name"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_street"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_street2"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_city"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_state"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_country"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_zip"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_phone"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_mobile"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_email"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_website"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_reference"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_partner_vat"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_name"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_street"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_street2"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_city"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_state"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_country"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_zip"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_phone"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_mobile"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_email"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_vat"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_website"
+                                   invisible="not check_picking_custom_address"/>
+                            <field name="check_picking_shipping_company_reference"
+                                   invisible="not check_picking_custom_address"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group name="informations_picking_1"
+                               string="Picking Informations Header">
+                            <field name="check_picking_title_outgoing"/>
+                            <field name="check_picking_title_incoming"/>
+                            <field name="check_picking_informations_outgoing"/>
+                            <field name="check_picking_informations_incoming"/>
+                        </group>
+                        <group name="informations_picking"
+                               string="Picking Informations Header">
+                            <field name="check_picking_order_outgoing"/>
+                            <field name="check_picking_order_incoming"/>
+                            <field name="check_picking_shipping_date_outgoing"/>
+                            <field name="check_picking_shipping_date_incoming"/>
+                        </group>
+                        <group name="table_picking" string="Picking not Done Table">
+                            <field name="picking_table_not_done_product_outgoing"/>
+                            <field
+                                name="check_picking_table_not_done_product_incoming"/>
+                            <field name="picking_table_not_done_ordered_outgoing"/>
+                            <field name="picking_table_not_done_ordered_incoming"/>
+                            <field
+                                name="picking_table_not_done_delivered_outgoing"/>
+                        </group>
+                        <group name="table_picking_decimals"
+                               string="Decimals Picking Table">
+                            <field name="picking_table_decimals_quantity_ordered"/>
+                            <field name="picking_table_decimals_quantity_delivered"/>
+                        </group>
+                        <group name="table_picking_1"
+                               string="Picking with State Done Table">
+                            <field name="picking_table_done_product_outgoing"/>
+                            <field name="picking_table_done_product_incoming"/>
+                            <field name="picking_table_done_ordered_outgoing"/>
+                            <field name="picking_table_done_ordered_incoming"/>
+                        </group>
+                        <group name="table_picking_2"
+                               string="Picking with State Done Table">
+                            <field name="picking_table_done_lot_outgoing"/>
+                            <field
+                                name="picking_table_done_lot_incoming"/>
+                            <field name="picking_table_done_delivered_outgoing"/>
+                            <field name="picking_table_done_delivered_incoming"/>
+                            <field
+                                name="check_picking_table_info_package_outgoing"/>
+                            <field
+                                name="check_picking_table_info_package_incoming"/>
+                        </group>
+                        <group name="picking_footer" string="Picking Footer">
+                            <field name="check_picking_outgoing_backorders"/>
+                            <field name="check_picking_incoming_backorders"/>
+                            <field name="check_picking_outgoing_signature"/>
+                            <field name="check_picking_incoming_signature"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

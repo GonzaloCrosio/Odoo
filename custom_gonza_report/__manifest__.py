@@ -1,0 +1,28 @@
+{
+    "name": "Custom Reports",
+    "version": "18.0.1.0.0",
+    "category": "Customizations",
+    "website": "https://www.puntsistemes.es",
+    "author": "Gonzalo Crosio",
+    "summary": "Custom basic reports PDF",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "base",
+        "account",
+        "sale",
+        "purchase",
+        "stock",
+    ],
+    "data": [
+        "views/view_company_form_invoice.xml",
+        "views/view_company_form_sale.xml",
+        "views/view_company_form_purchase.xml",
+        "views/view_company_form_delivery.xml",
+        "reports/report_invoice.xml",
+        "reports/report_sale_order.xml",
+        "reports/report_purchase.xml",
+        "reports/report_deliveryslip.xml",
+    ],
+}

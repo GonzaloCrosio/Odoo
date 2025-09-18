@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_sale" model="ir.ui.view">
+        <field name="name">gonza.res.company.form.sale</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='branches']" position="after">
+                <page name="Sale Reports" string="Custom Sale">
+                    <group name="sale" string="Sale Reports">
+                        <group name="header_address" string="Sale Address">
+                            <field name="check_sale_block_address"/>
+                            <field name="check_sale_partner_address"/>
+                            <field name="check_sale_customer_address"/>
+                        </group>
+                        <group name="header_sale" string="Sale Header">
+                            <field name="check_sale_custom_address"/>
+                            <field name="check_sale_partner_name"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_street"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_street2"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_city"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_state"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_country"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_zip"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_phone"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_mobile"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_email"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_website"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_reference"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_partner_vat"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_name"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_street"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_street2"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_city"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_state"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_country"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_zip"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_phone"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_mobile"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_email"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_vat"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_website"
+                                   invisible="not check_sale_custom_address"/>
+                            <field name="check_sale_shipping_partner_reference"
+                                   invisible="not check_sale_custom_address"/>
+                        </group>
+                        <group name="informations_sale_1"
+                               string="Sale Informations Header">
+                            <field name="sale_not_title"/>
+                            <field name="sale_not_proforma"/>
+                            <field name="sale_not_quotation"/>
+                        </group>
+                        <group name="informations_sale"
+                               string="Sale Informations Header">
+                            <field name="sale_not_order"/>
+                            <field name="sale_name_order"/>
+                        </group>
+                        <group name="table" string="Sale Table">
+                            <field name="sale_description_column"/>
+                            <field name="sale_quantity_column"/>
+                            <field name="sale_price_column"/>
+                            <field name="sale_discount_column"/>
+                            <field name="sale_taxes_column"/>
+                            <field name="sale_total_column"/>
+                            <field name="sale_note"/>
+                            <field name="sale_section"/>
+                            <field name="sale_subtotal_row"/>
+                            <field name="sale_description_column_product_name"/>
+                            <field name="sale_description_product_description"/>
+                            <field name="sale_reference_column"/>
+                        </group>
+                        <group name="table" string="Sale Table">
+                            <field name="sale_units_word"/>
+                            <field name="sale_packaging_word"/>
+                            <field name="sale_decimals_quantity"/>
+                            <field name="sale_decimals_price"/>
+                            <field name="sale_decimals_discount"/>
+                            <field name="sale_decimals_subtotal"/>
+                        </group>
+                        <group name="footer" string="Sale Footer">
+                            <field name="sale_total_table"/>
+                            <field name="sale_signature"/>
+                            <field name="sale_terms_payments"/>
+                            <field name="sale_note_settings"/>
+                            <field name="sale_fiscal_position_remark"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

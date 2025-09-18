@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_purchase" model="ir.ui.view">
+        <field name="name">gonza.res.company.form.purchase</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='branches']" position="after">
+                <page name="Purchase Reports" string="Purchase Order">
+                    <group name="purchase" string="Purchase Reports">
+                        <group name="header_address_purchase" string="Purchase Address">
+                            <field name="purchase_company_address"/>
+                            <field name="purchase_partner_address"/>
+                            <field name="check_purchase_custom_address"/>
+                        </group>
+                        <group name="header_purchase" string="Purchase Header">
+                            <field name="check_purchase_partner_name"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_street"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_street2"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_city"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_state"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_country"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_zip"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_phone"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_mobile"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_email"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_website"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_reference"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_partner_vat"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_name"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_street"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_street2"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_city"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_state"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_country"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_zip"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_phone"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_mobile"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_email"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_vat"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_website"
+                                   invisible="not check_purchase_custom_address"/>
+                            <field name="check_purchase_shipping_company_reference"
+                                   invisible="not check_purchase_custom_address"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group name="informations_purchase_1"
+                               string="Purchase Informations Header">
+                            <field name="check_purchase_not_title"/>
+                            <field name="check_purchase_buyer"/>
+                            <field name="check_purchase_reference"/>
+                            <field name="check_purchase_incoterm"/>
+                        </group>
+                        <group name="informations_purchase"
+                               string="Purchase Informations Header">
+                            <field name="check_purchase_date"/>
+                            <field name="check_purchase_deadline_date"/>
+                            <field name="check_purchase_date_planned"/>
+                        </group>
+                        <group name="table_purchase" string="Purchase Table">
+                            <field name="check_purchase_description"/>
+                            <field name="check_purchase_quantity"/>
+                            <field name="check_purchase_unit_price"/>
+                            <field name="check_purchase_discount"/>
+                            <field name="check_purchase_tax"/>
+                            <field name="check_purchase_subtotal"/>
+                            <field name="check_purchase_product_reference"/>
+                            <field name="check_purchase_product_description"/>
+                            <field name="check_purchase_product_reference_column"/>
+                            <field name="check_purchase_uom_name"/>
+                            <field name="check_purchase_package_name"/>
+                        </group>
+                        <group name="table_purchase_1" string="Purchase Table">
+                            <field name="check_purchase_notes"/>
+                            <field name="check_purchase_section"/>
+                            <field name="check_purchase_subtotal_row"/>
+                            <field name="check_purchase_totals"/>
+                            <field name="check_purchase_quantity_decimals"/>
+                            <field name="check_purchase_unit_price_decimals"/>
+                            <field name="check_purchase_discount_decimals"/>
+                        </group>
+                        <group name="purchase_footer" string="Purchase Footer">
+                            <field name="check_purchase_footer_notes"/>
+                            <field name="check_purchase_payment_terms"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

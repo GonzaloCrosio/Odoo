@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_delivery_document"
+              inherit_id="stock.report_delivery_document">
+        <!--Defino varible según sea albarán de venta o de compra-->
+        <xpath expr="//t[@t-set='o']" position="before">
+            <!-- Definir variable condicional -->
+            <t t-set="is_outgoing" t-value="o.picking_type_id.code == 'outgoing'"/>
+            <t t-set="is_incoming" t-value="o.picking_type_id.code == 'incoming'"/>
+        </xpath>
+        <!--Ocultar dirección de envío del partner-->
+        <xpath expr="//div[@name='outgoing_delivery_address']" position="attributes">
+            <attribute name="t-if"
+                       add="not o.company_id.check_picking_outgoing_address_block"
+                       separator=" and "/>
+        </xpath>
+        <!--Ocultar dirección de almacen interno-->
+        <xpath expr="//div[@name='outgoing_warehouse_address']" position="attributes">
+            <attribute name="t-elif"
+                       add="not o.company_id.check_picking_outgoing_warehouse_address"
+                       separator=" and "/>
+        </xpath>
+        <!--Ocultar dirección en Albarán de Compra-->
+        <xpath expr="//div[@name='vendor_address']" position="attributes">
+            <attribute name="t-if"
+                       add="not o.company_id.check_incoming_picking_vendor_address_shipping"
+                       separator=" and "/>
+        </xpath>
+        <!--Ocultar dirección en Albarán de Venta-->
+        <xpath expr="//div[@name='customer_address']" position="attributes">
+            <attribute name="t-if"
+                       add="not o.company_id.check_outgoing_picking_customer_address"
+                       separator=" and "/>
+        </xpath>
+        <xpath expr="//div[@name='partner_header']" position="attributes">
+            <attribute name="t-if"
+                       add="not o.company_id.check_outgoing_picking_customer_address"
+                       separator=" and "/>
+        </xpath>
+        <!--Direcciones Personalizadas-->
+        <xpath expr="//div[@class='page']" position="after">
+            <div class="row" t-if="o.company_id.check_picking_custom_address">
+                <t>
+                    <div class="col-6">
+                        <t t-set="address">
+                            <strong
+                                t-if="o.company_id.check_picking_partner_name">
+                                Shipping Address
+                            </strong>
+                            <div t-if="o.company_id.check_picking_partner_name"
+                                 t-field="o.partner_id.name"/>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_street"
+                                    t-field="o.partner_id.street"/>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_street2
+                                    and o.partner_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_street2"
+                                    t-field="o.partner_id.street2"/>
+                            </div>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_city"
+                                    t-field="o.partner_id.city"/>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_zip
+                                    and o.partner_id.zip">
+                                    ,
+                                </span>
+                                <span t-if="o.company_id.check_picking_partner_zip"
+                                      t-field="o.partner_id.zip"/>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_state
+                                    and o.partner_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_picking_partner_state"
+                                    t-field="o.partner_id.state_id.name"/>
+                            </div>
+                            <div t-if="o.company_id.check_picking_partner_country"
+                                 t-field="o.partner_id.country_id.name"/>
+                            <div t-if="o.company_id.check_picking_partner_vat"
+                                 t-field="o.partner_id.vat"/>
+                            <div t-if="o.company_id.check_picking_partner_phone and
+                                 o.partner_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span t-field="o.partner_id.phone"/>
+                            </div>
+                            <div t-if="o.company_id.check_picking_partner_mobile and
+                                 o.partner_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span t-field="o.partner_id.mobile"/>
+                            </div>
+                            <div t-if="o.company_id.check_picking_partner_email"
+                                 t-field="o.partner_id.email"/>
+                            <div t-if="o.company_id.check_picking_partner_website"
+                                 t-field="o.partner_id.website"/>
+                            <div
+                                t-if="o.company_id.check_picking_partner_reference"
+                                t-field="o.partner_id.ref"/>
+                        </t>
+                    </div>
+                    <div class="col-6"
+                         t-if="o.company_id.check_picking_custom_address">
+                        <t t-set="information_block">
+                            <div
+                                t-if="o.company_id.check_picking_shipping_company_name"
+                                t-field="o.company_id.name"/>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_street"
+                                    t-field="o.company_id.street"/>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_street2
+                                    and o.company_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_street2"
+                                    t-field="o.company_id.street2"/>
+                            </div>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_city"
+                                    t-field="o.company_id.city"/>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_zip
+                                    and o.company_id.zip">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_zip"
+                                    t-field="o.company_id.zip"/>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_state
+                                    and o.company_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_state"
+                                    t-field="o.company_id.state_id.name"/>
+                            </div>
+                            <div
+                                t-if="o.company_id.check_picking_shipping_company_country"
+                                t-field="o.company_id.country_id.name"/>
+                            <div
+                                t-if="o.company_id.check_picking_shipping_company_vat"
+                                t-field="o.company_id.vat"/>
+                            <div t-if="o.company_id.check_picking_shipping_company_phone and
+                                 o.company_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_phone"
+                                    t-field="o.company_id.phone"/>
+                            </div>
+                            <div t-if="o.company_id.check_picking_shipping_company_mobile and
+                                 o.company_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span
+                                    t-if="o.company_id.check_picking_shipping_company_mobile"
+                                    t-field="o.company_id.mobile"/>
+                            </div>
+                            <div
+                                t-if="o.company_id.check_picking_shipping_company_email"
+                                t-field="o.company_id.email"/>
+                            <div
+                                t-if="o.company_id.check_picking_shipping_company_website"
+                                t-field="o.company_id.website"/>
+                            <div
+                                t-if="o.company_id.check_picking_shipping_company_reference"
+                                t-field="o.company_id.ref"/>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+        <!--Ocultar datos encabezado-->
+        <xpath expr="//h2" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_title_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_title_incoming and is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_informations_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_informations_incoming and is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@name='div_origin']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_order_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_order_incoming and is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@name='div_sched_date']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_shipping_date_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_shipping_date_incoming and is_incoming
+            </attribute>
+        </xpath>
+
+        <!--Tabla de albarán en estado distinto de done-->
+        <!--Oculta columna producto-->
+        <xpath expr="//th[@name='th_sm_product']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_not_done_product_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_table_not_done_product_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@t-field='move.product_id']]" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_not_done_product_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_table_not_done_product_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <!--Oculta columna cantidad demandada-->
+        <xpath expr="//th[@name='th_sm_ordered']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_not_done_ordered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_not_done_ordered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@t-field='move.product_uom_qty']]" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_not_done_ordered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_not_done_ordered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <!--Oculta columna cantidad entregada-->
+        <xpath expr="//th[@name='th_sm_quantity']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_not_done_delivered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_not_done_delivered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@t-field='move.quantity']]" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_not_done_delivered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_not_done_delivered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+
+        <!--Oculta datos en tabla con albarán igual a hecho-->
+        <xpath expr="//th[@name='th_sml_product']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_product_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_product_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//th[@name='th_sml_qty_ordered']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_ordered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_ordered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//th[@name='lot_serial']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_lot_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_lot_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//th[@name='th_sml_quantity']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_delivered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_delivered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <!--Decimales en tabla-->
+        <xpath expr="//span[@t-field='move.product_uom_qty']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float",
+                "precision":
+                o.company_id.picking_table_decimals_quantity_ordered}
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='move.quantity']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float",
+                "precision":
+                o.company_id.picking_table_decimals_quantity_delivered}
+            </attribute>
+        </xpath>
+        <!--Datos inferiores-->
+        <!--Ocultar Tabla que muestra cantidades pendientes-->
+        <xpath expr="//table[@name='stock_backorder_table']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_outgoing_backorders and
+                is_outgoing or not
+                o.company_id.check_picking_incoming_backorders and
+                is_incoming
+            </attribute>
+        </xpath>
+        <!--Ocultar firma del cliente-->
+        <xpath
+            expr="//span[normalize-space()='Remaining quantities not yet delivered:']"
+            position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_outgoing_backorders and
+                is_outgoing or not
+                o.company_id.check_picking_incoming_backorders and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@name='signature']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_outgoing_signature and
+                is_outgoing or not
+                o.company_id.check_picking_incoming_signature and
+                is_incoming
+            </attribute>
+        </xpath>
+
+        <!--Oculta la palabra paquetes en cantidad entregada-->
+        <!--        <xpath expr="//div[@id='informations']" position="attributes">-->
+        <!--            <attribute name="t-if"-->
+        <!--                       add="not o.company_id.check_picking_informations_outgoing"-->
+        <!--                       separator=" and "/>-->
+        <!--        </xpath>-->
+
+    </template>
+
+    <template id="stock_report_delivery_has_serial_move_line"
+              inherit_id="stock.stock_report_delivery_has_serial_move_line">
+        <xpath expr="//td[span[@t-field='move_line.product_id']]" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_product_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_product_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@name='move_line_lot']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_lot_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_lot_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='move_line_lot_quantity']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_delivered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_delivered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <!--Decimales-->
+        <xpath expr="//span[@t-field='move_line.quantity']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float",
+                "precision":
+                o.company_id.picking_table_decimals_quantity_delivered}
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="stock_report_delivery_aggregated_move_lines"
+              inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+        <xpath expr="//td[span[@t-esc=&quot;aggregated_lines[line]['name']&quot;]]"
+               position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_product_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_product_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='move_line_aggregated_qty_ordered']"
+               position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_lot_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_lot_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='move_line_aggregated_quantity']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.picking_table_done_delivered_outgoing and
+                is_outgoing or not
+                o.company_id.picking_table_done_delivered_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+        <!--Decimales-->
+        <xpath expr="//span[@t-esc=&quot;aggregated_lines[line]['qty_ordered']&quot;]"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float",
+                "precision":
+                o.company_id.picking_table_decimals_quantity_ordered}
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-esc=&quot;aggregated_lines[line]['quantity']&quot;]"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float",
+                "precision":
+                o.company_id.picking_table_decimals_quantity_delivered}
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="stock_report_delivery_package_section_line"
+              inherit_id="stock.stock_report_delivery_package_section_line">
+        <xpath expr="//td[@name='package_info']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_table_info_package_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_table_info_package_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="stock_report_delivery_no_package_section_line"
+              inherit_id="stock.stock_report_delivery_no_package_section_line">
+        <xpath expr="//td[@name='no_package_info']" position="attributes">
+            <attribute name="t-if">
+                not o.company_id.check_picking_table_info_package_outgoing and
+                is_outgoing or not
+                o.company_id.check_picking_table_info_package_incoming and
+                is_incoming
+            </attribute>
+        </xpath>
+    </template>
+</odoo>

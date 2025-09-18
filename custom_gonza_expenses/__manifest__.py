@@ -2,7 +2,7 @@
     "name": "Custom Gonzalo Expenses",
     "version": "18.0.1.0.0",
     "category": "Customizations",
-    "author": "Gonzalo",
+    "author": "Gonzalo Crosio",
     "summary": "Custom reports for the client",
     "license": "AGPL-3",
     "application": True,

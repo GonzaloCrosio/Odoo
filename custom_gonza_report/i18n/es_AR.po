@@ -1,0 +1,1522 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* custom_gonza_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-18 08:40+0000\n"
+"PO-Revision-Date: 2025-09-18 10:42+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.7\n"
+
+#. module: custom_gonza_report
+#: model:ir.actions.report,print_report_name:custom_gonza_report.action_report_sale_report_unvalued
+msgid ""
+"(object.state in ('draft', 'sent') and\n"
+"            'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)\n"
+"        "
+msgstr "(object.state in ('draft', 'sent') and 'Presupuesto - %s' % (object.name)) or 'Pedido - %s' % (object.name) "
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_invoice_document
+msgid "<span>Lot</span>"
+msgstr "<span>Lote</span>"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+#, fuzzy
+msgid "<span>Lots will only appear on the normal invoice.</span>"
+msgstr "Los lotes aparecerán solo en la factura normal"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_purchase_report_custom
+msgid "<strong>Reference</strong>"
+msgstr "<strong>Referencia</strong>"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_saleorder_sale_custom
+msgid "<strong>Shipping Address</strong>"
+msgstr "<strong>Dirección de Envío</strong>"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_city
+msgid "Add Company City in picking"
+msgstr "Agregar Ciudad de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_country
+msgid "Add Company Country in picking"
+msgstr "Agregar País de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_email
+msgid "Add Company Email in picking"
+msgstr "Agregar Email de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_mobile
+msgid "Add Company Mobile in picking"
+msgstr "Agregar Móvil de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_name
+msgid "Add Company Name in picking"
+msgstr "Agregar Nombre de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_phone
+msgid "Add Company Phone in picking"
+msgstr "Agregar Teléfono de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_reference
+msgid "Add Company Reference in picking"
+msgstr "Agregar Referencia de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_state
+msgid "Add Company State in picking"
+msgstr "Agregar Estado de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_street
+msgid "Add Company Street in picking"
+msgstr "Agregar Calle de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_street2
+#, fuzzy
+msgid "Add Company Street2 in picking"
+msgstr "Agregar Calle 2 de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_vat
+msgid "Add Company VAT in picking"
+msgstr "Agregar NIF de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_website
+msgid "Add Company Website in picking"
+msgstr "Agregar Web de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_company_zip
+msgid "Add Company Zip in picking"
+msgstr "Agregar CP de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_lot_name_in_column
+msgid "Add Lot Name Column in Invoice"
+msgstr "Agregar lote en columna"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_city
+#, fuzzy
+msgid "Add Partner City in Invoice"
+msgstr "Agregar Ciudad del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_city
+msgid "Add Partner City in picking"
+msgstr "Agregar Ciudad del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_city
+msgid "Add Partner City in purchase"
+msgstr "Agregar Ciudad del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_city
+msgid "Add Partner City in sale"
+msgstr "Agregar Ciudad del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_country
+msgid "Add Partner Country in Invoice"
+msgstr "Agregar País del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_country
+msgid "Add Partner Country in picking"
+msgstr "Agregar País del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_country
+msgid "Add Partner Country in purchase"
+msgstr "Agregar País del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_country
+msgid "Add Partner Country in sale"
+msgstr "Agregar País del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_email
+msgid "Add Partner Email in Invoice"
+msgstr "Agregar Email del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_email
+msgid "Add Partner Email in picking"
+msgstr "Agregar Email del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_email
+msgid "Add Partner Email in purchase"
+msgstr "Agregar Email del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_email
+msgid "Add Partner Email in sale"
+msgstr "Agregar Email del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_mobile
+msgid "Add Partner Mobile in Invoice"
+msgstr "Agregar Móvil del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_mobile
+msgid "Add Partner Mobile in picking"
+msgstr "Agregar Móvil del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_mobile
+msgid "Add Partner Mobile in purchase"
+msgstr "Agregar Móvil del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_mobile
+msgid "Add Partner Mobile in sale"
+msgstr "Agregar Móvil del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_name
+msgid "Add Partner Name in Invoice"
+msgstr "Agregar Nombre del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_name
+msgid "Add Partner Name in picking"
+msgstr "Agregar Nombre del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_name
+msgid "Add Partner Name in purchase"
+msgstr "Agregar Nombre del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_name
+msgid "Add Partner Name in sale"
+msgstr "Agregar Nombre del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_phone
+msgid "Add Partner Phone in Invoice"
+msgstr "Agregar Teléfono del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_phone
+msgid "Add Partner Phone in picking"
+msgstr "Agregar Teléfono del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_phone
+msgid "Add Partner Phone in purchase"
+msgstr "Agregar Teléfono del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_phone
+msgid "Add Partner Phone in sale"
+msgstr "Agregar Teléfono del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_reference
+msgid "Add Partner Reference in Invoice"
+msgstr "Agregar Referencia del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_reference
+msgid "Add Partner Reference in picking"
+msgstr "Agregar Referencia del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_reference
+msgid "Add Partner Reference in purchase"
+msgstr "Agregar Referencia del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_reference
+msgid "Add Partner Reference in sale"
+msgstr "Agregar Referencia del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_state
+msgid "Add Partner State in Invoice"
+msgstr "Agregar Estado del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_state
+msgid "Add Partner State in picking"
+msgstr "Agregar Estado del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_state
+msgid "Add Partner State in purchase"
+msgstr "Agregar Estado del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_state
+msgid "Add Partner State in sale"
+msgstr "Agregar Estado del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_street
+msgid "Add Partner Street in Invoice"
+msgstr "Agregar Calle del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_street
+msgid "Add Partner Street in picking"
+msgstr "Agregar Calle del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_street
+msgid "Add Partner Street in purchase"
+msgstr "Agregar Calle del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_street
+msgid "Add Partner Street in sale"
+msgstr "Agregar Calle del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_street2
+msgid "Add Partner Street2 in Invoice"
+msgstr "Agregar Calle 2 del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_street2
+msgid "Add Partner Street2 in picking"
+msgstr "Agregar Calle 2 del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_street2
+msgid "Add Partner Street2 in purchase"
+msgstr "Agregar Calle 2 del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_street2
+msgid "Add Partner Street2 in sale"
+msgstr "Agregar Calle 2 del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_vat
+msgid "Add Partner VAT in Invoice"
+msgstr "Agregar NIF del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_vat
+msgid "Add Partner VAT in picking"
+msgstr "Agregar NIF del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_vat
+msgid "Add Partner VAT in purchase"
+msgstr "Agregar NIF del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_vat
+msgid "Add Partner VAT in sale"
+msgstr "Agregar NIF del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_website
+msgid "Add Partner Website in Invoice"
+msgstr "Agregar Web del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_website
+msgid "Add Partner Website in picking"
+msgstr "Agregar Web del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_website
+msgid "Add Partner Website in purchase"
+msgstr "Agregar Web del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_website
+msgid "Add Partner Website in sale"
+msgstr "Agregar Web del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_partner_zip
+msgid "Add Partner Zip in Invoice"
+msgstr "Agregar CP del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_partner_zip
+msgid "Add Partner Zip in picking"
+msgstr "Agregar CP del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_partner_zip
+msgid "Add Partner Zip in purchase"
+msgstr "Agregar CP del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_zip
+msgid "Add Partner Zip in sale"
+msgstr "Agregar CP del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_product_description
+msgid "Add Product Purchase Description in Purchase Order"
+msgstr "Agregar Descripción de Compra del Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_description_reference_column
+#, fuzzy
+msgid "Add Product Reference Column in Invoice"
+msgstr "Agregar columna Referencia de Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_product_reference_column
+#, fuzzy
+msgid "Add Product Reference Column in Purchase Order"
+msgstr "Agregar columna Referencia de Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_description_sale
+msgid "Add Product Sale Description Column in Invoice"
+msgstr "Agregar Descripción de Venta del Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_description_product_description
+msgid "Add Product Sale Description in Sale Order"
+msgstr "Agregar Descripción de Venta del Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_reference_column
+msgid "Add Reference Column in Sale Order"
+msgstr "Agregar columna Referencia de Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_city
+#, fuzzy
+msgid "Add Shipping Company City in purchase"
+msgstr "Agregar Ciudad de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_country
+#, fuzzy
+msgid "Add Shipping Company Country in purchase"
+msgstr "Agregar País de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_email
+msgid "Add Shipping Company Email in purchase"
+msgstr "Agregar Email de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_mobile
+msgid "Add Shipping Company Mobile in purchase"
+msgstr "Agregar Móvil de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_name
+msgid "Add Shipping Company Name in purchase"
+msgstr "Agregar Nombre de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_phone
+msgid "Add Shipping Company Phone in purchase"
+msgstr "Agregar Teléfono de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_reference
+msgid "Add Shipping Company Reference in purchase"
+msgstr "Agregar Referencia de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_state
+msgid "Add Shipping Company State in purchase"
+msgstr "Agregar Estado de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_street
+msgid "Add Shipping Company Street in purchase"
+msgstr "Agregar Calle de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_street2
+msgid "Add Shipping Company Street2 in purchase"
+msgstr "Agregar Calle 2 de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_vat
+msgid "Add Shipping Company VAT in purchase"
+msgstr "Agregar NIF de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_website
+msgid "Add Shipping Company Website in purchase"
+msgstr "Agregar Web de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_shipping_company_zip
+msgid "Add Shipping Company Zip in purchase"
+msgstr "Agregar CP de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_city
+#, fuzzy
+msgid "Add Shipping Partner City in Invoice"
+msgstr "Agregar Ciudad de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_city
+#, fuzzy
+msgid "Add Shipping Partner City in sale"
+msgstr "Agregar Ciudad de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_country
+#, fuzzy
+msgid "Add Shipping Partner Country in Invoice"
+msgstr "Agregar País de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_country
+#, fuzzy
+msgid "Add Shipping Partner Country in sale"
+msgstr "Agregar País de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_email
+msgid "Add Shipping Partner Email in Invoice"
+msgstr "Agregar Email de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_email
+msgid "Add Shipping Partner Email in sale"
+msgstr "Agregar Email de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_mobile
+msgid "Add Shipping Partner Mobile in Invoice"
+msgstr "Agregar Móvil de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_mobile
+msgid "Add Shipping Partner Mobile in sale"
+msgstr "Agregar Móvil de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_name
+msgid "Add Shipping Partner Name in Invoice"
+msgstr "Agregar Nombre de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_name
+msgid "Add Shipping Partner Name in sale"
+msgstr "Agregar Nombre de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_phone
+msgid "Add Shipping Partner Phone in Invoice"
+msgstr "Agregar Teléfono de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_phone
+msgid "Add Shipping Partner Phone in sale"
+msgstr "Agregar Teléfono de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_reference
+msgid "Add Shipping Partner Reference in Invoice"
+msgstr "Agregar Referencia de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_reference
+msgid "Add Shipping Partner Reference in sale"
+msgstr "Agregar Referencia de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_state
+msgid "Add Shipping Partner State in Invoice"
+msgstr "Agregar Estado de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_state
+msgid "Add Shipping Partner State in sale"
+msgstr "Agregar Estado de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_street
+msgid "Add Shipping Partner Street in Invoice"
+msgstr "Agregar Calle de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_street
+msgid "Add Shipping Partner Street in sale"
+msgstr "Agregar Calle de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_street2
+msgid "Add Shipping Partner Street2 in Invoice"
+msgstr "Agregar Calle 2 de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_street2
+msgid "Add Shipping Partner Street2 in sale"
+msgstr "Agregar Calle 2 de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_vat
+msgid "Add Shipping Partner VAT in Invoice"
+msgstr "Agregar NIF de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_vat
+msgid "Add Shipping Partner VAT in sale"
+msgstr "Agregar NIF de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_website
+msgid "Add Shipping Partner Website in Invoice"
+msgstr "Agregar Web de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_website
+msgid "Add Shipping Partner Website in sale"
+msgstr "Agregar Web de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_partner_zip
+msgid "Add Shipping Partner Zip in Invoice"
+msgstr "Agregar CP de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_shipping_partner_zip
+msgid "Add Shipping Partner Zip in sale"
+msgstr "Agregar CP de la Dirección de envío"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+#, fuzzy
+msgid "Changes to the totals table affect both orders and invoices."
+msgstr "Los cambios en los totales afectan a Facturas y Pedidos por igual"
+
+#. module: custom_gonza_report
+#: model:ir.model,name:custom_gonza_report.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_custom_address
+msgid "Create Custom Address in Purchase Order"
+msgstr "Crear Direcciones Personalizadas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_custom_address
+msgid "Custom Address in Invoice"
+msgstr "Crear Direcciones Personalizadas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_custom_address
+msgid "Custom Address in Sale Order"
+msgstr "Crear Direcciones Personalizadas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_custom_address
+msgid "Custom Address in picking"
+msgstr "Crear Direcciones Personalizadas"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+msgid "Custom Invoice"
+msgstr "Factura Customizada"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+#, fuzzy
+msgid "Custom Sale"
+msgstr "Pedido Customizado"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__decimals_discount_invoice
+#, fuzzy
+msgid "Decimals Discount in Invoice"
+msgstr "Decimales en  Descuentos"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_decimals_discount
+msgid "Decimals Discount in Sale"
+msgstr "Decimales en Descuentos"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Decimals Picking Table"
+msgstr "Decimales en Tabla de Albaranes"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__decimals_price_invoice
+#, fuzzy
+msgid "Decimals Price in Invoice"
+msgstr "Decimales en Precio"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_decimals_price
+msgid "Decimals Price in Sale"
+msgstr "Decimales en Precio"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_decimals_quantity_delivered
+msgid "Decimals Quantity Delivered in Picking"
+msgstr "Decimales en Cantidades Entregadas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_decimals_quantity_ordered
+msgid "Decimals Quantity Ordered in Picking"
+msgstr "Decimales en Cantidades Ordenadas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__decimals_quantity_invoice
+#, fuzzy
+msgid "Decimals Quantity in Invoice"
+msgstr "Decimales en Cantidad"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_decimals_quantity
+msgid "Decimals Quantity in Sale"
+msgstr "Decimales en Cantidad"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__decimals_subtotal_invoice
+#, fuzzy
+msgid "Decimals Subtotal in Invoice"
+msgstr "Decimales en Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_decimals_subtotal
+msgid "Decimals Subtotal in Sale"
+msgstr "Decimales en Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_discount_decimals
+msgid "Discount Decimals in Purchase Order"
+msgstr "Decimales en Descuentos"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+msgid "Invoice Address"
+msgstr "Dirección de Factura"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+#, fuzzy
+msgid "Invoice Footer"
+msgstr "Datos Inferiores de la Factura"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+#, fuzzy
+msgid "Invoice Header"
+msgstr "Datos Superiores de la Factura"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+#, fuzzy
+msgid "Invoice Table"
+msgstr "Tabla de la Factura"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking Address"
+msgstr "Dirección del Albarán"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking Footer"
+msgstr "Datos Inferiores del Albarán"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking Header"
+msgstr "Encabezado Albarán"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking Informations Header"
+msgstr "Datos superiores del Albarán"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+#, fuzzy
+msgid "Picking Order"
+msgstr "Albarán Customizado"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking Reports"
+msgstr "Albarán Customizado"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking not Done Table"
+msgstr "Modificaciones del Albarán con Estado Distinto a Hecho"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_picking
+msgid "Picking with State Done Table"
+msgstr "Modificaciones del Albarán con Estado igual a Hecho"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+#, fuzzy
+msgid "Purchase Address"
+msgstr "Dirección Pedido Compra"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+#, fuzzy
+msgid "Purchase Footer"
+msgstr "Datos Inferiores del Pedido de Compra"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+msgid "Purchase Header"
+msgstr "Datos Superiores del Pedido de Compra"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+#, fuzzy
+msgid "Purchase Informations Header"
+msgstr "Datos Superiores del Pedido de Compra"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+#, fuzzy
+msgid "Purchase Order"
+msgstr "Pedido de Compra Customizado"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+#, fuzzy
+msgid "Purchase Reports"
+msgstr "Pedido de Compra Customizado"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_purchase
+#, fuzzy
+msgid "Purchase Table"
+msgstr "Tabla Pedido de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_quantity_decimals
+msgid "Quantity Decimals in Purchase Order"
+msgstr "Decimales en Cantidad"
+
+#. module: custom_gonza_report
+#: model:ir.actions.report,name:custom_gonza_report.action_report_sale_report_unvalued
+msgid "Quotation / Order (unvalued)"
+msgstr "Presupuesto / Pedido (sin valorar)"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_invoice_document
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_saleorder_sale_custom
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_incoming_backorders
+msgid "Remove BackOrderds Table in Incoming Picking"
+msgstr "Ocultar Tabla de Productos Pendientes de Entrega en Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_outgoing_backorders
+msgid "Remove BackOrderds Table in Outgoing Picking"
+msgstr "Ocultar Tabla de Productos Pendientes de Entrega en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_buyer
+msgid "Remove Buyer in Purchase Order"
+msgstr "Ocultar Comprador"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__purchase_company_address
+msgid "Remove Company Address in Purchase Order"
+msgstr "Ocultar Dirección de la Compañía"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_customer_code
+#, fuzzy
+msgid "Remove Customer Code in Invoice"
+msgstr "Ocultar Código de Cliente"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_date
+#, fuzzy
+msgid "Remove Date in Invoice"
+msgstr "Ocultar Fecha de Factura"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_date
+msgid "Remove Date in Purchase Order"
+msgstr "Ocultar Fecha"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_date
+msgid "Remove Date in Sale Order"
+msgstr "Ocultar Fecha de Pedido"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_deadline_date
+msgid "Remove Deadline in Purchase Order"
+msgstr "Ocultar Fecha de Vencimiento"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_delivered_incoming
+msgid "Remove Delivered in Incoming Picking Table with state done"
+msgstr "Ocultar Columna Entregado en Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_not_done_delivered_incoming
+#, fuzzy
+msgid "Remove Delivered in Incoming Picking Table with state not done"
+msgstr "Ocultar Columna Entregado en Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_delivered_outgoing
+msgid "Remove Delivered in Outgoing Picking Table with state done"
+msgstr "Ocultar Columna Entregado en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_not_done_delivered_outgoing
+msgid "Remove Delivered in Outgoing Picking Table with state not done"
+msgstr "Ocultar Columna Entregado en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_delivery_date
+#, fuzzy
+msgid "Remove Delivery Date in Invoice"
+msgstr "Ocultar Fecha de Envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_description_column
+msgid "Remove Description Column in Sale Order"
+msgstr "Ocultar Columna Descripción"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_description
+#, fuzzy
+msgid "Remove Description in Invoice"
+msgstr "Ocultar Columna Descripción"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_description
+#, fuzzy
+msgid "Remove Description in Purchase Order"
+msgstr "Ocultar Columna Descripción"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_discount_column
+msgid "Remove Discount Column in Sale Order"
+msgstr "Ocultar Columna Descuento"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_discount
+#, fuzzy
+msgid "Remove Discount in Invoice"
+msgstr "Ocultar Columna Descuento"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_discount
+msgid "Remove Discount in Purchase Order"
+msgstr "Ocultar Columna Descuento"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_due_date
+#, fuzzy
+msgid "Remove Due Date in Invoice"
+msgstr "Ocultar Fecha de Vencimiento"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_due_date
+msgid "Remove Due Date in Sale Order"
+msgstr "Ocultar Fecha de Vencimiento"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_date_planned
+msgid "Remove Expected Arrival in Purchase Order"
+msgstr "Ocultar Fecha de Llegada Prevista"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_fiscal_position
+#, fuzzy
+msgid "Remove Fiscal Position in Invoice"
+msgstr "Ocultar Posición Fiscal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_fiscal_position_remark
+msgid "Remove Fiscal Position in Sale"
+msgstr "Ocultar Posición Fiscal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_footer_notes
+msgid "Remove Footer Notes in Purchase Order"
+msgstr "Ocultas Notas inferiores"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_incoterm
+#, fuzzy
+msgid "Remove Incoterm in Invoice"
+msgstr "Ocultar Incoterm"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_incoterm
+msgid "Remove Incoterm in Purchase Order"
+msgstr "Ocultar Incoterm"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_table_info_package_incoming
+msgid "Remove Info Package in Incoming Picking Table"
+msgstr "Ocultar Información de Paquetes en Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_table_info_package_outgoing
+msgid "Remove Info Package in Outgoing Picking Table"
+msgstr "Ocultar Información de Paquetes en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_customer_address
+msgid "Remove Invoicing and Shipping Address Customer Address in Sale Order"
+msgstr "Ocultar Dirección Envío/Facturación"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_line_subtotal
+msgid "Remove Line Subtotal in Invoice"
+msgstr "Ocultar Línea de Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_lot_outgoing
+#, fuzzy
+msgid "Remove Lot/Serial Number in Outgoing Picking Table with state done"
+msgstr "Ocultar Columna Número de Lote o Serie en Albarán de Venta en Estado Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_lot_incoming
+#, fuzzy
+msgid "Remove Lot/Serial in Incoming Picking Table with state done"
+msgstr "Ocultar Columna Número de Lote o Serie en Albarán de Compra en Estado Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_name
+msgid "Remove Name in Invoice"
+msgstr "Ocultar Título"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_note_settings
+#, fuzzy
+msgid "Remove Note Settings in Sale"
+msgstr "Ocultar Términos y Condiciones incluidos en ajustes"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_comment
+msgid "Remove Note for settings in Invoice"
+msgstr "Eliminar Nota en Factura"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_note
+msgid "Remove Note in Sale"
+msgstr "Ocultar Notas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_notes
+msgid "Remove Notes in Invoice"
+msgstr "Ocultar Notas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_notes
+msgid "Remove Notes in Purchase Order"
+msgstr "Ocultar Notas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_name_order
+msgid "Remove Number in Sale Order"
+msgstr "Ocultar Número Pedido"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_order_incoming
+msgid "Remove Order in Incoming Delivery"
+msgstr "Ocultar Nº Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_order_outgoing
+msgid "Remove Order in Outgoing Delivery"
+msgstr "Ocultar Nº Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_not_order
+msgid "Remove Order in Sale Order"
+msgstr "Ocultar Palabra Pedido"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_ordered_incoming
+#, fuzzy
+msgid "Remove Ordered in Incoming Picking Table with state done"
+msgstr "Ocultar Columna Ordenado en Albarán de Compra en Estado Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_not_done_ordered_incoming
+msgid "Remove Ordered in Incoming Picking Table with state not done"
+msgstr "Ocultar Columna Ordenado en Albarán de Compra en Estado distinto a Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_ordered_outgoing
+msgid "Remove Ordered in Outgoing Picking Table with state done"
+msgstr "Ocultar Columna Ordenado en Albarán de Venta en Estado Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_not_done_ordered_outgoing
+msgid "Remove Ordered in Outgoing Picking Table with state not done"
+msgstr "Ocultar Columna Ordenado en Albarán de Venta en Estado distinto a Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_package_name
+msgid "Remove Package in Purchase Order"
+msgstr "Ocultar Palabra Paquete"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_packaging_word
+msgid "Remove Packaging Word in Sale Order"
+msgstr "Ocultar Palabra Paquete"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__purchase_partner_address
+msgid "Remove Partner Address in Purchase Order"
+msgstr "Ocultar Dirección del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_payment_communication
+msgid "Remove Payment Communication in Invoice"
+msgstr "Ocultar Comunicación de Pago"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_payment_term_id
+msgid "Remove Payment Term in Invoice"
+msgstr "Ocultar Términos de Pago"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_payment_terms
+msgid "Remove Payment Terms in Purchase Order"
+msgstr "Ocultar Términos de Pago"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_payments_table
+msgid "Remove Payments Table in Invoice"
+msgstr "Ocultar Tabla de Pagos"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_payments_words_table
+msgid "Remove Payments Words in Invoice"
+msgstr "Ocultar Total en Letras"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_price_column
+msgid "Remove Price Column in Sale Order"
+msgstr "Ocultar Columna Precio"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_product_reference
+msgid "Remove Product Reference in Purchase Order"
+msgstr "Ocultar Referencia del Producto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_description_reference
+msgid "Remove Product Reference-Description in Invoice"
+msgstr "Ocultar Referencia de Producto en Columna Descripción"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_product_incoming
+msgid "Remove Product in Incoming Picking Table with state done"
+msgstr "Ocultar Columna Producto en Albarán de Compra en Estado Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_table_not_done_product_incoming
+msgid "Remove Product in Incoming Picking Table with state not done"
+msgstr "Ocultar Columna Producto en Albarán de Compra en Estado distinto a Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_done_product_outgoing
+msgid "Remove Product in Outgoing Picking Table with state done"
+msgstr "Ocultar Columna Producto en Albarán de Venta en Estado Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__picking_table_not_done_product_outgoing
+msgid "Remove Product in Outgoing Picking Table with state not done"
+msgstr "Ocultar Columna Producto en Albarán de Venta en Estado distinto a Hecho"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_not_proforma
+msgid "Remove Proforma in Sale Order"
+msgstr "Ocultar Palabra Proforma"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_qrcode
+msgid "Remove QR Code in Invoice"
+msgstr "Ocultar Código QR"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_quantity_column
+msgid "Remove Quantity Column in Sale Order"
+msgstr "Ocultar Columna Cantidad"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_quantity
+msgid "Remove Quantity in Invoice"
+msgstr "Ocultar Cantidad"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_quantity
+msgid "Remove Quantity in Purchase Order"
+msgstr "Ocultar Columna Cantidad"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_not_quotation
+msgid "Remove Quotation in Sale Order"
+msgstr "Ocultar Palabra Presupuesto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_reference
+msgid "Remove Reference in Invoice"
+msgstr "Ocultar Referencia"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_reference
+msgid "Remove Reference in Purchase Order"
+msgstr "Ocultar Referencia"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_reference
+msgid "Remove Reference in Sale Order"
+msgstr "Ocultar Referencia"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_description_column_product_name
+msgid "Remove Reference-Description Column in Sale Order"
+msgstr "Ocultar Columna Descripción"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_rounding_total
+#, fuzzy
+msgid "Remove Rounding in Total Table"
+msgstr "Ocultar Redondeo en Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_salesperson
+msgid "Remove Salesperson in Sale Order"
+msgstr "Ocultar Comercial"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_section
+msgid "Remove Section in Invoice"
+msgstr "Ocultar Secciones"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_section
+msgid "Remove Section in Purchase Order"
+msgstr "Ocultas Secciones"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_section
+msgid "Remove Sections in Sale"
+msgstr "Ocultar Secciones"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_date_incoming
+msgid "Remove Shipping Date in Incoming Delivery"
+msgstr "Ocultar Fecha Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_shipping_date_outgoing
+msgid "Remove Shipping Date in Outgoing Delivery"
+msgstr "Ocultar Fecha Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_incoming_signature
+msgid "Remove Signature in Incoming Picking"
+msgstr "Ocultar firma en Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_outgoing_signature
+msgid "Remove Signature in Outgoing Picking"
+msgstr "Ocultar firma en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_signature
+msgid "Remove Signature in Sale"
+msgstr "Ocultar Firmas"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_source
+msgid "Remove Source in Invoice"
+msgstr "Ocultar Origen"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_total_column
+#, fuzzy
+msgid "Remove Subtotal Column in Sale Order"
+msgstr "Ocultar Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_subtotal_row
+msgid "Remove Subtotal Row in Purchase Order"
+msgstr "Oculta Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_subtotal
+msgid "Remove Subtotal in Invoice"
+msgstr "Ocultar Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_subtotal
+msgid "Remove Subtotal in Purchase Order"
+msgstr "Oculta Columna Subtotal"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_total_subtotal
+msgid "Remove Subtotal in Total Table"
+msgstr "Ocultar Subtotal en Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_subtotal_row
+msgid "Remove Subtotal row in Sale"
+msgstr "Ocultar Fila de Subtotales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_show_payment_term_details
+msgid "Remove Table Payment Term in Invoice"
+msgstr "Ocultar Tabla de Términos de Pago"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_tax
+msgid "Remove Tax in Purchase Order"
+msgstr "Oculta Columna Impuestos"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_taxes_column
+msgid "Remove Taxes Column in Sale Order"
+msgstr "Ocultar Columna de Impuesto"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_taxes
+msgid "Remove Taxes in Invoice"
+msgstr "Ocultar Impuestos"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_total_taxes
+msgid "Remove Taxes in Total Table"
+msgstr "Ocultar Impuestos en Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_terms_payments
+msgid "Remove Terms of Payment in Sale"
+msgstr "Ocultar Términos de Pago"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_title_incoming
+msgid "Remove Title in Incoming Delivery"
+msgstr "Ocultar Título Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_title_outgoing
+msgid "Remove Title in Outgoing Delivery"
+msgstr "Ocultar Título Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_not_title
+msgid "Remove Title in Purchase Order"
+msgstr "Oculta Título"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_not_title
+msgid "Remove Title in Sale Order"
+msgstr "Ocultar Título del Pedido"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_informations_incoming
+msgid "Remove Total Informations in Incoming Delivery"
+msgstr "Ocultar Total de Datos Superiores Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_informations_outgoing
+msgid "Remove Total Informations in Outgoing Delivery"
+msgstr "Ocultar Total de Datos Superiores Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_total_table
+msgid "Remove Total Table in Invoice"
+msgstr "Ocultar Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_total_table
+msgid "Remove Total Table in Sale"
+msgstr "Ocultar Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_total_total
+msgid "Remove Total in Total Table"
+msgstr "Ocultar Total en Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_totals
+msgid "Remove Totals in Purchase Order"
+msgstr "Oculta Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_unit_price
+msgid "Remove Unit Price in Invoice"
+msgstr "Ocultar Precio Unitario"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_unit_price
+msgid "Remove Unit Price in Purchase Order"
+msgstr "Oculta Columna de Precio Unitario"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_uom_name
+msgid "Remove Unit of Measure in Purchase Order"
+msgstr "Ocultar palabra Unidades"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__sale_units_word
+msgid "Remove Units Word in Sale Order"
+msgstr "Ocultar palabra Unidades"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_units_invoice
+msgid "Remove Units in Invoice"
+msgstr "Ocultar Unidades"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_no_shipping
+msgid "Remove address no shipping in Invoice"
+msgstr "Ocultar Dirección sin Envío"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_address_not_same_shipping
+msgid "Remove address not same as shipping in Invoice"
+msgstr "Ocultar Dirección de Envío diferente de la Dirección del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_address_same_shipping
+msgid "Remove address same as shipping in Invoice"
+msgstr "Ocultar Dirección del Partner"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_outgoing_picking_customer_address
+msgid "Remove customer address shipping in outgoing picking"
+msgstr "Ocultar Dirección de Entrega en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_outgoing_warehouse_address
+msgid "Remove outgoing warehouse address shipping in internal picking"
+msgstr "Ocultar Dirección de Almacenes en Albarán Interno"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_invoice_shipping_address_block
+msgid "Remove shipping address block in Invoice"
+msgstr "Ocultar Bloque de Direcciones"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_block_address
+msgid "Remove shipping address block in Sale Order"
+msgstr "Ocultar Bloque de Direcciones"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_picking_outgoing_address_block
+msgid "Remove shipping outgoing address block in picking"
+msgstr "Ocultar Dirección de Entrega en Albarán de Venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_sale_partner_address
+msgid "Remove uniqle Customer Address in Sale Order"
+msgstr "Eliminar la dirección de un solo cliente en la orden de venta"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_incoming_picking_vendor_address_shipping
+msgid "Remove vendor address shipping in incoming picking"
+msgstr "Ocultar Dirección de Entrega en Albarán de Compra"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+msgid "Sale Address"
+msgstr "Dirección del Pedido de Venta"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+#, fuzzy
+msgid "Sale Footer"
+msgstr "Datos Inferiores del Pedido de Venta"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+#, fuzzy
+msgid "Sale Header"
+msgstr "Datos Superiores del Pedido de Venta"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+#, fuzzy
+msgid "Sale Informations Header"
+msgstr "Datos Superiores del Pedido de Venta"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+#, fuzzy
+msgid "Sale Reports"
+msgstr "Pedido de Venta Customizado"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_sale
+#, fuzzy
+msgid "Sale Table"
+msgstr "Tabla del Pedido de Venta"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_delivery_document
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_invoice_document
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_purchase_report_custom
+msgid "Shipping Address"
+msgstr "Dirección de Envío"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.view_company_form_invoice
+msgid "Total Table"
+msgstr "Tabla de Totales"
+
+#. module: custom_gonza_report
+#: model:ir.model.fields,field_description:custom_gonza_report.field_res_company__check_purchase_unit_price_decimals
+msgid "Unit Price Decimals in Purchase Order"
+msgstr "Decimales en Precio Unitario"
+
+#. module: custom_gonza_report
+#: model_terms:ir.ui.view,arch_db:custom_gonza_report.report_purchase_report_custom
+msgid "not o.company_id.check_purchase_uom_name"
+msgstr ""

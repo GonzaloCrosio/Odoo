@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document"
+              inherit_id="account.report_invoice_document">
+        <!--Quitar datos superiores-->
+        <xpath expr="//div[@name='shipping_address_block']" position="attributes">
+            <attribute name="t-if">
+                o.company_id.check_invoice_shipping_address_block
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@name='address_not_same_as_shipping']" position="attributes">
+            <attribute name="t-if">not
+                o.company_id.check_invoice_address_not_same_shipping
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@name='address_same_as_shipping']" position="attributes">
+            <attribute name="t-if">not
+                o.company_id.check_invoice_address_same_shipping
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@name='no_shipping']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_no_shipping
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='layout_document_title']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_name
+            </attribute>
+        </xpath>
+        <!--Direcciones Customizadas-->
+        <xpath expr="//div[1]" position="before">
+            <div class="row" t-if="o.company_id.check_invoice_custom_address">
+                <t>
+                    <div class="col-6">
+                        <t t-set="address">
+                            <div t-if="o.company_id.check_invoice_partner_name"
+                                 t-field="o.partner_id.name"/>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_invoice_partner_street"
+                                    t-field="o.partner_id.street"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_partner_street2
+                                    and o.partner_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_invoice_partner_street2"
+                                    t-field="o.partner_id.street2"/>
+                            </div>
+                            <div>
+                                <span t-if="o.company_id.check_invoice_partner_city"
+                                      t-field="o.partner_id.city"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_partner_zip
+                                    and o.partner_id.zip">
+                                    ,
+                                </span>
+                                <span t-if="o.company_id.check_invoice_partner_zip"
+                                      t-field="o.partner_id.zip"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_partner_state
+                                    and o.partner_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_invoice_partner_state"
+                                    t-field="o.partner_id.state_id.name"/>
+                            </div>
+                            <div t-if="o.company_id.check_invoice_partner_country"
+                                 t-field="o.partner_id.country_id.name"/>
+                            <div t-if="o.company_id.check_invoice_partner_vat"
+                                 t-field="o.partner_id.vat"/>
+                            <div t-if="o.company_id.check_invoice_partner_phone and
+                                 o.partner_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span t-field="o.partner_id.phone"/>
+                            </div>
+                            <div t-if="o.company_id.check_invoice_partner_mobile and
+                                 o.partner_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span t-field="o.partner_id.mobile"/>
+                            </div>
+                            <div t-if="o.company_id.check_invoice_partner_email"
+                                 t-field="o.partner_id.email"/>
+                            <div t-if="o.company_id.check_invoice_partner_website"
+                                 t-field="o.partner_id.website"/>
+                            <div t-if="o.company_id.check_invoice_partner_reference"
+                                 t-field="o.partner_id.ref"/>
+                        </t>
+                    </div>
+                    <div class="col-6"
+                         t-if="o.company_id.check_invoice_custom_address">
+                        <t t-set="information_block">
+                            <strong
+                                t-if="o.company_id.check_invoice_shipping_partner_name">
+                                Shipping Address
+                            </strong>
+                            <div
+                                t-if="o.company_id.check_invoice_shipping_partner_name"
+                                t-field="o.partner_shipping_id.name"/>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_street"
+                                    t-field="o.partner_shipping_id.street"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_street2
+                                    and o.partner_shipping_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_street2"
+                                    t-field="o.partner_shipping_id.street2"/>
+                            </div>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_city"
+                                    t-field="o.partner_shipping_id.city"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_zip
+                                    and o.partner_shipping_id.zip">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_zip"
+                                    t-field="o.partner_shipping_id.zip"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_state
+                                    and o.partner_shipping_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_state"
+                                    t-field="o.partner_shipping_id.state_id.name"/>
+                            </div>
+                            <div
+                                t-if="o.company_id.check_invoice_shipping_partner_country"
+                                t-field="o.partner_shipping_id.country_id.name"/>
+                            <div
+                                t-if="o.company_id.check_invoice_shipping_partner_vat"
+                                t-field="o.partner_shipping_id.vat"/>
+                            <div t-if="o.company_id.check_invoice_shipping_partner_phone and
+                                 o.partner_shipping_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_phone"
+                                    t-field="o.partner_shipping_id.phone"/>
+                            </div>
+                            <div t-if="o.company_id.check_invoice_shipping_partner_mobile and
+                                 o.partner_shipping_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span
+                                    t-if="o.company_id.check_invoice_shipping_partner_mobile"
+                                    t-field="o.partner_shipping_id.mobile"/>
+                            </div>
+                            <div
+                                t-if="o.company_id.check_invoice_shipping_partner_email"
+                                t-field="o.partner_shipping_id.email"/>
+                            <div
+                                t-if="o.company_id.check_invoice_shipping_partner_website"
+                                t-field="o.partner_shipping_id.website"/>
+                            <div
+                                t-if="o.company_id.check_invoice_shipping_partner_reference"
+                                t-field="o.partner_shipping_id.ref"/>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+        <!--Quita fecha de factura-->
+        <xpath expr="//div[@name='invoice_date']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_date" separator=" and "/>
+        </xpath>
+        <!--Quita fecha de vencimiento-->
+        <xpath expr="//div[@name='due_date']" position="attributes">
+            <attribute name="t-if" add="not o.company_id.check_invoice_due_date"
+                       separator=" and "/>
+        </xpath>
+        <!--Quita fecha de envío-->
+        <xpath expr="//div[@name='delivery_date']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_delivery_date" separator=" and "/>
+        </xpath>
+        <!--Quita el pedido de venta de origen-->
+        <xpath expr="//div[@name='origin']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_source" separator=" and "/>
+        </xpath>
+        <!--Quita el código de cliente-->
+        <xpath expr="//div[@name='customer_code']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_customer_code" separator=" and "/>
+        </xpath>
+        <!--Quita la referencia-->
+        <xpath expr="//div[@name='reference']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_reference" separator=" and "/>
+        </xpath>
+        <!--Quita el incoterm-->
+        <xpath expr="//div[@name='incoterm_id']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_incoterm" separator=" and "/>
+        </xpath>
+        <!--Ocultar filas y columnas-->
+        <!--Quita la descripción en columna-->
+        <xpath expr="//th[@name='th_description']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_description
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='account_invoice_line_name']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_description and
+                not o.company_id.check_invoice_description_reference
+            </attribute>
+        </xpath>
+        <!--Columna de descripción sin referencia del producto-->
+        <!--Agrega columna de referencia-->
+        <xpath expr="//td[@name='account_invoice_line_name']" position="before">
+            <td t-if="o.company_id.check_invoice_description_reference_column">
+                <span t-field="line.product_id.default_code"/>
+            </td>
+            <td t-if="o.company_id.check_invoice_description_reference">
+                <span t-field="line.product_id.name"/>
+                <p t-if="line.product_id.description_sale and
+                        o.company_id.check_invoice_description_sale">
+                    <span t-field="line.product_id.description_sale"
+                          class="text-muted"/>
+                </p>
+            </td>
+        </xpath>
+        <!--Agrega columna de lotes-->
+        <xpath expr="//th[@name='th_priceunit']" position="before">
+            <th t-if="o.company_id.check_invoice_lot_name_in_column and o.move_type == 'out_invoice' and o.state == 'posted'"
+                class="text-center">
+                <span>Lot</span>
+            </th>
+        </xpath>
+        <xpath expr="//td[@name='td_price_unit']" position="before">
+            <td t-if="o.company_id.check_invoice_lot_name_in_column and o.move_type == 'out_invoice' and o.state == 'posted'"
+                class="text-center">
+                <t t-foreach="line.sale_line_ids.mapped('move_ids.move_line_ids')"
+                   t-as="move_line">
+                    <div>
+                        <t t-esc="move_line.lot_id.name"/>
+                        -
+                        <t t-esc="int(move_line.quantity)"/>
+                    </div>
+                </t>
+            </td>
+        </xpath>
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th t-if="o.company_id.check_invoice_description_reference_column">
+                Reference
+            </th>
+        </xpath>
+        <!--Quita la cantidad en columna-->
+        <xpath expr="//th[@name='th_quantity']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_quantity
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_quantity']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_quantity
+            </attribute>
+        </xpath>
+        <!--Quita el precio unitario en columna-->
+        <xpath expr="//th[@name='th_priceunit']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_unit_price
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_price_unit']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_unit_price
+            </attribute>
+        </xpath>
+        <!--Quita el descuento en columna-->
+        <xpath expr="//th[@name='th_discount']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_discount" separator=" and "/>
+        </xpath>
+        <xpath expr="//td[@name='td_discount']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_discount" separator=" and "/>
+        </xpath>
+        <!--Quita los impuestos en columna-->
+        <xpath expr="//th[@name='th_taxes']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_taxes</attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_taxes']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_taxes</attribute>
+        </xpath>
+        <!--Quita el subtotal en columna-->
+        <xpath expr="//th[@name='th_subtotal']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_subtotal
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_subtotal']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_subtotal
+            </attribute>
+        </xpath>
+        <!--Quita las secciones de las líneas-->
+        <xpath expr="//t[@t-elif=&quot;line.display_type == 'line_section'&quot;]"
+               position="attributes">
+            <attribute name="t-elif">line.display_type == 'line_section' and not
+                o.company_id.check_invoice_section
+            </attribute>
+        </xpath>
+        <!--Quita las notas de las líneas-->
+        <xpath expr="//t[@t-elif=&quot;line.display_type == 'line_note'&quot;]"
+               position="attributes">
+            <attribute name="t-elif">line.display_type == 'line_section' and not
+                o.company_id.check_invoice_notes
+            </attribute>
+        </xpath>
+        <!--Quita la línea de subtotal-->
+        <xpath
+            expr="//t[@t-if=&quot;current_section and (line_last or lines[line_index+1].display_type == 'line_section')&quot;]"
+            position="attributes">
+            <attribute name="t-if">current_section and (line_last or
+                lines[line_index+1].display_type == 'line_section') and not
+                o.company_id.check_invoice_line_subtotal
+            </attribute>
+        </xpath>
+        <!--Modificar formato de cantidad, precio, impuestos, descuento y totales-->
+        <!--Quitar la palabra "unidades" en la columna cantidad-->
+        <xpath expr="//td[@name='td_quantity']//span[@t-field='line.product_uom_id']"
+               position="attributes">
+            <attribute name="t-if">not
+                o.company_id.check_units_invoice
+            </attribute>
+        </xpath>
+        <!--Decimales en cantidad-->
+        <xpath expr="//td[@name='td_quantity']//span[@t-field='line.quantity']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.decimals_quantity_invoice}
+            </attribute>
+        </xpath>
+        <!--Decimales en precio unitario-->
+        <xpath expr="//td[@name='td_price_unit']//span[@t-field='line.price_unit']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.decimals_price_invoice}
+            </attribute>
+        </xpath>
+        <!--Decimales en descuento-->
+        <xpath expr="//td[@name='td_discount']//span[@t-field='line.discount']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.decimals_discount_invoice}
+            </attribute>
+        </xpath>
+        <!--Decimales en importe total-->
+        <xpath expr="//td[@name='td_subtotal']//span[@t-field='line.price_subtotal']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.decimals_subtotal_invoice}
+            </attribute>
+        </xpath>
+        <!--Ocultar datos inferiores a la tabla-->
+        <!--Quita cuadro de totales-->
+        <xpath expr="//div[@id='total']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_total_table
+            </attribute>
+        </xpath>
+        <!--Quita el cuadro de pagos en facturas a plazos-->
+        <xpath expr="//t[@t-if='print_with_payments']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_payments_table" separator=" and "/>
+        </xpath>
+        <!--Quita el total en letras-->
+        <xpath expr="//span[@t-field='o.amount_total_words']" position="attributes">
+            <attribute name="t-if">not
+                o.company_id.check_invoice_payments_words_table
+            </attribute>
+        </xpath>
+        <!--Quita el apartado de notas-->
+        <xpath expr="//p[@name='note']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_fiscal_position" separator=" and "/>
+        </xpath>
+        <!--Quita los términos de pago-->
+        <xpath expr="//span[@id='payment_terms_note_id']" position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_payment_term_id" separator=" and "/>
+        </xpath>
+        <!--Quita la tabla de detalles de pago-->
+        <xpath expr="//div[@id='total_payment_term_details_table']"
+               position="attributes">
+            <attribute name="t-if" add="not
+                o.company_id.check_invoice_show_payment_term_details"
+                       separator=" and "/>
+        </xpath>
+        <!--Quita la comunicación de pago-->
+        <xpath expr="//p[@name='payment_communication']" position="attributes">
+            <attribute name="t-if">not
+                o.company_id.check_invoice_payment_communication
+            </attribute>
+        </xpath>
+        <!--Quita el código QR-->
+        <xpath expr="//div[@id='qrcode']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_qr_code
+            </attribute>
+        </xpath>
+        <!--Quita el texto incluido en Ajustes-->
+        <xpath expr="//div[@name='comment']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_invoice_comment
+            </attribute>
+        </xpath>
+        <!--        <xpath expr="//div[@name='source_invoice']" position="attributes">-->
+        <!--            <attribute name="t-if">o.pos_refunded_invoice_ids and not-->
+        <!--                o.company_id.check_source_invoice_point_sale-->
+        <!--            </attribute>-->
+        <!--        </xpath>-->
+
+    </template>
+
+    <!--    <template id="report_invoice_document_2"-->
+    <!--              inherit_id="account_payment_partner.report_invoice_payment_mode">-->
+    <!--        <xpath expr="//p[@t-if='o.payment_mode_id.note']" position="attributes">-->
+    <!--            <attribute name="t-if" add="False" separator=" and "/>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <!--    <template id="report_invoice_document_3"-->
+    <!--              inherit_id="l10n_es_edi_tbai.l10n_es_tbai_external_layout_standard">-->
+    <!--        <xpath expr="//div[@name='l10n_es_tbai_qrcode']" position="attributes">-->
+    <!--            <attribute name="t-if">o.l10n_es_tbai_state == 'sent' and not-->
+    <!--                o.company_id.check_invoice_l10n_es_tbai_state-->
+    <!--            </attribute>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <!--    <template id="report_invoice_document_4"-->
+    <!--              inherit_id="point_of_sale.report_invoice_document">-->
+    <!--        <xpath expr="//div[@name='source_invoice']" position="attributes">-->
+    <!--            <attribute name="t-if">o.pos_refunded_invoice_ids and not-->
+    <!--                o.company_id.check_source_invoice_point_sale-->
+    <!--            </attribute>-->
+    <!--        </xpath>-->
+    <!--    </template>-->
+
+    <template id="document_tax_totals_template"
+              inherit_id="account.document_tax_totals_template">
+        <!-- Quita la fila de subtotal en tabla de totales -->
+        <xpath expr="//tr[@class='o_subtotal']" position="attributes">
+            <attribute name="t-if">not (o or doc).company_id.check_total_subtotal
+            </attribute>
+        </xpath>
+
+        <!-- Quita la fila de impuestos en tabla de totales -->
+        <xpath expr="//tr[@class='o_taxes']" position="attributes">
+            <attribute name="t-if">not (o or doc).company_id.check_total_taxes
+            </attribute>
+        </xpath>
+
+        <!-- Quita la fila de redondeo en tabla de totales -->
+        <xpath expr="//tr[contains(@t-if, 'cash_rounding_base_amount_currency')]"
+               position="attributes">
+            <attribute name="t-if">("cash_rounding_base_amount_currency" in
+                tax_totals)
+                and not (o or doc).company_id.check_rounding_total
+            </attribute>
+        </xpath>
+
+        <!-- Quita la fila de total en tabla de totales -->
+        <xpath expr="//tr[@class='o_total']" position="attributes">
+            <attribute name="t-if">not (o or doc).company_id.check_total_total
+            </attribute>
+        </xpath>
+    </template>
+
+</odoo>

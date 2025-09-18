@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_saleorder_sale_custom" inherit_id="sale.report_saleorder_document">
+        <!--Elimina bloque de direcciones-->
+        <xpath expr="//t[@t-set='address']" position="attributes">
+            <attribute name="t-if">not doc.company_id.check_sale_block_address
+            </attribute>
+        </xpath>
+        <!--Elimina dirección del partner-->
+        <xpath expr="//t[@t-set='address']//div[@t-field='doc.partner_id']"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.check_sale_partner_address
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='address']//p[@t-if='doc.partner_id.vat']"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.check_sale_partner_address
+            </attribute>
+        </xpath>
+        <!--Elimina dirección de facturación/envío-->
+        <xpath expr="//t[@t-set='information_block']" position="attributes">
+            <attribute name="t-if">not doc.company_id.check_sale_customer_address
+            </attribute>
+        </xpath>
+        <!--Direcciones Personalizadas-->
+        <xpath expr="//t[@t-set='forced_vat']" position="after">
+            <div class="row" t-if="doc.company_id.check_sale_custom_address">
+                <t>
+                    <div class="col-6">
+                        <t t-set="address">
+                            <div t-if="doc.company_id.check_sale_partner_name"
+                                 t-field="doc.partner_id.name"/>
+                            <div>
+                                <span
+                                    t-if="doc.company_id.check_sale_partner_street"
+                                    t-field="doc.partner_id.street"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_partner_street2
+                                    and doc.partner_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="doc.company_id.check_sale_partner_street2"
+                                    t-field="doc.partner_id.street2"/>
+                            </div>
+                            <div>
+                                <span t-if="doc.company_id.check_sale_partner_city"
+                                      t-field="doc.partner_id.city"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_partner_zip
+                                    and doc.partner_id.zip">
+                                    ,
+                                </span>
+                                <span t-if="doc.company_id.check_sale_partner_zip"
+                                      t-field="doc.partner_id.zip"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_partner_state
+                                    and doc.partner_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="doc.company_id.check_sale_partner_state"
+                                    t-field="doc.partner_id.state_id.name"/>
+                            </div>
+                            <div t-if="doc.company_id.check_sale_partner_country"
+                                 t-field="doc.partner_id.country_id.name"/>
+                            <div t-if="doc.company_id.check_sale_partner_vat"
+                                 t-field="doc.partner_id.vat"/>
+                            <div t-if="doc.company_id.check_sale_partner_phone and
+                                 doc.partner_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span t-field="doc.partner_id.phone"/>
+                            </div>
+                            <div t-if="doc.company_id.check_sale_partner_mobile and
+                                 doc.partner_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span t-field="doc.partner_id.mobile"/>
+                            </div>
+                            <div t-if="doc.company_id.check_sale_partner_email"
+                                 t-field="doc.partner_id.email"/>
+                            <div t-if="doc.company_id.check_sale_partner_website"
+                                 t-field="doc.partner_id.website"/>
+                            <div t-if="doc.company_id.check_sale_partner_reference"
+                                 t-field="doc.partner_id.ref"/>
+                        </t>
+                    </div>
+                    <div class="col-6"
+                         t-if="doc.company_id.check_sale_custom_address">
+                        <t t-set="information_block">
+                            <strong>Shipping Address</strong>
+                            <div
+                                t-if="doc.company_id.check_sale_shipping_partner_name"
+                                t-field="doc.partner_shipping_id.name"/>
+                            <div>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_street"
+                                    t-field="doc.partner_shipping_id.street"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_street2
+                                    and doc.partner_shipping_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_street2"
+                                    t-field="doc.partner_shipping_id.street2"/>
+                            </div>
+                            <div>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_city"
+                                    t-field="doc.partner_shipping_id.city"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_zip
+                                    and doc.partner_shipping_id.zip">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_zip"
+                                    t-field="doc.partner_shipping_id.zip"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_state
+                                    and doc.partner_shipping_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_state"
+                                    t-field="doc.partner_shipping_id.state_id.name"/>
+                            </div>
+                            <div
+                                t-if="doc.company_id.check_sale_shipping_partner_country"
+                                t-field="doc.partner_shipping_id.country_id.name"/>
+                            <div
+                                t-if="doc.company_id.check_sale_shipping_partner_vat"
+                                t-field="doc.partner_shipping_id.vat"/>
+                            <div t-if="doc.company_id.check_sale_shipping_partner_phone and
+                                 doc.partner_shipping_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_phone"
+                                    t-field="doc.partner_shipping_id.phone"/>
+                            </div>
+                            <div t-if="doc.company_id.check_sale_shipping_partner_mobile and
+                                 doc.partner_shipping_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span
+                                    t-if="doc.company_id.check_sale_shipping_partner_mobile"
+                                    t-field="doc.partner_shipping_id.mobile"/>
+                            </div>
+                            <div
+                                t-if="doc.company_id.check_sale_shipping_partner_email"
+                                t-field="doc.partner_shipping_id.email"/>
+                            <div
+                                t-if="doc.company_id.check_sale_shipping_partner_website"
+                                t-field="doc.partner_shipping_id.website"/>
+                            <div
+                                t-if="doc.company_id.check_sale_shipping_partner_reference"
+                                t-field="doc.partner_shipping_id.ref"/>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+
+        <!--Elimina título del presupuesto-->
+        <xpath expr="//t[@t-set='layout_document_title']"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_not_title</attribute>
+        </xpath>
+        <!--Elimina la palabra proforma-->
+        <xpath expr="//t[@t-set='layout_document_title']//span[@t-if='is_proforma']"
+               position="attributes">
+            <attribute name="t-if">is_proforma and not
+                doc.company_id.sale_not_proforma
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='layout_document_title']//span[2]"
+               position="attributes">
+            <attribute name="t-elif">doc.state in ['draft','sent'] and not
+                doc.company_id.sale_not_quotation
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='layout_document_title']//span[3]"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_not_order</attribute>
+        </xpath>
+        <!--Elimina palabra unidades en columna de Cantidad-->
+        <xpath expr="//td[@name='td_quantity']//span[@t-field='line.product_uom']"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_units_word
+            </attribute>
+        </xpath>
+        <!--Elimina palabra paquetes en columna de Cantidad-->
+        <xpath expr="//td[@name='td_quantity']//span[@t-field='line.product_uom']"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_packaging_word
+            </attribute>
+        </xpath>
+        <!--Elimina número de presupuesto-->
+        <xpath expr="//t[@t-set='layout_document_title']//span[@t-field='doc.name']"
+               position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_name_order</attribute>
+        </xpath>
+        <!--Elimina columna descripción-->
+        <xpath expr="//th[@name='th_description']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_description_column
+            </attribute>
+        </xpath>
+        <!--Agrego columna de referencia del producto-->
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th t-if="doc.company_id.sale_reference_column">Reference</th>
+        </xpath>
+        <!--Oculta description-->
+        <xpath expr="//td[@name='td_name']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_description_column and
+                not
+                doc.company_id.sale_description_column_product_name
+            </attribute>
+        </xpath>
+        <!--Agrega columna product_name en description-->
+        <xpath expr="//td[@name='td_name']" position="after">
+            <td t-if="doc.company_id.sale_reference_column">
+                <span t-field="line.product_id.default_code"/>
+            </td>
+            <td t-if="doc.company_id.sale_description_column_product_name">
+                <span t-field="line.product_id.name"/>
+                <p t-field="line.product_id.description_sale"
+                   t-if="line.product_id.description_sale and
+                   doc.company_id.sale_description_product_description"/>
+            </td>
+        </xpath>
+        <!--Elimina columna cantidades-->
+        <xpath expr="//th[@name='th_quantity']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_quantity_column
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_quantity']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_quantity_column
+            </attribute>
+        </xpath>
+        <!--Elimina columna precio unitario-->
+        <xpath expr="//th[@name='th_priceunit']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_price_column and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_priceunit']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_price_column and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <!--Elimina columna descuentos-->
+        <xpath expr="//th[@name='th_discount']" position="attributes">
+            <attribute name="t-if">display_discount and not sale_report_unvalued and not
+                doc.company_id.sale_discount_column
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@t-if='display_discount']" position="attributes">
+            <attribute name="t-if">display_discount and not sale_report_unvalued
+                and not doc.company_id.sale_discount_column
+            </attribute>
+        </xpath>
+        <!--Elimina la columna impuestos-->
+        <xpath expr="//th[@name='th_taxes']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_taxes_column and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_taxes']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_taxes_column and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <!--Elimina columna subtotales-->
+        <xpath expr="//th[@name='th_subtotal']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_total_column and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_subtotal']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_taxes_column and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <!--Elimina notas-->
+        <xpath expr="//td[@name='td_note_line']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_note</attribute>
+        </xpath>
+        <!--Elimina secciones-->
+        <xpath expr="//td[@name='td_section_line']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_section</attribute>
+        </xpath>
+        <!--Elimina fila de subtotales-->
+        <xpath expr="//td[@name='td_section_subtotal']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_subtotal_row and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <!--Decimales-->
+        <xpath expr="//td[@name='td_quantity']//span[@t-field='line.product_uom_qty']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                doc.company_id.sale_decimals_quantity}
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_priceunit']//span[@t-field='line.price_unit']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                doc.company_id.sale_decimals_price}
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='line.discount']" position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                doc.company_id.sale_decimals_discount}
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@name='td_subtotal']//span[@t-field='line.price_subtotal']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                doc.company_id.sale_decimals_subtotal}
+            </attribute>
+        </xpath>
+        <!--Oculta cuadro de totales-->
+        <xpath expr="//div[@name='so_total_summary']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_total_table and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <!--Oculta firma-->
+        <xpath expr="//div[@name='signature']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_signature</attribute>
+        </xpath>
+        <!--Oculta términos de pago-->
+        <xpath expr="//span[@name='order_note']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_note_settings and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='doc.payment_term_id.note']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_terms_payments and not
+                sale_report_unvalued
+            </attribute>
+        </xpath>
+        <!--Oculta posición fiscal-->
+        <xpath expr="//p[@id='fiscal_position_remark']" position="attributes">
+            <attribute name="t-if">not doc.company_id.sale_fiscal_position_remark
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="report_saleorder_unvalued">
+        <t t-call="web.html_container">
+            <t t-set="sale_report_unvalued" t-value="True"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="sale.report_saleorder_document"
+                   t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_sale_report_unvalued" model="ir.actions.report">
+        <field name="name">Quotation / Order (unvalued)</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">report_sale_custom.report_saleorder_unvalued</field>
+        <field name="report_file">report_sale_custom.report_saleorder_unvalued</field>
+        <field name="print_report_name">(object.state in ('draft', 'sent') and
+            'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)
+        </field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

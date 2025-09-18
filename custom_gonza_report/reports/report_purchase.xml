@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Pedido de Compra-->
+    <template id="report_purchase_report_custom"
+              inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//t[@t-set='address']//div" position="attributes">
+            <attribute name="t-if">purchase_partner_address</attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='information_block']" position="attributes">
+            <attribute name="t-if">o.company_id.purchase_company_address</attribute>
+        </xpath>
+        <!--Direcciones Personalizadas-->
+        <xpath expr="//div[@class='page']" position="after">
+            <div class="row" t-if="o.company_id.check_purchase_custom_address">
+                <t>
+                    <div class="col-6">
+                        <t t-set="address">
+                            <div t-if="o.company_id.check_purchase_partner_name"
+                                 t-field="o.partner_id.name"/>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_street"
+                                    t-field="o.partner_id.street"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_street2
+                                    and o.partner_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_street2"
+                                    t-field="o.partner_id.street2"/>
+                            </div>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_city"
+                                    t-field="o.partner_id.city"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_zip
+                                    and o.partner_id.zip">
+                                    ,
+                                </span>
+                                <span t-if="o.company_id.check_purchase_partner_zip"
+                                      t-field="o.partner_id.zip"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_state
+                                    and o.partner_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_purchase_partner_state"
+                                    t-field="o.partner_id.state_id.name"/>
+                            </div>
+                            <div t-if="o.company_id.check_purchase_partner_country"
+                                 t-field="o.partner_id.country_id.name"/>
+                            <div t-if="o.company_id.check_purchase_partner_vat"
+                                 t-field="o.partner_id.vat"/>
+                            <div t-if="o.company_id.check_purchase_partner_phone and
+                                 o.partner_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span t-field="o.partner_id.phone"/>
+                            </div>
+                            <div t-if="o.company_id.check_purchase_partner_mobile and
+                                 o.partner_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span t-field="o.partner_id.mobile"/>
+                            </div>
+                            <div t-if="o.company_id.check_purchase_partner_email"
+                                 t-field="o.partner_id.email"/>
+                            <div t-if="o.company_id.check_purchase_partner_website"
+                                 t-field="o.partner_id.website"/>
+                            <div
+                                t-if="o.company_id.check_purchase_partner_reference"
+                                t-field="o.partner_id.ref"/>
+                        </t>
+                    </div>
+                    <div class="col-6"
+                         t-if="o.company_id.check_purchase_custom_address">
+                        <t t-set="information_block">
+                            <strong
+                                t-if="o.company_id.check_purchase_shipping_company_name">
+                                Shipping Address
+                            </strong>
+                            <div
+                                t-if="o.company_id.check_purchase_shipping_company_name"
+                                t-field="o.dest_address_id.name"/>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_street"
+                                    t-field="o.dest_address_id.street"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_street2
+                                    and o.dest_address_id.street2">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_street2"
+                                    t-field="o.dest_address_id.street2"/>
+                            </div>
+                            <div>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_city"
+                                    t-field="o.dest_address_id.city"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_zip
+                                    and o.dest_address_id.zip">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_zip"
+                                    t-field="o.dest_address_id.zip"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_state
+                                    and o.dest_address_id.state_id.name">
+                                    ,
+                                </span>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_state"
+                                    t-field="o.dest_address_id.state_id.name"/>
+                            </div>
+                            <div
+                                t-if="o.company_id.check_purchase_shipping_company_country"
+                                t-field="o.dest_address_id.country_id.name"/>
+                            <div
+                                t-if="o.company_id.check_purchase_shipping_company_vat"
+                                t-field="o.dest_address_id.vat"/>
+                            <div t-if="o.company_id.check_purchase_shipping_company_phone and
+                                 o.dest_address_id.phone">
+                                <i class="fa fa-phone" style="margin-right:5px;"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_phone"
+                                    t-field="o.dest_address_id.phone"/>
+                            </div>
+                            <div t-if="o.company_id.check_purchase_shipping_company_mobile and
+                                 o.dest_address_id.mobile">
+                                <i class="fa fa-mobile" style="margin-right:5px;"/>
+                                <span
+                                    t-if="o.company_id.check_purchase_shipping_company_mobile"
+                                    t-field="o.dest_address_id.mobile"/>
+                            </div>
+                            <div
+                                t-if="o.company_id.check_purchase_shipping_company_email"
+                                t-field="o.dest_address_id.email"/>
+                            <div
+                                t-if="o.company_id.check_purchase_shipping_company_website"
+                                t-field="o.dest_address_id.website"/>
+                            <div
+                                t-if="o.company_id.check_purchase_shipping_company_reference"
+                                t-field="o.dest_address_id.ref"/>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+        <!--Elimina el título-->
+        <xpath expr="//t[@t-set='layout_document_title']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_not_title
+            </attribute>
+        </xpath>
+        <!--Elimina el usuario comprador-->
+        <xpath expr="//div[@t-if='o.user_id']" position="attributes">
+            <attribute name="t-if" add="not o.company_id.check_purchase_buyer"
+                       separator=" and "/>
+        </xpath>
+        <!--Elimina la referencia-->
+        <xpath expr="//div[@t-if='o.partner_ref']" position="attributes">
+            <attribute name="t-if" add="not o.company_id.check_purchase_reference"
+                       separator=" and "/>
+        </xpath>
+        <!--Elimina la fecha de orden-->
+        <xpath
+            expr="//div[@t-if=&quot;o.state in ['purchase','done'] and o.date_approve&quot;]"
+            position="attributes">
+            <attribute name="t-if" add="not o.company_id.check_purchase_reference"
+                       separator=" and "/>
+        </xpath>
+        <!--Elimina la fecha de vencimiento-->
+        <xpath expr="//div[@t-elif='o.date_order']" position="attributes">
+            <attribute name="t-elif"
+                       add="not o.company_id.check_purchase_deadline_date"
+                       separator=" and "/>
+        </xpath>
+        <!--Elimina la llegada prevista-->
+        <xpath expr="//div[@t-if='o.date_planned']" position="attributes">
+            <attribute name="t-if"
+                       add="not o.company_id.check_purchase_date_planned"
+                       separator=" and "/>
+        </xpath>
+        <!--Elimina datos de tabla-->
+        <!--Columna descripción-->
+        <xpath expr="//th[@name='th_description']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_description
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@id='product']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_description
+            </attribute>
+        </xpath>
+        <!--Columna cantidad-->
+        <xpath expr="//th[@name='th_quantity']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_quantity
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@t-field='line.product_qty']]" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_quantity
+            </attribute>
+        </xpath>
+        <!--Elimina palabra unidades-->
+        <xpath expr="//span[@t-field='line.product_uom.name']" position="attributes">
+            <attributes name="t-if">not o.company_id.check_purchase_uom_name
+            </attributes>
+        </xpath>
+        <!--Elimina palabra paquetes-->
+        <xpath expr="//span[@t-if='line.product_packaging_id']" position="attributes">
+            <attribute name="t-if"
+                       add="not o.company_id.check_purchase_package_name"
+                       separator=" and "/>
+        </xpath>
+        <!--Columna precio unitario-->
+        <xpath expr="//th[@name='th_price_unit']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_unit_price
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@t-field='line.price_unit']]" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_unit_price
+            </attribute>
+        </xpath>
+        <!--Columna descuento-->
+        <xpath expr="//th[@name='th_discount']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_discount
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@class='text-align-bottom']]" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_discount
+            </attribute>
+        </xpath>
+        <!--Columna impuesto-->
+        <xpath expr="//th[@name='th_taxes']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_tax</attribute>
+        </xpath>
+        <xpath
+            expr="//td[span[@t-out=&quot;', '.join([(tax.invoice_label or tax.name) for tax in line.taxes_id])&quot;]]"
+            position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_tax</attribute>
+        </xpath>
+        <!--Columna subtotal-->
+        <xpath expr="//th[@name='th_subtotal']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_subtotal
+            </attribute>
+        </xpath>
+        <xpath expr="//td[span[@t-field='line.price_subtotal']]" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_subtotal
+            </attribute>
+        </xpath>
+        <!--Separa referencia interna en columna de descripción-->
+        <xpath expr="//td[@id='product']//span[@t-field='line.name']"
+               position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_product_reference
+            </attribute>
+        </xpath>
+        <xpath expr="//td[@id='product']//span[@t-field='line.name']"
+               position="after">
+            <span t-field="line.product_id.name"
+                  t-if="o.company_id.check_purchase_product_reference"/>
+            <p t-field="line.product_id.description_purchase"
+               t-if="o.company_id.check_purchase_product_description"/>
+        </xpath>
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th class="text-start"
+                t-if="o.company_id.check_purchase_product_reference_column">
+                <strong>Reference</strong>
+            </th>
+        </xpath>
+        <xpath expr="//td[@id='product']" position="before">
+            <td t-if="o.company_id.check_purchase_product_reference_column">
+                <span t-field="line.product_id.default_code"/>
+            </td>
+        </xpath>
+        <!--Modifica decimales de las columnas-->
+        <xpath expr="//span[@t-field='line.product_qty']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.check_purchase_quantity_decimals}
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='line.price_unit']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.check_purchase_unit_price_decimals}
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='line.discount']"
+               position="attributes">
+            <attribute name="t-options">{"widget": "float", "precision":
+                o.company_id.check_purchase_discount_decimals}
+            </attribute>
+        </xpath>
+        <!--Elimina notas-->
+        <xpath expr="//td[@id='note']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_notes</attribute>
+        </xpath>
+        <!--Elimina secciones-->
+        <xpath expr="//td[@id='section']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_section
+            </attribute>
+        </xpath>
+        <!--Elimina fila de subtotal-->
+        <xpath expr="//td[@id='subtotal']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_subtotal_row
+            </attribute>
+        </xpath>
+        <!--Ocultar cuadro de totales-->
+        <xpath expr="//div[@id='total']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_totals
+            </attribute>
+        </xpath>
+        <!--Ocultar notas inferiores-->
+        <xpath expr="//p[@t-field='o.notes']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_footer_notes
+            </attribute>
+        </xpath>
+        <!--Ocultar términos de pago-->
+        <xpath expr="//strong[normalize-space(text())='Payment Terms:']"
+               position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_payment_terms
+            </attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='o.payment_term_id']" position="attributes">
+            <attribute name="t-if">not o.company_id.check_purchase_payment_terms
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="report_purchase_report_custom_inherit_incoterm"
+              inherit_id="purchase_stock.report_purchaseorder_document">
+        <!--Elimina el incoterm-->
+        <xpath expr="//div[@t-if='o.incoterm_id']" position="attributes">
+            <attribute name="t-if" add="not o.company_id.check_purchase_incoterm"
+                       separator=" and "/>
+        </xpath>
+    </template>
+</odoo>

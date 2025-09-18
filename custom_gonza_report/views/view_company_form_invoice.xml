@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_invoice" model="ir.ui.view">
+        <field name="name">gonza.res.company.form.invoice</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='branches']" position="after">
+                <page name="Reports" string="Custom Invoice">
+                    <group name="invoice" string="Invoice">
+                        <group name="header_address" string="Invoice Address">
+                            <field name="check_invoice_shipping_address_block"/>
+                            <field name="check_invoice_address_not_same_shipping"/>
+                            <field name="check_invoice_address_same_shipping"/>
+                            <field name="check_invoice_no_shipping"/>
+                        </group>
+                        <group name="header_address_1" string="Invoice Address">
+                            <field name="check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_name"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_street"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_street2"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_city"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_state"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_country"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_zip"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_phone"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_mobile"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_email"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_website"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_reference"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_partner_vat"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_name"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_street"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_street2"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_city"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_state"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_country"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_zip"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_phone"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_mobile"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_email"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_vat"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_website"
+                                   invisible="not check_invoice_custom_address"/>
+                            <field name="check_invoice_shipping_partner_reference"
+                                   invisible="not check_invoice_custom_address"/>
+                        </group>
+                        <group name="header" string="Invoice Header">
+                            <field name="check_invoice_name"/>
+                            <field name="check_invoice_date"/>
+                            <field name="check_invoice_due_date"/>
+                            <field name="check_invoice_delivery_date"/>
+
+                        </group>
+                        <group name="header_1" string="Invoice Header">
+                            <field name="check_invoice_source"/>
+                            <field name="check_invoice_customer_code"/>
+                            <field name="check_invoice_reference"/>
+                            <field name="check_invoice_incoterm"/>
+                        </group>
+                        <group name="table" string="Invoice Table">
+                            <field name="check_invoice_description"/>
+                            <field name="check_invoice_quantity"/>
+                            <field name="check_invoice_unit_price"/>
+                            <field name="check_invoice_discount"/>
+                            <field name="check_invoice_taxes"/>
+                            <field name="check_invoice_subtotal"/>
+                            <field name="check_invoice_section"/>
+                            <field name="check_invoice_notes"/>
+                            <field name="check_invoice_line_subtotal"/>
+                            <field name="check_invoice_description_reference"/>
+                            <field
+                                name="check_invoice_description_reference_column"/>
+                            <field name="check_invoice_description_sale"/>
+                            <field name="check_invoice_lot_name_in_column"/>
+                            <span>Lots will only appear on the normal invoice.</span>
+                        </group>
+                        <group name="table_1" string="Invoice Table">
+                            <field name="check_units_invoice"/>
+                            <field name="decimals_quantity_invoice"/>
+                            <field name="decimals_price_invoice"/>
+                            <field name="decimals_discount_invoice"/>
+                            <field name="decimals_subtotal_invoice"/>
+                        </group>
+                        <group name="footer" string="Invoice Footer">
+                            <field name="check_invoice_total_table"/>
+                            <field name="check_invoice_payments_table"/>
+                            <field name="check_invoice_payments_words_table"/>
+                            <field name="check_invoice_comment"/>
+                        </group>
+                        <group name="footer_1" string="Invoice Footer">
+                            <field name="check_invoice_fiscal_position"/>
+                            <field name="check_invoice_payment_term_id"/>
+                            <field name="check_invoice_show_payment_term_details"/>
+                            <field name="check_invoice_payment_communication"/>
+                        </group>
+                    </group>
+                    <group name="Total"
+                           string="Changes to the totals table affect both orders and invoices.">
+                        <group name="total_table" string="Total Table">
+                            <field name="check_total_subtotal"/>
+                            <field name="check_total_taxes"/>
+                        </group>
+                        <group name="total_table" string="Total Table">
+                            <field name="check_total_total"/>
+                            <field name="check_rounding_total"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
