@@ -1,3 +1,6 @@
+# Este modelo sirve para actualizar el precio de las criptomonedas
+# desde una API externa y actualizar los precios en los activos relacionados.
+
 import logging
 import requests
 from odoo import models, fields, api
@@ -136,7 +139,7 @@ class InvestmentCryptoPrice(models.Model):
 
     def update_assets_prices(self):
         """
-        Metodo que actualiza el campo `current_price` en los registros de `inv.investment.assets`
+        Metodo que actualiza el campo `current_price` en los registros de `investment.assets`
         después de que cambien los precios de las criptomonedas.
         """
         # Recupera el registro actualizado de `investment.crypto.price`
@@ -145,8 +148,8 @@ class InvestmentCryptoPrice(models.Model):
         if not crypto_prices:
             return  # Si no hay registro, no hace nada
 
-        # Busca todos los registros de `inv.investment.assets` donde `asset_type` sea 'crypto'
-        assets = self.env['inv.investment.assets'].search(
+        # Busca todos los registros de `investment.assets` donde `asset_type` sea 'crypto'
+        assets = self.env['investment.assets'].search(
             [('asset_type', '=', 'crypto')])
         for asset in assets:
             # Actualiza el precio basado en `custom_name`
@@ -157,26 +160,27 @@ class InvestmentCryptoPrice(models.Model):
             elif asset.custom_name == 'HBAR':
                 asset.sudo().write({'current_price': crypto_prices.hbar_price})
 
-        total_assets = self.env['inv.investment.total'].search(
-            [('total_investment_asset_type', '=', 'crypto')])
-        for total_asset in total_assets:
-            # Actualiza el precio basado en `custom_name`
-            if total_asset.name == 'Bitcoin':
-                total_asset.sudo().write({'current_price': crypto_prices.bitcoin_price})
-            elif total_asset.name == 'XRP':
-                total_asset.sudo().write({'current_price': crypto_prices.xrp_price})
-            elif total_asset.name == 'HBAR':
-                total_asset.sudo().write({'current_price': crypto_prices.hbar_price})
-
-        properties = self.env['inv.investment.property'].search(
-            [('property_asset_type', '=', 'crypto')])
-        for property in properties:
-            # Actualiza el precio basado en `display_name`
-            if property.display_name == 'Bitcoin':
-                property.sudo().write({'unit_current_price': crypto_prices.bitcoin_price})
-            elif property.display_name == 'XRP':
-                property.sudo().write({'unit_current_price': crypto_prices.xrp_price})
-            elif property.display_name == 'HBAR':
-                property.sudo().write({'unit_current_price': crypto_prices.hbar_price})
+        # Actualiza los precios en investment.total y investment.property si es necesario
+        # total_assets = self.env['investment.total'].search(
+        #     [('total_investment_asset_type', '=', 'crypto')])
+        # for total_asset in total_assets:
+        #     # Actualiza el precio basado en `custom_name`
+        #     if total_asset.name == 'Bitcoin':
+        #         total_asset.sudo().write({'current_price': crypto_prices.bitcoin_price})
+        #     elif total_asset.name == 'XRP':
+        #         total_asset.sudo().write({'current_price': crypto_prices.xrp_price})
+        #     elif total_asset.name == 'HBAR':
+        #         total_asset.sudo().write({'current_price': crypto_prices.hbar_price})
+        #
+        # properties = self.env['investment.property'].search(
+        #     [('property_asset_type', '=', 'crypto')])
+        # for property in properties:
+        #     # Actualiza el precio basado en `display_name`
+        #     if property.display_name == 'Bitcoin':
+        #         property.sudo().write({'unit_current_price': crypto_prices.bitcoin_price})
+        #     elif property.display_name == 'XRP':
+        #         property.sudo().write({'unit_current_price': crypto_prices.xrp_price})
+        #     elif property.display_name == 'HBAR':
+        #         property.sudo().write({'unit_current_price': crypto_prices.hbar_price})
 
 

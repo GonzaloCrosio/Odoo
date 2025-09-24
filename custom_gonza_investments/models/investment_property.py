@@ -3,13 +3,13 @@ from odoo import models, fields, api
 
 class InvestmentProperty(models.Model):
     _description = "Investment Property"
-    _name = "inv.investment.property"
+    _name = "investment.property"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "custom_name"
 
     custom_name = fields.Many2one(
         string="Investment Property Name",
-        comodel_name="inv.investment.assets",
+        comodel_name="investment.assets",
         required=True,
     )
     property_asset_type = fields.Selection(
@@ -32,7 +32,7 @@ class InvestmentProperty(models.Model):
         compute = "_compute_current_amount",
     )
     investment_id = fields.Many2one(
-        comodel_name="inv.investment.total",
+        comodel_name="investment.total",
         string="Related Investment",
         # domain="[('name', '=', custom_name.name)]",
     )
@@ -50,7 +50,7 @@ class InvestmentProperty(models.Model):
     def _compute_quantity(self):
         """
         Calcula automáticamente la cantidad si el campo
-        total_quantity_in_crypto cambia en inv.investment.total.
+        total_quantity_in_crypto cambia en investment.total.
         """
         for record in self:
             if record.investment_id:

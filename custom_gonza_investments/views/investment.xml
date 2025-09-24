@@ -2,7 +2,7 @@
     <!--Define la vista list (donde se muestra la lista de datos)-->
     <record id="view_investments_list" model="ir.ui.view">
         <field name="name">view.investments.list</field>
-        <field name="model">inv.investments.transactions</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <list>
                 <field name="investment_name" optional="show"/>
@@ -30,7 +30,7 @@
     <!--Define la vista Form (donde se carga el dato)-->
     <record id="view_investments_form" model="ir.ui.view">
         <field name="name">investments.form</field>
-        <field name="model">inv.investments.transactions</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -75,8 +75,8 @@
 
     <!--Crea los filtros disponibles - Separator IF/OR-->
     <record id="investments_transactions_view_search" model="ir.ui.view">
-        <field name="name">inv.investments.transactions.view.search</field>
-        <field name="model">inv.investments.transactions</field>
+        <field name="name">investments.transactions.view.search</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <search string="Search investments">
                 <field name="investment_name"/>
@@ -103,8 +103,8 @@
 
     <!--Vista Pivot-->
     <record id="investments_transactions_view_pivot" model="ir.ui.view">
-        <field name="name">inv.investments.transactions.view.pivot</field>
-        <field name="model">inv.investments.transactions</field>
+        <field name="name">investments.transactions.view.pivot</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <pivot string="Variable Investments" sample="1">
                 <field name="investment_name"/>
@@ -131,8 +131,8 @@
 
     <!--Vista Graph-->
     <record id="investments_transactions_view_graph" model="ir.ui.view">
-        <field name="name">inv.investments.transactions.view.graph</field>
-        <field name="model">inv.investments.transactions</field>
+        <field name="name">investments.transactions.view.graph</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <graph string="Variable Investments" sample="1">
                 <field name="investment_name"/>
@@ -160,7 +160,7 @@
     <!--Acción que genera las vistas-->
     <record id="action_investments" model="ir.actions.act_window">
         <field name="name">Variable Investments</field>
-        <field name="res_model">inv.investments.transactions</field>
+        <field name="res_model">investments.transactions</field>
         <field name="view_mode">list,form,pivot,graph</field>
     </record>
 

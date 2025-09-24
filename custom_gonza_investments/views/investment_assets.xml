@@ -2,8 +2,8 @@
 <odoo>
     <!--Defino vista form-->
     <record id="inv_investment_assets_view_form" model="ir.ui.view">
-        <field name="name">inv.investment.assets.view.form</field>
-        <field name="model">inv.investment.assets</field>
+        <field name="name">investment.assets.view.form</field>
+        <field name="model">investment.assets</field>
         <field name="arch" type="xml">
             <form string="Assets">
                 <header string="Assets">
@@ -31,8 +31,8 @@
 
     <!--Defino vista list-->
     <record id="inv_investment_assets_view_list" model="ir.ui.view">
-        <field name="name">inv.investment.assets.view.list</field>
-        <field name="model">inv.investment.assets</field>
+        <field name="name">investment.assets.view.list</field>
+        <field name="model">investment.assets</field>
         <field name="arch" type="xml">
             <list class="inv_list">
                 <field name="custom_name" optional="show"/>
@@ -46,7 +46,7 @@
     <!--Crea las vistas del modelo-->
     <record id="inv_investment_assets_action" model="ir.actions.act_window">
         <field name="name">Assets</field>
-        <field name="res_model">inv.investment.assets</field>
+        <field name="res_model">investment.assets</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No assets created.</p>

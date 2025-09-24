@@ -1,8 +1,8 @@
 <odoo>
     <!-- Vista list -->
     <record id="view_investment_total_list" model="ir.ui.view">
-        <field name="name">inv.investment.total.list</field>
-        <field name="model">inv.investment.total</field>
+        <field name="name">investment.total.list</field>
+        <field name="model">investment.total</field>
         <field name="arch" type="xml">
             <list string="Total Investments">
                 <field name="name" optional="show"/>
@@ -24,8 +24,8 @@
 
     <!-- Vista Form -->
     <record id="view_investment_total_form" model="ir.ui.view">
-        <field name="name">inv.investment.total.form</field>
-        <field name="model">inv.investment.total</field>
+        <field name="name">investment.total.form</field>
+        <field name="model">investment.total</field>
         <field name="arch" type="xml">
             <form string="Total Investment">
                 <sheet>
@@ -69,8 +69,8 @@
 
     <!--Vista Pivot-->
     <record id="view_investment_total_pivot" model="ir.ui.view">
-        <field name="name">inv.investment.total.pivot</field>
-        <field name="model">inv.investment.total</field>
+        <field name="name">investment.total.pivot</field>
+        <field name="model">investment.total</field>
         <field name="arch" type="xml">
             <pivot string="Total Investments" sample="1">
                 <field name="name"/>
@@ -92,8 +92,8 @@
 
     <!--Vista Graph-->
     <record id="view_investment_total_graph" model="ir.ui.view">
-        <field name="name">inv.investment.total.graph</field>
-        <field name="model">inv.investment.total</field>
+        <field name="name">investment.total.graph</field>
+        <field name="model">investment.total</field>
         <field name="arch" type="xml">
             <graph string="Total Investments" sample="1">
                 <field name="name"/>
@@ -116,16 +116,16 @@
     <!-- Acción del servidor -->
     <record id="action_investment_total_server" model="ir.actions.server">
         <field name="name">Total Investments</field>
-        <field name="model_id" ref="model_inv_investment_total"/>
+        <field name="model_id" ref="model_investment_total"/>
         <field name="state">code</field>
         <field name="code">
-            action = env['inv.investment.total'].open_grouped_investments()
+            action = env['investment.total'].open_grouped_investments()
         </field>
     </record>
 
     <record id="action_investment_total_window" model="ir.actions.act_window">
         <field name="name">Total Investments</field>
-        <field name="res_model">inv.investment.total</field>
+        <field name="res_model">investment.total</field>
         <field name="view_mode">list,form,pivot,graph</field>
     </record>
 

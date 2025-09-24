@@ -1,9 +1,9 @@
 from odoo import models, fields, api
 
 
-class InvestmentAsstes(models.Model):
+class InvestmentAssets(models.Model):
     _description = "Investment Assets"
-    _name = "inv.investment.assets"
+    _name = "investment.assets"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "custom_name"
 

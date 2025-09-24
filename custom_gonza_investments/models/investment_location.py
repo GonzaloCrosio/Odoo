@@ -3,7 +3,7 @@ from odoo import models, fields
 
 class InvestmentLocation(models.Model):
     _description = "Investment Location"
-    _name = "inv.investment.location"
+    _name = "investment.location"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "custom_name"
 

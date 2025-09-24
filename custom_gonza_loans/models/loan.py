@@ -184,20 +184,28 @@ class Loan(models.Model):
 
             # Configurar la fecha inicial de `detail_date`
             if loan.other_day_payment:
-                # Primer pago el mismo día del siguiente mes
-                detail_date = loan.date + relativedelta(months=1)
+                # Primer pago el mismo día de firma
+                detail_date = loan.date
             else:
                 # Primer pago el día 01 del siguiente mes
                 detail_date = loan.date + relativedelta(months=1, day=1)
 
             # Generación de cuotas
             for i in range(1, n + 1):
-                interest_amount = capital_remaining * r  # Intereses del mes
-                capital_amount = emi - interest_amount  # Capital pagado en esta cuota
-                capital_remaining -= capital_amount  # Capital restante
-                capital_amortized += capital_amount  # Capital amortizado acumulado
+                # Determinar si es la primera cuota y se paga el mismo día (no interés)
+                if i == 1 and loan.other_day_payment:
+                    interest_amount = 0.0
+                    capital_amount = emi
+                else:
+                    # Si se paga normal calculamos interés
+                    interest_amount = capital_remaining * r
+                    capital_amount = emi - interest_amount
 
-                # Sumar totales de interés y de importe a devolver
+                # Actualizar capital
+                capital_remaining -= capital_amount
+                capital_amortized += capital_amount
+
+                # Acumulados
                 total_interest += interest_amount
                 total_amount += emi
 

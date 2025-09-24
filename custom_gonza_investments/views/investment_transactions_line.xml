@@ -2,7 +2,7 @@
 <odoo>
     <record id="view_form_investment_transaction_line" model="ir.ui.view">
         <field name="name">investment.transaction.line.form</field>
-        <field name="model">inv.investment.transaction.line</field>
+        <field name="model">investment.transaction.line</field>
         <field name="arch" type="xml">
             <form string="Transaction Line">
                 <sheet>

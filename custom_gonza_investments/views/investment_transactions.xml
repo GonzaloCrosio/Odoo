@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_form_investment_transaction" model="ir.ui.view">
-        <field name="name">investment.transaction.form</field>
-        <field name="model">inv.investment.transaction</field>
+        <field name="name">investments.transactions.form</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <form string="Investment Transaction">
                 <sheet>
@@ -12,34 +12,23 @@
                             <field name="date"/>
                             <field name="status"/>
                             <field name="strategy"/>
-                        </group>
-                        <group>
                             <field name="investment_location_id"/>
                             <field name="investment_purchase_mode_id"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="quantity_in_fiat"/>
+                            <field name="quantity_in_crypto"/>
+                            <field name="transaction_price"/>
+                            <field name="current_price"/>
+                            <field name="price_difference"/>
+                            <field name="profit"/>
+                            <field name="profit_percentage"/>
+                            <field name="tax_quantity"/>
+                            <field name="profit_net"/>
+                            <field name="purchaseback_price"/>
                         </group>
                     </group>
-                    <notebook>
-                        <page string="Transaction Lines">
-                            <field name="line_ids" widget="one2many_list">
-                                <list editable="bottom" create="true">
-                                    <field name="date"/>
-                                    <field name="type"/>
-                                    <field name="investment_name_line"/>
-                                    <field name="quantity_in_fiat"/>
-                                    <field name="quantity_in_crypto"/>
-                                    <field name="transaction_price"/>
-                                    <field name="current_price"/>
-                                    <field name="price_difference"/>
-                                    <field name="profit"/>
-                                    <field name="profit_percentage"/>
-                                    <field name="tax_quantity"/>
-                                    <field name="profit_net"/>
-                                    <field name="purchaseback_price"/>
-                                    <field name="description"/>
-                                </list>
-                            </field>
-                        </page>
-                    </notebook>
                 </sheet>
                 <chatter>
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -51,8 +40,8 @@
     </record>
 
     <record id="view_list_investment_transaction" model="ir.ui.view">
-        <field name="name">investment.transaction.list</field>
-        <field name="model">inv.investment.transaction</field>
+        <field name="name">investments.transactions.list</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <list string="Investment Transactions">
                 <field name="investment_name"/>
@@ -66,8 +55,8 @@
     </record>
 
     <record id="view_pivot_investment_transaction" model="ir.ui.view">
-        <field name="name">investment.transaction.pivot</field>
-        <field name="model">inv.investment.transaction</field>
+        <field name="name">investments.transactions.pivot</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <pivot string="Investment Transactions">
                 <field name="investment_name" type="row"/>
@@ -79,8 +68,8 @@
     </record>
 
     <record id="view_graph_investment_transaction" model="ir.ui.view">
-        <field name="name">investment.transaction.graph</field>
-        <field name="model">inv.investment.transaction</field>
+        <field name="name">investments.transactions.graph</field>
+        <field name="model">investments.transactions</field>
         <field name="arch" type="xml">
             <graph string="Investment Transactions" type="bar">
                 <field name="investment_name" type="row"/>
@@ -93,7 +82,7 @@
     <!--Acción que genera las vistas-->
     <record id="action_investment_transaction" model="ir.actions.act_window">
         <field name="name">Investment Transactions</field>
-        <field name="res_model">inv.investment.transaction</field>
+        <field name="res_model">investments.transactions</field>
         <field name="view_mode">list,form,pivot,graph</field>
     </record>
 

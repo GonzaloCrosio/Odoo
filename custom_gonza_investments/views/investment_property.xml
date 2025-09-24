@@ -2,8 +2,8 @@
 <odoo>
     <!--Defino vista form-->
     <record id="inv_investment_property_view_form" model="ir.ui.view">
-        <field name="name">inv.investment.property.view.form</field>
-        <field name="model">inv.investment.property</field>
+        <field name="name">investment.property.view.form</field>
+        <field name="model">investment.property</field>
         <field name="arch" type="xml">
             <form string="Property">
                 <header string="Property">
@@ -33,8 +33,8 @@
 
     <!--Defino vista list-->
     <record id="inv_investment_property_view_list" model="ir.ui.view">
-        <field name="name">inv.investment.property.view.list</field>
-        <field name="model">inv.investment.property</field>
+        <field name="name">investment.property.view.list</field>
+        <field name="model">investment.property</field>
         <field name="arch" type="xml">
             <list string="Asset or Liability" class="inv_list">
                 <field name="custom_name" optional="show"/>
@@ -50,8 +50,8 @@
 
     <!--Vista Pivot-->
     <record id="investments_investments_view_pivot" model="ir.ui.view">
-        <field name="name">inv.investments.view.pivot</field>
-        <field name="model">inv.investment.property</field>
+        <field name="name">investments.view.pivot</field>
+        <field name="model">investment.property</field>
         <field name="arch" type="xml">
             <pivot string="Property" sample="1">
                 <field name="custom_name"/>
@@ -67,8 +67,8 @@
 
     <!--Vista Graph-->
     <record id="investments_investments_view_graph" model="ir.ui.view">
-        <field name="name">inv.investments.view.graph</field>
-        <field name="model">inv.investment.property</field>
+        <field name="name">investments.view.graph</field>
+        <field name="model">investment.property</field>
         <field name="arch" type="xml">
             <graph string="Property" sample="1">
                 <field name="custom_name"/>
@@ -85,7 +85,7 @@
     <!--Crea las vistas del modelo-->
     <record id="inv_investment_property_action" model="ir.actions.act_window">
         <field name="name">Property</field>
-        <field name="res_model">inv.investment.property</field>
+        <field name="res_model">investment.property</field>
         <field name="view_mode">list,form,pivot,graph</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">No property created.</p>

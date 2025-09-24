@@ -4,7 +4,7 @@ from odoo.exceptions import ValidationError
 
 
 class InvestmentTransactionLine(models.Model):
-    _name = 'inv.investment.transaction.line'
+    _name = 'investment.transaction.line'
     _description = 'Line Transaction Model'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "investment_name_line"
@@ -15,7 +15,7 @@ class InvestmentTransactionLine(models.Model):
         required=True
     )
     transaction_id = fields.Many2one(
-        comodel_name='inv.investment.transaction',
+        comodel_name='investment.transaction',
         string="Investment Transaction",
         ondelete='cascade',
         readonly=True,

@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 class InvestmentTotal(models.Model):
-    _name = 'inv.investment.total'
+    _name = 'investment.total'
     _description = 'Total Investment Data'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
@@ -57,22 +57,6 @@ class InvestmentTotal(models.Model):
     current_price = fields.Float(
         string="Current Unit Price",
     )
-    total_investment_asset_type = fields.Selection(
-        string="Total Asset Type",
-        selection=[
-            ('crypto', 'Crypto'),
-            ('actions', 'Actions'),
-            ('bonds', 'Bonds'),
-            ('funds', 'Funds'),
-            ('real_estate', 'Real Estate'),
-            ('commodities', 'Commodities'),
-            ('money_foreing_fiat', 'Foreign Fiat Money'),
-            ('etf', 'ETF'),
-            ('tourist_house', 'Tourist House'),
-            ('traditional_business', 'Traditional Business'),
-            ('others', 'Others'),
-        ],
-    )
 
     @api.model
     def create_or_update_total_data(self):
@@ -80,7 +64,7 @@ class InvestmentTotal(models.Model):
         Actualiza o crea registros en el modelo con los datos agrupados.
         """
         # Obtener los datos agregados
-        investment_model = self.env['inv.investment.transaction.line']
+        investment_model = self.env['investment.transaction.line']
         total_data = investment_model.get_investment_totals()
 
         for custom_name, data in total_data.items():
@@ -98,7 +82,6 @@ class InvestmentTotal(models.Model):
                 'total_profit_percentage': data['profit_percentage_avg'],
                 'total_tax_quantity': data['tax_quantity'],
                 'total_purchaseback_price': data['purchaseback_price'],
-                'total_investment_asset_type': data['investment_asset_type'],
             }
 
             if existing_record:
@@ -119,7 +102,7 @@ class InvestmentTotal(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': 'Total Investments',
-            'res_model': 'inv.investment.total',
+            'res_model': 'investment.total',
             'view_mode': 'tree,form,graph,pivot',
             'target': 'current',
         }
