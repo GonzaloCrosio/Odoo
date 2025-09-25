@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-13 16:35+0000\n"
-"PO-Revision-Date: 2025-09-13 18:39+0200\n"
+"POT-Creation-Date: 2025-09-25 08:10+0000\n"
+"PO-Revision-Date: 2025-09-25 10:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -221,6 +221,11 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: custom_gonza_loans
+#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__is_finished
+msgid "Indicates if the loan has been fully repaid."
+msgstr "Indica si el préstamo fue pagado en su totalidad"
+
+#. module: custom_gonza_loans
 #: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__is_investment
 msgid "Indicates if the loan is used for investment purposes."
 msgstr "Indica si el préstamo será utilizado para fines de inversión."
@@ -234,6 +239,11 @@ msgstr "Pago de interés"
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__interest_rate
 msgid "Interest Rate (%)"
 msgstr "Tasa Efectiva Anual"
+
+#. module: custom_gonza_loans
+#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__is_finished
+msgid "Is Finished"
+msgstr "Finalizado"
 
 #. module: custom_gonza_loans
 #: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_is_follower
@@ -488,8 +498,8 @@ msgid ""
 "                                the end date and the future value of all cash flows paid\n"
 "                                or obtained during the loan or investment."
 msgstr ""
-"El VFN es la resta del capital actualizado a la fecha final\r\n"
-"                                menos el valor futuro de todos los flujos pagados\r\n"
+"El VFN es la resta del capital actualizado a la fecha final&#13;\n"
+"                                menos el valor futuro de todos los flujos pagados&#13;\n"
 "                                u obtenidos durante el préstamo o inversión."
 
 #. module: custom_gonza_loans
@@ -500,9 +510,9 @@ msgid ""
 "                                present value of cash flows paid or received during the\n"
 "                                loan or investment."
 msgstr ""
-"El VAN es la resta del capital actual menos el valor actual de los flujos pagados\r\n"
-"                                u obtenidos\r\n"
-"                                durante el préstamo\r\n"
+"El VAN es la resta del capital actual menos el valor actual de los flujos pagados&#13;\n"
+"                                u obtenidos&#13;\n"
+"                                durante el préstamo&#13;\n"
 "                                o inversión."
 
 #. module: custom_gonza_loans

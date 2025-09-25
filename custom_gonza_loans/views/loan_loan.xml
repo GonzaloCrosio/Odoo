@@ -13,6 +13,7 @@
                 <field name="current_debt" optional="show" width="120"/>
                 <field name="percentage_debt" optional="show" width="120"/>
                 <field name="number_payments" optional="show" width="120"/>
+                <field name="is_finished" optional="show" width="60"/>
             </list>
         </field>
     </record>
@@ -39,6 +40,7 @@
                                 <field name="other_day_payment"/>
                                 <field name="total_interest"/>
                                 <field name="total_amount_to_pay"/>
+                                <field name="is_finished"/>
                                 <p>Set this field to true if you want to analyze a
                                     possible investment with this loan.
                                 </p>

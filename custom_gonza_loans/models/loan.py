@@ -95,6 +95,12 @@ class Loan(models.Model):
         digits=(16, 2),
         help="Net future value of an investment that uses the loan, considering an expected return.",
     )
+    is_finished = fields.Boolean(
+        string="Is Finished",
+        help="Indicates if the loan has been fully repaid.",
+        default=False,
+        store=True,
+    )
 
     # Cálculo del número de pagos pendientes
     @api.depends("number", "term")
