@@ -79,8 +79,9 @@
         <field name="model">exp.expenses.expenses</field>
         <field name="arch" type="xml">
             <pivot string="Expenses Tags" sample="1">
-                <field name="expenses_tag_id" type="row"/>
-                <field name="expenses_payment_mode_id" type="row"/>
+                <field name="date" type="row"/>
+                <field name="expenses_tag_id" type="col"/>
+                <field name="expense_amount" type="measure"/>
             </pivot>
         </field>
     </record>

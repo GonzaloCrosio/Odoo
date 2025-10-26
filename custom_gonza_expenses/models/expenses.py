@@ -19,6 +19,7 @@ class Expenses(models.Model):
     expense_amount = fields.Float(
         string="Expense Amount",
         required=True,
+        aggregator="sum", # Para que aparezca en la PIVOT y sume en la Kanban
     )
     income_amount = fields.Float(
         string="Income Amount",
