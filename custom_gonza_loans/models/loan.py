@@ -140,6 +140,7 @@ class Loan(models.Model):
             loan.current_debt = paid_details[0].capital_remaining if paid_details else 0
             loan.number = paid_details[0].number if paid_details else 0
 
+    # Validación de campos requeridos antes del cálculo
     def _validate_required_fields(self):
         for loan in self:
             missing_fields = []
