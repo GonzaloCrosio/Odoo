@@ -65,10 +65,11 @@ class ExpensesSummary(models.Model):
         # nombres localizados (enero, febrero, …)
         names = get_month_names("wide", locale=lang)  # {1: 'enero', ...}
         inv_local = {v.capitalize(): k for k, v in names.items()}
+        # Utiliza babel para obtener el mes en el idioma del entorno
         m = inv_local.get(label)
         if m:
             return m
-        # fallback en inglés si el label está en otro idioma
+        # Si no lo encuentra, intenta con nombres en inglés (January, February, …)
         import calendar as cal
 
         inv_en = {cal.month_name[i]: i for i in range(1, 13)}

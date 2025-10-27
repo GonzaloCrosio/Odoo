@@ -84,6 +84,7 @@ class Expenses(models.Model):
     # Metodo para preparar los datos del resumen
     def _prepare_summary_values(self):
         summary_data = []
+        # Obtener el idioma del usuario actual y sino del sistema (por defecto es en_US)
         lang = self.env.lang or "en_US"
 
         for record in self:
@@ -100,7 +101,7 @@ class Expenses(models.Model):
             )
         return summary_data
 
-    # Sobrescribir el metodo create
+    # Heredar el metodo create
     @api.model_create_multi
     def create(self, vals_list):
         records = super().create(vals_list)
@@ -124,7 +125,7 @@ class Expenses(models.Model):
 
         return records
 
-    # Sobrescribir el metodo write
+    # Heredar el metodo write
     def write(self, vals):
         for record in self:
             # Guardar los valores originales antes de actualizarlos
@@ -167,7 +168,7 @@ class Expenses(models.Model):
 
         return True
 
-    # Sobrescribir el metodo unlink
+    # Heredar el metodo unlink
     def unlink(self):
         for record in self:
             # Preparar los valores para los totales a eliminar
