@@ -1,9 +1,9 @@
 from odoo import models, fields
 
 
-class ExpensesPurchaseMode(models.Model):
-    _description = "Investment Purchase Mode"
-    _name = "investment.purchase.mode"
+class CryptoPurchaseMode(models.Model):
+    _description = "Crypto Purchase Mode"
+    _name = "crypto.purchase.mode"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "custom_name"
 

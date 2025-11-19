@@ -1,9 +1,7 @@
-from . import investments_transactions
-from . import investment_purchase_mode
-from . import investment_location
-from . import investment_total
-from . import investment_assets
-from . import investment_api
-from . import investment_transaction_line
-from . import investment_property
+from . import crypto_purchase_mode
+from . import crypto_api
+from . import crypto_asset
+from . import crypto_valuation_layer
+from . import crypto_sale
+from . import crypto_sale_allocation
 

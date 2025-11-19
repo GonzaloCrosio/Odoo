@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--Icono de inicio-->
+    <menuitem id="menu_crypto_root"
+              name="Investment Crypto"
+              sequence="10"
+              web_icon="custom_gonza_investments,static/img/bitcoin.png"/>
+
+    <!--Acción de menú-->
+    <record id="menu_crypto_asset" model="ir.ui.menu">
+        <field name="name">Assets</field>
+        <field name="action" ref="action_crypto_asset"/>
+        <field name="parent_id" ref="menu_crypto_root"/>
+        <field name="sequence">10</field>
+    </record>
+
+    <!--Acción de menú-->
+    <record id="menu_crypto_purchase_root" model="ir.ui.menu">
+        <field name="name">Purchase</field>
+        <field name="parent_id" ref="menu_crypto_root"/>
+        <field name="sequence">20</field>
+    </record>
+
+    <!--Acción de Submenú-->
+    <record id="menu_crypto_valuation_layer" model="ir.ui.menu">
+        <field name="name">Purchase Operations</field>
+        <field name="action" ref="action_crypto_valuation_layer"/>
+        <field name="parent_id" ref="menu_crypto_purchase_root"/>
+    </record>
+    <!--Acción de Submenú-->
+    <record id="crypto_payment_mode_menu" model="ir.ui.menu">
+        <field name="name">Purchase Mode</field>
+        <field name="action" ref="crypto_payment_mode_action"/>
+        <field name="parent_id" ref="menu_crypto_purchase_root"/>
+    </record>
+
+    <!--Acción de menú-->
+    <record id="menu_crypto_sale" model="ir.ui.menu">
+        <field name="name">Sales</field>
+        <field name="action" ref="action_crypto_sale"/>
+        <field name="parent_id" ref="menu_crypto_root"/>
+        <field name="sequence">30</field>
+    </record>
+
+    <!--Acción de menú-->
+    <record id="menu_crypto_allocation" model="ir.ui.menu">
+        <field name="name">FIFO Allocations</field>
+        <field name="action" ref="action_crypto_allocation"/>
+        <field name="parent_id" ref="menu_crypto_root"/>
+        <field name="sequence">40</field>
+    </record>
+
+</odoo>

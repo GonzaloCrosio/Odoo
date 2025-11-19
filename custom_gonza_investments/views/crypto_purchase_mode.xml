@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!--Crea las vistas del modelo-->
+    <record id="crypto_payment_mode_action" model="ir.actions.act_window">
+        <field name="name">Purchase Mode</field>
+        <field name="res_model">crypto.purchase.mode</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No purchase mode created.</p>
+        </field>
+    </record>
+
     <!--Defino vista form-->
-    <record id="inv_investment_payment_mode_view_form" model="ir.ui.view">
-        <field name="name">investment.purchase.mode.view.form</field>
-        <field name="model">investment.purchase.mode</field>
+    <record id="crypto_payment_mode_view_form" model="ir.ui.view">
+        <field name="name">crypto.purchase.mode.view.form</field>
+        <field name="model">crypto.purchase.mode</field>
         <field name="arch" type="xml">
             <form string="Purchase Mode">
                 <header string="Purchase Mode">
@@ -28,9 +39,9 @@
     </record>
 
     <!--Defino vista list-->
-    <record id="investment_payment_mode_action" model="ir.ui.view">
-        <field name="name">investment.purchase.mode.view.list</field>
-        <field name="model">investment.purchase.mode</field>
+    <record id="crypto_payment_mode_list" model="ir.ui.view">
+        <field name="name">crypto.purchase.mode.view.list</field>
+        <field name="model">crypto.purchase.mode</field>
         <field name="arch" type="xml">
             <list class="inv_list">
                 <field name="custom_name"/>
@@ -39,21 +50,4 @@
         </field>
     </record>
 
-    <!--Crea las vistas del modelo-->
-    <record id="inv_investment_payment_mode_action" model="ir.actions.act_window">
-        <field name="name">Purchase Mode</field>
-        <field name="res_model">investment.purchase.mode</field>
-        <field name="view_mode">list,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">No purchase mode created.</p>
-        </field>
-    </record>
-
-    <!--Dan acceso mediante el menú-->
-    <record id="inv_investment_payment_mode_menu" model="ir.ui.menu">
-        <field name="name">Purchase Mode</field>
-        <field name="action" ref="inv_investment_payment_mode_action"/>
-        <field name="parent_id" ref="custom_gonza_investments.menu_investment"/>
-        <field name="sequence">22</field>
-    </record>
 </odoo>

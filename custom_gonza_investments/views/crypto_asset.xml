@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- =========================
+         ACCIONES (defínelas antes de las vistas que las referencian)
+    ========================== -->
+    <record id="action_crypto_asset" model="ir.actions.act_window">
+        <field name="name">Assets</field>
+        <field name="res_model">crypto.asset</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- =========================
+         VISTAS: CRYPTO ASSET
+    ========================== -->
+    <record id="view_crypto_asset_list" model="ir.ui.view">
+        <field name="name">crypto.asset.list</field>
+        <field name="model">crypto.asset</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="symbol"/>
+                <field name="name"/>
+                <field name="currency_id"/>
+                <field name="precision"/>
+                <field name="company_id"/>
+                <field name="price_usd"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_crypto_asset_form" model="ir.ui.view">
+        <field name="name">crypto.asset.form</field>
+        <field name="model">crypto.asset</field>
+        <field name="arch" type="xml">
+            <form string="Crypto Asset">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="symbol"/>
+                            <field name="name"/>
+                            <field name="precision"/>
+                        </group>
+                        <group>
+                            <field name="currency_id"/>
+                            <field name="price_usd"/>
+                            <field name="market_cap_usd"/>
+                            <field name="cmc_rank"/>
+                            <field name="dominance_percentage"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_crypto_asset_search" model="ir.ui.view">
+        <field name="name">crypto.asset.search</field>
+        <field name="model">crypto.asset</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="symbol"/>
+                <field name="name"/>
+                <group expand="0" string="Group by">
+                    <filter string="Company" name="group_by_company"
+                            context="{'group_by':'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

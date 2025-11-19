@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_crypto_sale" model="ir.actions.act_window">
+        <field name="name">Sales</field>
+        <field name="res_model">crypto.sale</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- =========================
+     VISTAS: VENTAS
+========================== -->
+    <record id="view_crypto_sale_list" model="ir.ui.view">
+        <field name="name">crypto.sale.list</field>
+        <field name="model">crypto.sale</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="asset_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <field name="total_profit_eur"/>
+                <field name="total_tax_eur"/>
+                <field name="company_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_crypto_sale_form" model="ir.ui.view">
+        <field name="name">crypto.sale.form</field>
+        <field name="model">crypto.sale</field>
+        <field name="arch" type="xml">
+            <form string="Crypto Sale">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm"
+                            class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            class="btn-secondary"
+                            invisible="state != 'confirmed'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,confirmed,cancel"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="asset_id"/>
+                            <field name="date"/>
+                            <field name="company_id" readonly="1"/>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="total_profit_eur" readonly="1"/>
+                            <field name="total_tax_eur" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Sale Lines">
+                            <field name="line_ids" readonly="state == 'confirmed'">
+                                <list editable="bottom">
+                                    <field name="asset_id"/>
+                                    <field name="qty"/>
+                                    <field name="price_unit_eur"/>
+                                    <field name="fee_eur"/>
+                                    <field name="profit_eur" readonly="1"/>
+                                    <field name="tax_eur" readonly="1"/>
+                                </list>
+                                <form string="Sale Line">
+                                    <group>
+                                        <group>
+                                            <field name="asset_id"/>
+                                            <field name="qty"/>
+                                            <field name="price_unit_eur"/>
+                                            <field name="fee_eur"/>
+                                        </group>
+                                        <group>
+                                            <field name="profit_eur" readonly="1"/>
+                                            <field name="tax_eur" readonly="1"/>
+                                        </group>
+                                    </group>
+                                    <notebook>
+                                        <page string="FIFO Allocations">
+                                            <field name="allocation_ids" readonly="1">
+                                                <list>
+                                                    <field name="date"/>
+                                                    <field name="in_layer_id"/>
+                                                    <field name="qty_sold"/>
+                                                    <field name="unit_cost_eur"/>
+                                                    <field name="proceeds_unit_eur"/>
+                                                    <field name="fee_unit_eur"/>
+                                                    <field name="profit_eur"/>
+                                                    <field name="tax_eur"/>
+                                                </list>
+                                            </field>
+                                        </page>
+                                    </notebook>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter>
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_crypto_sale_search" model="ir.ui.view">
+        <field name="name">crypto.sale.search</field>
+        <field name="model">crypto.sale</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="asset_id"/>
+                <field name="date"/>
+                <filter string="Draft" name="draft"
+                        domain="[('state','=','draft')]"/>
+                <filter string="Confirm" name="confirmed"
+                        domain="[('state','=','confirmed')]"/>
+                <group expand="0" string="Group by">
+                    <filter string="State" name="group_by_state"
+                            context="{'group_by':'state'}"/>
+                    <filter string="Date (month)" name="group_by_month"
+                            context="{'group_by':'date:month'}"/>
+                    <filter string="Company" name="group_by_company"
+                            context="{'group_by':'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_crypto_allocation" model="ir.actions.act_window">
+        <field name="name">FIFO Allocations</field>
+        <field name="res_model">crypto.sale.allocation</field>
+        <field name="view_mode">list,graph,pivot</field>
+    </record>
+
+    <!-- =========================
+     VISTAS: ASIGNACIONES FIFO
+    ========================== -->
+    <record id="view_crypto_allocation_list" model="ir.ui.view">
+        <field name="name">crypto.sale.allocation.list</field>
+        <field name="model">crypto.sale.allocation</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="asset_id"/>
+                <field name="sale_line_id"/>
+                <field name="in_layer_id"/>
+                <field name="qty_sold"/>
+                <field name="proceeds_unit_eur"/>
+                <field name="unit_cost_eur"/>
+                <field name="fee_unit_eur"/>
+                <field name="proceeds_eur"/>
+                <field name="cost_eur"/>
+                <field name="fee_eur"/>
+                <field name="profit_eur"/>
+                <field name="tax_eur"/>
+                <field name="company_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_crypto_allocation_search" model="ir.ui.view">
+        <field name="name">crypto.sale.allocation.search</field>
+        <field name="model">crypto.sale.allocation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="sale_line_id"/>
+                <field name="in_layer_id"/>
+                <field name="date"/>
+                <group expand="0" string="Group by">
+                    <filter string="Asset" name="group_by_asset"
+                            context="{'group_by':'asset_id'}"/>
+                    <filter string="Date (month)" name="group_by_month"
+                            context="{'group_by':'date:month'}"/>
+                    <filter string="Company" name="group_by_company"
+                            context="{'group_by':'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_crypto_allocation_pivot" model="ir.ui.view">
+        <field name="name">crypto.sale.allocation.pivot</field>
+        <field name="model">crypto.sale.allocation</field>
+        <field name="arch" type="xml">
+            <pivot string="Profit for month/asset">
+                <field name="profit_eur" type="measure"/>
+                <field name="tax_eur" type="measure"/>
+                <field name="qty_sold" type="measure"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="sale_line_id" type="row"/>
+                <field name="in_layer_id" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_crypto_allocation_graph" model="ir.ui.view">
+        <field name="name">crypto.sale.allocation.graph</field>
+        <field name="model">crypto.sale.allocation</field>
+        <field name="arch" type="xml">
+            <graph string="Profit" type="bar">
+                <field name="profit_eur" type="measure"/>
+                <field name="tax_eur" type="measure"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="sale_line_id" type="row"/>
+            </graph>
+        </field>
+    </record>
+</odoo>
