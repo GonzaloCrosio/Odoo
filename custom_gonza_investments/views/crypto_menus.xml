@@ -9,9 +9,22 @@
     <!--Acción de menú-->
     <record id="menu_crypto_asset" model="ir.ui.menu">
         <field name="name">Assets</field>
-        <field name="action" ref="action_crypto_asset"/>
         <field name="parent_id" ref="menu_crypto_root"/>
         <field name="sequence">10</field>
+    </record>
+
+    <!--Acción de Submenú-->
+    <record id="submenu_crypto_asset" model="ir.ui.menu">
+        <field name="name">Assets</field>
+        <field name="action" ref="action_crypto_asset"/>
+        <field name="parent_id" ref="menu_crypto_asset"/>
+    </record>
+
+    <!--Acción de Submenú-->
+    <record id="submenu_crypto_holding" model="ir.ui.menu">
+        <field name="name">Holdings</field>
+        <field name="action" ref="action_crypto_holding"/>
+        <field name="parent_id" ref="menu_crypto_asset"/>
     </record>
 
     <!--Acción de menú-->

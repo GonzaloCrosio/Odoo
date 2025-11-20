@@ -68,6 +68,16 @@ class CryptoValuationLayer(models.Model):
         store=True,
         string="Total Cost (€)",
     )
+    purchase_mode = fields.Many2one(
+        "crypto.purchase.mode",
+        string="Purchase Mode",
+    )
+    bank_document = fields.Binary(
+        string="Bank Transfer Document",
+    )
+    exchange_document = fields.Binary(
+        string="Exchange Purchase Document",
+    )
     note = fields.Char(
         string="Note",
     )

@@ -15,10 +15,11 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "views/crypto_holding.xml",
         "views/crypto_asset.xml",
         "views/crypto_sale_allocation.xml",
         "views/crypto_sale.xml",
-        "views/crypto_valuation_layer.xml",
+        "views/crypto_purchase.xml",
         "views/crypto_purchase_mode.xml",
         "views/crypto_menus.xml",
     ],

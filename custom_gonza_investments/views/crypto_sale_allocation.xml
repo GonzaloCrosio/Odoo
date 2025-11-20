@@ -14,20 +14,20 @@
         <field name="model">crypto.sale.allocation</field>
         <field name="arch" type="xml">
             <list>
-                <field name="date"/>
-                <field name="asset_id"/>
-                <field name="sale_line_id"/>
-                <field name="in_layer_id"/>
-                <field name="qty_sold"/>
-                <field name="proceeds_unit_eur"/>
-                <field name="unit_cost_eur"/>
-                <field name="fee_unit_eur"/>
-                <field name="proceeds_eur"/>
-                <field name="cost_eur"/>
-                <field name="fee_eur"/>
-                <field name="profit_eur"/>
-                <field name="tax_eur"/>
-                <field name="company_id"/>
+                <field name="date" optional="show"/>
+                <field name="asset_id" optional="show"/>
+                <field name="sale_line_id" optional="show"/>
+                <field name="in_layer_id" optional="hide"/>
+                <field name="qty_sold" optional="show"/>
+                <field name="proceeds_unit_eur" optional="show"/>
+                <field name="unit_cost_eur" optional="show"/>
+                <field name="fee_unit_eur" optional="hide"/>
+                <field name="proceeds_eur" optional="show"/>
+                <field name="cost_eur" optional="show"/>
+                <field name="fee_eur" optional="hide"/>
+                <field name="profit_eur" optional="show"/>
+                <field name="tax_eur" optional="show"/>
+                <field name="company_id" optional="hide"/>
             </list>
         </field>
     </record>

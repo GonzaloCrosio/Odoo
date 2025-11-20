@@ -6,3 +6,4 @@ crypto_access_sale_line,crypto_access_sale_line,model_crypto_sale_line,base.grou
 crypto_access_sale_allocation,crypto_access_sale_allocation,model_crypto_sale_allocation,base.group_user,1,1,1,1
 investment_crypto_price,investment_crypto_price,model_investment_crypto_price,base.group_user,1,1,1,1
 crypto_purchase_mode,crypto_purchase_mode,model_crypto_purchase_mode,base.group_user,1,1,1,1
+crypto_holding,crypto_holding,model_crypto_holding,base.group_user,1,1,1,1

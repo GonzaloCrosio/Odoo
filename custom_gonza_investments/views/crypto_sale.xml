@@ -16,11 +16,11 @@
         <field name="arch" type="xml">
             <list>
                 <field name="asset_id"/>
-                <field name="date"/>
-                <field name="state"/>
-                <field name="total_profit_eur"/>
-                <field name="total_tax_eur"/>
-                <field name="company_id"/>
+                <field name="date" optional="show"/>
+                <field name="state" optional="show"/>
+                <field name="total_profit_eur" optional="show"/>
+                <field name="total_tax_eur" optional="show"/>
+                <field name="company_id" optional="show"/>
             </list>
         </field>
     </record>

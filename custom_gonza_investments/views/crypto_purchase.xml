@@ -15,17 +15,18 @@
         <field name="model">crypto.valuation.layer</field>
         <field name="arch" type="xml">
             <list>
-                <field name="date"/>
-                <field name="asset_id"/>
-                <field name="qty_purchase"/>
-                <field name="qty_sold"/>
-                <field name="qty_available"/>
-                <field name="unit_cost_eur"/>
-                <field name="fee_eur"/>
+                <field name="date" optional="show"/>
+                <field name="asset_id" optional="show"/>
+                <field name="qty_purchase" optional="show"/>
+                <field name="qty_sold" optional="show"/>
+                <field name="qty_available" optional="show"/>
+                <field name="unit_cost_eur" optional="show"/>
+                <field name="fee_eur" optional="hide"/>
                 <field name="total_cost_eur"
                        widget="monetary"
                        sum="Total"
-                       options="{'currency_field': 'currency_id'}"/>
+                       options="{'currency_field': 'currency_id'}"
+                       optional="show"/>
                 <field name="note" optional="hide"/>
             </list>
         </field>
@@ -65,6 +66,7 @@
                             <field name="total_cost_eur"/>
                         </group>
                         <group>
+                            <field name="purchase_mode"/>
                             <field name="note"/>
                         </group>
                     </group>

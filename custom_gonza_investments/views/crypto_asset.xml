@@ -19,11 +19,11 @@
         <field name="arch" type="xml">
             <list>
                 <field name="symbol"/>
-                <field name="name"/>
-                <field name="currency_id"/>
-                <field name="precision"/>
-                <field name="company_id"/>
-                <field name="price_usd"/>
+                <field name="name" optional="hide"/>
+                <field name="currency_id" optional="show"/>
+                <field name="precision" optional="hide"/>
+                <field name="company_id" optional="hide"/>
+                <field name="price_usd" optional="show"/>
             </list>
         </field>
     </record>
@@ -69,6 +69,8 @@
                 <group expand="0" string="Group by">
                     <filter string="Company" name="group_by_company"
                             context="{'group_by':'company_id'}"/>
+                    <filter string="Name" name="group_by_name"
+                            context="{'group_by':'name'}"/>
                 </group>
             </search>
         </field>
