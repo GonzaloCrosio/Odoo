@@ -171,6 +171,7 @@ class CryptoSaleLine(models.Model):
                 line.profit_eur = profit
                 line.tax_eur = tax
 
+    # Se usa en borrador para simular FIFO sin crear allocations
     def _simulate_fifo(self):
         # Simula el FIFO para calcular beneficio/impuesto SIN crear allocations ni tocar qty_sold.
         self.ensure_one()
@@ -194,15 +195,17 @@ class CryptoSaleLine(models.Model):
             """,
             (self.company_id.id, self.asset_id.id),
         )
-        layer_ids = [row[0] for row in self.env.cr.fetchall()]
-        layers = self.env["crypto.valuation.layer"].browse(layer_ids)
+        # Líneas de compra disponibles:
+        pucharse_ids = [row[0] for row in self.env.cr.fetchall()]
+        pucharse_lines = self.env["crypto.valuation.layer"].browse(pucharse_ids)
 
         remaining = qty_to_sell
         total_proceeds = 0.0
         total_cost = 0.0
         total_fee = 0.0
 
-        for layer in layers:
+        # Layer sería la línea de compra (traducido: Capa de compra)
+        for layer in pucharse_lines:
             if remaining <= 0:
                 break
 
@@ -233,6 +236,7 @@ class CryptoSaleLine(models.Model):
 
         return profit, tax
 
+    # Se usa en confirmación para crear asignaciones reales
     def allocate_fifo(self):
         # Asignar FIFO consumiendo compras disponibles
         self.ensure_one()
@@ -254,12 +258,12 @@ class CryptoSaleLine(models.Model):
             (self.company_id.id, self.asset_id.id),
         )
         # Líneas de compra disponibles:
-        layer_ids = [row[0] for row in self.env.cr.fetchall()]
-        layers = self.env["crypto.valuation.layer"].browse(layer_ids)
+        pucharse_ids = [row[0] for row in self.env.cr.fetchall()]
+        pucharse_lines = self.env["crypto.valuation.layer"].browse(pucharse_ids)
 
         allocations = []
         remaining = qty_to_sell
-        for layer in layers:
+        for layer in pucharse_lines:
             if remaining <= 0:
                 break
             take = min(
@@ -284,7 +288,7 @@ class CryptoSaleLine(models.Model):
             layer.qty_sold += take
             remaining -= take
 
-        # Error si no se ha podido vender toda la cantidad
+        # Error si no se ha podido vender toda la cantidad (por falta de tokens)
         if remaining > 1e-12:
             raise UserError(
                 _("There is not enough availability to sell %s %s. %s are missing.")

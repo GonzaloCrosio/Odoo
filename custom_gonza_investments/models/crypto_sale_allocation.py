@@ -15,6 +15,7 @@ class CryptoSaleAllocation(models.Model):
         string="Sale Line",
         ondelete="restrict",  # Borrar asignaciones al borrar línea de venta
     )
+    # Línea de compra de la que se extrae esta asignación
     in_layer_id = fields.Many2one(
         "crypto.valuation.layer",
         required=True,

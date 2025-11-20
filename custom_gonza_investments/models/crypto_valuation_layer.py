@@ -73,7 +73,11 @@ class CryptoValuationLayer(models.Model):
     )
 
     _sql_constraints = [
-        ("qty_purchase_positive", "CHECK(qty_purchase > 0)", "qty_purchase must be positive."),
+        (
+            "qty_purchase_positive",
+            "CHECK(qty_purchase > 0)",
+            "qty_purchase must be positive.",
+        ),
         (
             "qty_sold_not_negative",
             "CHECK(qty_sold >= 0)",
@@ -86,6 +90,7 @@ class CryptoValuationLayer(models.Model):
         ),
     ]
 
+    # Se ejecuta al crear un nuevo registro para establecer valores por defecto
     @api.model
     def default_get(self, fields_list):
         vals = super().default_get(fields_list)
@@ -95,38 +100,43 @@ class CryptoValuationLayer(models.Model):
             vals["qty_sold"] = 0.0
         return vals
 
+    # Obliga a seleccionar un Asset
     @api.constrains("asset_id")
     def _check_asset_required(self):
-        for r in self:
-            if not r.asset_id:
+        for crypto in self:
+            if not crypto.asset_id:
                 raise ValidationError(_("You must select an Asset."))
 
+    # Calcula la cantidad disponible
     @api.depends("qty_purchase", "qty_sold")
     def _compute_qty_available(self):
-        for r in self:
-            r.qty_available = r.qty_purchase - r.qty_sold
+        for crypto in self:
+            crypto.qty_available = crypto.qty_purchase - crypto.qty_sold
 
+    # Calcula el coste unitario en EUR
     @api.depends("qty_purchase", "total_cost_eur", "fee_eur")
     def _compute_unit_cost(self):
         for crypto in self:
             if crypto.qty_purchase:
-                    crypto.unit_cost_eur = (crypto.total_cost_eur / crypto.qty_purchase) + (
-                        crypto.fee_eur or 0.0
-                    )
+                crypto.unit_cost_eur = (crypto.total_cost_eur / crypto.qty_purchase) + (
+                    crypto.fee_eur or 0.0
+                )
             else:
-                    crypto.unit_cost_eur = 0.0
+                crypto.unit_cost_eur = 0.0
 
+    # Si cambias de moneda en el asset, actualiza la compañía
     @api.onchange("asset_id")
     def _onchange_asset(self):
         # Sólo sincroniza compañía; la moneda se hereda por related desde company_id
-        for r in self:
+        for crypto in self:
             if (
-                r.asset_id
-                and r.asset_id.company_id
-                and r.company_id != r.asset_id.company_id
+                crypto.asset_id
+                and crypto.asset_id.company_id
+                and crypto.company_id != crypto.asset_id.company_id
             ):
-                r.company_id = r.asset_id.company_id.id
+                crypto.company_id = crypto.asset_id.company_id.id
 
+    # Acción para abrir las asignaciones de venta relacionadas
     def action_open_allocations(self):
         self.ensure_one()
         action = self.env.ref(
