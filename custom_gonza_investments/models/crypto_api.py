@@ -56,7 +56,7 @@ class InvestmentCryptoPrice(models.Model):
     # Metodo para obtener precios desde API CoinMarketCap
     @api.model
     def update_crypto_prices(self):
-        # Leer API Key desde System Parameters
+        # Leer API Key desde Parámetros del Sistema
         api_key = self.env["ir.config_parameter"].sudo().get_param("crypto.api_key")
 
         if not api_key:

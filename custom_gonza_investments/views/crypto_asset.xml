@@ -18,12 +18,12 @@
         <field name="model">crypto.asset</field>
         <field name="arch" type="xml">
             <list>
-                <field name="symbol"/>
-                <field name="name" optional="hide"/>
-                <field name="currency_id" optional="show"/>
-                <field name="precision" optional="hide"/>
-                <field name="company_id" optional="hide"/>
-                <field name="price_usd" optional="show"/>
+                <field name="symbol" widget="text"/>
+                <field name="name" widget="text" optional="hide"/>
+                <field name="precision" widget="text" optional="hide"/>
+                <field name="company_id" widget="text" optional="hide"/>
+                <field name="price_usd" widget="text" optional="show"/>
+                <field name="currency_id" widget="text" optional="hide"/>
             </list>
         </field>
     </record>

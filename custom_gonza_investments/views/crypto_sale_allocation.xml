@@ -14,20 +14,28 @@
         <field name="model">crypto.sale.allocation</field>
         <field name="arch" type="xml">
             <list>
-                <field name="date" optional="show"/>
-                <field name="asset_id" optional="show"/>
+                <field name="date" widget="date" optional="show"/>
+                <field name="asset_id"  optional="show"/>
                 <field name="sale_line_id" optional="show"/>
                 <field name="in_layer_id" optional="hide"/>
-                <field name="qty_sold" optional="show"/>
-                <field name="proceeds_unit_eur" optional="show"/>
-                <field name="unit_cost_eur" optional="show"/>
-                <field name="fee_unit_eur" optional="hide"/>
-                <field name="proceeds_eur" optional="show"/>
-                <field name="cost_eur" optional="show"/>
-                <field name="fee_eur" optional="hide"/>
-                <field name="profit_eur" optional="show"/>
-                <field name="tax_eur" optional="show"/>
+                <field name="qty_sold" widget="text"  optional="show"/>
+                <field name="proceeds_unit_eur" widget="text"  optional="show"/>
+                <field name="unit_cost_eur" widget="monetary"
+                       sum="Total" optional="show"/>
+                <field name="fee_unit_eur" widget="monetary"
+                       sum="Total" optional="hide"/>
+                <field name="proceeds_eur" widget="monetary"
+                       sum="Total" optional="show"/>
+                <field name="cost_eur" widget="monetary"
+                       sum="Total" optional="show"/>
+                <field name="fee_eur" widget="monetary"
+                       sum="Total" optional="hide"/>
+                <field name="profit_eur" widget="monetary"
+                       sum="Total" optional="show"/>
+                <field name="tax_eur" widget="monetary"
+                       sum="Total" optional="show"/>
                 <field name="company_id" optional="hide"/>
+                <field name="currency_id" optional="hide"/>
             </list>
         </field>
     </record>
