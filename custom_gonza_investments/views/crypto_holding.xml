@@ -7,12 +7,13 @@
         <field name="model">crypto.holding</field>
         <field name="arch" type="xml">
             <list string="Crypto Holdings">
+                <field name="currency_id" optional="hide"/>
                 <field name="asset_id"/>
                 <field name="company_id" optional="hide"/>
-                <field name="qty_available" optional="show"/>
-                <field name="current_price_usd" optional="show"/>
-                <field name="value_usd" optional="show"/>
-                <field name="cmc_rank" optional="show"/>
+                <field name="qty_available" sum="total" widget="text" optional="show"/>
+                <field name="current_price_usd" widget="text" optional="show"/>
+                <field name="value_usd" widget="monetary" sum="Total" optional="show"/>
+                <field name="cmc_rank" widget="text" optional="show"/>
                 <field name="dominance_percentage" optional="show"/>
             </list>
         </field>

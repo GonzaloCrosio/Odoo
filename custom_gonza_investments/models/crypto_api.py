@@ -56,11 +56,20 @@ class InvestmentCryptoPrice(models.Model):
     # Metodo para obtener precios desde API CoinMarketCap
     @api.model
     def update_crypto_prices(self):
+        # Leer API Key desde System Parameters
+        api_key = self.env["ir.config_parameter"].sudo().get_param("crypto.api_key")
+
+        if not api_key:
+            _logger.error(
+                "API key not configured in System Parameters (crypto.api_key)"
+            )
+            return
+
         # Endpoint y headers de la API
         url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
         headers = {
             "Accepts": "application/json",
-            "X-CMC_PRO_API_KEY": "e195ad49-8340-4ae9-8897-5e06ebdaa143",
+            "X-CMC_PRO_API_KEY": api_key,
         }
 
         # Criptomonedas a consultar

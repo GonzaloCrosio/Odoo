@@ -1,0 +1,179 @@
+<odoo>
+    <!--Vista inicial de préstamos-->
+    <record id="view_loan_list" model="ir.ui.view">
+        <field name="name">loan.loan.list</field>
+        <field name="model">loan.loan</field>
+        <field name="arch" type="xml">
+            <list string="Loans">
+                <field name="name" optional="show" width="180"/>
+                <field name="amount" optional="show" width="100"/>
+                <field name="interest_rate" optional="show" width="100"/>
+                <field name="term" optional="show" width="100"/>
+                <field name="number" optional="show" width="100"/>
+                <field name="current_debt" optional="show" width="120"/>
+                <field name="percentage_debt" optional="show" width="120"/>
+                <field name="number_payments" optional="show" width="120"/>
+                <field name="is_finished" optional="show" width="60"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!--Vista form-->
+    <record id="view_loan_form" model="ir.ui.view">
+        <field name="name">loan.loan.form</field>
+        <field name="model">loan.loan</field>
+        <field name="arch" type="xml">
+            <!--Cabecera del préstamo-->
+            <form>
+                <sheet>
+                    <div class="row">
+                        <div class="col-6">
+                            <group>
+                                <field name="name"/>
+                                <field name="amount"/>
+                                <field name="interest_rate"/>
+                                <field name="effective_interest_rate"/>
+                                <field name="term"/>
+                                <field name="date"/>
+                                <field name="description"/>
+                                <field name="other_day_payment"/>
+                                <field name="total_interest"/>
+                                <field name="total_amount_to_pay"/>
+                                <field name="is_finished"/>
+                                <p>Set this field to true if you want to analyze a
+                                    possible investment with this loan.
+                                </p>
+                                <field name="is_investment"/>
+
+                                <button name="compute_simulated_npv"
+                                        string="Generate Net Present Value"
+                                        type="object" class="btn-primary"
+                                        invisible="not is_investment"/>
+
+                                <p invisible="not is_investment">
+                                    Please, if there are changes in the capital or
+                                    interest, generate the new installment details to
+                                    update the exact calculation.
+                                </p>
+                                <field name="simulated_npv"
+                                       invisible="not is_investment"/>
+                                <field name="simulated_vfn"
+                                       invisible="not is_investment"/>
+                                <field name="expected_return_rate"
+                                       invisible="not is_investment"/>
+                            </group>
+                        </div>
+                        <div class="col-6">
+                            <h4>Example of Loan Effective Rate Calculation</h4>
+                            <img
+                                src="/custom_gonza_loans/static/img/Ejemplo_TNA-TAE.png"
+                                alt="Tasa Efectiva"
+                                style="width: 500px; height: 300px;"
+                            />
+                            <p style="margin-top: 150px;" invisible="not is_investment">
+                                The NPV is the difference between current capital and
+                                the
+                                present value of cash flows paid or received during the
+                                loan or investment.
+                            </p>
+                            <p style="margin-top: 50px;" invisible="not is_investment">
+                                The FNV is the difference between the capital updated at
+                                the end date and the future value of all cash flows paid
+                                or obtained during the loan or investment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button name="compute_details" string="Generate Details"
+                            type="object" class="btn-primary"/>
+
+                    <notebook>
+                        <page string="Payments">
+                            <field name="detail_ids" class="text-center"
+                                   style="text-align:center;"
+                                   context="{'default_loan_id': id}">
+                                <!--Líneas del préstamo-->
+                                <list>
+                                    <!--Hago invisible la columna currency-->
+                                    <!--Pero debe estar currency para que aparezca el signo euro-->
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="number" width="120"/>
+                                    <field name="date" width="120"/>
+                                    <field name="total_payment" width="120"
+                                           widget="monetary"/>
+                                    <field name="interest_payment" width="120"
+                                           widget="monetary"/>
+                                    <field name="capital_payment" width="120"
+                                           widget="monetary"/>
+                                    <field name="capital_remaining" width="120"
+                                           widget="monetary"/>
+                                    <field name="capital_amortized" width="120"
+                                           widget="monetary"/>
+                                    <field name="status" width="120" editable="bottom"/>
+                                </list>
+                                <!--Vista al clickear en líneas del préstamo-->
+                                <form>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <group>
+                                                <field name="loan_id"/>
+                                                <field name="number"/>
+                                                <field name="date"/>
+                                                <field name="status" editable="bottom"/>
+                                            </group>
+                                        </div>
+                                        <div class="col-6">
+                                            <group>
+                                                <field name="total_payment"/>
+                                                <field name="capital_payment"/>
+                                                <field name="interest_payment"/>
+                                                <field name="capital_amortized"/>
+                                                <field name="capital_remaining"/>
+                                            </group>
+                                        </div>
+                                    </div>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter>
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <!--Crea los filtros disponibles - Separator IF/OR-->
+    <record id="loan_view_search" model="ir.ui.view">
+        <field name="name">loan.loan.view.search</field>
+        <field name="model">loan.loan</field>
+        <field name="arch" type="xml">
+            <search string="Loan">
+                <field name="name"/>
+                <field name="amount"/>
+                <field name="interest_rate"/>
+                <field name="term"/>
+                <field name="number"/>
+                <field name="current_debt"/>
+                <field name="percentage_debt"/>
+                <field name="number_payments"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Creación de vistas-->
+    <record id="action_loan" model="ir.actions.act_window">
+        <field name="name">Loans</field>
+        <field name="res_model">loan.loan</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Loan
+            </p>
+        </field>
+    </record>
+</odoo>
