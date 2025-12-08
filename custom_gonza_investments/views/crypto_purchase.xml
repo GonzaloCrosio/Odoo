@@ -90,7 +90,7 @@
                 <field name="note"/>
                 <filter string="Quantity Available" name="with_available"
                         domain="[('qty_available','&gt;',0)]"/>
-                <group expand="0" string="Group by">
+                <group>
                     <filter string="Asset" name="group_by_asset"
                             context="{'group_by':'asset_id'}"/>
                     <filter string="Date (month)" name="group_by_month"

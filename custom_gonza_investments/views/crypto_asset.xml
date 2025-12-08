@@ -66,7 +66,7 @@
             <search>
                 <field name="symbol"/>
                 <field name="name"/>
-                <group expand="0" string="Group by">
+                <group>
                     <filter string="Company" name="group_by_company"
                             context="{'group_by':'company_id'}"/>
                     <filter string="Name" name="group_by_name"

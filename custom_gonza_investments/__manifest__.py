@@ -1,6 +1,6 @@
 {
     "name": "Custom Gonzalo Investments",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Customizations",
     "author": "Gonzalo Crosio",
     "summary": "Custom reports for the client",

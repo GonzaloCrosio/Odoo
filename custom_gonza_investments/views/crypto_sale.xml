@@ -144,7 +144,7 @@
                         domain="[('state','=','draft')]"/>
                 <filter string="Confirm" name="confirmed"
                         domain="[('state','=','confirmed')]"/>
-                <group expand="0" string="Group by">
+                <group>
                     <filter string="State" name="group_by_state"
                             context="{'group_by':'state'}"/>
                     <filter string="Date (month)" name="group_by_month"

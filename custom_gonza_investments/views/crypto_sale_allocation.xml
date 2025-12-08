@@ -48,7 +48,7 @@
                 <field name="sale_line_id"/>
                 <field name="in_layer_id"/>
                 <field name="date"/>
-                <group expand="0" string="Group by">
+                <group>
                     <filter string="Asset" name="group_by_asset"
                             context="{'group_by':'asset_id'}"/>
                     <filter string="Date (month)" name="group_by_month"
