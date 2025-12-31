@@ -19,6 +19,8 @@
                         <field name="bitcoin_dominance"/>
                         <field name="xrp_dominance"/>
                         <field name="hbar_dominance"/>
+                        <field name="fear_greed_value"/>
+                        <field name="fear_greed_classification"/>
                     </group>
                 </sheet>
                 <chatter>
@@ -59,23 +61,15 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <!--Dan acceso mediante el menú-->
-    <menuitem
-        id="menu_investment_crypto_price"
-        name="Crypto Price"
-        parent="menu_investment_root"
-        action="action_investment_crypto_price"
-        sequence="10"/>
-
     <!--Cron para ejecutar acciones planificadas-->
-    <record id="ir_cron_update_investment_crypto_prices" model="ir.cron">
-        <field name="name">Update Cryptocurrency Prices</field>
-        <field name="model_id" ref="model_investment_crypto_price"/>
-        <field name="state">code</field>
-        <field name="code">model.cron_update_prices()</field>
-        <field name="interval_number">25</field>
-        <field name="interval_type">minutes</field>
-        <field name="active">True</field>
-    </record>
+<!--    <record id="ir_cron_update_investment_crypto_prices" model="ir.cron">-->
+<!--        <field name="name">Update Cryptocurrency Prices</field>-->
+<!--        <field name="model_id" ref="model_investment_crypto_price"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">model.cron_update_prices()</field>-->
+<!--        <field name="interval_number">25</field>-->
+<!--        <field name="interval_type">minutes</field>-->
+<!--        <field name="active">True</field>-->
+<!--    </record>-->
 
 </odoo>

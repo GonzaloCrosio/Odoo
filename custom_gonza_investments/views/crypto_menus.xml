@@ -27,6 +27,13 @@
         <field name="parent_id" ref="menu_crypto_asset"/>
     </record>
 
+    <!--Acción de Submenú-->
+    <record id="submenu_crypto_api" model="ir.ui.menu">
+        <field name="name">API Informations</field>
+        <field name="action" ref="action_investment_crypto_price"/>
+        <field name="parent_id" ref="menu_crypto_asset"/>
+    </record>
+
     <!--Acción de menú-->
     <record id="menu_crypto_purchase_root" model="ir.ui.menu">
         <field name="name">Purchase</field>

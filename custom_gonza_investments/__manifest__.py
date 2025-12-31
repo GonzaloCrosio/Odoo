@@ -21,6 +21,7 @@
         "views/crypto_sale.xml",
         "views/crypto_purchase.xml",
         "views/crypto_purchase_mode.xml",
+        "views/investments_api.xml",
         "views/crypto_menus.xml",
     ],
 }

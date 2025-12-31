@@ -52,6 +52,12 @@ class InvestmentCryptoPrice(models.Model):
     hbar_dominance = fields.Float(
         string="HBAR Dominance %",
     )
+    fear_greed_value = fields.Integer(
+        string="CMC Fear & Greed",
+    )
+    fear_greed_classification = fields.Char(
+        string="F&G Classification",
+    )
 
     # Metodo para obtener precios desde API CoinMarketCap
     @api.model
@@ -149,9 +155,11 @@ class InvestmentCryptoPrice(models.Model):
         self.update_assets_prices()
 
     # Cron para actualización de precios automáticamente - Acciones planificadas
+    # También actualiza el índice de miedo y codicia
     @api.model
     def cron_update_prices(self):
         self.update_crypto_prices()
+        self.update_fear_greed()
 
     def update_assets_prices(self):
         """
@@ -193,3 +201,52 @@ class InvestmentCryptoPrice(models.Model):
             vals = mapping.get(asset.symbol)
             if vals:
                 asset.sudo().write(vals)
+
+    # API para actualizar el índice de miedo y codicia
+    def _fetch_cmc_fear_greed_latest(self, api_key):
+        url = "https://pro-api.coinmarketcap.com/v3/fear-and-greed/latest"
+        headers = {
+            "Accepts": "application/json",
+            "X-CMC_PRO_API_KEY": api_key,
+        }
+
+        response = requests.get(url, headers=headers, timeout=20)
+        response.raise_for_status()  # Verifica que no existe errores de conexión
+        payload = response.json()
+
+        data = payload.get("data")
+        if not data:
+            return None
+
+        item = data[0] if isinstance(data, list) else data
+
+        return {
+            "fear_greed_value": item.get("value"),
+            "fear_greed_classification": item.get("value_classification"),
+        }
+
+    @api.model
+    def update_fear_greed(self):
+        # Parámetro del API en Parámetros del Sistema
+        api_key = self.env["ir.config_parameter"].sudo().get_param("crypto.api_key")
+        if not api_key:
+            _logger.error(
+                "API key not configured in System Parameters (crypto.api_key)"
+            )
+            return
+
+        try:
+            fng_vals = self._fetch_cmc_fear_greed_latest(api_key)
+            if not fng_vals:
+                return
+
+            record = self.search([], limit=1)
+            if record:
+                record.sudo().write(fng_vals)
+            else:
+                self.create(fng_vals)
+
+        except requests.exceptions.RequestException as e:
+            _logger.error(f"Fail conexion Fear&Greed CoinMarketCap API: {e}")
+        except KeyError as e:
+            _logger.error(f"Fear&Greed API response structure error: {e}")
