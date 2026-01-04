@@ -4,7 +4,7 @@
     <menuitem id="menu_crypto_root"
               name="Investment Crypto"
               sequence="10"
-              web_icon="custom_gonza_investments,static/img/bitcoin.png"/>
+              web_icon="custom_gonza_investments,static/description/icon.png"/>
 
     <!--Acción de menú-->
     <record id="menu_crypto_asset" model="ir.ui.menu">

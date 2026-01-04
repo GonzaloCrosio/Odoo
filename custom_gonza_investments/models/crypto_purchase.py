@@ -2,6 +2,7 @@
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from odoo.tools.float_utils import float_compare
 
 
 class CryptoValuationLayer(models.Model):
@@ -54,7 +55,6 @@ class CryptoValuationLayer(models.Model):
     )
     unit_cost_eur = fields.Monetary(
         currency_field="currency_id",
-        required=True,
         compute="_compute_unit_cost",
         string="Unit Cost (€)",
     )
@@ -65,7 +65,7 @@ class CryptoValuationLayer(models.Model):
     )
     total_cost_eur = fields.Monetary(
         currency_field="currency_id",
-        store=True,
+        required=True,
         string="Total Cost (€)",
     )
     purchase_mode = fields.Many2one(
@@ -82,24 +82,6 @@ class CryptoValuationLayer(models.Model):
         string="Note",
     )
 
-    _sql_constraints = [
-        (
-            "qty_purchase_positive",
-            "CHECK(qty_purchase > 0)",
-            "qty_purchase must be positive.",
-        ),
-        (
-            "qty_sold_not_negative",
-            "CHECK(qty_sold >= 0)",
-            "qty_sold cannot be negative.",
-        ),
-        (
-            "qty_sold_le_qty_purchase",
-            "CHECK(qty_sold <= qty_purchase)",
-            "No more can leave than went in.",
-        ),
-    ]
-
     # Se ejecuta al crear un nuevo registro para establecer valores por defecto
     @api.model
     def default_get(self, fields_list):
@@ -110,12 +92,26 @@ class CryptoValuationLayer(models.Model):
             vals["qty_sold"] = 0.0
         return vals
 
-    # Obliga a seleccionar un Asset
-    @api.constrains("asset_id")
+    # Obliga a seleccionar un Asset y otras restricciones de la operación
+    @api.constrains("asset_id", "qty_purchase", "qty_sold")
     def _check_asset_required(self):
+        precision = self.env["decimal.precision"].precision_get(
+            "Product Unit of Measure"
+        )
         for crypto in self:
             if not crypto.asset_id:
                 raise ValidationError(_("You must select an Asset."))
+            if float_compare(crypto.qty_purchase, 0.0, precision_digits=precision) <= 0:
+                raise ValidationError(_("qty_purchase must be positive."))
+            if float_compare(crypto.qty_sold, 0.0, precision_digits=precision) < 0:
+                raise ValidationError(_("qty_sold cannot be negative."))
+            if (
+                float_compare(
+                    crypto.qty_sold, crypto.qty_purchase, precision_digits=precision
+                )
+                > 0
+            ):
+                raise ValidationError(_("No more can leave than went in."))
 
     # Calcula la cantidad disponible
     @api.depends("qty_purchase", "qty_sold")

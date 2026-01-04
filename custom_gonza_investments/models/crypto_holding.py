@@ -1,4 +1,5 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class CryptoHolding(models.Model):
@@ -65,13 +66,19 @@ class CryptoHolding(models.Model):
         readonly=True,
     )
 
-    _sql_constraints = [
-        (
-            "holding_asset_company_unique",
-            "unique(asset_id, company_id)",
-            "Each asset can only have one holding per company.",
-        )
-    ]
+    @api.constrains("asset_id", "company_id")
+    def _check_unique_asset_company(self):
+        for crypto in self:
+            duplicate_count = self.search_count([
+                ("asset_id", "=", crypto.asset_id.id),
+                ("company_id", "=", crypto.company_id.id),
+                ("id", "!=", crypto.id),
+            ])
+            if duplicate_count:
+                raise ValidationError(_(
+                    "Each asset can only have one holding per company.\n"
+                    "Asset: %s\nCompany: %s"
+                ) % (crypto.asset_id.display_name, crypto.company_id.display_name))
 
     @api.depends("asset_id", "company_id")
     def _compute_position(self):

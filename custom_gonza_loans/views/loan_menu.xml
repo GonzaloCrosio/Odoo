@@ -4,7 +4,7 @@
               name="Loan"
               action="action_loan"
               sequence="10"
-              web_icon="custom_gonza_loans,static/img/prestamo.png"
+              web_icon="custom_gonza_loans,static/description/icon.png"
     />
 
     <menuitem id="menu_loan"

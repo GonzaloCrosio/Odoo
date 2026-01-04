@@ -4,7 +4,7 @@
               name="Expenses"
               action="action_expenses"
               sequence="10"
-              web_icon="custom_gonza_expenses,static/gastos.png"
+              web_icon="custom_gonza_expenses,static/description/icon.png"
     />
 
     <!--Menú de acceso dentro de Expenses-->

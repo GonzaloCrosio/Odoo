@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* custom_gonza_loans
+# 	* custom_gonza_dashboard
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-25 08:10+0000\n"
-"PO-Revision-Date: 2025-09-25 10:11+0200\n"
+"POT-Creation-Date: 2026-01-04 17:49+0000\n"
+"PO-Revision-Date: 2026-01-04 23:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -15,539 +15,702 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_needaction
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_needaction
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_needaction
 msgid "Action Needed"
-msgstr "Acción necesaria"
+msgstr "Acción Necesaria"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_ids
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_ids
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_ids
 msgid "Activities"
 msgstr "Actividades"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_exception_decoration
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_exception_decoration
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Actividad de excepción"
+msgstr "Actividad de Excepción"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_state
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_state
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_state
 msgid "Activity State"
-msgstr "Estado de la actividad"
+msgstr "Estado Actividad"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_type_icon
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_type_icon
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_type_icon
 msgid "Activity Type Icon"
-msgstr "Tipo de Actividad"
+msgstr "Ícono Tipo Actividad"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__amount
-msgid "Amount"
-msgstr "Importe"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_yoy
+msgid "Annual Inflation (%)"
+msgstr "Inflación Anual (%)"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_attachment_count
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_attachment_count
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_attachment_count
 msgid "Attachment Count"
-msgstr "Recuento de adjuntos"
+msgstr "Recuento de Adjuntos"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__capital_amortized
-msgid "Capital Amortized"
-msgstr "Capital amortizado"
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "BONDS"
+msgstr "Bonos"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__capital_payment
-msgid "Capital Payment"
-msgstr "Pago de capital"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__reserves_value
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Bank Reserves"
+msgstr "Reservas Bancarias"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__capital_remaining
-msgid "Capital Remaining"
-msgstr "Capital pendiente"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__bonds_usa_value
+msgid "Bonds USA Bank Reserva"
+msgstr "Bonos en la Reserva Federal USA"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__current_debt
-msgid "Capital remaining from the last paid installment."
-msgstr "Deuda Actual."
+#. module: custom_gonza_dashboard
+#: model_terms:ir.actions.act_window,help:custom_gonza_dashboard.action_financial_indicators
+msgid "Create a record to store the latest FRED indicators."
+msgstr "Cree un registro para almacenar los últimos indicadores FRED."
 
-#. module: custom_gonza_loans
-#: model_terms:ir.actions.act_window,help:custom_gonza_loans.action_loan
-msgid "Create your first Loan"
-msgstr "Crea tu primer préstamo"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__create_uid
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__create_uid
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__create_date
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__create_date
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__create_date
 msgid "Created on"
 msgstr "Creado el"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__currency_id
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__currency_id
 msgid "Currency"
 msgstr "Moneda"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__current_debt
-msgid "Current Debt"
-msgstr "Deuda actual"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__date
-msgid "Date"
-msgstr "Fecha"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__description
-msgid "Description"
-msgstr "Descripción"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__detail_ids
-msgid "Details"
-msgstr "Detalles"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__display_name
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__display_name
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__display_name
 msgid "Display Name"
 msgstr "Nombre"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__effective_interest_rate
-msgid "Effective Interest Rate Monthly"
-msgstr "Tasa efectiva mensual"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__on_rrp_value
+msgid "Excess Liquidity"
+msgstr ""
+"Es la liquidez sobrante. Cuando está alto significa que existe mucha "
+"líquidez para entrar al sistema e invertirse en distintos activos, cuando "
+"hay muy poca liquidez ya no queda nada por invertirse en activos y se "
+"necesita liquidez"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__effective_interest_rate
-msgid "Effective monthly interest rate calculated from the nominal annual rate."
-msgstr "Tasa efectiva mensual obtenida a partir de la tasa efectiva anual."
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "FRED Indicators"
+msgstr "Indicadores FRED"
 
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
-msgid "Example of Loan Effective Rate Calculation"
-msgstr "Ejemplo de cálculo de la Tasa Efectiva Mensual a partir de la Tasa Efectiva Anual"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_bonds
+msgid "FRED series_id BONDS"
+msgstr "Código FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__expected_return_rate
-msgid "Expected Investment Return (%)"
-msgstr "Tasa de Retorno Esperada (%)"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_reserves
+msgid "FRED series_id Bank Reserves"
+msgstr "Código FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__expected_return_rate
-msgid "Expected annual rate of return on the investment."
-msgstr "Tasa de rendimiento anual esperada de la inversión."
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_cpi
+msgid "FRED series_id CPI (para inflation)"
+msgstr "Código FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__number
-msgid "Fees paid"
-msgstr "Cuotas pagadas"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_ffr
+msgid "FRED series_id Interest Rate (EFFR/FF)"
+msgstr "Código FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_follower_ids
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_follower_ids
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_inverse_repo
+msgid "FRED series_id Inverse Repo"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_move
+msgid "FRED series_id MOVE"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_on_rrp
+msgid "FRED series_id ON RRP"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_sofr
+msgid "FRED series_id SOFR"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_srf
+msgid "FRED series_id SRF"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_tga
+msgid "FRED series_id TGA"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_usd_index
+msgid "FRED series_id USD Index (DXY/proxy)"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_unrate
+msgid "FRED series_id Unemployment Rate"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_vix
+msgid "FRED series_id VIX"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.ui.menu,name:custom_gonza_dashboard.menu_financial_root
+msgid "Financial Data"
+msgstr "Datos Financieros"
+
+#. module: custom_gonza_dashboard
+#: model:ir.actions.act_window,name:custom_gonza_dashboard.action_financial_indicators
+#: model:ir.model,name:custom_gonza_dashboard.model_financial_indicators
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_list
+msgid "Financial Indicators"
+msgstr "Indicadores Financieros"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_partner_ids
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_partner_ids
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Partners"
+msgstr "Seguidores (Partners)"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__activity_type_icon
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_type_icon
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Ìcono"
+msgstr "Ícono"
 
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
-msgid "Generate Details"
-msgstr "Genera detalle de cuotas"
-
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
-msgid "Generate Net Present Value"
-msgstr "Generar VAN y VFN"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__has_message
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__has_message
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__has_message
 msgid "Has Message"
 msgstr "Mensaje"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__id
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__id
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_exception_icon
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_exception_icon
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_exception_icon
 msgid "Icon"
 msgstr "Ícono"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__activity_exception_icon
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_exception_icon
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Ícono muestra una actividad de excepción."
+msgstr "Ícono de actividad de excepción."
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__message_needaction
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_needaction
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado, los mensajes nuevos requieren su atención."
+msgstr "Si está marcada, los mensajes nuevos requieren su atención."
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__message_has_error
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_has_error
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+msgstr "Si está marcada, algunos mensajes tendrán un error de entrega."
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__is_finished
-msgid "Indicates if the loan has been fully repaid."
-msgstr "Indica si el préstamo fue pagado en su totalidad"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__bonds_usa_value
+msgid ""
+"If it goes up it provides more liquidity, and if it goes down it provides "
+"less liquidity."
+msgstr ""
+"Son los bonos en manos de la Reserva Federal. Si sube da más liquidez y si "
+"baja da menos liquidez. Significa que compra bonos (inyecta dinero) o vende "
+"bonos (retira dinero)."
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__is_investment
-msgid "Indicates if the loan is used for investment purposes."
-msgstr "Indica si el préstamo será utilizado para fines de inversión."
+#. module: custom_gonza_dashboard
+#: model:ir.ui.menu,name:custom_gonza_dashboard.menu_financial_indicators
+msgid "Indicators (FRED)"
+msgstr "Indicadores (FRED)"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__interest_payment
-msgid "Interest Payment"
-msgstr "Pago de interés"
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Inflation"
+msgstr "Inflación"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__interest_rate
-msgid "Interest Rate (%)"
-msgstr "Tasa Efectiva Anual"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_6m
+msgid "Inflation 6M (%)"
+msgstr "Inflación 6M (%)"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__is_finished
-msgid "Is Finished"
-msgstr "Finalizado"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_mom
+msgid "Inflation MoM (%)"
+msgstr "Inflación Mensual (%)"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_is_follower
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_is_follower
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Interest Rate"
+msgstr "Tasa de Inflación"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__interest_rate_value
+msgid "Interest Rate USA (%)"
+msgstr "Tasa de Interés UA (%)"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Inverse Repo"
+msgstr "Repos Inversas"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inverse_repo_value
+msgid "Inverse Repo USA"
+msgstr "Repos Inversas USA"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_is_follower
 msgid "Is Follower"
 msgstr "Es seguidor"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__is_investment
-msgid "Is Investment"
-msgstr "Es inversión"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__srf_value
+msgid ""
+"It is the instrument by which the Federal Reserve lends to banks that have "
+"access to it to prevent them from going bankrupt."
+msgstr ""
+"Instrumento de la Reserva Federal para evitar la quiebra bancaria en USA."
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__write_uid
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__write_uid
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__last_sync
+msgid "Last Total Update"
+msgstr "Última Actualización el"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__bonds_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__inflation_cpi_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__interest_rate_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__inverse_repo_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__move_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__on_rrp_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__reserves_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__sofr_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__srf_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__tga_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__unemployment_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__usd_index_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__vix_date
+msgid "Last Update Date"
+msgstr "Última Actualización el"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización hecha por"
+msgstr "Última Actualización por"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__write_date
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__write_date
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__write_date
 msgid "Last Updated on"
-msgstr "Última actualización hecha en"
+msgstr "Última Actualización el"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__loan_id
-#: model:ir.ui.menu,name:custom_gonza_loans.menu_loan_root
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.loan_view_search
-msgid "Loan"
-msgstr "Préstamo"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__bonds_link
+msgid "Link FRED BONDS"
+msgstr "Link FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model,name:custom_gonza_loans.model_loan_details
-msgid "Loan Details"
-msgstr "Detalle de Préstamos"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_link
+msgid "Link FRED Inflation"
+msgstr "Link FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.ui.menu,name:custom_gonza_loans.menu_loan
-msgid "Loan Menu"
-msgstr "Menú de Préstamos"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__interest_rate_link
+msgid "Link FRED Interest Rate"
+msgstr "Link FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model,name:custom_gonza_loans.model_loan_loan
-msgid "Loan Model"
-msgstr "Modelo de Préstamos"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inverse_repo_link
+msgid "Link FRED Inverse Repo"
+msgstr "Link FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.actions.act_window,name:custom_gonza_loans.action_loan
-#: model:ir.ui.menu,name:custom_gonza_loans.loan_general_menu
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_list
-msgid "Loans"
-msgstr "Préstamos"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__move_link
+msgid "Link FRED MOVE"
+msgstr "Link FRED"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_has_error
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_has_error
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__on_rrp_link
+msgid "Link FRED ON RRP"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__reserves_link
+msgid "Link FRED Reserves"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__sofr_link
+msgid "Link FRED SOFR"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__srf_link
+msgid "Link FRED SRF"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__tga_link
+msgid "Link FRED TGA"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__usd_index_link
+msgid "Link FRED USD Index"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__unemployment_link
+msgid "Link FRED Unemployment"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__vix_link
+msgid "Link FRED VIX"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Liquidity / Fed"
+msgstr "Liquidez/FED"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "MOVE"
+msgstr "Market Option Volatility Estimate (MOVE) - Volatilidad de los bonos"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Macro"
+msgstr "Datos Macro"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Markets"
+msgstr "Datos del Mercado"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__move_value
+msgid "Merrill Lynch Option Volatility Estimate (MOVE)"
+msgstr "Market Option Volatility Estimate (MOVE) - Volatilidad de los bonos"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_has_error
 msgid "Message Delivery error"
-msgstr "Error de entrega de mensaje"
+msgstr "Error en el envío del mensaje"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_ids
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_ids
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_ids
 msgid "Messages"
 msgstr "Mensajes"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__my_activity_date_deadline
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__my_activity_date_deadline
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr "Fecha límite de actividad"
+msgstr "Deadline de la actividad"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__name
-msgid "Name"
-msgstr "Nombre"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__simulated_vfn
-msgid "Net future value of an investment that uses the loan, considering an expected return."
-msgstr ""
-"Valor Futuro Neto de una inversión que utiliza el préstamo, considerando una rentabilidad "
-"esperada."
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__simulated_npv
-msgid "Net present value of an investment that uses the loan, considering an expected return."
-msgstr ""
-"Valor Actual Neto de una inversión que utiliza el préstamo, considerando una rentabilidad "
-"esperada."
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_date_deadline
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_date_deadline
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Fecha límite siguiente actividad"
+msgstr "Siguiente Deadline"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_summary
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_summary
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_summary
 msgid "Next Activity Summary"
-msgstr "Resumen de la próxima actividad"
+msgstr "Resumen de la Actividad"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_type_id
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_type_id
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_type_id
 msgid "Next Activity Type"
-msgstr "Tipo de la siguiente actividad"
+msgstr "Tipo de Actividad"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__interest_rate
-msgid "Nominal annual interest rate."
-msgstr "Tasa Nominal Anual."
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__name
+msgid "Nombre"
+msgstr ""
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__number
-msgid "Number"
-msgstr "Cuota"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_needaction_counter
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_needaction_counter
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_needaction_counter
 msgid "Number of Actions"
-msgstr "Número de acciones"
+msgstr "Cantidad de Acciones"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__message_has_error_counter
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__message_has_error_counter
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__message_has_error_counter
 msgid "Number of errors"
-msgstr "Números de errores"
+msgstr "Cantidad de Errores"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__message_needaction_counter
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_needaction_counter
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr "Número de mensajes que requieren acción"
+msgstr "Mensajes que requieren acción"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__message_has_error_counter
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__message_has_error_counter
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "Número de mensajes con error de entrega"
+msgstr "Cantidad de mensajes con error"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields.selection,name:custom_gonza_loans.selection__loan_details__status__paid
-msgid "Paid"
-msgstr "Pagada"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__on_rrp_value
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "ON RRP"
+msgstr "LIQUIDEZ SOBRANTE (ON RRP)"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__date
-msgid "Payment Date"
-msgstr "Fecha de pago"
-
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
-msgid "Payments"
-msgstr "Pagos"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields.selection,name:custom_gonza_loans.selection__loan_details__status__pending
-msgid "Pending"
-msgstr "Pendiente"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__number_payments
-msgid "Pending Payments"
-msgstr "Pagos pendientes"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__percentage_debt
-msgid "Percentage Debt"
-msgstr "Ratio deuda/capital"
-
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__inverse_repo_value
 msgid ""
-"Please, if there are changes in the capital or\n"
-"                                    interest, generate the new installment details to\n"
-"                                    update the exact calculation."
+"Overnight Repurchase Agreements: Treasury Securities Purchased by the "
+"Federal Reserve in the Temporary Open Market Operations,"
 msgstr ""
-"Por favor, si hay cambios en el capital o intereses,&#13;\n"
-"                                    generar el detalle de las nuevas cuotas&#13;\n"
-"                                    para actualizar el cálculo del VAN exacto."
+"Acuerdos de Recompra a un día. El Tesoro compra a los Bancos un bono que "
+"los Bancos devuelven al otro día para cuadrar la falta de liquidez y evitar "
+"la quiebra. Debe estar en cero para ser positivo, si existen transacciones "
+"significa que los Bancos necesitan el \"salvataje\" de la FED"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__activity_user_id
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__activity_user_id
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__activity_user_id
 msgid "Responsible User"
-msgstr "Usuario responsable"
+msgstr "Usuario Responsable"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__number
-msgid "Sequential number"
-msgstr "Cuota"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__last_sync_message
+msgid "Result last sync"
+msgstr "Resultado última Actualización"
 
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
-msgid ""
-"Set this field to true if you want to analyze a\n"
-"                                    possible investment with this loan."
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "SOFR"
+msgstr "SOFR (Secured Overnight Financing Rate)"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "SRF"
+msgstr "SRF (Standart Record Facility)"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Search in FRED API and paste the series_id"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__sofr_value
+msgid "Secured Overnight Financing Rate (SOFR)"
 msgstr ""
-"Establezca este campo como verdadero&#13;\n"
-"                                    si desea analizar una posible inversión con este préstamo."
+"Secured Overnight Financing Rate (SOFR) - Tipo de interés interbancario"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__other_day_payment
-msgid "Signing day first pay day"
-msgstr "Se paga el día de firma"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__srf_value
+msgid "Standart Record Facility (SRF)"
+msgstr "Standart Record Facility (SRF) - Interés de la FED a los Bancos"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__simulated_npv
-msgid "Simulated Investment NPV"
-msgstr "Valor Actual Neto (VAN)"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__simulated_vfn
-msgid "Simulated Investment VFN"
-msgstr "Valor Futuro Neto (VFN)"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__status
-msgid "Status"
-msgstr "Estado"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__activity_state
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_state
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__activity_state
 msgid ""
 "Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
-"Estado basado en actividades\n"
-"Vencido: la fecha de vencimiento ya pasó\n"
-"Hoy: la fecha de la actividad es hoy.\n"
-"Planificado: Actividades futuras."
 
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
-msgid "Tasa Efectiva"
-msgstr "Tasa efectiva"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__tga_date
+msgid "TGA date"
+msgstr "Última actualización"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__term
-msgid "Term in months"
-msgstr "Duración en meses"
-
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__tga_value
 msgid ""
-"The FNV is the difference between the capital updated at\n"
-"                                the end date and the future value of all cash flows paid\n"
-"                                or obtained during the loan or investment."
+"The Treasury and Federal Reserve accounts.The lower the account, the more "
+"money is in circulation."
 msgstr ""
-"El VFN es la resta del capital actualizado a la fecha final&#13;\n"
-"                                menos el valor futuro de todos los flujos pagados&#13;\n"
-"                                u obtenidos durante el préstamo o inversión."
+"Cuenta del Tesoro y Reserva Federal. Cuánto menos dinero tenga, significa "
+"que existe más dinero en circulación y menos retenido por el Estado. En los "
+"shutdown suele crecer mucho, porque el Estado recauda pero no paga y seca "
+"de liquidez al mercado."
 
-#. module: custom_gonza_loans
-#: model_terms:ir.ui.view,arch_db:custom_gonza_loans.view_loan_form
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__usd_index_value
 msgid ""
-"The NPV is the difference between current capital and\n"
-"                                the\n"
-"                                present value of cash flows paid or received during the\n"
-"                                loan or investment."
+"The USD's relationship to other currencies. The lower the value, the better "
+"for risk assets; if it rises, it's worse."
 msgstr ""
-"El VAN es la resta del capital actual menos el valor actual de los flujos pagados&#13;\n"
-"                                u obtenidos&#13;\n"
-"                                durante el préstamo&#13;\n"
-"                                o inversión."
+"Relación del dólar estadounidense con otras monedas. Cuanto menor sea su "
+"valor, mejor para los activos de riesgo; si sube, peor."
 
-#. module: custom_gonza_loans
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__sofr_value
+msgid "The interest rate at which banks lend money to each other"
+msgstr ""
+"La tasa de interés a la que los bancos se prestan dinero entre sí, el banco "
+"que da el dinero recibe un colateral a cambio (hipotecas si hay poca "
+"liquidez o bonos si existe mucha liquidez). Si la tasa SOFR es muy alta la "
+"política monetaria es muy restrictiva (recesión) y si es muy baja es "
+"demasiado laxa (inflación), para que sea perfecta tiene que ser igual a la "
+"Tasa de Interés de la FED, si es más alta o baja depende del momento "
+"monetario"
+
+#. module: custom_gonza_dashboard
 #. odoo-python
-#: code:addons/custom_gonza_loans/models/loan.py:0
-msgid "The payment plan cannot be calculated because the following fields are missing: %s"
+#: code:addons/custom_gonza_dashboard/models/dashboard.py:0
+msgid ""
+"The payment plan cannot be calculated because the following fields are "
+"missing: %s"
 msgstr "El préstamo no puede ser calculado porque hay campos vacíos: %s"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__total_amount_to_pay
-msgid "Total Amount to Pay"
-msgstr "Total Importe a Pagar"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__reserves_value
+msgid ""
+"This is what banks use to invest—basically, our deposits. They depend to "
+"some extent on the TGA (Total Annual Growth Rate); if the US doesn't spend, "
+"no funds are deposited into the accounts of companies, individuals, etc."
+msgstr ""
+"Esto es lo que los bancos usan para invertir: básicamente, nuestros "
+"depósitos. Dependen en cierta medida de la TGA (Tasa de Crecimiento Anual "
+"Total); si EE. UU. no gasta, no se depositan fondos en las cuentas de "
+"empresas, particulares, etc."
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_loan__total_interest
-msgid "Total Interest"
-msgstr "Total Interés a Pagar"
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__tga_value
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Treasury General Account (TGA)"
+msgstr "Treasury General Account (TGA) - Cuenta del Tesoro"
 
-#. module: custom_gonza_loans
-#: model:ir.model.fields,field_description:custom_gonza_loans.field_loan_details__total_payment
-msgid "Total Payment"
-msgstr "Total pagos"
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__total_amount_to_pay
-msgid "Total amount to be repaid (principal + interest)."
-msgstr "Total Importe a devolver (principal + intereses)."
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__total_interest
-msgid "Total interest paid over the life of the loan."
-msgstr "Total intereses pagados en todo el préstamo."
-
-#. module: custom_gonza_loans
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_details__activity_exception_decoration
-#: model:ir.model.fields,help:custom_gonza_loans.field_loan_loan__activity_exception_decoration
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__move_value
+msgid "USA Bond Volatility - Manual Changes"
+msgstr "Volatilidad de los Bonos de USA (Se requiere actualización Manual)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_cpi_value
+msgid "USA Inflation"
+msgstr "USA Inflación"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "USD Index (DXY / proxy)"
+msgstr "Índice USD (DXY/Proxy)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__usd_index_value
+msgid "USD Index (DXY)"
+msgstr "Índice USD (DXY)"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Unemployment"
+msgstr "Desempleo"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__unemployment_value
+msgid "Unemployment USA (%)"
+msgstr "Desempleo USA (%)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_yoy_date
+msgid "Update Date Annual Inflation"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__bonds_date
+msgid "Update Date BONDS"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__reserves_date
+msgid "Update Date Bank Reserves"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_cpi_date
+msgid "Update Date CPI"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_6m_date
+msgid "Update Date Inflation 6M"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_mom_date
+msgid "Update Date Inflation MoM"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inverse_repo_date
+msgid "Update Date Inverse Repo"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__move_date
+msgid "Update Date MOVE"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__on_rrp_date
+msgid "Update Date ON RRP"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__sofr_date
+msgid "Update Date SOFR"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__srf_date
+msgid "Update Date SRF"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__usd_index_date
+msgid "Update Date USD Index"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__unemployment_date
+msgid "Update Date Unemployment"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__vix_date
+msgid "Update Date VIX"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__interest_rate_date
+msgid "Update Interest Rate"
+msgstr "Última actualización"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "VIX"
+msgstr "Volatility Index (VIX) - Volatilidad de las Bolsas USA"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__vix_value
+msgid "Volatility Index (VIX)"
+msgstr "Índice de Volatilidad de las Bolsas (VIX)"

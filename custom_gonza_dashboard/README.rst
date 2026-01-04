@@ -15,8 +15,7 @@ None.
 Usage
 =====
 
-Standard Odoo functionality. It is a module designed for loan calculation under
-a French interest system, and it allows financial analysis of investment profitability.
+Standard Odoo functionality. It is a module for monitoring financial indicators
 
 Known issues
 ============

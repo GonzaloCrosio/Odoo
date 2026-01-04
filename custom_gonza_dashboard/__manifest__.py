@@ -12,7 +12,6 @@
     ],
     "data": [
         "security/ir.model.access.csv",
-        "views/loan_loan.xml",
-        "views/loan_menu.xml",
+        "views/financial_indicators_views.xml",
     ],
 }
