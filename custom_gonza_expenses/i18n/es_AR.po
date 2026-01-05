@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 09:59+0000\n"
-"PO-Revision-Date: 2025-08-14 12:05+0200\n"
+"POT-Creation-Date: 2026-01-04 23:58+0000\n"
+"PO-Revision-Date: 2026-01-05 01:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__message_needaction
@@ -160,6 +160,17 @@ msgid "Display Name"
 msgstr "Nombre"
 
 #. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_interval
+msgid "Every"
+msgstr "Intervalo"
+
+#. module: custom_gonza_expenses
+#. odoo-python
+#: code:addons/custom_gonza_expenses/models/expenses.py:0
+msgid "Every must be >= 1."
+msgstr "El intervalo debe ser superior a 1."
+
+#. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expense_amount
 msgid "Expense Amount"
 msgstr "Importe gasto"
@@ -257,6 +268,11 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Ìcono"
 
 #. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_frequency
+msgid "Frequency"
+msgstr "Frecuencia"
+
+#. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__has_message
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_payment_mode__has_message
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__has_message
@@ -274,7 +290,7 @@ msgstr "Mensaje"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_expenses__id
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_secundary_expenses__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__activity_exception_icon
@@ -375,6 +391,11 @@ msgstr "Mensajes"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__month
 msgid "Month"
 msgstr "Mes"
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields.selection,name:custom_gonza_expenses.selection__exp_expenses_expenses__recurrence_frequency__monthly
+msgid "Monthly"
+msgstr "Mensual"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__my_activity_date_deadline
@@ -503,6 +524,16 @@ msgid "Principal Tags"
 msgstr "Etiquetas Principales"
 
 #. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_parent_id
+msgid "Recurrence Parent"
+msgstr "Padre de la Recurrencia"
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_child_ids
+msgid "Recurring Expenses"
+msgstr "Gasto Recurrente"
+
+#. module: custom_gonza_expenses
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_type_view_form
 msgid "Related Expenses"
 msgstr "Operación Relacionada"
@@ -516,6 +547,33 @@ msgstr "Operación Relacionada"
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_type_view_form
 msgid "Related Operation"
 msgstr "Operación Relacionada"
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_end_date
+msgid "Repeat Until"
+msgstr "Repetir hasta"
+
+#. module: custom_gonza_expenses
+#. odoo-python
+#: code:addons/custom_gonza_expenses/models/expenses.py:0
+msgid "Repeat Until is required for recurring expenses."
+msgstr "Se requiere repetir hasta para gastos recurrentes."
+
+#. module: custom_gonza_expenses
+#. odoo-python
+#: code:addons/custom_gonza_expenses/models/expenses.py:0
+msgid "Repeat Until must be >= Date."
+msgstr "El Repetir Hasta debe ser superior a la Fecha Actual"
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields,help:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_interval
+msgid "Repeat every N months/years."
+msgstr "Repetir cada N meses/años."
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__is_recurring
+msgid "Repetitive"
+msgstr "Repetitivo"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__activity_user_id
@@ -593,3 +651,8 @@ msgstr "Tipo de actividad de excepción registrada."
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__year
 msgid "Year"
 msgstr "Año"
+
+#. module: custom_gonza_expenses
+#: model:ir.model.fields.selection,name:custom_gonza_expenses.selection__exp_expenses_expenses__recurrence_frequency__yearly
+msgid "Yearly"
+msgstr "Anual"

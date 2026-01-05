@@ -21,6 +21,11 @@
                 <field name="expenses_payment_mode_id" optional="hide" width="130"/>
                 <field name="expenses_type_id" optional="hide" width="130"/>
                 <field name="description" optional="hide" width="200"/>
+                <field name="is_recurring" optional="hide" width="200"/>
+                <field name="recurrence_frequency" optional="hide" width="200"/>
+                <field name="recurrence_interval" optional="hide" width="200"/>
+                <field name="recurrence_end_date" optional="hide" width="200"/>
+                <field name="recurrence_parent_id" optional="hide" width="200"/>
             </list>
         </field>
     </record>
@@ -33,18 +38,27 @@
             <form string="Expenses">
                 <sheet>
                     <group>
-                        <field name="currency_id" invisible="1"/>
-                        <field name="expense_amount" widget="monetary"/>
-                        <field name="income_amount" widget="monetary"/>
-                        <field name="date"/>
-                        <field name="description"/>
-                        <field name="expenses_tag_id"/>
-                        <field name="expenses_secundary_tag_id"
-                               widget="many2many_tags"/>
-                        <field name="expenses_payment_mode_id"/>
-                        <field name="expenses_type_id"/>
-                        <field name="pdf_attachment" filename="pdf_filename"
-                               widget="binary" class="oe_form_field_file"/>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="expense_amount" widget="monetary"/>
+                            <field name="income_amount" widget="monetary"/>
+                            <field name="date"/>
+                            <field name="expenses_tag_id"/>
+                            <field name="expenses_secundary_tag_id"
+                                   widget="many2many_tags"/>
+                            <field name="expenses_payment_mode_id"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="expenses_type_id"/>
+                            <field name="pdf_attachment" filename="pdf_filename"
+                                   widget="binary" class="oe_form_field_file"/>
+                            <field name="is_recurring"/>
+                            <field name="recurrence_frequency"/>
+                            <field name="recurrence_interval"/>
+                            <field name="recurrence_end_date"/>
+                            <field name="recurrence_parent_id"/>
+                        </group>
                     </group>
                     <field name="compatible_secundary_tags_ids" invisible="1"/>
                 </sheet>
