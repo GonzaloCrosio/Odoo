@@ -15,11 +15,12 @@
         <field name="model">crypto.valuation.layer</field>
         <field name="arch" type="xml">
             <list>
-                <field name="date" widget="text" optional="show"/>
-                <field name="asset_id" widget="text" optional="show"/>
-                <field name="qty_purchase" widget="text" optional="show"/>
-                <field name="qty_sold" widget="text" optional="show"/>
-                <field name="qty_available" widget="text" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="date" optional="show"/>
+                <field name="asset_id" optional="show"/>
+                <field name="qty_purchase" widget="text" optional="show" sum="Total"/>
+                <field name="qty_sold" widget="text" optional="show" sum="Total"/>
+                <field name="qty_available" widget="text" optional="show" sum="Total"/>
                 <field name="unit_cost_eur" widget="text" optional="show"/>
                 <field name="fee_eur" widget="text" optional="hide"/>
                 <field name="total_cost_eur"
@@ -39,6 +40,9 @@
             <form string="Purchase Operation">
                 <!-- Smart button a Asignaciones de esta capa -->
                 <header>
+                    <h1>
+                        <field name="name" readonly="1" class="oe_inline"/>
+                    </h1>
                     <button name="action_open_allocations"
                             type="object"
                             class="oe_stat_button"
@@ -50,6 +54,7 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="name"/>
                             <field name="date"/>
                             <field name="asset_id" required="1"/>
                         </group>
@@ -84,18 +89,57 @@
         <field name="name">crypto.valuation.layer.search</field>
         <field name="model">crypto.valuation.layer</field>
         <field name="arch" type="xml">
-            <search>
+            <search string="Search Purchases (FIFO)">
+
+                <!-- Búsqueda rápida -->
+                <field name="name" string="Buy Ref"/>
                 <field name="asset_id"/>
                 <field name="date"/>
+                <field name="purchase_mode"/>
                 <field name="note"/>
-                <filter string="Quantity Available" name="with_available"
+
+                <separator/>
+
+                <!-- Estado FIFO -->
+                <filter string="With Available" name="with_available"
                         domain="[('qty_available','&gt;',0)]"/>
+                <filter string="Fully Sold" name="fully_sold"
+                        domain="[('qty_available','=',0)]"/>
+                <filter string="Partially Sold" name="partially_sold"
+                        domain="[('qty_sold','&gt;',0), ('qty_available','&gt;',0)]"/>
+                <filter string="Never Sold" name="never_sold"
+                        domain="[('qty_sold','=',0)]"/>
+
+                <separator/>
+
+                <!-- Fechas rápidas (sin .replace para evitar errores JS) -->
+                <filter string="This Month" name="this_month"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
+                <filter string="This Year" name="this_year"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
+                <filter string="Last 30 Days" name="last_30"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(days=-30)))]"/>
+
+                <separator/>
+
+                <!-- Costes -->
+                <filter string="Total Cost &gt; 0" name="cost_pos"
+                        domain="[('total_cost_eur','&gt;',0)]"/>
+                <filter string="Fees &gt; 0" name="fees_pos"
+                        domain="[('fee_eur','&gt;',0)]"/>
+
                 <group>
+                    <!-- Group by -->
                     <filter string="Asset" name="group_by_asset"
                             context="{'group_by':'asset_id'}"/>
-                    <filter string="Date (month)" name="group_by_month"
+                    <filter string="Purchase Mode" name="group_by_mode"
+                            context="{'group_by':'purchase_mode'}"/>
+                    <filter string="Date (Month)" name="group_by_month"
                             context="{'group_by':'date:month'}"/>
+                    <filter string="Date (Year)" name="group_by_year"
+                            context="{'group_by':'date:year'}"/>
                 </group>
+
             </search>
         </field>
     </record>

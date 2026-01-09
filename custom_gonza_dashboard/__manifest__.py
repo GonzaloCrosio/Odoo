@@ -9,9 +9,17 @@
     "installable": True,
     "depends": [
         "mail",
+        "web",
     ],
+    "assets": {
+        "web.assets_backend": [
+            "custom_gonza_dashboard/static/src/css/financial_dashboard.css",
+        ],
+    },
     "data": [
         "security/ir.model.access.csv",
         "views/financial_indicators_views.xml",
+        "views/dashboard_control.xml",
+        "views/dashboard_menu.xml",
     ],
 }

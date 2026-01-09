@@ -54,10 +54,10 @@
                             <field name="pdf_attachment" filename="pdf_filename"
                                    widget="binary" class="oe_form_field_file"/>
                             <field name="is_recurring"/>
-                            <field name="recurrence_frequency"/>
-                            <field name="recurrence_interval"/>
-                            <field name="recurrence_end_date"/>
-                            <field name="recurrence_parent_id"/>
+                            <field name="recurrence_frequency" invisible="not is_recurring"/>
+                            <field name="recurrence_interval" invisible="not is_recurring"/>
+                            <field name="recurrence_end_date" invisible="not is_recurring"/>
+                            <field name="recurrence_parent_id" invisible="not is_recurring"/>
                         </group>
                     </group>
                     <field name="compatible_secundary_tags_ids" invisible="1"/>
@@ -71,18 +71,51 @@
         </field>
     </record>
 
-    <!--Crea los filtros disponibles - Separator IF/OR-->
+    <!--Crea los filtros disponibles -->
     <record id="expenses_expenses_view_search" model="ir.ui.view">
         <field name="name">exp.expenses.expenses.view.search</field>
         <field name="model">exp.expenses.expenses</field>
         <field name="arch" type="xml">
             <search string="Search Expenses">
-                <field string="Category OR" name="expenses_tag_id"/>
-                <field name="expenses_payment_mode_id"/>
+
+                <!-- Búsqueda rápida -->
+                <field name="description" string="Description"/>
+                <field name="expenses_tag_id" string="Category"/>
+                <field name="expenses_secundary_tag_id" string="Secondary Tags"/>
+                <field name="expenses_payment_mode_id" string="Payment Mode"/>
+                <field name="expenses_type_id" string="Type"/>
+                <field name="date"/>
+
                 <separator/>
-                <field string="Category AND" name="expenses_tag_id"/>
-                <field name="expenses_payment_mode_id"/>
+
+                <!-- Filtros útiles -->
+                <filter string="Expenses" name="f_expenses" domain="[('expense_amount','&gt;',0)]"/>
+                <filter string="Income" name="f_income" domain="[('income_amount','&gt;',0)]"/>
+
+                <filter string="Recurring" name="f_recurring" domain="[('is_recurring','=',True)]"/>
+                <filter string="Not recurring" name="f_not_recurring" domain="[('is_recurring','=',False)]"/>
+
                 <separator/>
+
+                <!-- Fechas típicas -->
+                <filter string="This Month" name="f_this_month"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
+
+                <filter string="This Year" name="f_this_year"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
+
+                <separator/>
+
+                <!-- Agrupaciones -->
+                <filter string="Group by Category" name="grp_cat" context="{'group_by':'expenses_tag_id'}"/>
+                <filter string="Group by Secondary Tags" name="grp_sectag"
+                        context="{'group_by':'expenses_secundary_tag_id'}"/>
+                <filter string="Group by Payment Mode" name="grp_pay"
+                        context="{'group_by':'expenses_payment_mode_id'}"/>
+                <filter string="Group by Type" name="grp_type" context="{'group_by':'expenses_type_id'}"/>
+                <filter string="Group by Date (Month)" name="grp_month" context="{'group_by':'date:month'}"/>
+                <filter string="Group by Recurring" name="grp_rec" context="{'group_by':'is_recurring'}"/>
+
             </search>
         </field>
     </record>
@@ -93,8 +126,10 @@
         <field name="model">exp.expenses.expenses</field>
         <field name="arch" type="xml">
             <pivot string="Expenses Tags" sample="1">
-                <field name="date" type="row"/>
-                <field name="expenses_tag_id" type="col"/>
+                <!-- Principal: por AÑO -->
+                <field name="date" type="row" interval="year"/>
+                <!-- Medidas: separados -->
+                <field name="income_amount" type="measure"/>
                 <field name="expense_amount" type="measure"/>
             </pivot>
         </field>
@@ -119,6 +154,7 @@
         <field name="name">Expenses</field>
         <field name="res_model">exp.expenses.expenses</field>
         <field name="view_mode">list,form,pivot,graph</field>
+        <field name="search_view_id" ref="expenses_expenses_view_search"/>
     </record>
 
 </odoo>

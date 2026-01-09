@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-20 12:45+0000\n"
-"PO-Revision-Date: 2025-11-20 13:52+0100\n"
+"POT-Creation-Date: 2026-01-08 23:57+0000\n"
+"PO-Revision-Date: 2026-01-09 01:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.8\n"
+
+#. module: custom_gonza_investments
+#: model:ir.ui.menu,name:custom_gonza_investments.submenu_crypto_api
+msgid "API Informations"
+msgstr "Información API"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__message_needaction
@@ -83,6 +88,7 @@ msgstr "Asignaciones FIFO"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__asset_id
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__asset_id
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
 msgid "Asset"
 msgstr "Activo"
@@ -116,6 +122,21 @@ msgid "Bank Transfer Document"
 msgstr "Documento de Transferencia Bancaria"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__name
+msgid "Buy Code"
+msgstr "Código"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Buy Ref"
+msgstr "Código"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__fear_greed_value
+msgid "CMC Fear & Greed"
+msgstr "Miedo y Codicia"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__cmc_rank
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__cmc_rank
 msgid "CMC Rank"
@@ -146,12 +167,12 @@ msgstr "Compañía"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 msgid "Confirm"
 msgstr "Confirmar"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields.selection,name:custom_gonza_investments.selection__crypto_sale__state__confirmed
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 msgid "Confirmed"
 msgstr "Confirmado"
 
@@ -228,7 +249,10 @@ msgid "Crypto Valuation (FIFO)"
 msgstr "Criterio de Valuación (FIFO)"
 
 #. module: custom_gonza_investments
+#: model:ir.actions.act_window,name:custom_gonza_investments.action_investment_crypto_price
 #: model:ir.model,name:custom_gonza_investments.model_investment_crypto_price
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_investment_crypto_price_form
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_investment_crypto_price_list
 msgid "Cryptocurrency Prices"
 msgstr "Precio Criptos"
 
@@ -254,10 +278,24 @@ msgstr "Fecha"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Date (Month)"
+msgstr "Fecha (mes)"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Date (Year)"
+msgstr "Fecha (Año)"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 msgid "Date (month)"
 msgstr "Fecha (mes)"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
+msgid "Date (year)"
+msgstr "Fecha (Año)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_purchase_mode__description
@@ -289,9 +327,16 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: custom_gonza_investments
-#: model:ir.model.constraint,message:custom_gonza_investments.constraint_crypto_holding_holding_asset_company_unique
-msgid "Each asset can only have one holding per company."
-msgstr "Cada activo solo puede tener una participación por empresa."
+#. odoo-python
+#: code:addons/custom_gonza_investments/models/crypto_holding.py:0
+msgid ""
+"Each asset can only have one holding per company.\n"
+"Asset: %s\n"
+"Company: %s"
+msgstr ""
+"Cada activo solo puede tener una participación por empresa.\n"
+"Activo: %s\n"
+"Compañía: %s"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__exchange_document
@@ -299,11 +344,21 @@ msgid "Exchange Purchase Document"
 msgstr "Documento de Compra del Exchange"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__fear_greed_classification
+msgid "F&G Classification"
+msgstr "Clasificación F&G del Mercado Cripto"
+
+#. module: custom_gonza_investments
 #: model:ir.actions.act_window,name:custom_gonza_investments.action_crypto_allocation
 #: model:ir.ui.menu,name:custom_gonza_investments.menu_crypto_allocation
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
 msgid "FIFO Allocations"
 msgstr "Asignaciones FIFO"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Fees > 0"
+msgstr "Comisiones > 0"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__message_follower_ids
@@ -339,12 +394,9 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Ìcono"
 
 #. module: custom_gonza_investments
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_asset_search
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
-msgid "Group by"
-msgstr "Agrupar por"
+msgid "Fully Sold"
+msgstr "Totalmente Vendido"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__hbar_dominance
@@ -415,12 +467,19 @@ msgstr "Si está marcado, los mensajes nuevos requieren su atención."
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,help:custom_gonza_investments.field_crypto_asset__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_asset__message_has_sms_error
 #: model:ir.model.fields,help:custom_gonza_investments.field_crypto_holding__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_holding__message_has_sms_error
 #: model:ir.model.fields,help:custom_gonza_investments.field_crypto_purchase_mode__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_purchase_mode__message_has_sms_error
 #: model:ir.model.fields,help:custom_gonza_investments.field_crypto_sale__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_sale__message_has_sms_error
 #: model:ir.model.fields,help:custom_gonza_investments.field_crypto_sale_line__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_sale_line__message_has_sms_error
 #: model:ir.model.fields,help:custom_gonza_investments.field_crypto_valuation_layer__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_valuation_layer__message_has_sms_error
 #: model:ir.model.fields,help:custom_gonza_investments.field_investment_crypto_price__message_has_error
+#: model:ir.model.fields,help:custom_gonza_investments.field_investment_crypto_price__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
@@ -439,6 +498,12 @@ msgstr "Inversión Cripto"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__message_is_follower
 msgid "Is Follower"
 msgstr "Es seguidor"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Last 30 Days"
+msgstr "Últimos 30 días"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__write_uid
@@ -473,7 +538,7 @@ msgstr "Líneas"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__market_cap_usd
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__market_cap_usd
 msgid "Market Cap (USD)"
-msgstr "Market Cap (USD)"
+msgstr "Market Cap (USD) - Capitalización de Mercado"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_holding_form
@@ -545,6 +610,18 @@ msgid "Net Profit (EUR)"
 msgstr "Beneficio EUR"
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Never Sold"
+msgstr "Nunca Vendido"
+
+#. module: custom_gonza_investments
+#. odoo-python
+#: code:addons/custom_gonza_investments/models/crypto_purchase.py:0
+#: code:addons/custom_gonza_investments/models/crypto_sale.py:0
+msgid "New"
+msgstr "Nuevo"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__activity_date_deadline
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__activity_date_deadline
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_purchase_mode__activity_date_deadline
@@ -578,9 +655,10 @@ msgid "Next Activity Type"
 msgstr "Tipo de la siguiente actividad"
 
 #. module: custom_gonza_investments
-#: model:ir.model.constraint,message:custom_gonza_investments.constraint_crypto_valuation_layer_qty_sold_le_qty_purchase
+#. odoo-python
+#: code:addons/custom_gonza_investments/models/crypto_purchase.py:0
 msgid "No more can leave than went in."
-msgstr "No puede salir más cantidad de la que ha ingresado."
+msgstr "No puede venderse más de lo comprado."
 
 #. module: custom_gonza_investments
 #: model_terms:ir.actions.act_window,help:custom_gonza_investments.crypto_payment_mode_action
@@ -642,6 +720,11 @@ msgid "Open Purchases"
 msgstr "Órdenes de Compras del Activo"
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Partially Sold"
+msgstr "Parcialmente Vendido."
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__precision
 msgid "Precision"
 msgstr "Precisión"
@@ -677,6 +760,18 @@ msgid "Profit (€)"
 msgstr "Beneficio EUR"
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
+msgid "Profit < 0"
+msgstr "Beneficio < 0"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
+msgid "Profit > 0"
+msgstr "Beneficio > 0"
+
+#. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_pivot
 msgid "Profit for month/asset"
 msgstr "Beneficio por mes/activo"
@@ -697,11 +792,17 @@ msgid "Purchase Date"
 msgstr "Fecha"
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+msgid "Purchase Layer"
+msgstr "Compra"
+
+#. module: custom_gonza_investments
 #: model:ir.actions.act_window,name:custom_gonza_investments.crypto_payment_mode_action
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_purchase_mode__custom_name
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__purchase_mode
 #: model:ir.ui.menu,name:custom_gonza_investments.crypto_payment_mode_menu
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.crypto_payment_mode_view_form
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
 msgid "Purchase Mode"
 msgstr "Modo de Compra"
 
@@ -734,7 +835,6 @@ msgstr "Cantidad"
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__qty_available
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__qty_available
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
 msgid "Quantity Available"
 msgstr "Cantidad disponible"
 
@@ -775,6 +875,17 @@ msgid "Responsible User"
 msgstr "Usuario responsable"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__message_has_sms_error
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__message_has_sms_error
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_purchase_mode__message_has_sms_error
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__message_has_sms_error
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__message_has_sms_error
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__message_has_sms_error
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error Envío SMS"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__sale_id
 msgid "Sale"
 msgstr "Oferta"
@@ -786,9 +897,15 @@ msgstr "Fecha"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_allocation__sale_line_id
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
 msgid "Sale Line"
 msgstr "Líneas de venta"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__name
+msgid "Sale Line Code"
+msgstr "Código"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
@@ -800,6 +917,16 @@ msgstr "Líneas de venta"
 #: model:ir.ui.menu,name:custom_gonza_investments.menu_crypto_sale
 msgid "Sales"
 msgstr "Ventas"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+msgid "Search FIFO Allocations"
+msgstr "Búsqueda Asignaciones"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Search Purchases (FIFO)"
+msgstr "Búsqueda Asignaciones FIFO"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_form
@@ -851,6 +978,11 @@ msgid "Tax (€)"
 msgstr "Impuestos Euros"
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+msgid "Tax > 0"
+msgstr "Tax > 0"
+
+#. module: custom_gonza_investments
 #. odoo-python
 #: code:addons/custom_gonza_investments/models/crypto_sale.py:0
 msgid "The quantity to be sold must be positive."
@@ -863,6 +995,20 @@ msgid "There is not enough availability to sell %s %s. %s are missing."
 msgstr "No hay suficiente disponibilidad para vender %s %s. Faltan %s."
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "This Month"
+msgstr "Mes Actual"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "This Year"
+msgstr "Año Actual"
+
+#. module: custom_gonza_investments
 #: model_terms:ir.actions.act_window,help:custom_gonza_investments.action_crypto_holding
 msgid ""
 "This view shows your current crypto positions, with quantity available\n"
@@ -872,6 +1018,10 @@ msgstr ""
 "y el valor de mercado basado en los últimos precios."
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_list
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_holding_list
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_list
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_list
 msgid "Total"
 msgstr "Total"
@@ -885,6 +1035,11 @@ msgstr "Total  (EUR)"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__total_cost_eur
 msgid "Total Cost (€)"
 msgstr "Total costo euros"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "Total Cost > 0"
+msgstr "Total Costo > 0"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__fee_eur
@@ -971,6 +1126,11 @@ msgid "Website communication history"
 msgstr "Comunicación histórica Website"
 
 #. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
+msgid "With Available"
+msgstr "Con Disponibilidad"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__xrp_dominance
 msgid "XRP Dominance %"
 msgstr "Dominancia XRP %"
@@ -982,11 +1142,18 @@ msgid "You must select an Asset."
 msgstr "Debes seleccionar un activo."
 
 #. module: custom_gonza_investments
-#: model:ir.model.constraint,message:custom_gonza_investments.constraint_crypto_valuation_layer_qty_purchase_positive
+#. odoo-python
+#: code:addons/custom_gonza_investments/models/crypto_purchase.py:0
 msgid "qty_purchase must be positive."
-msgstr "La cantidad comprada debe ser positiva"
+msgstr "La cantidad comprada debe ser positiva."
 
 #. module: custom_gonza_investments
-#: model:ir.model.constraint,message:custom_gonza_investments.constraint_crypto_valuation_layer_qty_sold_not_negative
+#. odoo-python
+#: code:addons/custom_gonza_investments/models/crypto_purchase.py:0
 msgid "qty_sold cannot be negative."
 msgstr "La cantidad vendida no puede ser negativa"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_holding_list
+msgid "total"
+msgstr "Total"

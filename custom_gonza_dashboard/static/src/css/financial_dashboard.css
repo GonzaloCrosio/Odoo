@@ -1,0 +1,23 @@
+.fi_dot {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.o_kanban_view .o_kanban_record {
+  padding: 0 !important;              /* elimina el “marco” interno */
+  border: 0 !important;               /* único borde */
+  border-radius: 0 !important;        /* quita la curvatura */
+  box-shadow: none !important;        /* quita sombra que parece doble borde */
+  background: #e8f7e8;                /* base */
+}
+
+
+.fi_level_1 { background: #ffe5e5; }  .fi_level_1 .fi_dot { background: #d10000; } /* rojo */
+.fi_level_2 { background: #fff1e0; }  .fi_level_2 .fi_dot { background: #ff7a00; } /* naranja */
+.fi_level_3 { background: #fff9d6; }  .fi_level_3 .fi_dot { background: #d4b000; } /* amarillo */
+.fi_level_4 { background: #e8f7e8; }  .fi_level_4 .fi_dot { background: #2ea52e; } /* verde */
+.fi_level_5 { background: #d8f5d8; }  .fi_level_5 .fi_dot { background: #0b7a0b; } /* verde fuerte */
+.fi_level_0 { background: #f2f2f2; }  .fi_level_0 .fi_dot { background: #999; }     /* N/A */

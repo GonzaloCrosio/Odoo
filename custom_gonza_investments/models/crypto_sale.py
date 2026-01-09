@@ -92,7 +92,16 @@ class CryptoSaleLine(models.Model):
     _name = "crypto.sale.line"
     _description = "Crypto Sale Line"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = "name"
 
+    name = fields.Char(
+        string="Sale Line Code",
+        copy=False,
+        readonly=True,
+        index=True,
+        default=lambda self: _("New"),
+        tracking=True,
+    )
     sale_id = fields.Many2one(
         "crypto.sale",
         required=True,
@@ -145,6 +154,15 @@ class CryptoSaleLine(models.Model):
         store=True,
         string="Tax (€)",
     )
+
+    # Para crear la secuencia en el campo name
+    @api.model_create_multi
+    def create(self, vals_list):
+        seq = self.env["ir.sequence"]
+        for vals in vals_list:
+            if not vals.get("name") or vals.get("name") == _("New"):
+                vals["name"] = seq.next_by_code("crypto.sale.line.seq") or _("New")
+        return super().create(vals_list)
 
     @api.depends(
         "allocation_ids.profit_eur",

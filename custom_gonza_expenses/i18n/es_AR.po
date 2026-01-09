@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 23:58+0000\n"
-"PO-Revision-Date: 2026-01-05 01:02+0100\n"
+"POT-Creation-Date: 2026-01-08 22:32+0000\n"
+"PO-Revision-Date: 2026-01-08 23:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -89,13 +89,8 @@ msgstr "Balance (Ingreso - Gastos)"
 
 #. module: custom_gonza_expenses
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
-msgid "Category AND"
-msgstr "Categoría AND"
-
-#. module: custom_gonza_expenses
-#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
-msgid "Category OR"
-msgstr "Categoría OR"
+msgid "Category"
+msgstr "Categoría"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_expenses__compatible_secundary_tags_ids
@@ -143,6 +138,7 @@ msgstr "Fecha"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_type__description
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_expenses__description
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_secundary_expenses__description
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.secundary_tag_expenses_view_form
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_type_view_form
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_view_form
@@ -181,6 +177,7 @@ msgstr "Importe gasto"
 #: model:ir.ui.menu,name:custom_gonza_expenses.expenses_general_menu
 #: model:ir.ui.menu,name:custom_gonza_expenses.menu_expenses_expenses
 #: model:ir.ui.menu,name:custom_gonza_expenses.menu_expenses_root
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_form
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_list
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_summary_form
@@ -273,6 +270,36 @@ msgid "Frequency"
 msgstr "Frecuencia"
 
 #. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Group by Category"
+msgstr "Categoría"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Group by Date (Month)"
+msgstr "Por Fecha (Mes)"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Group by Payment Mode"
+msgstr "Modo de Pago"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Group by Recurring"
+msgstr "Recurrencia"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Group by Secondary Tags"
+msgstr "Segunda Etiqueta"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Group by Type"
+msgstr "Tipo"
+
+#. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__has_message
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_payment_mode__has_message
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__has_message
@@ -290,7 +317,7 @@ msgstr "Mensaje"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_expenses__id
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_tag_secundary_expenses__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__activity_exception_icon
@@ -331,6 +358,11 @@ msgstr "Si está marcado, los mensajes nuevos requieren su atención."
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_tag_secundary_expenses__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Income"
+msgstr "Ingreso"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__income_amount
@@ -458,6 +490,11 @@ msgid "No tags created."
 msgstr "No hay etiquetas creadas."
 
 #. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Not recurring"
+msgstr "No recurrencia"
+
+#. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__message_needaction_counter
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_payment_mode__message_needaction_counter
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__message_needaction_counter
@@ -506,6 +543,7 @@ msgstr "PDF Adjunto"
 #: model:ir.actions.act_window,name:custom_gonza_expenses.tag_expenses_payment_mode_action
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__expenses_payment_mode_id
 #: model:ir.ui.menu,name:custom_gonza_expenses.tag_expenses_payment_mode_menu
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.tag_expenses_payment_mode_view_form
 msgid "Payment Mode"
 msgstr "Modo de Pago"
@@ -527,6 +565,11 @@ msgstr "Etiquetas Principales"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_parent_id
 msgid "Recurrence Parent"
 msgstr "Padre de la Recurrencia"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Recurring"
+msgstr "Recurrencia"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__recurrence_child_ids
@@ -591,6 +634,11 @@ msgid "Search Expenses"
 msgstr "Filtros de Gastos"
 
 #. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Secondary Tags"
+msgstr "Segunda Etiqueta"
+
+#. module: custom_gonza_expenses
 #: model:ir.actions.act_window,name:custom_gonza_expenses.secundary_tag_expenses_action
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.secundary_tag_expenses_view_form
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.secundary_tag_expenses_view_list
@@ -628,6 +676,16 @@ msgstr ""
 "Planificado: Actividades futuras."
 
 #. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "This Month"
+msgstr "Este Mes"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "This Year"
+msgstr "Este Año"
+
+#. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__total_expenses
 msgid "Total Expenses"
 msgstr "Total Gastos"
@@ -636,6 +694,11 @@ msgstr "Total Gastos"
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__total_income
 msgid "Total Income"
 msgstr "Total Ingresos"
+
+#. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
+msgid "Type"
+msgstr "Tipo"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,help:custom_gonza_expenses.field_exp_expenses_expenses__activity_exception_decoration

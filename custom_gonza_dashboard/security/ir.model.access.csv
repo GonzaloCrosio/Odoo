@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-custom_gonza_dashboard.access_financial_indicators,access_loan_loan_user,custom_gonza_dashboard.model_financial_indicators,base.group_user,1,1,1,1
+custom_gonza_dashboard.access_financial_indicators,access_financial_indicators_user,custom_gonza_dashboard.model_financial_indicators,base.group_user,1,1,1,1
+custom_gonza_dashboard.access_dashboard_control,access_dashboard_control_user,custom_gonza_dashboard.model_dashboard_control,base.group_user,1,1,1,1

@@ -10,9 +10,17 @@ class CryptoValuationLayer(models.Model):
     _description = "Crypto Valuation (FIFO)"
     _order = "date asc, id asc"
     _check_company_auto = True
-    _rec_name = "asset_id"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = "name"
 
+    name = fields.Char(
+        string="Buy Code",
+        copy=False,
+        readonly=True,
+        index=True,
+        default=lambda self: _("New"),
+        tracking=True,
+    )
     asset_id = fields.Many2one(
         "crypto.asset",
         index=True,
@@ -81,6 +89,15 @@ class CryptoValuationLayer(models.Model):
     note = fields.Char(
         string="Note",
     )
+
+    # Para crear la secuencia en las líneas de compra
+    @api.model_create_multi
+    def create(self, vals_list):
+        seq = self.env["ir.sequence"]
+        for vals in vals_list:
+            if not vals.get("name") or vals.get("name") == _("New"):
+                vals["name"] = seq.next_by_code("crypto.valuation.layer.buy") or _("New")
+        return super().create(vals_list)
 
     # Se ejecuta al crear un nuevo registro para establecer valores por defecto
     @api.model

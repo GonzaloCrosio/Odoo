@@ -492,3 +492,9 @@ class FinancialIndicators(models.Model):
     def cron_update_from_fred(self):
         """Para llamarlos desde Acciones Planificadas o de Servidor."""
         self.update_from_fred()
+
+    threshold_ids = fields.One2many(
+        "dashboard.control",
+        "indicators_id",
+        string="Dashboard thresholds",
+    )

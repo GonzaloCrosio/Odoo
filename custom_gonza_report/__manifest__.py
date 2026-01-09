@@ -1,7 +1,7 @@
 {
     "name": "Custom Reports",
-    "version": "18.0.1.0.0",
-    "category": "Customizations",
+    "version": "19.0.1.0.0",
+    "category": "Customizations - Versión 18",
     "website": "https://www.puntsistemes.es",
     "author": "Gonzalo Crosio",
     "summary": "Custom basic reports PDF",

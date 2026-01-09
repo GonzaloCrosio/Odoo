@@ -9,13 +9,13 @@
 
     <!-- =========================
      VISTAS: VENTAS
-========================== -->
+    ========================== -->
     <record id="view_crypto_sale_list" model="ir.ui.view">
         <field name="name">crypto.sale.list</field>
         <field name="model">crypto.sale</field>
         <field name="arch" type="xml">
             <list>
-                <field name="asset_id"/>
+                <field name="asset_id" optional="show"/>
                 <field name="date" optional="show"/>
                 <field name="state" optional="show"/>
                 <field name="total_profit_eur" widget="monetary"
@@ -61,6 +61,7 @@
                         <page string="Sale Lines">
                             <field name="line_ids" readonly="state == 'confirmed'">
                                 <list>
+                                    <field name="name"/>
                                     <field name="asset_id"/>
                                     <field name="qty" sum="Total"
                                            optional="show"/>
@@ -80,6 +81,7 @@
                                 <form string="Sale Line">
                                     <group>
                                         <group>
+                                            <field name="name"/>
                                             <field name="asset_id"/>
                                             <field name="qty"/>
                                             <field name="price_unit_eur"/>
@@ -140,17 +142,28 @@
             <search>
                 <field name="asset_id"/>
                 <field name="date"/>
-                <filter string="Draft" name="draft"
-                        domain="[('state','=','draft')]"/>
-                <filter string="Confirm" name="confirmed"
-                        domain="[('state','=','confirmed')]"/>
+
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('state','=','confirmed')]"/>
+
+                <separator/>
+
+                <filter string="This Month" name="this_month"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
+                <filter string="This Year" name="this_year"
+                        domain="[('date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
+
+                <separator/>
+
+                <filter string="Profit &gt; 0" name="profit_pos" domain="[('total_profit_eur','&gt;', 0)]"/>
+                <filter string="Profit &lt; 0" name="profit_neg" domain="[('total_profit_eur','&lt;', 0)]"/>
+
                 <group>
-                    <filter string="State" name="group_by_state"
-                            context="{'group_by':'state'}"/>
-                    <filter string="Date (month)" name="group_by_month"
-                            context="{'group_by':'date:month'}"/>
-                    <filter string="Company" name="group_by_company"
-                            context="{'group_by':'company_id'}"/>
+                    <filter string="State" name="group_by_state" context="{'group_by':'state'}"/>
+                    <filter string="Date (month)" name="group_by_month" context="{'group_by':'date:month'}"/>
+                    <filter string="Date (year)" name="group_by_year" context="{'group_by':'date:year'}"/>
+                    <filter string="Asset" name="group_by_asset" context="{'group_by':'asset_id'}"/>
+                    <filter string="Company" name="group_by_company" context="{'group_by':'company_id'}"/>
                 </group>
             </search>
         </field>

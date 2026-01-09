@@ -14,6 +14,7 @@ class InvestmentCryptoPrice(models.Model):
     _name = "investment.crypto.price"
     _description = "Cryptocurrency Prices"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _rec_name = "fear_greed_classification"
 
     # Campos para almacenar los valores
     bitcoin_price = fields.Float(

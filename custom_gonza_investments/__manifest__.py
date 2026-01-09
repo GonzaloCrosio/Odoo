@@ -15,6 +15,7 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "data/sequence.xml",
         "views/crypto_holding.xml",
         "views/crypto_asset.xml",
         "views/crypto_sale_allocation.xml",
