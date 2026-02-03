@@ -7,7 +7,7 @@ class DashboardControl(models.Model):
     _description = "Dashboard Model"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = "name"
-    _order = "indicator"
+    _order = "name asc"
 
     name = fields.Char(
         string="Name",
@@ -30,6 +30,10 @@ class DashboardControl(models.Model):
             ("usd_index_value", "USD Index"),
             ("vix_value", "VIX"),
             ("move_value", "MOVE"),
+            ("sp500_value", "S&P 500"),
+            ("djia_value", "Dow Jones (DJIA)"),
+            ("nasdaqcom_value", "NASDAQ Composite"),
+            ("nasdaq100_value", "NASDAQ 100"),
             ("inflation_yoy", "Inflation YoY"),
             ("inflation_6m", "Inflation 6M"),
             ("inflation_mom", "Inflation MoM"),
@@ -105,6 +109,10 @@ class DashboardControl(models.Model):
         "indicators_id.usd_index_value",
         "indicators_id.vix_value",
         "indicators_id.move_value",
+        "indicators_id.sp500_value",
+        "indicators_id.djia_value",
+        "indicators_id.nasdaqcom_value",
+        "indicators_id.nasdaq100_value",
         "indicators_id.inflation_yoy",
         "indicators_id.inflation_6m",
         "indicators_id.inflation_mom",

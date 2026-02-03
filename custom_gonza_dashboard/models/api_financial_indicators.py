@@ -36,7 +36,7 @@ class FinancialIndicators(models.Model):
     tga_value = fields.Float(
         string="Treasury General Account (TGA)",
         help="The Treasury and Federal Reserve accounts."
-        "The lower the account, the more money is in circulation.",
+             "The lower the account, the more money is in circulation.",
         tracking=True,
     )
     tga_date = fields.Date(
@@ -49,12 +49,13 @@ class FinancialIndicators(models.Model):
     )
     tga_link = fields.Char(
         string="Link FRED TGA",
+        default="https://fred.stlouisfed.org/series/WTREGEN",
     )
     reserves_value = fields.Float(
         string="Bank Reserves",
         help="This is what banks use to invest—basically,"
-        " our deposits. They depend to some extent on the TGA (Total Annual Growth Rate);"
-        " if the US doesn't spend, no funds are deposited into the accounts of companies, individuals, etc.",
+             " our deposits. They depend to some extent on the TGA (Total Annual Growth Rate);"
+             " if the US doesn't spend, no funds are deposited into the accounts of companies, individuals, etc.",
         tracking=True,
     )
     reserves_date = fields.Date(
@@ -67,11 +68,12 @@ class FinancialIndicators(models.Model):
     )
     reserves_link = fields.Char(
         string="Link FRED Reserves",
+        default="https://fred.stlouisfed.org/series/WRESBAL",
     )
     srf_value = fields.Float(
         string="Standart Record Facility (SRF)",
         help="It is the instrument by which the Federal Reserve lends to banks that have access"
-        " to it to prevent them from going bankrupt.",
+             " to it to prevent them from going bankrupt.",
         tracking=True,
     )
     srf_date = fields.Date(
@@ -84,6 +86,7 @@ class FinancialIndicators(models.Model):
     )
     srf_link = fields.Char(
         string="Link FRED SRF",
+        default="https://fred.stlouisfed.org/series/SRFTSYD",
     )
     on_rrp_value = fields.Float(
         string="ON RRP",
@@ -100,6 +103,7 @@ class FinancialIndicators(models.Model):
     )
     on_rrp_link = fields.Char(
         string="Link FRED ON RRP",
+        default="https://fred.stlouisfed.org/series/RRPONTSYD",
     )
     sofr_value = fields.Float(
         string="Secured Overnight Financing Rate (SOFR)",
@@ -116,11 +120,12 @@ class FinancialIndicators(models.Model):
     )
     sofr_link = fields.Char(
         string="Link FRED SOFR",
+        default="https://fred.stlouisfed.org/series/SOFR",
     )
     bonds_usa_value = fields.Float(
         string="Bonds USA Bank Reserva",
         help="If it goes up it provides more liquidity,"
-        " and if it goes down it provides less liquidity.",
+             " and if it goes down it provides less liquidity.",
         tracking=True,
     )
     bonds_date = fields.Date(
@@ -133,11 +138,12 @@ class FinancialIndicators(models.Model):
     )
     bonds_link = fields.Char(
         string="Link FRED BONDS",
+        default="https://fred.stlouisfed.org/series/treast",
     )
     inverse_repo_value = fields.Float(
         string="Inverse Repo USA",
         help="Overnight Repurchase Agreements: Treasury Securities Purchased"
-        " by the Federal Reserve in the Temporary Open Market Operations,",
+             " by the Federal Reserve in the Temporary Open Market Operations,",
         tracking=True,
     )
     inverse_repo_date = fields.Date(
@@ -150,12 +156,13 @@ class FinancialIndicators(models.Model):
     )
     inverse_repo_link = fields.Char(
         string="Link FRED Inverse Repo",
+        default="https://fred.stlouisfed.org/series/RPONTSYD",
     )
     # Mercados / índices
     usd_index_value = fields.Float(
         string="USD Index (DXY)",
         help="The USD's relationship to other currencies. "
-        "The lower the value, the better for risk assets; if it rises, it's worse.",
+             "The lower the value, the better for risk assets; if it rises, it's worse.",
         tracking=True,
     )
     usd_index_date = fields.Date(
@@ -168,6 +175,7 @@ class FinancialIndicators(models.Model):
     )
     usd_index_link = fields.Char(
         string="Link FRED USD Index",
+        default="https://fred.stlouisfed.org/series/DTWEXBGS",
     )
     vix_value = fields.Float(
         string="Volatility Index (VIX)",
@@ -183,6 +191,7 @@ class FinancialIndicators(models.Model):
     )
     vix_link = fields.Char(
         string="Link FRED VIX",
+        default="https://fred.stlouisfed.org/series/VIXCLS",
     )
     move_value = fields.Float(
         string="Merrill Lynch Option Volatility Estimate (MOVE)",
@@ -199,6 +208,7 @@ class FinancialIndicators(models.Model):
     )
     move_link = fields.Char(
         string="Link FRED MOVE",
+        default="https://es.tradingview.com/symbols/TVC-MOVE/?timeframe=1M",
     )
     # Macro
     inflation_cpi_value = fields.Float(
@@ -215,6 +225,7 @@ class FinancialIndicators(models.Model):
     )
     inflation_link = fields.Char(
         string="Link FRED Inflation",
+        default="https://fred.stlouisfed.org/series/CPIAUCSL",
     )
     inflation_yoy = fields.Float(
         string="Annual Inflation (%)",
@@ -254,6 +265,7 @@ class FinancialIndicators(models.Model):
     )
     unemployment_link = fields.Char(
         string="Link FRED Unemployment",
+        default="https://fred.stlouisfed.org/series/UNRATE",
     )
     interest_rate_value = fields.Float(
         string="Interest Rate USA (%)",
@@ -269,6 +281,72 @@ class FinancialIndicators(models.Model):
     )
     interest_rate_link = fields.Char(
         string="Link FRED Interest Rate",
+        default="https://fred.stlouisfed.org/series/DFF",
+    )
+    # Exchange Data - Sp500 etc
+    sp500_value = fields.Float(
+        string="S&P 500",
+        tracking=True,
+    )
+    sp500_date = fields.Date(
+        string="Update Date S&P 500",
+        help="Last Update Date",
+    )
+    fred_series_sp500 = fields.Char(
+        string="FRED series_id S&P 500",
+        default="SP500",
+    )
+    sp500_link = fields.Char(
+        string="Link FRED S&P 500",
+        default="https://fred.stlouisfed.org/series/SP500",
+    )
+    djia_value = fields.Float(
+        string="Dow Jones Industrial Average (DJIA)",
+        tracking=True,
+    )
+    djia_date = fields.Date(
+        string="Update Date DJIA",
+        help="Last Update Date",
+    )
+    fred_series_djia = fields.Char(
+        string="FRED series_id DJIA",
+        default="DJIA",
+    )
+    djia_link = fields.Char(
+        string="Link FRED DJIA",
+        default="https://fred.stlouisfed.org/series/DJIA",
+    )
+    nasdaqcom_value = fields.Float(
+        string="NASDAQ Composite Index",
+        tracking=True,
+    )
+    nasdaqcom_date = fields.Date(
+        string="Update Date NASDAQ Composite",
+        help="Last Update Date",
+    )
+    fred_series_nasdaqcom = fields.Char(
+        string="FRED series_id NASDAQ Composite",
+        default="NASDAQCOM",
+    )
+    nasdaqcom_link = fields.Char(
+        string="Link FRED NASDAQ Composite",
+        default="https://fred.stlouisfed.org/series/NASDAQCOM",
+    )
+    nasdaq100_value = fields.Float(
+        string="NASDAQ 100 Index",
+        tracking=True,
+    )
+    nasdaq100_date = fields.Date(
+        string="Update Date NASDAQ 100",
+        help="Last Update Date",
+    )
+    fred_series_nasdaq100 = fields.Char(
+        string="FRED series_id NASDAQ 100",
+        default="NASDAQ100",
+    )
+    nasdaq100_link = fields.Char(
+        string="Link FRED NASDAQ 100",
+        default="https://fred.stlouisfed.org/series/NASDAQ100",
     )
 
     # Helpers FRED
@@ -461,6 +539,26 @@ class FinancialIndicators(models.Model):
             d, v = rec._fred_get_latest_valid(rec.fred_series_ffr, api_key)
             if d:
                 vals.update({"interest_rate_date": d, "interest_rate_value": v})
+
+            # S&P 500
+            d, v = rec._fred_get_latest_valid(rec.fred_series_sp500, api_key)
+            if d:
+                vals.update({"sp500_date": d, "sp500_value": v})
+
+            # DJIA
+            d, v = rec._fred_get_latest_valid(rec.fred_series_djia, api_key)
+            if d:
+                vals.update({"djia_date": d, "djia_value": v})
+
+            # NASDAQ Composite
+            d, v = rec._fred_get_latest_valid(rec.fred_series_nasdaqcom, api_key)
+            if d:
+                vals.update({"nasdaqcom_date": d, "nasdaqcom_value": v})
+
+            # NASDAQ 100
+            d, v = rec._fred_get_latest_valid(rec.fred_series_nasdaq100, api_key)
+            if d:
+                vals.update({"nasdaq100_date": d, "nasdaq100_value": v})
 
             # Guardar
             vals.update(

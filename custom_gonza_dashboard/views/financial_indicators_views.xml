@@ -25,6 +25,14 @@
                 <field name="vix_date" optional="hide"/>
                 <field name="move_value" optional="show"/>
                 <field name="move_date" optional="hide"/>
+                <field name="sp500_value" optional="show"/>
+                <field name="sp500_date" optional="hide"/>
+                <field name="djia_value" optional="show"/>
+                <field name="djia_date" optional="hide"/>
+                <field name="nasdaqcom_value" optional="show"/>
+                <field name="nasdaqcom_date" optional="hide"/>
+                <field name="nasdaq100_value" optional="show"/>
+                <field name="nasdaq100_date" optional="hide"/>
                 <field name="inflation_yoy" optional="show"/>
                 <field name="inflation_yoy_date" optional="hide"/>
                 <field name="unemployment_value" optional="show"/>
@@ -121,6 +129,38 @@
                         </page>
 
                         <page string="Markets">
+                            <group>
+                                <group string="S&amp;P 500">
+                                    <field name="sp500_value" readonly="1"/>
+                                    <field name="sp500_date" readonly="1"/>
+                                    <field name="fred_series_sp500"/>
+                                    <field name="sp500_link"/>
+                                </group>
+
+                                <group string="Dow Jones (DJIA)">
+                                    <field name="djia_value" readonly="1"/>
+                                    <field name="djia_date" readonly="1"/>
+                                    <field name="fred_series_djia"/>
+                                    <field name="djia_link"/>
+                                </group>
+                            </group>
+
+                            <group>
+                                <group string="NASDAQ Composite">
+                                    <field name="nasdaqcom_value" readonly="1"/>
+                                    <field name="nasdaqcom_date" readonly="1"/>
+                                    <field name="fred_series_nasdaqcom"/>
+                                    <field name="nasdaqcom_link"/>
+                                </group>
+
+                                <group string="NASDAQ 100">
+                                    <field name="nasdaq100_value" readonly="1"/>
+                                    <field name="nasdaq100_date" readonly="1"/>
+                                    <field name="fred_series_nasdaq100"/>
+                                    <field name="nasdaq100_link"/>
+                                </group>
+                            </group>
+
                             <group>
                                 <group string="USD Index (DXY / proxy)">
                                     <field name="usd_index_value" readonly="1"/>
