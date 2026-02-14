@@ -7,13 +7,21 @@
         <field name="model">crypto.holding</field>
         <field name="arch" type="xml">
             <list string="Crypto Holdings">
-                <field name="asset_id" width="75px"/>
-                <field name="company_id" optional="hide" width="150px"/>
-                <field name="qty_available" sum="total" widget="text" optional="show" width="250px"/>
-                <field name="current_price_usd" widget="text" optional="show" width="250px"/>
-                <field name="value_usd" widget="monetary" sum="Total" optional="show" width="350px"/>
-                <field name="cmc_rank" widget="text" optional="show"/>
-                <field name="dominance_percentage" optional="show" width="400px"/>
+                <field name="asset_id" width="40px"/>
+                <field name="company_id" optional="hide" width="100px"/>
+                <field name="qty_available" widget="text" optional="show" width="175px"/>
+                <field name="current_price_usd" widget="monetary" optional="show" width="175px"/>
+                <field name="avg_buy_price_eur" widget="monetary" optional="show" width="140px"/>
+                <field name="cost_basis_eur" widget="monetary" sum="Total" optional="show" width="140px"/>
+                <field name="value_usd" widget="monetary" sum="Total" optional="show" width="200px"/>
+                <field name="unrealized_pl_eur" widget="monetary" sum="Total" optional="show" width="150px"
+                       decoration-success="unrealized_pl_eur &gt; 0"
+                       decoration-danger="unrealized_pl_eur &lt; 0"/>
+                <field name="unrealized_return_pct" optional="show" width="150px" widget="percentage"
+                       decoration-success="unrealized_return_pct &gt; 0"
+                       decoration-danger="unrealized_return_pct &lt; 0"/>
+                <field name="cmc_rank" widget="text" optional="show" width="150px"/>
+                <field name="dominance_percentage" optional="show" width="100px"/>
                 <field name="currency_id" optional="hide"/>
             </list>
         </field>
