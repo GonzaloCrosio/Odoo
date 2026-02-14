@@ -7,26 +7,25 @@
         <field name="context">{'search_default_group_by_asset': 1}</field>
     </record>
 
-    <!-- =========================
-     VISTAS: VALUATION LAYER
-========================== -->
+    <!-- Vista Lista de Compras-->
     <record id="view_crypto_valuation_layer_list" model="ir.ui.view">
         <field name="name">crypto.valuation.layer.list</field>
         <field name="model">crypto.valuation.layer</field>
         <field name="arch" type="xml">
             <list>
-                <field name="name" optional="show"/>
-                <field name="buy_date" optional="show" options="{'numeric':true}"/>
-                <field name="asset_id" optional="show"/>
-                <field name="qty_purchase" widget="text" optional="show" sum="Total"/>
-                <field name="qty_sold" widget="text" optional="show" sum="Total"/>
-                <field name="qty_available" widget="text" optional="show" sum="Total"/>
-                <field name="unit_cost_eur" widget="text" optional="show"/>
-                <field name="fee_eur" widget="text" optional="hide"/>
+                <field name="name" optional="show" width="150px"/>
+                <field name="buy_date" optional="show" options="{'numeric':true}" width="225px"/>
+                <field name="asset_id" optional="show" width="150px"/>
+                <field name="qty_purchase" widget="text" optional="show" sum="Total" width="225px"/>
+                <field name="qty_sold" widget="text" optional="show" sum="Total" width="225px"/>
+                <field name="qty_available" widget="text" optional="show" sum="Total" width="225px"/>
+                <field name="unit_cost_eur" widget="text" optional="show" width="225px"/>
+                <field name="fee_eur" widget="text" optional="hide" width="225px"/>
                 <field name="total_cost_eur"
                        widget="monetary"
                        sum="Total"
-                       optional="show"/>
+                       optional="show"
+                       width="225px"/>
                 <field name="note" optional="hide"/>
                 <field name="currency_id" optional="hide"/>
             </list>

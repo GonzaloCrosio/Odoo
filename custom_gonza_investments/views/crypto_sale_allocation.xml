@@ -14,26 +14,26 @@
         <field name="model">crypto.sale.allocation</field>
         <field name="arch" type="xml">
             <list>
-                <field name="allocation_date" options="{'numeric':true}" optional="show"/>
-                <field name="asset_id" optional="show"/>
-                <field name="sale_line_id" optional="show" options="{'no_open': False}"/>
-                <field name="in_layer_id" optional="hide" options="{'no_open': False}"/>
-                <field name="qty_sold" sum="Total" optional="show"/>
-                <field name="proceeds_unit_eur" widget="text" optional="show"/>
+                <field name="allocation_date" options="{'numeric':true}" optional="show" width="140px"/>
+                <field name="asset_id" optional="show" width="100px"/>
+                <field name="sale_line_id" optional="show" options="{'no_open': False}" width="125px"/>
+                <field name="in_layer_id" optional="show" options="{'no_open': False}" width="125px"/>
+                <field name="qty_sold" sum="Total" optional="show" width="150px"/>
+                <field name="proceeds_unit_eur" widget="text" optional="show" width="150px"/>
                 <field name="unit_cost_eur" widget="monetary"
-                       sum="Total" optional="show"/>
+                       sum="Total" optional="show" width="150px"/>
                 <field name="fee_unit_eur" widget="monetary"
-                       sum="Total" optional="hide"/>
+                       sum="Total" optional="hide" width="150px"/>
                 <field name="proceeds_eur" widget="monetary"
-                       sum="Total" optional="show"/>
+                       sum="Total" optional="show" width="150px"/>
                 <field name="cost_eur" widget="monetary"
-                       sum="Total" optional="show"/>
+                       sum="Total" optional="show" width="150px"/>
                 <field name="fee_eur" widget="monetary"
-                       sum="Total" optional="hide"/>
+                       sum="Total" optional="hide" width="150px"/>
                 <field name="profit_eur" widget="monetary"
-                       sum="Total" optional="show"/>
+                       sum="Total" optional="show" width="150px"/>
                 <field name="tax_eur" widget="monetary"
-                       sum="Total" optional="show"/>
+                       sum="Total" optional="show" width="150px"/>
                 <field name="company_id" optional="hide"/>
                 <field name="currency_id" optional="hide"/>
             </list>
