@@ -7,7 +7,7 @@ from odoo.exceptions import UserError
 class CryptoSale(models.Model):
     _name = "crypto.sale"
     _description = "Crypto Sale"
-    _order = "date desc, id desc"
+    _order = "sale_date desc, id desc"
     _check_company_auto = True
     _rec_name = "asset_id"
     _inherit = ["mail.thread", "mail.activity.mixin"]
@@ -17,9 +17,9 @@ class CryptoSale(models.Model):
         required=True,
         string="Asset",
     )
-    date = fields.Datetime(
+    sale_date = fields.Date(
         required=True,
-        default=fields.Datetime.now,
+        default=lambda self: fields.Date.context_today(self),
         string="Sale Date",
     )
     company_id = fields.Many2one(
@@ -114,7 +114,7 @@ class CryptoSaleLine(models.Model):
     )
     qty = fields.Float(
         required=True,
-        digits="Product Unit of Measure",
+        digits=(16, 8),
         string="Quantity",
     )
     price_unit_eur = fields.Monetary(
@@ -209,7 +209,7 @@ class CryptoSaleLine(models.Model):
             WHERE company_id = %s
               AND asset_id = %s
               AND qty_purchase > qty_sold
-            ORDER BY date ASC, id ASC
+            ORDER BY buy_date ASC, id ASC
             """,
             (self.company_id.id, self.asset_id.id),
         )
@@ -270,7 +270,7 @@ class CryptoSaleLine(models.Model):
             """
             SELECT id FROM crypto_valuation_layer
             WHERE company_id = %s AND asset_id = %s AND qty_purchase > qty_sold
-            ORDER BY date ASC, id ASC
+            ORDER BY buy_date ASC, id ASC
             FOR UPDATE
         """,
             (self.company_id.id, self.asset_id.id),
@@ -298,7 +298,7 @@ class CryptoSaleLine(models.Model):
                     "unit_cost_eur": layer.unit_cost_eur,
                     "proceeds_unit_eur": self.price_unit_eur,
                     "fee_unit_eur": fee_per_unit,
-                    "date": self.sale_id.date,
+                    "allocation_date": self.sale_id.sale_date,
                 }
             )
             allocations.append(alloc)

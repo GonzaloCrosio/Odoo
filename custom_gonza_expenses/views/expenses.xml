@@ -12,7 +12,7 @@
                 <field name="expenses_tag_id" optional="show" width="120"/>
                 <field name="expenses_secundary_tag_id" optional="show"
                        widget="many2many_tags" width="150"/>
-                <field name="date" widget="date"
+                <field name="date" options="{'numeric':true}"
                        optional="show" width="110"/>
                 <field name="expense_amount" optional="show" width="100"
                        widget="monetary"/>
@@ -24,7 +24,7 @@
                 <field name="is_recurring" optional="hide" width="200"/>
                 <field name="recurrence_frequency" optional="hide" width="200"/>
                 <field name="recurrence_interval" optional="hide" width="200"/>
-                <field name="recurrence_end_date" optional="hide" width="200"/>
+                <field name="recurrence_end_date" options="{'numeric':true}" optional="hide" width="200"/>
                 <field name="recurrence_parent_id" optional="hide" width="200"/>
             </list>
         </field>
@@ -42,7 +42,7 @@
                             <field name="currency_id" invisible="1"/>
                             <field name="expense_amount" widget="monetary"/>
                             <field name="income_amount" widget="monetary"/>
-                            <field name="date"/>
+                            <field name="date" options="{'numeric':true}"/>
                             <field name="expenses_tag_id"/>
                             <field name="expenses_secundary_tag_id"
                                    widget="many2many_tags"/>
@@ -56,7 +56,7 @@
                             <field name="is_recurring"/>
                             <field name="recurrence_frequency" invisible="not is_recurring"/>
                             <field name="recurrence_interval" invisible="not is_recurring"/>
-                            <field name="recurrence_end_date" invisible="not is_recurring"/>
+                            <field name="recurrence_end_date" options="{'numeric':true}" invisible="not is_recurring"/>
                             <field name="recurrence_parent_id" invisible="not is_recurring"/>
                         </group>
                     </group>
@@ -113,7 +113,7 @@
                 <filter string="Group by Payment Mode" name="grp_pay"
                         context="{'group_by':'expenses_payment_mode_id'}"/>
                 <filter string="Group by Type" name="grp_type" context="{'group_by':'expenses_type_id'}"/>
-                <filter string="Group by Date (Month)" name="grp_month" context="{'group_by':'date:month'}"/>
+                <filter string="Group by Date" name="grp_month" context="{'group_by':'date:month'}"/>
                 <filter string="Group by Recurring" name="grp_rec" context="{'group_by':'is_recurring'}"/>
 
             </search>

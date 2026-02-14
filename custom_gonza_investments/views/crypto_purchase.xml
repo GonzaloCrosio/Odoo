@@ -16,7 +16,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name" optional="show"/>
-                <field name="date" optional="show"/>
+                <field name="buy_date" optional="show" options="{'numeric':true}"/>
                 <field name="asset_id" optional="show"/>
                 <field name="qty_purchase" widget="text" optional="show" sum="Total"/>
                 <field name="qty_sold" widget="text" optional="show" sum="Total"/>
@@ -55,7 +55,7 @@
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="date"/>
+                            <field name="buy_date" options="{'numeric':true}"/>
                             <field name="asset_id" required="1"/>
                         </group>
                         <group>
@@ -94,7 +94,7 @@
                 <!-- Búsqueda rápida -->
                 <field name="name" string="Buy Ref"/>
                 <field name="asset_id"/>
-                <field name="date"/>
+                <field name="buy_date"/>
                 <field name="purchase_mode"/>
                 <field name="note"/>
 
@@ -112,13 +112,13 @@
 
                 <separator/>
 
-                <!-- Fechas rápidas (sin .replace para evitar errores JS) -->
+                <!-- Fechas rápidas-->
                 <filter string="This Month" name="this_month"
-                        domain="[('date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
+                        domain="[('buy_date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
                 <filter string="This Year" name="this_year"
-                        domain="[('date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
+                        domain="[('buy_date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
                 <filter string="Last 30 Days" name="last_30"
-                        domain="[('date','&gt;=', (context_today() + relativedelta(days=-30)))]"/>
+                        domain="[('buy_date','&gt;=', (context_today() + relativedelta(days=-30)))]"/>
 
                 <separator/>
 
@@ -134,10 +134,8 @@
                             context="{'group_by':'asset_id'}"/>
                     <filter string="Purchase Mode" name="group_by_mode"
                             context="{'group_by':'purchase_mode'}"/>
-                    <filter string="Date (Month)" name="group_by_month"
-                            context="{'group_by':'date:month'}"/>
-                    <filter string="Date (Year)" name="group_by_year"
-                            context="{'group_by':'date:year'}"/>
+                    <filter string="Date" name="group_by_month"
+                            context="{'group_by':'buy_date:month'}"/>
                 </group>
 
             </search>
@@ -153,7 +151,7 @@
                 <field name="qty_sold" type="measure"/>
                 <field name="qty_available" type="measure"/>
                 <field name="asset_id" type="row"/>
-                <field name="date" interval="month" type="col"/>
+                <field name="buy_date" interval="month" type="col"/>
             </graph>
         </field>
     </record>

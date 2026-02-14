@@ -14,7 +14,7 @@
         <field name="model">crypto.sale.allocation</field>
         <field name="arch" type="xml">
             <list>
-                <field name="date" widget="date" optional="show"/>
+                <field name="allocation_date" options="{'numeric':true}" optional="show"/>
                 <field name="asset_id" optional="show"/>
                 <field name="sale_line_id" optional="show" options="{'no_open': False}"/>
                 <field name="in_layer_id" optional="hide" options="{'no_open': False}"/>
@@ -48,7 +48,7 @@
 
                 <!-- Búsqueda rápida -->
                 <field name="asset_id"/>
-                <field name="date"/>
+                <field name="allocation_date"/>
                 <field name="sale_line_id" string="Sale Line"/>
                 <field name="in_layer_id" string="Purchase Layer"/>
                 <field name="company_id" groups="base.group_multi_company"/>
@@ -67,18 +67,18 @@
 
                 <!-- Rangos de fecha (compatibles con Odoo 19 / JS) -->
                 <filter string="This Month" name="this_month"
-                        domain="[('date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
+                        domain="[('allocation_date','&gt;=', (context_today() + relativedelta(day=1)))]"/>
                 <filter string="This Year" name="this_year"
-                        domain="[('date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
+                        domain="[('allocation_date','&gt;=', (context_today() + relativedelta(month=1, day=1)))]"/>
                 <filter string="Last 30 Days" name="last_30"
-                        domain="[('date','&gt;=', (context_today() + relativedelta(days=-30)))]"/>
+                        domain="[('allocation_date','&gt;=', (context_today() + relativedelta(days=-30)))]"/>
 
                 <group>
                     <!-- Group by -->
                     <filter string="Asset" name="group_by_asset"
                             context="{'group_by':'asset_id'}"/>
                     <filter string="Date (Month)" name="group_by_month"
-                            context="{'group_by':'date:month'}"/>
+                            context="{'group_by':'allocation_date:month'}"/>
                     <filter string="Sale Line" name="group_by_sale_line"
                             context="{'group_by':'sale_line_id'}"/>
                     <filter string="Company" name="group_by_company"
@@ -97,7 +97,7 @@
                 <field name="profit_eur" type="measure"/>
                 <field name="tax_eur" type="measure"/>
                 <field name="qty_sold" type="measure"/>
-                <field name="date" interval="month" type="col"/>
+                <field name="allocation_date" interval="month" type="col"/>
                 <field name="sale_line_id" type="row"/>
                 <field name="in_layer_id" type="row"/>
             </pivot>
@@ -111,7 +111,7 @@
             <graph string="Profit" type="bar">
                 <field name="profit_eur" type="measure"/>
                 <field name="tax_eur" type="measure"/>
-                <field name="date" interval="month" type="col"/>
+                <field name="allocation_date" interval="month" type="col"/>
                 <field name="sale_line_id" type="row"/>
             </graph>
         </field>

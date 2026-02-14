@@ -35,7 +35,7 @@
                                 <field name="interest_rate"/>
                                 <field name="effective_interest_rate"/>
                                 <field name="term"/>
-                                <field name="date"/>
+                                <field name="date" options="{'numeric':true}"/>
                                 <field name="description"/>
                                 <field name="other_day_payment"/>
                                 <field name="total_interest"/>
@@ -99,7 +99,7 @@
                                     <!--Pero debe estar currency para que aparezca el signo euro-->
                                     <field name="currency_id" column_invisible="True"/>
                                     <field name="number" width="120"/>
-                                    <field name="date" width="120"/>
+                                    <field name="date" options="{'numeric':true}" width="120"/>
                                     <field name="total_payment" width="120"
                                            widget="monetary"/>
                                     <field name="interest_payment" width="120"
@@ -119,7 +119,7 @@
                                             <group>
                                                 <field name="loan_id"/>
                                                 <field name="number"/>
-                                                <field name="date"/>
+                                                <field name="date" options="{'numeric':true}"/>
                                                 <field name="status" editable="bottom"/>
                                             </group>
                                         </div>

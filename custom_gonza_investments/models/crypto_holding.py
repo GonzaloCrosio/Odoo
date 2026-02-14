@@ -33,7 +33,7 @@ class CryptoHolding(models.Model):
     # CANTIDAD TOTAL DISPONIBLE (suma de todas las capas de compra no vendidas)
     qty_available = fields.Float(
         compute="_compute_position",
-        digits="Product Unit of Measure",
+        digits=(16, 8),
         string="Quantity Available",
         readonly=True,
     )

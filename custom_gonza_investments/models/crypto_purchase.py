@@ -8,7 +8,7 @@ from odoo.tools.float_utils import float_compare
 class CryptoValuationLayer(models.Model):
     _name = "crypto.valuation.layer"
     _description = "Crypto Valuation (FIFO)"
-    _order = "date asc, id asc"
+    _order = "buy_date asc, id asc"
     _check_company_auto = True
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _rec_name = "name"
@@ -33,25 +33,26 @@ class CryptoValuationLayer(models.Model):
         index=True,
         string="Company",
     )
-    date = fields.Datetime(
+    buy_date = fields.Date(
         required=True,
-        default=fields.Datetime.now,
+        default=lambda self: fields.Date.context_today(self),
         index=True,
         string="Purchase Date",
     )
     qty_purchase = fields.Float(
         required=True,
-        digits="Product Unit of Measure",
+        digits=(16, 8),
         string="Quantity Purchased",
     )
     qty_sold = fields.Float(
         default=0.0,
-        digits="Product Unit of Measure",
+        digits=(16, 8),
         string="Quantity Sold",
     )
     qty_available = fields.Float(
         compute="_compute_qty_available",
         store=True,
+        digits=(16, 8),
         string="Quantity Available",
     )
     currency_id = fields.Many2one(
@@ -112,22 +113,18 @@ class CryptoValuationLayer(models.Model):
     # Obliga a seleccionar un Asset y otras restricciones de la operación
     @api.constrains("asset_id", "qty_purchase", "qty_sold")
     def _check_asset_required(self):
-        precision = self.env["decimal.precision"].precision_get(
-            "Product Unit of Measure"
-        )
+        precision = 8  # tus 8 decimales
         for crypto in self:
             if not crypto.asset_id:
                 raise ValidationError(_("You must select an Asset."))
+
             if float_compare(crypto.qty_purchase, 0.0, precision_digits=precision) <= 0:
                 raise ValidationError(_("qty_purchase must be positive."))
+
             if float_compare(crypto.qty_sold, 0.0, precision_digits=precision) < 0:
                 raise ValidationError(_("qty_sold cannot be negative."))
-            if (
-                float_compare(
-                    crypto.qty_sold, crypto.qty_purchase, precision_digits=precision
-                )
-                > 0
-            ):
+
+            if float_compare(crypto.qty_sold, crypto.qty_purchase, precision_digits=precision) > 0:
                 raise ValidationError(_("No more can leave than went in."))
 
     # Calcula la cantidad disponible

@@ -22,12 +22,14 @@ class CryptoSaleAllocation(models.Model):
         ondelete="restrict",
         string="Purcharse Line",
     )
-    date = fields.Datetime(
+    allocation_date = fields.Date(
         required=True,
         string="Date",
     )
     qty_sold = fields.Float(
-        required=True, digits="Product Unit of Measure", string="Qty Sold"
+        required=True,
+        digits=(16, 8),
+        string="Qty Sold",
     )
     proceeds_unit_eur = fields.Monetary(
         currency_field="currency_id",

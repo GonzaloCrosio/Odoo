@@ -47,7 +47,7 @@
                                    options="{'no_create': True, 'no_create_edit': True}">
                                 <form>
                                     <group>
-                                        <field name="date" readonly="1"/>
+                                        <field name="date" options="{'numeric':true}" readonly="1"/>
                                         <field name="description" readonly="1"/>
                                         <field name="expenses_tag_id" readonly="1"/>
                                         <field name="expenses_secundary_tag_id"
