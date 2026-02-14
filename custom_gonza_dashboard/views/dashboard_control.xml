@@ -64,23 +64,33 @@
         <field name="arch" type="xml">
             <form string="Dashboard Control">
                 <sheet>
+                    <h1>
+                        <div class="o_field_input_buttons">
+                            <field name="name"/>
+                        </div>
+                        <div class="o_field_widget o_required_modifier o_field_text text-break">
+                            <field name="name"
+                                   placeholder="Indicator"/>
+                        </div>
+                    </h1>
                     <group>
-                        <group>
+                        <group string="Data">
                             <field name="name"/>
                             <field name="indicators_id"/>
                             <field name="indicator"/>
-                            <field name="higher_is_worse"/>
+                            <field name="indicator_link"/>
                         </group>
 
                         <group string="Status">
                             <field name="current_value" readonly="1"/>
                             <field name="level" readonly="1"/>
                             <field name="level_class" readonly="1"/>
+                            <field name="higher_is_worse"/>
                         </group>
                     </group>
 
-                    <group string="Thresholds (5 levels)">
-                        <group>
+                    <group>
+                        <group string="Thresholds (5 levels)">
                             <field name="v1"/>
                             <field name="v2"/>
                             <field name="v3"/>
@@ -90,6 +100,9 @@
                         <div class="o_form_label">
                             Rule: [v1,v2) Strong Green; [v2,v3) Green; [v3,v4) Yellow; [v4,v5) Orange; &gt;=v5 Red
                         </div>
+                    </group>
+                    <group string="Indicator operation">
+                        <field name="text_explication"/>
                     </group>
                 </sheet>
             </form>

@@ -18,7 +18,11 @@ class DashboardControl(models.Model):
         required=True,
         ondelete="cascade",
     )
-
+    indicator_link = fields.Char(
+        string="Indicator Link",
+        compute="_compute_indicator_link",
+        store=False,  # solo “del dashboard que miras en ese momento”
+    )
     indicator = fields.Selection(
         [
             ("reserves_value", "Bank Reserves"),
@@ -42,7 +46,6 @@ class DashboardControl(models.Model):
         ],
         required=True,
     )
-
     # 5 valores configurables
     v1 = fields.Float(
         string="V1",
@@ -59,14 +62,12 @@ class DashboardControl(models.Model):
     v5 = fields.Float(
         string="V5",
     )
-
     higher_is_worse = fields.Boolean(
         string="Higher is worse",
         default=True,
         help="If checked: higher values mean worse color (green to red)."
              "If unchecked: higher values mean better color (red to green)."
     )
-
     current_value = fields.Float(
         string="Current Value",
         compute="_compute_status",
@@ -85,13 +86,16 @@ class DashboardControl(models.Model):
         compute="_compute_status",
         store=True,
     )
-
     level_class = fields.Char(
         string="CSS Class",
         compute="_compute_status",
         store=True,
     )
+    text_explication = fields.Text(
+        string="Indicator Explication",
+    )
 
+    # Para traer el valor
     @api.depends(
         "indicator",
         "v1",
@@ -161,3 +165,38 @@ class DashboardControl(models.Model):
 
             rec.level = str(lvl)
             rec.level_class = f"fi_level_{lvl}"
+
+    # Para mostrar el link en la vista form
+    @api.depends("indicator", "indicators_id")
+    def _compute_indicator_link(self):
+        # Mapeo indicator -> campo link en financial.indicators
+        link_map = {
+            "reserves_value": "reserves_link",
+            "srf_value": "srf_link",
+            "on_rrp_value": "on_rrp_link",
+            "sofr_value": "sofr_link",
+            "bonds_usa_value": "bonds_link",
+            "inverse_repo_value": "inverse_repo_link",
+            "usd_index_value": "usd_index_link",
+            "vix_value": "vix_link",
+            "move_value": "move_link",
+            "sp500_value": "sp500_link",
+            "djia_value": "djia_link",
+            "nasdaqcom_value": "nasdaqcom_link",
+            "nasdaq100_value": "nasdaq100_link",
+            "inflation_yoy": "inflation_link",  # mismo link base CPI
+            "inflation_6m": "inflation_link",
+            "inflation_mom": "inflation_link",
+            "unemployment_value": "unemployment_link",
+            "interest_rate_value": "interest_rate_link",
+            # si quieres: "tga_value": "tga_link", etc.
+        }
+
+        for rec in self:
+            rec.indicator_link = False
+            if not rec.indicator or not rec.indicators_id:
+                continue
+
+            link_field = link_map.get(rec.indicator)
+            if link_field and link_field in rec.indicators_id._fields:
+                rec.indicator_link = rec.indicators_id[link_field] or False
