@@ -40,12 +40,12 @@ class CryptoHolding(models.Model):
     # DATOS RELACIONADOS DEL ASSET (API)
     current_price_usd = fields.Float(
         related="asset_id.price_usd",
-        string="Current Price (USD)",
+        string="Current Price (EUR)",
         readonly=True,
     )
     market_cap_usd = fields.Float(
         related="asset_id.market_cap_usd",
-        string="Market Cap (USD)",
+        string="Market Cap (EUR)",
         readonly=True,
     )
     cmc_rank = fields.Integer(
@@ -62,7 +62,7 @@ class CryptoHolding(models.Model):
     value_usd = fields.Monetary(
         compute="_compute_position",
         currency_field="currency_id",
-        string="Market Value (USD)",
+        string="Market Value (EUR)",
         readonly=True,
     )
     # Precio medio de Compra (Tenencia Activa, libre de ventas)
@@ -183,3 +183,16 @@ class CryptoHolding(models.Model):
                 (h.unrealized_pl_eur / cost)
                 if cost else 0.0
             )
+
+    # Botón para abrir vista de compras filtrada por activo y compañía
+    def action_open_valuation_layers(self):
+        """Abrir las compras (valuation layers) de este asset."""
+        self.ensure_one()
+        action = self.env.ref(
+            "custom_gonza_investments.action_crypto_valuation_layer"
+        ).read()[0]
+        action["domain"] = [
+            ("asset_id", "=", self.asset_id.id),
+            ("company_id", "=", self.company_id.id),
+        ]
+        return action

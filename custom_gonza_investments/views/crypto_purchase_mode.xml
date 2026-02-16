@@ -17,13 +17,9 @@
         <field name="model">crypto.purchase.mode</field>
         <field name="arch" type="xml">
             <form string="Purchase Mode">
-                <header string="Purchase Mode">
-                    <!--Nombre de la etiqueta-->
-                    <h1>Purchase Mode</h1>
-                </header>
-                <!--Te forma una sección dentro de la pantalla-->
                 <sheet>
-                    <group>
+                    <h1>Purchase Mode</h1>
+                    <group string="Mode Data">
                         <field string="Purchase Mode" name="custom_name"
                                readonly="False"/>
                         <field name="description"/>

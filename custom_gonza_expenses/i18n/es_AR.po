@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 22:32+0000\n"
-"PO-Revision-Date: 2026-01-08 23:34+0100\n"
+"POT-Creation-Date: 2026-02-16 14:16+0000\n"
+"PO-Revision-Date: 2026-02-16 15:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: custom_gonza_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_expenses__message_needaction
@@ -172,6 +172,11 @@ msgid "Expense Amount"
 msgstr "Importe gasto"
 
 #. module: custom_gonza_expenses
+#: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.view_expenses_form
+msgid "Expense Informations"
+msgstr "Información de Gastos"
+
+#. module: custom_gonza_expenses
 #: model:ir.actions.act_window,name:custom_gonza_expenses.action_expenses
 #: model:ir.model.fields,field_description:custom_gonza_expenses.field_exp_expenses_summary__expense_ids
 #: model:ir.ui.menu,name:custom_gonza_expenses.expenses_general_menu
@@ -276,8 +281,8 @@ msgstr "Categoría"
 
 #. module: custom_gonza_expenses
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search
-msgid "Group by Date (Month)"
-msgstr "Por Fecha (Mes)"
+msgid "Group by Date"
+msgstr "Agrupar por Fecha"
 
 #. module: custom_gonza_expenses
 #: model_terms:ir.ui.view,arch_db:custom_gonza_expenses.expenses_expenses_view_search

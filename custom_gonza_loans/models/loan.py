@@ -129,16 +129,21 @@ class Loan(models.Model):
                 record.effective_interest_rate = 0
 
     # Cálculo de la deuda actual
-    @api.depends("detail_ids.status", "detail_ids.capital_remaining")
+    @api.depends("amount", "detail_ids.status", "detail_ids.capital_remaining", "detail_ids.date", "detail_ids.number")
     def _compute_current_debt(self):
         for loan in self:
             # Filtrar cuotas pagadas y ordenarlas por fecha en orden descendente
             paid_details = loan.detail_ids.filtered(
                 lambda d: d.status == "paid"
             ).sorted(key=lambda d: d.date, reverse=True)
-            # Obtener el capital_remaining de la última cuota pagada
-            loan.current_debt = paid_details[0].capital_remaining if paid_details else 0
-            loan.number = paid_details[0].number if paid_details else 0
+
+            if paid_details:
+                loan.current_debt = paid_details[0].capital_remaining
+                loan.number = paid_details[0].number
+            else:
+                # Si no hay cuotas pagadas, la deuda es el principal completo
+                loan.current_debt = loan.amount or 0.0
+                loan.number = 0
 
     # Validación de campos requeridos antes del cálculo
     def _validate_required_fields(self):

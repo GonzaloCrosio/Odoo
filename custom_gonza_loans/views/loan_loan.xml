@@ -27,6 +27,15 @@
             <!--Cabecera del préstamo-->
             <form>
                 <sheet>
+                    <h1>
+                        <div class="o_field_input_buttons">
+                            <field name="name"/>
+                        </div>
+                        <div class="o_field_widget o_required_modifier o_field_text text-break">
+                            <field name="name"
+                                   placeholder="Loan"/>
+                        </div>
+                    </h1>
                     <div class="row">
                         <div class="col-6">
                             <group>
@@ -67,9 +76,9 @@
                         <div class="col-6">
                             <h4>Example of Loan Effective Rate Calculation</h4>
                             <img
-                                src="/custom_gonza_loans/static/description/Ejemplo_TNA-TAE.png"
-                                alt="Tasa Efectiva"
-                                style="width: 500px; height: 300px;"
+                                    src="/custom_gonza_loans/static/description/Ejemplo_TNA-TAE.png"
+                                    alt="Tasa Efectiva"
+                                    style="width: 500px; height: 300px;"
                             />
                             <p style="margin-top: 150px;" invisible="not is_investment">
                                 The NPV is the difference between current capital and

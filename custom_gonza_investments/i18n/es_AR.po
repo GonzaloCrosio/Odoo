@@ -6,19 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 23:57+0000\n"
-"PO-Revision-Date: 2026-01-09 01:05+0100\n"
+"POT-Creation-Date: 2026-02-16 14:12+0000\n"
+"PO-Revision-Date: 2026-02-16 14:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: custom_gonza_investments
 #: model:ir.ui.menu,name:custom_gonza_investments.submenu_crypto_api
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_investment_crypto_price_form
 msgid "API Informations"
 msgstr "Información API"
 
@@ -84,14 +83,18 @@ msgstr "Asignaciones FIFO"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__asset_id
-#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__asset_id
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__asset_id
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__asset_id
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
 msgid "Asset"
 msgstr "Activo"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_asset_form
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_holding_form
+msgid "Asset Informations"
+msgstr "Información del Activo"
 
 #. module: custom_gonza_investments
 #: model:ir.actions.act_window,name:custom_gonza_investments.action_crypto_asset
@@ -99,6 +102,11 @@ msgstr "Activo"
 #: model:ir.ui.menu,name:custom_gonza_investments.submenu_crypto_asset
 msgid "Assets"
 msgstr "Activos"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__asset_ids
+msgid "Assets sold"
+msgstr "Ventas"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__message_attachment_count
@@ -110,6 +118,11 @@ msgstr "Activos"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__message_attachment_count
 msgid "Attachment Count"
 msgstr "Recuento de adjuntos"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__avg_buy_price_eur
+msgid "Avg Buy Price"
+msgstr "Precio Promedio de Compra"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__bitcoin_dominance
@@ -177,6 +190,11 @@ msgid "Confirmed"
 msgstr "Confirmado"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__cost_basis_eur
+msgid "Cost Basis"
+msgstr "Costo Total del Portafolio"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__create_uid
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__create_uid
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_purchase_mode__create_uid
@@ -199,6 +217,11 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__create_date
 msgid "Created on"
 msgstr "Creado el"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_asset_form
+msgid "Crypto"
+msgstr "Criptomoneda"
 
 #. module: custom_gonza_investments
 #: model:ir.model,name:custom_gonza_investments.model_crypto_asset
@@ -268,24 +291,19 @@ msgstr "Moneda"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__current_price_usd
-msgid "Current Price (USD)"
+msgid "Current Price (EUR)"
 msgstr "Precio Actual (USD)"
 
 #. module: custom_gonza_investments
-#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_allocation__date
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_allocation__allocation_date
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
 msgid "Date"
 msgstr "Fecha"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
 msgid "Date (Month)"
 msgstr "Fecha (mes)"
-
-#. module: custom_gonza_investments
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_search
-msgid "Date (Year)"
-msgstr "Fecha (Año)"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_search
@@ -430,7 +448,7 @@ msgstr "Portafolio"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__id
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__activity_exception_icon
@@ -537,7 +555,7 @@ msgstr "Líneas"
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__market_cap_usd
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__market_cap_usd
-msgid "Market Cap (USD)"
+msgid "Market Cap (EUR)"
 msgstr "Market Cap (USD) - Capitalización de Mercado"
 
 #. module: custom_gonza_investments
@@ -547,23 +565,28 @@ msgstr "Información de Mercado"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__value_usd
-msgid "Market Value (USD)"
+msgid "Market Value (EUR)"
 msgstr "Valor Actual de la Inversión"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__bitcoin_market_cap
-msgid "Market capitalization BTC (USD)"
-msgstr "Capitalización de Mercado BTC (USD)"
+msgid "Market capitalization BTC (EUR)"
+msgstr "Capitalización de Mercado BTC (EUR)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__hbar_market_cap
-msgid "Market capitalization HBAR (USD)"
-msgstr "Market Cap HBAR (USD)"
+msgid "Market capitalization HBAR (EUR)"
+msgstr "Market Cap HBAR (EUR)"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__ron_market_cap
+msgid "Market capitalization RON (EUR)"
+msgstr "Capitalización de Mercado RON (EUR)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__xrp_market_cap
-msgid "Market capitalization XRP (USD)"
-msgstr "Capitalización de Mercado XRP (USD)"
+msgid "Market capitalization XRP (EUR)"
+msgstr "Capitalización de Mercado XRP (EUR)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__message_has_error
@@ -586,6 +609,11 @@ msgstr "Error de entrega de mensaje"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__message_ids
 msgid "Messages"
 msgstr "Mensajes"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.crypto_payment_mode_view_form
+msgid "Mode Data"
+msgstr "Información"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__my_activity_date_deadline
@@ -731,23 +759,28 @@ msgstr "Precisión"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__price_usd
-msgid "Price (USD)"
-msgstr "Precio (USD)"
+msgid "Price (EUR)"
+msgstr "Precio (EUR)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__bitcoin_price
-msgid "Price BTC (USD)"
-msgstr "Precio BTC (USD)"
+msgid "Price BTC (EUR)"
+msgstr "Precio BTC (EUR)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__hbar_price
-msgid "Price HBAR (USD)"
-msgstr "Precio HBAR (USD)"
+msgid "Price HBAR (EUR)"
+msgstr "Precio HBAR (EUR)"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__ron_price
+msgid "Price RON (EUR)"
+msgstr "Precio RON (EUR)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__xrp_price
-msgid "Price XRP (USD)"
-msgstr "Precio XRP (USD)"
+msgid "Price XRP (EUR)"
+msgstr "Precio XRP (EUR)"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_graph
@@ -787,9 +820,14 @@ msgid "Purchase"
 msgstr "Compra"
 
 #. module: custom_gonza_investments
-#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__date
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__buy_date
 msgid "Purchase Date"
-msgstr "Fecha"
+msgstr "Fecha de Compra"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_valuation_layer_form
+msgid "Purchase Informations"
+msgstr "Información de Compra"
 
 #. module: custom_gonza_investments
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_allocation_search
@@ -849,6 +887,11 @@ msgid "Quantity Sold"
 msgstr "Cantidad vendida"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__ron_dominance
+msgid "RON Dominance %"
+msgstr "Dominancia (%)"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__bitcoin_ranking
 msgid "Ranking BTC"
 msgstr "Ranking BTC"
@@ -859,9 +902,25 @@ msgid "Ranking HBAR"
 msgstr "Ranking HBAR"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__ron_ranking
+msgid "Ranking RON"
+msgstr "Ranking RON"
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__xrp_ranking
 msgid "Ranking XRP"
 msgstr "Ranking XRP"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__rating_ids
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__rating_ids
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_purchase_mode__rating_ids
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__rating_ids
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__rating_ids
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_valuation_layer__rating_ids
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_investment_crypto_price__rating_ids
+msgid "Ratings"
+msgstr "Ratings"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__activity_user_id
@@ -887,13 +946,19 @@ msgstr "Error Envío SMS"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_line__sale_id
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
 msgid "Sale"
 msgstr "Oferta"
 
 #. module: custom_gonza_investments
-#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__date
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__name
+msgid "Sale Code"
+msgstr "Código de Venta"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale__sale_date
 msgid "Sale Date"
-msgstr "Fecha"
+msgstr "Información de Venta"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_allocation__sale_line_id
@@ -911,6 +976,11 @@ msgstr "Código"
 #: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
 msgid "Sale Lines"
 msgstr "Líneas de venta"
+
+#. module: custom_gonza_investments
+#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_sale_form
+msgid "Sale Order Informations"
+msgstr "Información de la Orden de Venta"
 
 #. module: custom_gonza_investments
 #: model:ir.actions.act_window,name:custom_gonza_investments.action_crypto_sale
@@ -1063,6 +1133,11 @@ msgid "Total cost (EUR)"
 msgstr "Costo en Euros"
 
 #. module: custom_gonza_investments
+#: model:ir.model.fields,help:custom_gonza_investments.field_crypto_holding__cost_basis_eur
+msgid "Total cost of the remaining position (only unsold quantities)."
+msgstr "Coste total de la posición restante (sólo cantidades no vendidas)."
+
+#. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_allocation__fee_eur
 msgid "Total fee (EUR)"
 msgstr "Comisiones"
@@ -1102,6 +1177,16 @@ msgstr "Precio Unitario Euros"
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_sale_allocation__unit_cost_eur
 msgid "Unit cost (EUR)"
 msgstr "Costo unitario euros"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__unrealized_pl_eur
+msgid "Unrealized P/L"
+msgstr "Resultado No Realizado (€)"
+
+#. module: custom_gonza_investments
+#: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_holding__unrealized_return_pct
+msgid "Unrealized Return (%)"
+msgstr "Resultado No Realizado (%)"
 
 #. module: custom_gonza_investments
 #: model:ir.model.fields,field_description:custom_gonza_investments.field_crypto_asset__website_message_ids
@@ -1152,8 +1237,3 @@ msgstr "La cantidad comprada debe ser positiva."
 #: code:addons/custom_gonza_investments/models/crypto_purchase.py:0
 msgid "qty_sold cannot be negative."
 msgstr "La cantidad vendida no puede ser negativa"
-
-#. module: custom_gonza_investments
-#: model_terms:ir.ui.view,arch_db:custom_gonza_investments.view_crypto_holding_list
-msgid "total"
-msgstr "Total"

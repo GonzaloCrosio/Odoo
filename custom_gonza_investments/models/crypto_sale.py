@@ -9,14 +9,22 @@ class CryptoSale(models.Model):
     _description = "Crypto Sale"
     _order = "sale_date desc, id desc"
     _check_company_auto = True
-    _rec_name = "asset_id"
+    _rec_name = "name"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    asset_id = fields.Many2one(
-        "crypto.asset",
-        required=True,
-        string="Asset",
+    name = fields.Char(
+        string="Sale Code",
+        copy=False,
+        readonly=True,
+        index=True,
+        default=lambda self: _("New"),
+        tracking=True,
     )
+    # asset_id = fields.Many2one(
+    #     "crypto.asset",
+    #     required=True,
+    #     string="Asset",
+    # )
     sale_date = fields.Date(
         required=True,
         default=lambda self: fields.Date.context_today(self),
@@ -55,6 +63,13 @@ class CryptoSale(models.Model):
         default=lambda self: self.env.ref("base.EUR"),
         string="Currency",
     )
+    asset_ids = fields.Many2many(
+        comodel_name="crypto.asset",
+        string="Assets sold",
+        compute="_compute_asset_ids",
+        store=True,
+        readonly=True,
+    )
 
     @api.depends("line_ids.profit_eur", "line_ids.tax_eur")
     def _compute_totals(self):
@@ -86,6 +101,21 @@ class CryptoSale(models.Model):
         if confirmed_sales:
             confirmed_sales.action_cancel()
         return super().unlink()
+
+    # Para crear la secuencia en el campo name
+    @api.model_create_multi
+    def create(self, vals_list):
+        seq = self.env["ir.sequence"]
+        for vals in vals_list:
+            if not vals.get("name") or vals.get("name") == _("New"):
+                vals["name"] = seq.next_by_code("crypto.sale.seq") or _("New")
+        return super().create(vals_list)
+
+    # Para mostrar las cripto vendidas en las líneas de ventas
+    @api.depends("line_ids.asset_id")
+    def _compute_asset_ids(self):
+        for sale in self:
+            sale.asset_ids = sale.line_ids.mapped("asset_id")
 
 
 class CryptoSaleLine(models.Model):

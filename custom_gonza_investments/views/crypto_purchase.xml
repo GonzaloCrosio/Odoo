@@ -39,9 +39,6 @@
             <form string="Purchase Operation">
                 <!-- Smart button a Asignaciones de esta capa -->
                 <header>
-                    <h1>
-                        <field name="name" readonly="1" class="oe_inline"/>
-                    </h1>
                     <button name="action_open_allocations"
                             type="object"
                             class="oe_stat_button"
@@ -51,7 +48,10 @@
                     </button>
                 </header>
                 <sheet>
-                    <group>
+                    <h1>
+                        <field name="name" readonly="1" class="oe_inline"/>
+                    </h1>
+                    <group string="Purchase Informations">
                         <group>
                             <field name="name"/>
                             <field name="buy_date" options="{'numeric':true}"/>

@@ -11,33 +11,33 @@
                 <field name="currency_id" optional="show"/>
                 <field name="last_sync" optional="show"/>
                 <field name="last_sync_message" optional="hide"/>
-                <field name="tga_value" optional="show"/>
+                <field name="tga_value" optional="hide"/>
                 <field name="tga_date" options="{'numeric':true}" optional="hide"/>
-                <field name="reserves_value" optional="show"/>
+                <field name="reserves_value" optional="hide"/>
                 <field name="reserves_date" options="{'numeric':true}" optional="hide"/>
-                <field name="on_rrp_value" optional="show"/>
+                <field name="on_rrp_value" optional="hide"/>
                 <field name="on_rrp_date" options="{'numeric':true}" optional="hide"/>
-                <field name="sofr_value" optional="show"/>
+                <field name="sofr_value" optional="hide"/>
                 <field name="sofr_date" options="{'numeric':true}" optional="hide"/>
-                <field name="usd_index_value" optional="show"/>
+                <field name="usd_index_value" optional="hide"/>
                 <field name="usd_index_date" options="{'numeric':true}" optional="hide"/>
-                <field name="vix_value" optional="show"/>
+                <field name="vix_value" optional="hide"/>
                 <field name="vix_date" options="{'numeric':true}" optional="hide"/>
-                <field name="move_value" optional="show"/>
+                <field name="move_value" optional="hide"/>
                 <field name="move_date" options="{'numeric':true}" optional="hide"/>
-                <field name="sp500_value" optional="show"/>
+                <field name="sp500_value" optional="hide"/>
                 <field name="sp500_date" options="{'numeric':true}" optional="hide"/>
-                <field name="djia_value" optional="show"/>
+                <field name="djia_value" optional="hide"/>
                 <field name="djia_date" options="{'numeric':true}" optional="hide"/>
-                <field name="nasdaqcom_value" optional="show"/>
+                <field name="nasdaqcom_value" optional="hide"/>
                 <field name="nasdaqcom_date" options="{'numeric':true}" optional="hide"/>
-                <field name="nasdaq100_value" optional="show"/>
+                <field name="nasdaq100_value" optional="hide"/>
                 <field name="nasdaq100_date" options="{'numeric':true}" optional="hide"/>
-                <field name="inflation_yoy" optional="show"/>
+                <field name="inflation_yoy" optional="hide"/>
                 <field name="inflation_yoy_date" options="{'numeric':true}" optional="hide"/>
-                <field name="unemployment_value" optional="show"/>
+                <field name="unemployment_value" optional="hide"/>
                 <field name="unemployment_date" options="{'numeric':true}" optional="hide"/>
-                <field name="interest_rate_value" optional="show"/>
+                <field name="interest_rate_value" optional="hide"/>
                 <field name="interest_rate_date" options="{'numeric':true}" optional="hide"/>
             </list>
         </field>

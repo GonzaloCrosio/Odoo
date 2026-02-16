@@ -38,10 +38,10 @@ class CryptoAsset(models.Model):
         string="Precision",
     )
     price_usd = fields.Float(
-        string="Price (USD)",
+        string="Price (EUR)",
     )
     market_cap_usd = fields.Float(
-        string="Market Cap (USD)",
+        string="Market Cap (EUR)",
     )
     cmc_rank = fields.Integer(
         string="CMC Rank",

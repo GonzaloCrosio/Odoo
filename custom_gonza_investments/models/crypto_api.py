@@ -18,22 +18,28 @@ class InvestmentCryptoPrice(models.Model):
 
     # Campos para almacenar los valores
     bitcoin_price = fields.Float(
-        string="Price BTC (USD)",
+        string="Price BTC (EUR)",
     )
     xrp_price = fields.Float(
-        string="Price XRP (USD)",
+        string="Price XRP (EUR)",
     )
     hbar_price = fields.Float(
-        string="Price HBAR (USD)",
+        string="Price HBAR (EUR)",
+    )
+    ron_price = fields.Float(
+        string="Price RON (EUR)",
     )
     bitcoin_market_cap = fields.Float(
-        string="Market capitalization BTC (USD)",
+        string="Market capitalization BTC (EUR)",
     )
     xrp_market_cap = fields.Float(
-        string="Market capitalization XRP (USD)",
+        string="Market capitalization XRP (EUR)",
     )
     hbar_market_cap = fields.Float(
-        string="Market capitalization HBAR (USD)",
+        string="Market capitalization HBAR (EUR)",
+    )
+    ron_market_cap = fields.Float(
+        string="Market capitalization RON (EUR)",
     )
     bitcoin_ranking = fields.Integer(
         string="Ranking BTC",
@@ -44,6 +50,9 @@ class InvestmentCryptoPrice(models.Model):
     hbar_ranking = fields.Integer(
         string="Ranking HBAR",
     )
+    ron_ranking = fields.Integer(
+        string="Ranking RON",
+    )
     bitcoin_dominance = fields.Float(
         string="BTC Dominance %",
     )
@@ -52,6 +61,9 @@ class InvestmentCryptoPrice(models.Model):
     )
     hbar_dominance = fields.Float(
         string="HBAR Dominance %",
+    )
+    ron_dominance = fields.Float(
+        string="RON Dominance %",
     )
     fear_greed_value = fields.Integer(
         string="CMC Fear & Greed",
@@ -80,7 +92,7 @@ class InvestmentCryptoPrice(models.Model):
         }
 
         # Criptomonedas a consultar
-        params = {"symbol": "BTC,XRP,HBAR", "convert": "USD"}
+        params = {"symbol": "BTC,XRP,HBAR,RON", "convert": "EUR"}
 
         try:
             # Realizamos la solicitud
@@ -89,20 +101,26 @@ class InvestmentCryptoPrice(models.Model):
             data = response.json()
 
             # Obtenemos las respuestas de la API
-            btc_price = data["data"]["BTC"]["quote"]["USD"]["price"]
-            xrp_price = data["data"]["XRP"]["quote"]["USD"]["price"]
-            hbar_price = data["data"]["HBAR"]["quote"]["USD"]["price"]
-            btc_capitalization = data["data"]["BTC"]["quote"]["USD"]["market_cap"]
-            xrp_capitalization = data["data"]["XRP"]["quote"]["USD"]["market_cap"]
-            hbar_capitalization = data["data"]["HBAR"]["quote"]["USD"]["market_cap"]
+            btc_price = data["data"]["BTC"]["quote"]["EUR"]["price"]
+            xrp_price = data["data"]["XRP"]["quote"]["EUR"]["price"]
+            hbar_price = data["data"]["HBAR"]["quote"]["EUR"]["price"]
+            ron_price = data["data"]["RON"]["quote"]["EUR"]["price"]
+            btc_capitalization = data["data"]["BTC"]["quote"]["EUR"]["market_cap"]
+            xrp_capitalization = data["data"]["XRP"]["quote"]["EUR"]["market_cap"]
+            hbar_capitalization = data["data"]["HBAR"]["quote"]["EUR"]["market_cap"]
+            ron_capitalization = data["data"]["RON"]["quote"]["EUR"]["market_cap"]
             btc_ranking = data["data"]["BTC"]["cmc_rank"]
             xrp_rank = data["data"]["XRP"]["cmc_rank"]
             hbar_rank = data["data"]["HBAR"]["cmc_rank"]
-            btc_dominance = data["data"]["BTC"]["quote"]["USD"]["market_cap_dominance"]
-            xrp_dominance_cap = data["data"]["XRP"]["quote"]["USD"][
+            ron_rank = data["data"]["RON"]["cmc_rank"]
+            btc_dominance = data["data"]["BTC"]["quote"]["EUR"]["market_cap_dominance"]
+            xrp_dominance_cap = data["data"]["XRP"]["quote"]["EUR"][
                 "market_cap_dominance"
             ]
-            hbar_dominance_cap = data["data"]["HBAR"]["quote"]["USD"][
+            hbar_dominance_cap = data["data"]["HBAR"]["quote"]["EUR"][
+                "market_cap_dominance"
+            ]
+            ron_dominance_cap = data["data"]["RON"]["quote"]["EUR"][
                 "market_cap_dominance"
             ]
 
@@ -115,15 +133,19 @@ class InvestmentCryptoPrice(models.Model):
                         "bitcoin_price": btc_price,
                         "xrp_price": xrp_price,
                         "hbar_price": hbar_price,
+                        "ron_price": ron_price,
                         "bitcoin_market_cap": btc_capitalization,
                         "xrp_market_cap": xrp_capitalization,
                         "hbar_market_cap": hbar_capitalization,
+                        "ron_market_cap": ron_capitalization,
                         "bitcoin_ranking": btc_ranking,
                         "xrp_ranking": xrp_rank,
                         "hbar_ranking": hbar_rank,
+                        "ron_ranking": ron_rank,
                         "bitcoin_dominance": btc_dominance,
                         "xrp_dominance": xrp_dominance_cap,
                         "hbar_dominance": hbar_dominance_cap,
+                        "ron_dominance": ron_dominance_cap,
                     }
                 )
             else:
@@ -133,15 +155,19 @@ class InvestmentCryptoPrice(models.Model):
                         "bitcoin_price": btc_price,
                         "xrp_price": xrp_price,
                         "hbar_price": hbar_price,
+                        "ron_price": ron_price,
                         "bitcoin_market_cap": btc_capitalization,
                         "xrp_market_cap": xrp_capitalization,
                         "hbar_market_cap": hbar_capitalization,
+                        "ron_market_cap": ron_capitalization,
                         "bitcoin_ranking": btc_ranking,
                         "xrp_ranking": xrp_rank,
                         "hbar_ranking": hbar_rank,
+                        "ron_ranking": ron_rank,
                         "bitcoin_dominance": btc_dominance,
                         "xrp_dominance": xrp_dominance_cap,
                         "hbar_dominance": hbar_dominance_cap,
+                        "ron_dominance": ron_dominance_cap,
                     }
                 )
 
@@ -193,6 +219,12 @@ class InvestmentCryptoPrice(models.Model):
                 "market_cap_usd": crypto_prices.hbar_market_cap,
                 "cmc_rank": crypto_prices.hbar_ranking,
                 "dominance_percentage": crypto_prices.hbar_dominance,
+            },
+            "RON": {
+                "price_usd": crypto_prices.ron_price,
+                "market_cap_usd": crypto_prices.ron_market_cap,
+                "cmc_rank": crypto_prices.ron_ranking,
+                "dominance_percentage": crypto_prices.ron_dominance,
             },
         }
 

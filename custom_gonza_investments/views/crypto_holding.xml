@@ -11,13 +11,13 @@
                 <field name="company_id" optional="hide" width="100px"/>
                 <field name="qty_available" widget="text" optional="show" width="175px"/>
                 <field name="current_price_usd" widget="monetary" optional="show" width="175px"/>
-                <field name="avg_buy_price_eur" widget="monetary" optional="show" width="140px"/>
-                <field name="cost_basis_eur" widget="monetary" sum="Total" optional="show" width="140px"/>
+                <field name="avg_buy_price_eur" widget="monetary" optional="show" width="175px"/>
+                <field name="cost_basis_eur" widget="monetary" sum="Total" optional="show" width="175px"/>
                 <field name="value_usd" widget="monetary" sum="Total" optional="show" width="200px"/>
-                <field name="unrealized_pl_eur" widget="monetary" sum="Total" optional="show" width="150px"
+                <field name="unrealized_pl_eur" widget="monetary" sum="Total" optional="show" width="175px"
                        decoration-success="unrealized_pl_eur &gt; 0"
                        decoration-danger="unrealized_pl_eur &lt; 0"/>
-                <field name="unrealized_return_pct" optional="show" width="150px" widget="percentage"
+                <field name="unrealized_return_pct" optional="show" width="175px" widget="percentage"
                        decoration-success="unrealized_return_pct &gt; 0"
                        decoration-danger="unrealized_return_pct &lt; 0"/>
                 <field name="cmc_rank" widget="text" optional="show" width="150px"/>
@@ -41,7 +41,15 @@
                             class="oe_highlight"/>
                 </header>
                 <sheet>
-                    <group>
+                    <h1>
+                        <div class="o_field_input_buttons">
+                            <field name="asset_id"/>
+                        </div>
+                        <div class="o_field_widget o_required_modifier o_field_text text-break">
+                            <field name="asset_id" readonly="1" options="{'no_open': True}"/>
+                        </div>
+                    </h1>
+                    <group string="Asset Informations">
                         <group>
                             <field name="asset_id"/>
                             <field name="company_id"/>

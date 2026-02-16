@@ -15,4 +15,12 @@
         <field name="padding">5</field>
         <field name="company_id" eval="False"/>
     </record>
+
+    <record id="seq_crypto_sale" model="ir.sequence">
+        <field name="name">Crypto Sale</field>
+        <field name="code">crypto.sale.seq</field>
+        <field name="prefix">SALE-ORDER-</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
 </odoo>
