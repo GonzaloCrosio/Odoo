@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Mail Inbound Controller para Odoo V19 Community
-Versión 3 — Busca por References completo y loguea para diagnóstico.
-"""
 
 import logging
 import re
