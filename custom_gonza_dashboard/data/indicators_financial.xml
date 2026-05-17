@@ -1,0 +1,273 @@
+<odoo>
+    <data noupdate="1">
+        <!--    Registro base de Financial Indicators   -->
+        <record id="financial_indicators_main" model="financial.indicators">
+            <field name="name">Indicadores FRED</field>
+        </record>
+        <!--    Tablero Financiero: 24 registros dashboard.control   -->
+        <record id="dashboard_a_liquidez_sobrante" model="dashboard.control">
+            <field name="name">A- Liquidez Sobrante</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">on_rrp_value</field>
+            <field name="v1">1.0</field>
+            <field name="v2">100.0</field>
+            <field name="v3">200.0</field>
+            <field name="v4">300.0</field>
+            <field name="v5">500.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_b_repos_alerta_fed" model="dashboard.control">
+            <field name="name">B- REPOS - ALERTA FED</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">inverse_repo_value</field>
+            <field name="v1">0.0</field>
+            <field name="v2">0.01</field>
+            <field name="v3">3.0</field>
+            <field name="v4">5.0</field>
+            <field name="v5">7.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_c_tasa_interes_anual" model="dashboard.control">
+            <field name="name">C- Tasa de Interes Anual</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">interest_rate_value</field>
+            <field name="v1">0.0</field>
+            <field name="v2">1.0</field>
+            <field name="v3">2.0</field>
+            <field name="v4">3.0</field>
+            <field name="v5">5.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_d_srf" model="dashboard.control">
+            <field name="name">D- SRF - Tasa Prestamo FED a Bancos para REPOS</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">srf_value</field>
+            <field name="v1">0.01</field>
+            <field name="v2">1.50</field>
+            <field name="v3">3.25</field>
+            <field name="v4">4.0</field>
+            <field name="v5">5.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_e_sofr" model="dashboard.control">
+            <field name="name">E- SOFR - Tasa de interes de Prestamos entre Bancos</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">sofr_value</field>
+            <field name="v1">0.01</field>
+            <field name="v2">1.50</field>
+            <field name="v3">3.0</field>
+            <field name="v4">4.30</field>
+            <field name="v5">5.40</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_f_desempleo" model="dashboard.control">
+            <field name="name">F- Desempleo</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">unemployment_value</field>
+            <field name="v1">3.0</field>
+            <field name="v2">4.0</field>
+            <field name="v3">6.0</field>
+            <field name="v4">7.0</field>
+            <field name="v5">10.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_g_inflacion_anual" model="dashboard.control">
+            <field name="name">G- Inflacion Anual</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">inflation_yoy</field>
+            <field name="v1">0.01</field>
+            <field name="v2">1.0</field>
+            <field name="v3">2.0</field>
+            <field name="v4">3.0</field>
+            <field name="v5">5.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_g_inflacion_mensual" model="dashboard.control">
+            <field name="name">G- Inflacion Mensual</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">inflation_mom</field>
+            <field name="v1">0.01</field>
+            <field name="v2">0.08</field>
+            <field name="v3">0.17</field>
+            <field name="v4">0.25</field>
+            <field name="v5">0.41</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_g_inflacion_semestral" model="dashboard.control">
+            <field name="name">G- Inflacion Semestral</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">inflation_6m</field>
+            <field name="v1">0.01</field>
+            <field name="v2">0.50</field>
+            <field name="v3">1.0</field>
+            <field name="v4">1.50</field>
+            <field name="v5">2.50</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_h_cuenta_tesoro" model="dashboard.control">
+            <field name="name">H- Cuenta del Tesoro</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">tga_value</field>
+            <field name="v1">500000.0</field>
+            <field name="v2">600000.0</field>
+            <field name="v3">750000.0</field>
+            <field name="v4">1000000.0</field>
+            <field name="v5">1300000.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_i_move" model="dashboard.control">
+            <field name="name">I- MOVE - Volatilidad Bonos</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">move_value</field>
+            <field name="v1">1.0</field>
+            <field name="v2">70.0</field>
+            <field name="v3">90.0</field>
+            <field name="v4">100.0</field>
+            <field name="v5">120.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_j_vix" model="dashboard.control">
+            <field name="name">J- VIX - Volatilidad de las Bolsas</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">vix_value</field>
+            <field name="v1">0.01</field>
+            <field name="v2">10.0</field>
+            <field name="v3">20.0</field>
+            <field name="v4">29.0</field>
+            <field name="v5">35.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_k_indice_usd" model="dashboard.control">
+            <field name="name">K- Indice USD/Monedas</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">usd_index_value</field>
+            <field name="v1">100.0</field>
+            <field name="v2">110.0</field>
+            <field name="v3">120.0</field>
+            <field name="v4">130.0</field>
+            <field name="v5">140.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_l_reservas_bancarias" model="dashboard.control">
+            <field name="name">L- Reservas Bancarias Privadas</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">reserves_value</field>
+            <field name="v1">1.0</field>
+            <field name="v2">2500000.0</field>
+            <field name="v3">3000000.0</field>
+            <field name="v4">3500000.0</field>
+            <field name="v5">4000000.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_m_nasdaq_composite" model="dashboard.control">
+            <field name="name">M- NASDAQ Composite</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">nasdaqcom_value</field>
+            <field name="v1">10000.0</field>
+            <field name="v2">16000.0</field>
+            <field name="v3">20000.0</field>
+            <field name="v4">22000.0</field>
+            <field name="v5">30000.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_n_sp500" model="dashboard.control">
+            <field name="name">N- SP 500 - Bolsa</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">sp500_value</field>
+            <field name="v1">3000.0</field>
+            <field name="v2">4500.0</field>
+            <field name="v3">5200.0</field>
+            <field name="v4">6500.0</field>
+            <field name="v5">10000.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_o_dow_jones" model="dashboard.control">
+            <field name="name">O- Dow Jones</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">djia_value</field>
+            <field name="v1">36000.0</field>
+            <field name="v2">39000.0</field>
+            <field name="v3">42000.0</field>
+            <field name="v4">45000.0</field>
+            <field name="v5">50000.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_enie_nasdaq100" model="dashboard.control">
+            <field name="name">N- Nasdaq 100</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">nasdaq100_value</field>
+            <field name="v1">14000.0</field>
+            <field name="v2">18000.0</field>
+            <field name="v3">22000.0</field>
+            <field name="v4">24000.0</field>
+            <field name="v5">26000.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_p_yield_curve" model="dashboard.control">
+            <field name="name">A- Spread Curva Bonos (10Y-2Y)</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">t10y2y_value</field>
+            <field name="v1">-1.0</field>
+            <field name="v2">-0.5</field>
+            <field name="v3">0.0</field>
+            <field name="v4">1.0</field>
+            <field name="v5">3.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_q_10y_treasury" model="dashboard.control">
+            <field name="name">Q- Tasa bonos a 10 años UA</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">dgs10_value</field>
+            <field name="v1">0.5</field>
+            <field name="v2">2.0</field>
+            <field name="v3">3.5</field>
+            <field name="v4">4.5</field>
+            <field name="v5">6.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_r_m2_money_supply" model="dashboard.control">
+            <field name="name">R- Valor M2 USA (Money Supply)</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">m2_value</field>
+            <field name="v1">20000000.0</field>
+            <field name="v2">21000000.0</field>
+            <field name="v3">22000000.0</field>
+            <field name="v4">23000000.0</field>
+            <field name="v5">24000000.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_s_oil_price" model="dashboard.control">
+            <field name="name">S- Precio OIL (WTI)</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">oil_value</field>
+            <field name="v1">40.0</field>
+            <field name="v2">50.0</field>
+            <field name="v3">70.0</field>
+            <field name="v4">90.0</field>
+            <field name="v5">110.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+        <record id="dashboard_t_consumer_sentiment" model="dashboard.control">
+            <field name="name">T- Sentimiento del Consumidor USA (UMCSENT)</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">umcsent_value</field>
+            <field name="v1">50.0</field>
+            <field name="v2">70.0</field>
+            <field name="v3">85.0</field>
+            <field name="v4">100.0</field>
+            <field name="v5">120.0</field>
+            <field name="higher_is_worse" eval="False"/>
+        </record>
+        <record id="dashboard_u_michigan_inflation" model="dashboard.control">
+            <field name="name">U- Expectativa de Inflación (USA Michigan)</field>
+            <field name="indicators_id" ref="financial_indicators_main"/>
+            <field name="indicator">mich_value</field>
+            <field name="v1">1.0</field>
+            <field name="v2">2.0</field>
+            <field name="v3">2.5</field>
+            <field name="v4">3.0</field>
+            <field name="v5">5.0</field>
+            <field name="higher_is_worse" eval="True"/>
+        </record>
+    </data>
+</odoo>

@@ -18,6 +18,8 @@
     },
     "data": [
         "security/ir.model.access.csv",
+        "data/update_data_from_fred.xml",
+        "data/indicators_financial.xml",
         "views/financial_indicators_views.xml",
         "views/dashboard_control.xml",
         "views/dashboard_menu.xml",

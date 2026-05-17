@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- ===== CRYPTO ASSETS ===== -->
+        <!-- Bitcoin -->
+        <record id="crypto_asset_btc" model="crypto.asset">
+            <field name="name">Bitcoin</field>
+            <field name="symbol">BTC</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="precision">8</field>
+        </record>
+
+        <!-- Ripple -->
+        <record id="crypto_asset_xrp" model="crypto.asset">
+            <field name="name">Ripple</field>
+            <field name="symbol">XRP</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="precision">8</field>
+        </record>
+
+        <!-- Hedera -->
+        <record id="crypto_asset_hbar" model="crypto.asset">
+            <field name="name">Hedera</field>
+            <field name="symbol">HBAR</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="precision">8</field>
+        </record>
+
+        <!-- Ron -->
+        <record id="crypto_asset_ron" model="crypto.asset">
+            <field name="name">Ron</field>
+            <field name="symbol">RON</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+            <field name="precision">8</field>
+        </record>
+    </data>
+</odoo>

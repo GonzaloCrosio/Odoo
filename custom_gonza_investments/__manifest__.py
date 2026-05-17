@@ -9,13 +9,12 @@
     "installable": True,
     "depends": [
         "mail",
-        "base",
-        "product",
-        "account",
     ],
     "data": [
         "security/ir.model.access.csv",
         "data/sequence.xml",
+        "data/crypto_action_server.xml",
+        "data/crypto_asset_data.xml",
         "views/crypto_holding.xml",
         "views/crypto_asset.xml",
         "views/crypto_sale_allocation.xml",

@@ -21,14 +21,11 @@
                 <filter string="Strong Green" name="lvl_sgreen" domain="[('level', '=', '5')]"/>
                 <filter string="N/A" name="lvl_na" domain="[('level', '=', '0')]"/>
 
-                <!-- Group By (sin <group> con atributos) -->
                 <separator/>
                 <filter string="Group by: Indicators record" name="grp_indicators"
                         context="{'group_by':'indicators_id'}"/>
-                <filter string="Group by: Indicator" name="grp_indicator"
-                        context="{'group_by':'indicator'}"/>
-                <filter string="Group by: Level" name="grp_level"
-                        context="{'group_by':'level'}"/>
+                <filter string="Group by: Indicator" name="grp_indicator" context="{'group_by':'indicator'}"/>
+                <filter string="Group by: Level" name="grp_level" context="{'group_by':'level'}"/>
             </search>
         </field>
     </record>
@@ -44,9 +41,7 @@
                 <field name="indicator"/>
                 <field name="current_value" readonly="1"/>
                 <field name="level" readonly="1"/>
-
                 <field name="higher_is_worse"/>
-
                 <field name="v1"/>
                 <field name="v2"/>
                 <field name="v3"/>
@@ -55,7 +50,6 @@
             </list>
         </field>
     </record>
-
 
     <!-- ========= FORM ========= -->
     <record id="view_dashboard_control_form" model="ir.ui.view">
@@ -69,8 +63,7 @@
                             <field name="name"/>
                         </div>
                         <div class="o_field_widget o_required_modifier o_field_text text-break">
-                            <field name="name"
-                                   placeholder="Indicator"/>
+                            <field name="name" placeholder="Indicator"/>
                         </div>
                     </h1>
                     <group>
@@ -97,8 +90,8 @@
                             <field name="v4"/>
                             <field name="v5"/>
                         </group>
-                        <div class="o_form_label">
-                            Rule: [v1,v2) Strong Green; [v2,v3) Green; [v3,v4) Yellow; [v4,v5) Orange; &gt;=v5 Red
+                        <div class="o_form_label">Rule: [v1,v2) Strong Green; [v2,v3) Green; [v3,v4) Yellow; [v4,v5)
+                            Orange; >=v5 Red
                         </div>
                     </group>
                     <group string="Indicator operation">
@@ -179,6 +172,4 @@
             </kanban>
         </field>
     </record>
-
-
 </odoo>

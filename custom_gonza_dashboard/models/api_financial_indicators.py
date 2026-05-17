@@ -348,6 +348,108 @@ class FinancialIndicators(models.Model):
         string="Link FRED NASDAQ 100",
         default="https://fred.stlouisfed.org/series/NASDAQ100",
     )
+    t10y2y_value = fields.Float(
+        string="Yield Curve (10Y-2Y Spread)",
+        help="10-Year Treasury minus 2-Year Treasury. Inverted curves predict recessions.",
+        tracking=True,
+    )
+    t10y2y_date = fields.Date(
+        string="Yield Curve Update Date",
+        help="Last Update Date",
+    )
+    fred_series_t10y2y = fields.Char(
+        string="FRED series_id T10Y2Y",
+        default="T10Y2Y",
+    )
+    t10y2y_link = fields.Char(
+        string="Link FRED T10Y2Y",
+        default="https://fred.stlouisfed.org/series/T10Y2Y",
+    )
+    dgs10_value = fields.Float(
+        string="10-Year Treasury Yield",
+        help="Cost of long-term capital - higher yields pressure equities and crypto",
+        tracking=True,
+    )
+    dgs10_date = fields.Date(
+        string="10Y Treasury Update Date",
+        help="Last Update Date",
+    )
+    fred_series_dgs10 = fields.Char(
+        string="FRED series_id DGS10",
+        default="DGS10",
+    )
+    dgs10_link = fields.Char(
+        string="Link FRED DGS10",
+        default="https://fred.stlouisfed.org/series/DGS10",
+    )
+    m2_value = fields.Float(
+        string="M2 Money Supply",
+        help="Broad money supply including cash and deposits. Bitcoin correlates with M2 growth.",
+        tracking=True,
+    )
+    m2_date = fields.Date(
+        string="M2 Money Supply Update Date",
+        help="Last Update Date",
+    )
+    fred_series_m2 = fields.Char(
+        string="FRED series_id M2",
+        default="M2SL",
+    )
+    m2_link = fields.Char(
+        string="Link FRED M2",
+        default="https://fred.stlouisfed.org/series/M2SL",
+    )
+    oil_value = fields.Float(
+        string="Oil Price (WTI Crude)",
+        help="West Texas Intermediate crude. Reflects inflation and growth expectations.",
+        tracking=True,
+    )
+    oil_date = fields.Date(
+        string="Oil Price Update Date",
+        help="Last Update Date",
+    )
+    fred_series_oil = fields.Char(
+        string="FRED series_id Oil (DCOILWTICO)",
+        default="DCOILWTICO",
+    )
+    oil_link = fields.Char(
+        string="Link FRED Oil",
+        default="https://fred.stlouisfed.org/series/DCOILWTICO",
+    )
+    umcsent_value = fields.Float(
+        string="Consumer Sentiment Index",
+        help="University of Michigan survey. Leads changes in consumer spending.",
+        tracking=True,
+    )
+    umcsent_date = fields.Date(
+        string="Consumer Sentiment Update Date",
+        help="Last Update Date (delayed 1 month)",
+    )
+    fred_series_umcsent = fields.Char(
+        string="FRED series_id UMCSENT",
+        default="UMCSENT",
+    )
+    umcsent_link = fields.Char(
+        string="Link FRED UMCSENT",
+        default="https://fred.stlouisfed.org/series/UMCSENT",
+    )
+    mich_value = fields.Float(
+        string="Michigan Inflation Expectation",
+        help="University of Michigan long-term inflation expectations.",
+        tracking=True,
+    )
+    mich_date = fields.Date(
+        string="Michigan Inflation Update Date",
+        help="Last Update Date (delayed 1 month)",
+    )
+    fred_series_mich = fields.Char(
+        string="FRED series_id MICH",
+        default="MICH",
+    )
+    mich_link = fields.Char(
+        string="Link FRED MICH",
+        default="https://fred.stlouisfed.org/series/MICH",
+    )
 
     # Helpers FRED
     def _get_fred_api_key(self):
@@ -559,6 +661,36 @@ class FinancialIndicators(models.Model):
             d, v = rec._fred_get_latest_valid(rec.fred_series_nasdaq100, api_key)
             if d:
                 vals.update({"nasdaq100_date": d, "nasdaq100_value": v})
+
+            # Yield Curve T10Y2Y
+            d, v = rec._fred_get_latest_valid(rec.fred_series_t10y2y, api_key)
+            if d:
+                vals.update({"t10y2y_date": d, "t10y2y_value": v})
+
+            # 10Y Treasury
+            d, v = rec._fred_get_latest_valid(rec.fred_series_dgs10, api_key)
+            if d:
+                vals.update({"dgs10_date": d, "dgs10_value": v})
+
+            # M2 Money Supply
+            d, v = rec._fred_get_latest_valid(rec.fred_series_m2, api_key)
+            if d:
+                vals.update({"m2_date": d, "m2_value": v})
+
+            # Oil Price (WTI)
+            d, v = rec._fred_get_latest_valid(rec.fred_series_oil, api_key)
+            if d:
+                vals.update({"oil_date": d, "oil_value": v})
+
+            # Consumer Sentiment (UMCSENT)
+            d, v = rec._fred_get_latest_valid(rec.fred_series_umcsent, api_key)
+            if d:
+                vals.update({"umcsent_date": d, "umcsent_value": v})
+
+            # Michigan Inflation (MICH)
+            d, v = rec._fred_get_latest_valid(rec.fred_series_mich, api_key)
+            if d:
+                vals.update({"mich_date": d, "mich_value": v})
 
             # Guardar
             vals.update(

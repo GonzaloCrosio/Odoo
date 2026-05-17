@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-16 13:51+0000\n"
-"PO-Revision-Date: 2026-02-16 14:56+0100\n"
+"POT-Creation-Date: 2026-05-17 20:57+0000\n"
+"PO-Revision-Date: 2026-05-17 23:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -16,6 +16,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.2\n"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__dgs10_value
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__dgs10_value
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "10-Year Treasury Yield"
+msgstr "Bono a 10 años USA"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__t10y2y_value
+msgid ""
+"10-Year Treasury minus 2-Year Treasury. Inverted curves predict recessions."
+msgstr ""
+"Spread entre bonos a 2 y 10 años. Si es negativa, se invierte la curva y "
+"predice una recesión en los próximos 6 meses a 2 años."
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__dgs10_date
+msgid "10Y Treasury Update Date"
+msgstr "Última Actualización"
 
 #. module: custom_gonza_dashboard
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_dashboard_control_kanban
@@ -83,6 +103,11 @@ msgid "Activity Type Icon"
 msgstr "Ícono Tipo Actividad"
 
 #. module: custom_gonza_dashboard
+#: model:ir.actions.server,name:custom_gonza_dashboard.action_update_from_fred
+msgid "Actualizar datos desde FRED"
+msgstr ""
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_yoy
 msgid "Annual Inflation (%)"
 msgstr "Inflación Anual (%)"
@@ -116,9 +141,41 @@ msgid "Bonds USA Bank Reserva"
 msgstr "Bonos en la Reserva Federal USA"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__m2_value
+msgid ""
+"Broad money supply including cash and deposits. Bitcoin correlates with M2 "
+"growth."
+msgstr ""
+"Masa monetaria amplia, incluyendo efectivo y depósitos. Bitcoin se "
+"correlaciona con el crecimiento de M2."
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_dashboard_control__level_class
 msgid "CSS Class"
 msgstr "Clase CSS"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__umcsent_value
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Consumer Sentiment"
+msgstr "Sentimiento del Consumidor"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__umcsent_value
+msgid "Consumer Sentiment Index"
+msgstr "Sentimiento del Consumidor"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__umcsent_date
+msgid "Consumer Sentiment Update Date"
+msgstr "Última Actualización"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__dgs10_value
+msgid "Cost of long-term capital - higher yields pressure equities and crypto"
+msgstr ""
+"Costo del capital a largo plazo: los mayores rendimientos presionan a las "
+"acciones y las criptomonedas."
 
 #. module: custom_gonza_dashboard
 #: model_terms:ir.actions.act_window,help:custom_gonza_dashboard.action_financial_indicators
@@ -184,12 +241,12 @@ msgstr "Nombre"
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__djia_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "Dow Jones (DJIA)"
-msgstr "Dow Jones (DJIA)"
+msgstr ""
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__djia_value
 msgid "Dow Jones Industrial Average (DJIA)"
-msgstr "Dow Jones Industrial Average (DJIA)"
+msgstr ""
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__on_rrp_value
@@ -221,6 +278,11 @@ msgid "FRED series_id CPI (para inflation)"
 msgstr "Código FRED"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_dgs10
+msgid "FRED series_id DGS10"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_djia
 msgid "FRED series_id DJIA"
 msgstr "Código FRED"
@@ -233,6 +295,16 @@ msgstr "Código FRED"
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_inverse_repo
 msgid "FRED series_id Inverse Repo"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_m2
+msgid "FRED series_id M2"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_mich
+msgid "FRED series_id MICH"
 msgstr "Código FRED"
 
 #. module: custom_gonza_dashboard
@@ -256,6 +328,11 @@ msgid "FRED series_id ON RRP"
 msgstr "Código FRED"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_oil
+msgid "FRED series_id Oil (DCOILWTICO)"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_sp500
 msgid "FRED series_id S&P 500"
 msgstr "Código FRED"
@@ -271,8 +348,18 @@ msgid "FRED series_id SRF"
 msgstr "Código FRED"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_t10y2y
+msgid "FRED series_id T10Y2Y"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_tga
 msgid "FRED series_id TGA"
+msgstr "Código FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__fred_series_umcsent
+msgid "FRED series_id UMCSENT"
 msgstr "Código FRED"
 
 #. module: custom_gonza_dashboard
@@ -477,12 +564,12 @@ msgstr "Inflación Anual"
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__interest_rate_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "Interest Rate"
-msgstr "Tasa de Inflación"
+msgstr "Tasa de Interés"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__interest_rate_value
 msgid "Interest Rate USA (%)"
-msgstr "Tasa de Interés UA (%)"
+msgstr "Tasa de Interés USA. (%)"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__inverse_repo_value
@@ -516,23 +603,33 @@ msgstr "Última Actualización el"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__bonds_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__dgs10_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__djia_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__inflation_cpi_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__interest_rate_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__inverse_repo_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__m2_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__move_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__nasdaq100_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__nasdaqcom_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__oil_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__on_rrp_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__reserves_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__sofr_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__sp500_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__srf_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__t10y2y_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__tga_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__unemployment_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__usd_index_date
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__vix_date
 msgid "Last Update Date"
+msgstr "Última Actualización el"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__mich_date
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__umcsent_date
+msgid "Last Update Date (delayed 1 month)"
 msgstr "Última Actualización el"
 
 #. module: custom_gonza_dashboard
@@ -558,6 +655,11 @@ msgid "Link FRED BONDS"
 msgstr "Link FRED"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__dgs10_link
+msgid "Link FRED DGS10"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__djia_link
 msgid "Link FRED DJIA"
 msgstr "Link FRED"
@@ -575,6 +677,16 @@ msgstr "Link FRED"
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inverse_repo_link
 msgid "Link FRED Inverse Repo"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__m2_link
+msgid "Link FRED M2"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__mich_link
+msgid "Link FRED MICH"
 msgstr "Link FRED"
 
 #. module: custom_gonza_dashboard
@@ -598,6 +710,11 @@ msgid "Link FRED ON RRP"
 msgstr "Link FRED"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__oil_link
+msgid "Link FRED Oil"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__reserves_link
 msgid "Link FRED Reserves"
 msgstr "Link FRED"
@@ -618,8 +735,18 @@ msgid "Link FRED SRF"
 msgstr "Link FRED"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__t10y2y_link
+msgid "Link FRED T10Y2Y"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__tga_link
 msgid "Link FRED TGA"
+msgstr "Link FRED"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__umcsent_link
+msgid "Link FRED UMCSENT"
 msgstr "Link FRED"
 
 #. module: custom_gonza_dashboard
@@ -641,6 +768,22 @@ msgstr "Link FRED"
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "Liquidity / Fed"
 msgstr "Liquidez/FED"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "M2 Liquidy"
+msgstr "Stock de Dinero M2"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__m2_value
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__m2_value
+msgid "M2 Money Supply"
+msgstr "Stock de Dinero M2"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__m2_date
+msgid "M2 Money Supply Update Date"
+msgstr "Última Actualización"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__move_value
@@ -676,6 +819,22 @@ msgid "Messages"
 msgstr "Mensajes"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__mich_value
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__mich_value
+msgid "Michigan Inflation Expectation"
+msgstr "Expectativa de Inflación (Michigan USA)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__mich_date
+msgid "Michigan Inflation Update Date"
+msgstr "Última Actualización"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Month Inflation Indicator USA Michigan"
+msgstr "Indicador de Inflación Anual realizada por Michigan University"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_dashboard_control__my_activity_date_deadline
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__my_activity_date_deadline
 msgid "My Activity Deadline"
@@ -685,13 +844,13 @@ msgstr "Deadline de la actividad"
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__level__0
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_dashboard_control_search
 msgid "N/A"
-msgstr "N/A"
+msgstr ""
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__nasdaq100_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "NASDAQ 100"
-msgstr "NASDAQ 100"
+msgstr ""
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__nasdaq100_value
@@ -702,7 +861,7 @@ msgstr "NASDAQ 100 Índice"
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__nasdaqcom_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "NASDAQ Composite"
-msgstr "NASDAQ Composite"
+msgstr ""
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__nasdaqcom_value
@@ -758,11 +917,31 @@ msgid "Number of messages with delivery error"
 msgstr "Cantidad de mensajes con error"
 
 #. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "OIL Price"
+msgstr "Precio OIL"
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__on_rrp_value
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__on_rrp_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "ON RRP"
 msgstr "LIQUIDEZ SOBRANTE (ON RRP)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__oil_value
+msgid "Oil Price (WTI Crude)"
+msgstr "Precio OIL (WTI Crudo)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__oil_value
+msgid "Oil Price (WTI)"
+msgstr "Precio OIL (WTI Crudo)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__oil_date
+msgid "Oil Price Update Date"
+msgstr "Última Actualización"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__level__2
@@ -801,8 +980,8 @@ msgstr "Resultado última Actualización"
 #. module: custom_gonza_dashboard
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_dashboard_control_form
 msgid ""
-"Rule: [v1,v2) Strong Green; [v2,v3) Green; [v3,v4) Yellow; [v4,v5) Orange; "
-"&gt;=v5 Red"
+"Rule: [v1,v2) Strong Green; [v2,v3) Green; [v3,v4) Yellow; [v4,v5)\n"
+"                            Orange; &gt;=v5 Red"
 msgstr ""
 "Reglas: [v1,v2) Verde Fuerte; [v2,v3) Verde; [v3,v4) Amarillo; [v4,v5) "
 "Naranja; &gt;=v5 Rojo"
@@ -812,7 +991,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__sp500_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "S&P 500"
-msgstr "S&P 500"
+msgstr ""
 
 #. module: custom_gonza_dashboard
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
@@ -931,6 +1110,7 @@ msgstr "Umbrales (5 niveles)"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__tga_value
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__tga_value
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
 msgid "Treasury General Account (TGA)"
 msgstr "Treasury General Account (TGA) - Cuenta del Tesoro"
@@ -945,6 +1125,11 @@ msgstr "Tipo de actividad de excepción registrada."
 #: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__move_value
 msgid "USA Bond Volatility - Manual Changes"
 msgstr "Volatilidad de los Bonos de USA (Se requiere actualización Manual)"
+
+#. module: custom_gonza_dashboard
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "USA Bonds 2 years and 10 years rate"
+msgstr "Spread entre el bono a 2 años y el bono a 10 años de USA"
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_cpi_value
@@ -976,6 +1161,19 @@ msgstr "Desempleo"
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__unemployment_value
 msgid "Unemployment USA (%)"
 msgstr "Desempleo USA (%)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__mich_value
+msgid "University of Michigan long-term inflation expectations."
+msgstr ""
+"Expectativas de inflación a largo plazo de la Universidad de Michigan."
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__umcsent_value
+msgid "University of Michigan survey. Leads changes in consumer spending."
+msgstr ""
+"Encuesta de la Universidad de Michigan. Predice cambios en el gasto del "
+"consumidor."
 
 #. module: custom_gonza_dashboard
 #: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__inflation_yoy_date
@@ -1109,7 +1307,31 @@ msgid "Volatility Index (VIX)"
 msgstr "Índice de Volatilidad de las Bolsas (VIX)"
 
 #. module: custom_gonza_dashboard
+#: model:ir.model.fields,help:custom_gonza_dashboard.field_financial_indicators__oil_value
+msgid ""
+"West Texas Intermediate crude. Reflects inflation and growth expectations."
+msgstr ""
+"Petróleo crudo West Texas Intermediate. Refleja las expectativas de "
+"inflación y crecimiento."
+
+#. module: custom_gonza_dashboard
 #: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__level__3
 #: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_dashboard_control_search
 msgid "Yellow"
 msgstr "Amarillo"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__t10y2y_value
+#: model_terms:ir.ui.view,arch_db:custom_gonza_dashboard.view_financial_indicators_form
+msgid "Yield Curve (10Y-2Y Spread)"
+msgstr "Curva de rendimiento (spread 10Y-2Y)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields.selection,name:custom_gonza_dashboard.selection__dashboard_control__indicator__t10y2y_value
+msgid "Yield Curve (10Y-2Y)"
+msgstr "Curva de rendimiento (spread 10Y-2Y)"
+
+#. module: custom_gonza_dashboard
+#: model:ir.model.fields,field_description:custom_gonza_dashboard.field_financial_indicators__t10y2y_date
+msgid "Yield Curve Update Date"
+msgstr "Última Actualización"

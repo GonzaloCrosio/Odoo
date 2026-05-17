@@ -1,5 +1,4 @@
 from odoo import _, api, fields, models
-from odoo.exceptions import ValidationError
 
 
 class DashboardControl(models.Model):
@@ -43,6 +42,13 @@ class DashboardControl(models.Model):
             ("inflation_mom", "Inflation MoM"),
             ("unemployment_value", "Unemployment"),
             ("interest_rate_value", "Interest Rate"),
+            ("tga_value", "Treasury General Account (TGA)"),
+            ("t10y2y_value", "Yield Curve (10Y-2Y)"),
+            ("dgs10_value", "10-Year Treasury Yield"),
+            ("m2_value", "M2 Money Supply"),
+            ("oil_value", "Oil Price (WTI)"),
+            ("umcsent_value", "Consumer Sentiment"),
+            ("mich_value", "Michigan Inflation Expectation"),
         ],
         required=True,
     )
@@ -122,6 +128,13 @@ class DashboardControl(models.Model):
         "indicators_id.inflation_mom",
         "indicators_id.unemployment_value",
         "indicators_id.interest_rate_value",
+        "indicators_id.tga_value",
+        "indicators_id.t10y2y_value",
+        "indicators_id.dgs10_value",
+        "indicators_id.m2_value",
+        "indicators_id.oil_value",
+        "indicators_id.umcsent_value",
+        "indicators_id.mich_value",
     )
     def _compute_status(self):
         for rec in self:
@@ -189,7 +202,13 @@ class DashboardControl(models.Model):
             "inflation_mom": "inflation_link",
             "unemployment_value": "unemployment_link",
             "interest_rate_value": "interest_rate_link",
-            # si quieres: "tga_value": "tga_link", etc.
+            "tga_value": "tga_link",
+            "t10y2y_value": "t10y2y_link",
+            "dgs10_value": "dgs10_link",
+            "m2_value": "m2_link",
+            "oil_value": "oil_link",
+            "umcsent_value": "umcsent_link",
+            "mich_value": "mich_link",
         }
 
         for rec in self:

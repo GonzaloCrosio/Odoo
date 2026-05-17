@@ -125,6 +125,28 @@
                                     <field name="inverse_repo_link"/>
                                 </group>
 
+                                <group string="M2 Liquidy">
+                                    <field name="m2_value" readonly="1"/>
+                                    <field name="m2_date" options="{'numeric':true}" readonly="1"/>
+                                    <field name="fred_series_m2"/>
+                                    <field name="m2_link"/>
+                                </group>
+                            </group>
+
+                            <group string="USA Bonds 2 years and 10 years rate">
+                                <group string="Yield Curve (10Y-2Y Spread)">
+                                    <field name="t10y2y_value" readonly="1"/>
+                                    <field name="t10y2y_date" options="{'numeric':true}" readonly="1"/>
+                                    <field name="fred_series_t10y2y"/>
+                                    <field name="t10y2y_link"/>
+                                </group>
+
+                                <group string="10-Year Treasury Yield">
+                                    <field name="dgs10_value" readonly="1"/>
+                                    <field name="dgs10_date" options="{'numeric':true}" readonly="1"/>
+                                    <field name="fred_series_dgs10"/>
+                                    <field name="dgs10_link"/>
+                                </group>
                             </group>
                         </page>
 
@@ -164,14 +186,14 @@
                             <group>
                                 <group string="USD Index (DXY / proxy)">
                                     <field name="usd_index_value" readonly="1"/>
-                                    <field name="usd_index_date" options="{'numeric':true}"  readonly="1"/>
+                                    <field name="usd_index_date" options="{'numeric':true}" readonly="1"/>
                                     <field name="fred_series_usd_index"/>
                                     <field name="usd_index_link"/>
                                 </group>
 
                                 <group string="VIX">
                                     <field name="vix_value" readonly="1"/>
-                                    <field name="vix_date" options="{'numeric':true}"  readonly="1"/>
+                                    <field name="vix_date" options="{'numeric':true}" readonly="1"/>
                                     <field name="fred_series_vix"/>
                                     <field name="vix_link"/>
                                 </group>
@@ -180,9 +202,25 @@
                             <group>
                                 <group string="MOVE">
                                     <field name="move_value"/>
-                                    <field name="move_date" options="{'numeric':true}" />
+                                    <field name="move_date" options="{'numeric':true}"/>
                                     <field name="fred_series_move"/>
                                     <field name="move_link"/>
+                                </group>
+
+                                <group string="Consumer Sentiment">
+                                    <field name="umcsent_value"/>
+                                    <field name="umcsent_date" options="{'numeric':true}"/>
+                                    <field name="fred_series_umcsent"/>
+                                    <field name="umcsent_link"/>
+                                </group>
+                            </group>
+
+                            <group>
+                                <group string="OIL Price">
+                                    <field name="oil_value"/>
+                                    <field name="oil_date" options="{'numeric':true}"/>
+                                    <field name="fred_series_oil"/>
+                                    <field name="oil_link"/>
                                 </group>
                             </group>
                         </page>
@@ -191,14 +229,23 @@
                             <group>
                                 <group string="Interest Rate">
                                     <field name="interest_rate_value" readonly="1"/>
-                                    <field name="interest_rate_date" options="{'numeric':true}"  readonly="1"/>
+                                    <field name="interest_rate_date" options="{'numeric':true}" readonly="1"/>
                                     <field name="fred_series_ffr"/>
                                     <field name="interest_rate_link"/>
                                 </group>
 
+                                <group>
+                                    <group string="Unemployment">
+                                        <field name="unemployment_value" readonly="1"/>
+                                        <field name="unemployment_date" options="{'numeric':true}" readonly="1"/>
+                                        <field name="fred_series_unrate"/>
+                                        <field name="unemployment_link"/>
+                                    </group>
+                                </group>
+
                                 <group string="Inflation">
                                     <field name="inflation_cpi_value" readonly="1"/>
-                                    <field name="inflation_cpi_date" options="{'numeric':true}"  readonly="1"/>
+                                    <field name="inflation_cpi_date" options="{'numeric':true}" readonly="1"/>
                                     <field name="inflation_link"/>
                                     <field name="inflation_yoy" readonly="1"/>
                                     <field name="inflation_6m" readonly="1"/>
@@ -209,15 +256,15 @@
                                     <field name="fred_series_cpi"/>
                                 </group>
 
-                            </group>
-
-                            <group>
-                                <group string="Unemployment">
-                                    <field name="unemployment_value" readonly="1"/>
-                                    <field name="unemployment_date" options="{'numeric':true}"  readonly="1"/>
-                                    <field name="fred_series_unrate"/>
-                                    <field name="unemployment_link"/>
+                                <group>
+                                    <group string="Month Inflation Indicator USA Michigan">
+                                        <field name="mich_value" readonly="1"/>
+                                        <field name="mich_date" options="{'numeric':true}" readonly="1"/>
+                                        <field name="fred_series_mich"/>
+                                        <field name="mich_link"/>
+                                    </group>
                                 </group>
+
                             </group>
                         </page>
                     </notebook>
