@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_realestate_rent_property"
+              name="Properties for Rent"
+              parent="realestate_base.menu_realestate_root"
+              action="action_realestate_rent_property"
+              sequence="20"/>
+</odoo>

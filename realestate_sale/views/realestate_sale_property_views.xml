@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- LIST -->
+    <record id="view_realestate_sale_property_list" model="ir.ui.view">
+        <field name="name">realestate.sale.property.list</field>
+        <field name="model">realestate.sale.property</field>
+        <field name="arch" type="xml">
+            <list string="Properties for Sale">
+                <field name="name" width="120px" optional="show"/>
+                <field name="partner_id" width="120px" optional="show"/>
+                <field name="property_type_id" width="120px" optional="show"/>
+                <field name="neighborhood" width="120px" optional="show"/>
+                <field name="state_id" width="120px" optional="show"/>
+                <field name="current_sale_value" width="120px" optional="show"/>
+                <field name="market_price" width="120px" optional="show"/>
+                <field name="currency" width="120px" optional="show"/>
+                <field name="state" widget="badge" width="120px" optional="show"
+                       decoration-info="state == 'portfolio'"
+                       decoration-success="state == 'sold'"
+                       decoration-muted="state == 'inactive'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM -->
+    <record id="view_realestate_sale_property_form" model="ir.ui.view">
+        <field name="name">realestate.sale.property.form</field>
+        <field name="model">realestate.sale.property</field>
+        <field name="arch" type="xml">
+            <form string="Property for Sale">
+                <header>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="portfolio,sold"/>
+                    <button name="action_set_portfolio"
+                            type="object"
+                            string="Portfolio"
+                            invisible="state=='portfolio'"
+                            class="btn-primary"/>
+
+                    <button name="action_set_sold"
+                            type="object"
+                            string="Sold"
+                            invisible="state=='sold'"
+                            class="btn-success"/>
+
+                    <button name="action_set_inactive"
+                            type="object"
+                            string="Inactive"
+                            invisible="state=='inactive'"
+                            class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="partner_id"/>
+                            <field name="property_type_id"/>
+                            <field name="currency"/>
+                        </group>
+                        <group string="Operation">
+                            <field name="listing_date"/>
+                            <field name="sale_date"/>
+                            <field name="buyer_id"/>
+                        </group>
+                    </group>
+                    <group string="Address">
+                        <group>
+                            <field name="street"/>
+                            <field name="neighborhood"/>
+                            <field name="zip"/>
+                        </group>
+                        <group>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                        </group>
+                    </group>
+                    <group string="Valuation">
+                        <group>
+                            <field name="client_expected_value"/>
+                            <field name="current_sale_value"/>
+                        </group>
+                        <group>
+                            <field name="market_price"/>
+                            <field name="safe_sale_value"/>
+                        </group>
+                    </group>
+                    <group string="Characteristics">
+                        <group>
+                            <field name="total_area"/>
+                            <field name="covered_area"/>
+                        </group>
+                        <group>
+                            <field name="rooms"/>
+                            <field name="bedrooms"/>
+                            <field name="bathrooms"/>
+                        </group>
+                    </group>
+                    <group string="Description">
+                        <field name="description" placeholder="Description" colspan="2" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH -->
+    <record id="view_realestate_sale_property_search" model="ir.ui.view">
+        <field name="name">realestate.sale.property.search</field>
+        <field name="model">realestate.sale.property</field>
+        <field name="arch" type="xml">
+            <search string="Properties for Sale">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="neighborhood"/>
+                <field name="state_id"/>
+                <field name="property_type_id"/>
+                <filter name="filter_portfolio" string="In Portfolio"
+                        domain="[('state', '=', 'portfolio')]"/>
+                <filter name="filter_sold" string="Sold"
+                        domain="[('state', '=', 'sold')]"/>
+                <filter name="filter_inactive" string="Inactive"
+                        domain="[('state', '=', 'inactive')]"/>
+                <separator/>
+                <filter name="filter_archived" string="Archived"
+                        domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_type" string="Property Type"
+                            context="{'group_by': 'property_type_id'}"/>
+                    <filter name="group_province" string="Province"
+                            context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_realestate_sale_property" model="ir.actions.act_window">
+        <field name="name">Properties for Sale</field>
+        <field name="res_model">realestate.sale.property</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_realestate_sale_property_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register your first property for sale
+            </p>
+        </field>
+    </record>
+</odoo>

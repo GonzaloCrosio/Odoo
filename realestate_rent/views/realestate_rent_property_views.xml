@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- LIST -->
+    <record id="view_realestate_rent_property_list" model="ir.ui.view">
+        <field name="name">realestate.rent.property.list</field>
+        <field name="model">realestate.rent.property</field>
+        <field name="arch" type="xml">
+            <list string="Properties for Rent">
+                <field name="name" width="120px" optional="show"/>
+                <field name="partner_id" width="120px" optional="show"/>
+                <field name="property_type_id" width="120px" optional="show"/>
+                <field name="neighborhood" width="120px" optional="show"/>
+                <field name="state_id" width="120px" optional="show"/>
+                <field name="current_rent_value" width="120px" optional="show"/>
+                <field name="market_rent" width="120px" optional="show"/>
+                <field name="currency" width="120px" optional="show"/>
+                <field name="state" widget="badge" width="120px" optional="show"
+                       decoration-info="state == 'available'"
+                       decoration-success="state == 'rented'"
+                       decoration-muted="state == 'inactive'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM -->
+    <record id="view_realestate_rent_property_form" model="ir.ui.view">
+        <field name="name">realestate.rent.property.form</field>
+        <field name="model">realestate.rent.property</field>
+        <field name="arch" type="xml">
+            <form string="Property for Rent">
+                <header>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="available,rented"/>
+                    <button name="action_set_available"
+                            type="object"
+                            string="Available"
+                            invisible="state=='available'"
+                            class="btn-primary"/>
+
+                    <button name="action_set_rented"
+                            type="object"
+                            string="Rented"
+                            invisible="state=='rented'"
+                            class="btn-success"/>
+
+                    <button name="action_set_inactive"
+                            type="object"
+                            string="Inactive"
+                            invisible="state=='inactive'"
+                            class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="partner_id"/>
+                            <field name="property_type_id"/>
+                            <field name="currency"/>
+                            <field name="rent_period"/>
+                        </group>
+                        <group string="Contract">
+                            <field name="tenant_id"/>
+                            <field name="available_date"/>
+                            <field name="contract_start"/>
+                            <field name="contract_end"/>
+                        </group>
+                    </group>
+                    <group string="Address">
+                        <group>
+                            <field name="street"/>
+                            <field name="neighborhood"/>
+                            <field name="zip"/>
+                        </group>
+                        <group>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                        </group>
+                    </group>
+                    <group string="Rental Values">
+                        <group>
+                            <field name="client_expected_rent"/>
+                            <field name="current_rent_value"/>
+                            <field name="deposit"/>
+                        </group>
+                        <group>
+                            <field name="market_rent"/>
+                            <field name="safe_rent_value"/>
+                        </group>
+                    </group>
+                    <group string="Characteristics">
+                        <group>
+                            <field name="total_area"/>
+                            <field name="covered_area"/>
+                        </group>
+                        <group>
+                            <field name="rooms"/>
+                            <field name="bedrooms"/>
+                            <field name="bathrooms"/>
+                        </group>
+                    </group>
+                    <group string="Description">
+                        <field name="description" placeholder="Description" colspan="2" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH -->
+    <record id="view_realestate_rent_property_search" model="ir.ui.view">
+        <field name="name">realestate.rent.property.search</field>
+        <field name="model">realestate.rent.property</field>
+        <field name="arch" type="xml">
+            <search string="Properties for Rent">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="neighborhood"/>
+                <field name="state_id"/>
+                <field name="property_type_id"/>
+                <filter name="filter_available" string="Available"
+                        domain="[('state', '=', 'available')]"/>
+                <filter name="filter_rented" string="Rented"
+                        domain="[('state', '=', 'rented')]"/>
+                <filter name="filter_inactive" string="Inactive"
+                        domain="[('state', '=', 'inactive')]"/>
+                <separator/>
+                <filter name="filter_archived" string="Archived"
+                        domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_type" string="Property Type"
+                            context="{'group_by': 'property_type_id'}"/>
+                    <filter name="group_province" string="Province"
+                            context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_realestate_rent_property" model="ir.actions.act_window">
+        <field name="name">Properties for Rent</field>
+        <field name="res_model">realestate.rent.property</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_realestate_rent_property_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register your first property for rent
+            </p>
+        </field>
+    </record>
+</odoo>

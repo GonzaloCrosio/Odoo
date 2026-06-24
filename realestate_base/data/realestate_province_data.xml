@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="province_ar_b" model="realestate.province">
+            <field name="name">Buenos Aires</field>
+            <field name="code">AR-B</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_c" model="realestate.province">
+            <field name="name">Ciudad Autónoma de Buenos Aires (CABA)</field>
+            <field name="code">AR-C</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_k" model="realestate.province">
+            <field name="name">Catamarca</field>
+            <field name="code">AR-K</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_h" model="realestate.province">
+            <field name="name">Chaco</field>
+            <field name="code">AR-H</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_u" model="realestate.province">
+            <field name="name">Chubut</field>
+            <field name="code">AR-U</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_x" model="realestate.province">
+            <field name="name">Córdoba</field>
+            <field name="code">AR-X</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_w" model="realestate.province">
+            <field name="name">Corrientes</field>
+            <field name="code">AR-W</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_e" model="realestate.province">
+            <field name="name">Entre Ríos</field>
+            <field name="code">AR-E</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_p" model="realestate.province">
+            <field name="name">Formosa</field>
+            <field name="code">AR-P</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_y" model="realestate.province">
+            <field name="name">Jujuy</field>
+            <field name="code">AR-Y</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_l" model="realestate.province">
+            <field name="name">La Pampa</field>
+            <field name="code">AR-L</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_f" model="realestate.province">
+            <field name="name">La Rioja</field>
+            <field name="code">AR-F</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_m" model="realestate.province">
+            <field name="name">Mendoza</field>
+            <field name="code">AR-M</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_n" model="realestate.province">
+            <field name="name">Misiones</field>
+            <field name="code">AR-N</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_q" model="realestate.province">
+            <field name="name">Neuquén</field>
+            <field name="code">AR-Q</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_r" model="realestate.province">
+            <field name="name">Río Negro</field>
+            <field name="code">AR-R</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_a" model="realestate.province">
+            <field name="name">Salta</field>
+            <field name="code">AR-A</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_j" model="realestate.province">
+            <field name="name">San Juan</field>
+            <field name="code">AR-J</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_d" model="realestate.province">
+            <field name="name">San Luis</field>
+            <field name="code">AR-D</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_z" model="realestate.province">
+            <field name="name">Santa Cruz</field>
+            <field name="code">AR-Z</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_s" model="realestate.province">
+            <field name="name">Santa Fe</field>
+            <field name="code">AR-S</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_g" model="realestate.province">
+            <field name="name">Santiago del Estero</field>
+            <field name="code">AR-G</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_v" model="realestate.province">
+            <field name="name">Tierra del Fuego</field>
+            <field name="code">AR-V</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+        <record id="province_ar_t" model="realestate.province">
+            <field name="name">Tucumán</field>
+            <field name="code">AR-T</field>
+            <field name="country_id" ref="base.ar"/>
+        </record>
+    </data>
+</odoo>

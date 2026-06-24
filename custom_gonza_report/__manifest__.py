@@ -2,7 +2,6 @@
     "name": "Custom Reports",
     "version": "19.0.1.0.0",
     "category": "Customizations - Versión 18",
-    "website": "https://www.puntsistemes.es",
     "author": "Gonzalo Crosio",
     "summary": "Custom basic reports PDF",
     "license": "AGPL-3",

@@ -1,0 +1,534 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* realestate_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-24 16:56+0000\n"
+"PO-Revision-Date: 2026-06-24 16:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono del tipo de actividad"
+
+#. module: realestate_sale
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "Address"
+msgstr "Dirección"
+
+#. module: realestate_sale
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__state_id
+msgid "Argentine province where the property is located."
+msgstr "Provincia argentina donde se encuentra la propiedad."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad de adjuntos"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__bathrooms
+msgid "Bathrooms"
+msgstr "Baños"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__bedrooms
+msgid "Bedrooms"
+msgstr "Dormitorios"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__buyer_id
+msgid "Buyer"
+msgstr "Comprador"
+
+#. module: realestate_sale
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "Characteristics"
+msgstr "Características"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__state
+msgid ""
+"Commercial situation of the property: In Portfolio (listed and offered for "
+"sale), Sold, or Inactive (could not be sold and is no longer offered)."
+msgstr ""
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__safe_sale_value
+msgid "Conservative value at which a quick / safe sale is expected."
+msgstr "Valor conservador al que se espera una venta rápida/segura."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__partner_id
+msgid "Contact who owns the property (seller / landlord)."
+msgstr "Contacto propietario de la propiedad (vendedor/arrendador)."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__buyer_id
+msgid "Contact who purchased the property."
+msgstr "Contacto que compró la propiedad."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__country_id
+msgid "Country where the property is located. Defaults to Argentina."
+msgstr "País donde se encuentra la propiedad. Por defecto, Argentina."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__covered_area
+msgid "Covered / built surface of the property in square meters."
+msgstr "Superficie cubierta/construida de la propiedad en metros cuadrados."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__covered_area
+msgid "Covered Area (m2)"
+msgstr "Superficie cubierta (m²)"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__currency
+msgid ""
+"Currency in which the property values are expressed. In Argentina sale "
+"prices are usually quoted in USD."
+msgstr ""
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__current_sale_value
+msgid "Current Sale Value"
+msgstr "Valor actual de venta"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__current_sale_value
+msgid "Current asking sale value of the property."
+msgstr "Valor de venta solicitado actualmente para la propiedad."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__sale_date
+msgid "Date on which the property was sold."
+msgstr "Fecha en que se vendió la propiedad."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__listing_date
+msgid "Date the property entered the portfolio."
+msgstr "Fecha en que la propiedad ingresó a la cartera."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__description
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__market_price
+msgid "Estimated market price based on comparable properties."
+msgstr "Precio de mercado estimado según propiedades comparables."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícono Font Awesome, por ejemplo fa-tasks"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__description
+msgid "Free description / general notes about the property."
+msgstr "Descripción libre / notas generales sobre la propiedad."
+
+#. module: realestate_sale
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "General"
+msgstr "General"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__has_message
+msgid "Has Message"
+msgstr "Tiene mensajes"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__id
+msgid "ID"
+msgstr "ID"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_exception_icon
+msgid "Icon"
+msgstr "Ícono"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícono para indicar una actividad excepcional."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__message_has_error
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen errores de entrega."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__active
+msgid ""
+"If unchecked, the record is archived: hidden from default views without "
+"being deleted."
+msgstr ""
+
+#. module: realestate_sale
+#: model:ir.model.fields.selection,name:realestate_sale.selection__realestate_sale_property__state__portfolio
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_search
+msgid "In Portfolio"
+msgstr "En cartera"
+
+#. module: realestate_sale
+#: model:ir.model.fields.selection,name:realestate_sale.selection__realestate_sale_property__state__inactive
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_search
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__name
+msgid ""
+"Internal reference of the property. Generated automatically from a sequence "
+"when left empty."
+msgstr ""
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__listing_date
+msgid "Listing Date"
+msgstr "Fecha de publicación"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__market_price
+msgid "Market Price"
+msgstr "Precio de mercado"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega del mensaje"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi fecha límite de actividad"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__neighborhood
+msgid "Neighborhood"
+msgstr "Barrio"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__neighborhood
+msgid "Neighborhood (barrio) where the property is located."
+msgstr "Barrio donde se encuentra la propiedad."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento del calendario"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Próxima fecha límite de actividad"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la próxima actividad"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de próxima actividad"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Cantidad de acciones"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__bathrooms
+msgid "Number of bathrooms."
+msgstr "Cantidad de baños."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__bedrooms
+msgid "Number of bedrooms."
+msgstr "Cantidad de dormitorios."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_has_error_counter
+msgid "Number of errors"
+msgstr "Cantidad de errores"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Cantidad de mensajes que requieren acción"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Cantidad de mensajes con error de entrega"
+
+#. module: realestate_sale
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "Operation"
+msgstr "Operación"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__partner_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__client_expected_value
+msgid "Owner's Expected Value"
+msgstr "Valor esperado por el propietario"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__zip
+msgid "Postal Code"
+msgstr "Código postal"
+
+#. module: realestate_sale
+#: model:ir.actions.act_window,name:realestate_sale.action_realestate_sale_property
+#: model:ir.ui.menu,name:realestate_sale.menu_realestate_sale_property
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_list
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_search
+msgid "Properties for Sale"
+msgstr "Propiedades en venta"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__property_type_id
+msgid "Property Type"
+msgstr "Tipo de propiedad"
+
+#. module: realestate_sale
+#: model:ir.model,name:realestate_sale.model_realestate_sale_property
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "Property for Sale"
+msgstr "Propiedad en venta"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__state_id
+msgid "Province"
+msgstr "Provincia"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__name
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: realestate_sale
+#: model_terms:ir.actions.act_window,help:realestate_sale.action_realestate_sale_property
+msgid "Register your first property for sale"
+msgstr "Registre su primera propiedad en venta"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__rooms
+msgid "Rooms"
+msgstr "Ambientes"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega SMS"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__safe_sale_value
+msgid "Safe Sale Value"
+msgstr "Valor de venta seguro"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__sale_date
+msgid "Sale Date"
+msgstr "Fecha de venta"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__client_expected_value
+msgid "Sale value expected by the owner / client."
+msgstr "Valor de venta esperado por el propietario/cliente."
+
+#. module: realestate_sale
+#: model:ir.model.fields.selection,name:realestate_sale.selection__realestate_sale_property__state__sold
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_search
+msgid "Sold"
+msgstr "Vendido"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__street
+msgid "Street name and number of the property."
+msgstr "Nombre y número de la calle de la propiedad."
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__total_area
+msgid "Total Area (m2)"
+msgstr "Superficie total (m²)"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__rooms
+msgid "Total number of rooms."
+msgstr "Cantidad total de ambientes."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__total_area
+msgid "Total surface of the property in square meters."
+msgstr "Superficie total de la propiedad en metros cuadrados."
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__property_type_id
+msgid ""
+"Type of property. The available values are managed by the user under Real "
+"Estate > Configuration > Property Types."
+msgstr ""
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad excepcional en el registro."
+
+#. module: realestate_sale
+#: model_terms:ir.ui.view,arch_db:realestate_sale.view_realestate_sale_property_form
+msgid "Valuation"
+msgstr "Tasación"
+
+#. module: realestate_sale
+#: model:ir.model.fields,field_description:realestate_sale.field_realestate_sale_property__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: realestate_sale
+#: model:ir.model.fields,help:realestate_sale.field_realestate_sale_property__zip
+msgid "ZIP / postal code of the property."
+msgstr "Código postal de la propiedad."

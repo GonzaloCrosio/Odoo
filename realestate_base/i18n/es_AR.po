@@ -1,0 +1,412 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* realestate_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-24 17:10+0000\n"
+"PO-Revision-Date: 2026-06-24 17:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: realestate_base
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_property__currency__ars
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_rent_property__currency__ars
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_sale_property__currency__ars
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_zone_location__currency__ars
+msgid "ARS"
+msgstr "ARS"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__active
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__active
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_apartment
+msgid "Apartment"
+msgstr "Departamento"
+
+#. module: realestate_base
+#: model:ir.model,name:realestate_base.model_realestate_province
+msgid "Argentine Province"
+msgstr "Provincia argentina"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__state_id
+msgid "Argentine province where the property is located."
+msgstr "Provincia argentina donde se encuentra la propiedad."
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__bathrooms
+msgid "Bathrooms"
+msgstr "Baños"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__bedrooms
+msgid "Bedrooms"
+msgstr "Dormitorios"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_building
+msgid "Building"
+msgstr "Edificio"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__code
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__code
+msgid "Code"
+msgstr "Código"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_commercial
+msgid "Commercial Premises"
+msgstr "Local comercial"
+
+#. module: realestate_base
+#: model:ir.ui.menu,name:realestate_base.menu_realestate_config
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__partner_id
+msgid "Contact who owns the property (seller / landlord)."
+msgstr "Contacto propietario de la propiedad (vendedor/locador)."
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__country_id
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_country_house
+msgid "Country House"
+msgstr "Casa de campo"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_province__country_id
+msgid ""
+"Country the province belongs to. Used to auto-fill the country on a property"
+" when the province is selected."
+msgstr "País al que pertenece la provincia. Se utiliza para completar automáticamente el país de una propiedad cuando se selecciona la provincia."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__country_id
+msgid "Country where the property is located. Defaults to Argentina."
+msgstr "País donde se encuentra la propiedad. Por defecto Argentina."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__covered_area
+msgid "Covered / built surface of the property in square meters."
+msgstr "Superficie cubierta/construida de la propiedad en metros cuadrados."
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__covered_area
+msgid "Covered Area (m2)"
+msgstr "Superficie cubierta (m²)"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__create_uid
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__create_date
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__currency
+msgid ""
+"Currency in which the property values are expressed. In Argentina sale "
+"prices are usually quoted in USD."
+msgstr ""
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property_type__sequence
+msgid "Defines the order in which property types are displayed."
+msgstr "Define el orden en que se muestran los tipos de propiedad."
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__description
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__description
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_property_type_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__display_name
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__display_name
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_dwelling
+msgid "Dwelling"
+msgstr "Vivienda"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_field
+msgid "Field / Rural"
+msgstr "Campo / Rural"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__description
+msgid "Free description / general notes about the property."
+msgstr "Descripción libre / notas generales sobre la propiedad."
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_garage
+msgid "Garage"
+msgstr "Garage"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_house
+msgid "House"
+msgstr "Casa"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__id
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__id
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__id
+msgid "ID"
+msgstr "ID"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_province__code
+msgid "ISO 3166-2 code of the province, e.g. AR-B for Buenos Aires."
+msgstr "Código ISO 3166-2 de la provincia, por ejemplo AR-B para Buenos Aires."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__active
+msgid ""
+"If unchecked, the record is archived: hidden from default views without "
+"being deleted."
+msgstr ""
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__name
+msgid ""
+"Internal reference of the property. Generated automatically from a sequence "
+"when left empty."
+msgstr ""
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_land
+msgid "Land / Lot"
+msgstr "Terreno / Lote"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__write_uid
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__write_date
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_province__name
+msgid "Name of the Argentine province (or autonomous city)."
+msgstr "Nombre de la provincia argentina (o ciudad autónoma)."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property_type__name
+msgid ""
+"Name of the property type (dwelling, commercial premises, garage, etc.). "
+"Fully editable by the user."
+msgstr ""
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__neighborhood
+msgid "Neighborhood"
+msgstr "Barrio"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__neighborhood
+msgid "Neighborhood (barrio) where the property is located."
+msgstr "Barrio donde se encuentra la propiedad."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__bathrooms
+msgid "Number of bathrooms."
+msgstr "Cantidad de baños."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__bedrooms
+msgid "Number of bedrooms."
+msgstr "Cantidad de dormitorios."
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_office
+msgid "Office"
+msgstr "Oficina"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property_type__description
+msgid "Optional description / notes about this property type."
+msgstr "Descripción/notas opcionales sobre este tipo de propiedad."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property_type__code
+msgid "Optional short code for the property type."
+msgstr "Código corto opcional para el tipo de propiedad."
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__partner_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_ph
+msgid "PH (Horizontal Property)"
+msgstr "PH (Propiedad Horizontal)"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__zip
+msgid "Postal Code"
+msgstr "Código postal"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__property_type_id
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_property_type_form
+msgid "Property Type"
+msgstr "Tipo de propiedad"
+
+#. module: realestate_base
+#: model:ir.actions.act_window,name:realestate_base.action_realestate_property_type
+#: model:ir.ui.menu,name:realestate_base.menu_realestate_property_type
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_property_type_list
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_property_type_search
+msgid "Property Types"
+msgstr "Tipos de propiedad"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__state_id
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_province__name
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_province_form
+msgid "Province"
+msgstr "Provincia"
+
+#. module: realestate_base
+#: model:ir.actions.act_window,name:realestate_base.action_realestate_province
+#: model:ir.ui.menu,name:realestate_base.menu_realestate_province
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_province_list
+#: model_terms:ir.ui.view,arch_db:realestate_base.view_realestate_province_search
+msgid "Provinces"
+msgstr "Provincias"
+
+#. module: realestate_base
+#: model:ir.ui.menu,name:realestate_base.menu_realestate_root
+msgid "Real Estate"
+msgstr "Inmobiliaria"
+
+#. module: realestate_base
+#: model:ir.model,name:realestate_base.model_realestate_property
+msgid "Real Estate Property (Abstract Base)"
+msgstr "Propiedad inmobiliaria (base abstracta)"
+
+#. module: realestate_base
+#: model:ir.model,name:realestate_base.model_realestate_property_type
+msgid "Real Estate Property Type"
+msgstr "Tipo de propiedad inmobiliaria"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__name
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__rooms
+msgid "Rooms"
+msgstr "Ambientes"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property_type__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__street
+msgid "Street name and number of the property."
+msgstr "Nombre y número de la calle de la propiedad."
+
+#. module: realestate_base
+#: model:ir.model.fields,field_description:realestate_base.field_realestate_property__total_area
+msgid "Total Area (m2)"
+msgstr "Superficie total (m²)"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__rooms
+msgid "Total number of rooms."
+msgstr "Cantidad total de ambientes."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__total_area
+msgid "Total surface of the property in square meters."
+msgstr "Superficie total de la propiedad en metros cuadrados."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__property_type_id
+msgid ""
+"Type of property. The available values are managed by the user under Real "
+"Estate > Configuration > Property Types."
+msgstr ""
+
+#. module: realestate_base
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_property__currency__usd
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_rent_property__currency__usd
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_sale_property__currency__usd
+#: model:ir.model.fields.selection,name:realestate_base.selection__realestate_zone_location__currency__usd
+msgid "USD"
+msgstr "USD"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property_type__active
+msgid "Uncheck to archive this property type without deleting it."
+msgstr "Desmarque para archivar este tipo de propiedad sin eliminarlo."
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_province__active
+msgid "Uncheck to archive this province without deleting it."
+msgstr "Desmarque para archivar esta provincia sin eliminarla."
+
+#. module: realestate_base
+#: model:realestate.property.type,name:realestate_base.ptype_warehouse
+msgid "Warehouse"
+msgstr "Depósito"
+
+#. module: realestate_base
+#: model:ir.model.fields,help:realestate_base.field_realestate_property__zip
+msgid "ZIP / postal code of the property."
+msgstr "Código postal de la propiedad."

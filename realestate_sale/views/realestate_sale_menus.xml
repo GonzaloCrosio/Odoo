@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_realestate_sale_property"
+              name="Properties for Sale"
+              parent="realestate_base.menu_realestate_root"
+              action="action_realestate_sale_property"
+              sequence="10"/>
+</odoo>
